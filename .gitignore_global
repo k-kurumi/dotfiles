@@ -1,0 +1,13 @@
+# git config --global --add core.excludesfile ~/.gitignore_global
+
+*~
+.DS_Store
+.*.swp
+
+# bundler
+.bundle/
+.kitchen/
+vendor/
+
+.ruby-version
+tags

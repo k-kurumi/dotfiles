@@ -1,0 +1,20 @@
+# keybind
+#bind generic G move-last-line
+#bind generic g move-first-line
+#
+#bind generic b none
+#bind main b view-refs
+#bind tree b view-blame
+#
+#bind main v view-tree
+
+set tab-size = 4
+bind main G !@hub browse -- commit/%(commit)
+bind diff G !@hub browse -- commit/%(commit)
+
+# 画面を垂直方向に分割する
+#set vertical-split = yes
+# 横分割に強制する
+set vertical-split = no
+# デフォルト値
+# set vertical-split = auto
