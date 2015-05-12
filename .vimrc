@@ -105,6 +105,9 @@ NeoBundle 'chriskempson/vim-tomorrow-theme'
 " git diffを表示
 NeoBundle 'airblade/vim-gitgutter'
 
+" GitHub Flavored Markdown
+NeoBundle 'jtratner/vim-flavored-markdown'
+
 " zencoding
 " <c-y>,で展開
 NeoBundle 'mattn/emmet-vim'
@@ -401,48 +404,46 @@ augroup MyGroup
   autocmd!
 
   " ruby settings
-  autocmd MyGroup BufNewFile,BufRead *.rb  set filetype=ruby  et sw=2 ts=2 sts=2 nocindent autoindent
-  autocmd MyGroup BufNewFile,BufRead *.erb set filetype=eruby et sw=2 ts=2 sts=2 nocindent autoindent
-  autocmd MyGroup BufNewFile,BufRead .pryrc  set filetype=ruby  et sw=2 ts=2 sts=2 nocindent autoindent
+  autocmd BufNewFile,BufRead *.rb  set filetype=ruby  et sw=2 ts=2 sts=2 nocindent autoindent
+  autocmd BufNewFile,BufRead *.erb set filetype=eruby et sw=2 ts=2 sts=2 nocindent autoindent
+  autocmd BufNewFile,BufRead .pryrc  set filetype=ruby  et sw=2 ts=2 sts=2 nocindent autoindent
 
   " coffee-script
-  autocmd MyGroup BufNewFile,BufRead *.bats set filetype=coffee sw=2 ts=2 sts=2 et nocindent autoindent
+  autocmd BufNewFile,BufRead *.bats set filetype=coffee sw=2 ts=2 sts=2 et nocindent autoindent
 
   " python settings
-  autocmd MyGroup BufNewFile,BufRead *.py set filetype=python et sw=2 ts=2 sts=2 nocindent autoindent
+  autocmd BufNewFile,BufRead *.py set filetype=python et sw=2 ts=2 sts=2 nocindent autoindent
 
   " java(android) settings
-  autocmd MyGroup BufNewFile,BufRead *.aidl set filetype=java
+  autocmd BufNewFile,BufRead *.aidl set filetype=java
 
   " javascript settings
-  autocmd MyGroup BufNewFile,BufRead *.js set filetype=javascript sw=2 ts=2 sts=2 et ai cin
-  autocmd MyGroup BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
+  autocmd BufNewFile,BufRead *.js set filetype=javascript sw=2 ts=2 sts=2 et ai cin
+  autocmd BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
 
-  " gitit wiki(markdown)
-  autocmd MyGroup BufNewFile,BufRead *.page set filetype=markdown
-  autocmd MyGroup BufNewFile,BufRead *.md set filetype=markdown
+  " markdown
+  autocmd BufNewFile,BufRead *.md,*.markdown setlocal filetype=ghmarkdown
 
   " rest
-  autocmd MyGroup BufNewFile,BufRead *.rst set  filetype=rest expandtab sw=2 ts=2 sts=2
-  autocmd MyGroup BufNewFile,BufRead *.rest set filetype=rest expandtab sw=2 ts=2 sts=2
-  autocmd MyGroup BufNewFile,BufRead *.page set filetype=rest expandtab sw=2 ts=2 sts=2
+  autocmd BufNewFile,BufRead *.rst set  filetype=rest expandtab sw=2 ts=2 sts=2
+  autocmd BufNewFile,BufRead *.rest set filetype=rest expandtab sw=2 ts=2 sts=2
+  autocmd BufNewFile,BufRead *.page set filetype=rest expandtab sw=2 ts=2 sts=2
 
   " yml(dotcloud)
-  autocmd MyGroup BufNewFile,BufRead *.yml  set filetype=yaml autoindent expandtab sw=2 ts=2 sts=2
-  autocmd MyGroup BufNewFile,BufRead *.yaml set filetype=yaml autoindent expandtab sw=2 ts=2 sts=2
+  autocmd BufNewFile,BufRead *.yml  set filetype=yaml autoindent expandtab sw=2 ts=2 sts=2
+  autocmd BufNewFile,BufRead *.yaml set filetype=yaml autoindent expandtab sw=2 ts=2 sts=2
 
   " ios(objective-c)
-  autocmd MyGroup BufNewFile,BufRead *.m set filetype=objc sw=4 ts=4 sts=4 cindent autoindent
-  autocmd MyGroup BufNewFile,BufRead *.h set filetype=objc sw=4 ts=4 sts=4 cindent autoindent
+  autocmd BufNewFile,BufRead *.h set filetype=objc sw=4 ts=4 sts=4 cindent autoindent
 
   " golang
-  autocmd MyGroup BufNewFile,BufRead *.go set filetype=go sw=4 ts=4 sts=4 cindent autoindent smartindent noet
+  autocmd BufNewFile,BufRead *.go set filetype=go sw=4 ts=4 sts=4 cindent autoindent smartindent noet
 
   " bats
-  autocmd MyGroup BufNewFile,BufRead *.bats set filetype=sh sw=2 ts=2 sts=2 et nocindent autoindent
+  autocmd BufNewFile,BufRead *.bats set filetype=sh sw=2 ts=2 sts=2 et nocindent autoindent
 
   " 保存時に末尾の半角スペースを強制削除する(既存ソースのものも消してしまいdiff多くなる)
-  ""autocmd MyGroup BufWritePre * FixWhitespace
+  "autocmd BufWritePre * FixWhitespace
 
 augroup END
 
