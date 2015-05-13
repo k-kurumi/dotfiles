@@ -158,58 +158,9 @@ let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 "  \ 'link': 'some_bad_symbolic_links',
 "  \ }
 
-
-"NeoBundle 'Shougo/unite.vim'
-"NeoBundle 'Shougo/neomru.vim'
-"NeoBundle 'basyura/unite-rails'
-"let g:unite_enable_start_insert=1
-"let g:unite_source_history_yank_enable =1
-"let g:unite_source_file_mru_limit = 200
-"
-"" yankバッファ一覧
-"nnoremap <silent> ,uy :<C-u>Unite history/yank<CR>
-""nnoremap <silent> ,ub :<C-u>Unite buffer<CR>
-"
-"" pwdのフォルダから探す
-"nnoremap <silent> ,uf :<C-u>UniteWithCurrentDir -buffer-name=files file<CR>
-"
-"" 開いたファイルのあるフォルダから探す
-"nnoremap <silent> ,uc :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
-"
-""nnoremap <silent> ,ur :<C-u>Unite -buffer-name=register register<CR>
-"nnoremap <silent> ,uu :<C-u>Unite file_mru buffer<CR>
-"
-"" grep
-"nnoremap <silent> ,ug :<C-u>Unite grep:. -buffer-name=search-buffer<CR>
-"" grep結果の再表示
-"nnoremap <silent> ,ur :<C-u>UniteResume search-buffer<CR>
-"
-"" unite起動
-"nnoremap <silent> ,u<CR> :<C-u>Unite<CR>
-"nnoremap <silent> ,u<SPACE> :<C-u>Unite<CR>
-"
-"if executable('pt')
-"  let g:unite_source_grep_command = 'pt'
-"elseif executable('ag')
-"  let g:unite_source_grep_command = 'ag'
-"endif
-"
-"let g:unite_source_grep_default_opts = '--nocolor --nogroup'
-"let g:unite_source_grep_recursive_opt = ''
-"let g:unite_source_grep_max_candidates = 200
-
-
-"" ruby補完(効かないような気がする)
-"NeoBundleLazy 'marcus/rsense', {
-"      \ 'autoload': {
-"      \   'filetypes': 'ruby',
-"      \ },
-"      \ }
-"
-"NeoBundleLazy 'supermomonga/neocomplete-rsense.vim', { 'autoload' : {
-"  \ 'insert' : 1,
-"  \ 'filetypes': 'ruby',
-"  \ }}
+" yankの一覧
+NeoBundle 'LeafCage/yankround.vim'
+nnoremap ,p :CtrlPYankRound<CR>
 
 NeoBundle 'Shougo/vimproc.vim', {
       \ 'build' : {
@@ -635,8 +586,8 @@ nnoremap tq :tabclose<CR>
 " gitgutter
 " 変更箇所へ飛ぶ
 nnoremap ,g :GitGutterToggle<CR>
-nnoremap ,n :GitGutterNextHunk<CR>
-nnoremap ,p :GitGutterPrevHunk<CR>
+"nnoremap ,n :GitGutterNextHunk<CR>
+"nnoremap ,p :GitGutterPrevHunk<CR>
 
 " カーソルのハイライト
 nnoremap ,c :set cursorcolumn!<CR>
