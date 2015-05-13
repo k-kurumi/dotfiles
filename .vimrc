@@ -117,7 +117,7 @@ NeoBundle 'mattn/emmet-vim'
 " 色設定を調整するのが面倒なのでvim-trailing-whitespaceを使う
 NeoBundle 'bronson/vim-trailing-whitespace'
 " uniteで赤くなるため無効にする"
-let g:extra_whitespace_ignored_filetypes = ['unite']
+"let g:extra_whitespace_ignored_filetypes = ['unite']
 
 " coffee-script
 NeoBundle 'kchmck/vim-coffee-script'
@@ -145,44 +145,58 @@ else
   " 設定が多いので使うときに作る
 endif
 
-NeoBundle 'Shougo/unite.vim'
-NeoBundle 'Shougo/neomru.vim'
-NeoBundle 'basyura/unite-rails'
-let g:unite_enable_start_insert=1
-let g:unite_source_history_yank_enable =1
-let g:unite_source_file_mru_limit = 200
+NeoBundle 'ctrlpvim/ctrlp.vim'
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
+set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
 
-" yankバッファ一覧
-nnoremap <silent> ,uy :<C-u>Unite history/yank<CR>
-"nnoremap <silent> ,ub :<C-u>Unite buffer<CR>
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+"let g:ctrlp_custom_ignore = {
+"  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+"  \ 'file': '\v\.(exe|so|dll)$',
+"  \ 'link': 'some_bad_symbolic_links',
+"  \ }
 
-" pwdのフォルダから探す
-nnoremap <silent> ,uf :<C-u>UniteWithCurrentDir -buffer-name=files file<CR>
 
-" 開いたファイルのあるフォルダから探す
-nnoremap <silent> ,uc :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
-
-"nnoremap <silent> ,ur :<C-u>Unite -buffer-name=register register<CR>
-nnoremap <silent> ,uu :<C-u>Unite file_mru buffer<CR>
-
-" grep
-nnoremap <silent> ,ug :<C-u>Unite grep:. -buffer-name=search-buffer<CR>
-" grep結果の再表示
-nnoremap <silent> ,ur :<C-u>UniteResume search-buffer<CR>
-
-" unite起動
-nnoremap <silent> ,u<CR> :<C-u>Unite<CR>
-nnoremap <silent> ,u<SPACE> :<C-u>Unite<CR>
-
-if executable('pt')
-  let g:unite_source_grep_command = 'pt'
-elseif executable('ag')
-  let g:unite_source_grep_command = 'ag'
-endif
-
-let g:unite_source_grep_default_opts = '--nocolor --nogroup'
-let g:unite_source_grep_recursive_opt = ''
-let g:unite_source_grep_max_candidates = 200
+"NeoBundle 'Shougo/unite.vim'
+"NeoBundle 'Shougo/neomru.vim'
+"NeoBundle 'basyura/unite-rails'
+"let g:unite_enable_start_insert=1
+"let g:unite_source_history_yank_enable =1
+"let g:unite_source_file_mru_limit = 200
+"
+"" yankバッファ一覧
+"nnoremap <silent> ,uy :<C-u>Unite history/yank<CR>
+""nnoremap <silent> ,ub :<C-u>Unite buffer<CR>
+"
+"" pwdのフォルダから探す
+"nnoremap <silent> ,uf :<C-u>UniteWithCurrentDir -buffer-name=files file<CR>
+"
+"" 開いたファイルのあるフォルダから探す
+"nnoremap <silent> ,uc :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
+"
+""nnoremap <silent> ,ur :<C-u>Unite -buffer-name=register register<CR>
+"nnoremap <silent> ,uu :<C-u>Unite file_mru buffer<CR>
+"
+"" grep
+"nnoremap <silent> ,ug :<C-u>Unite grep:. -buffer-name=search-buffer<CR>
+"" grep結果の再表示
+"nnoremap <silent> ,ur :<C-u>UniteResume search-buffer<CR>
+"
+"" unite起動
+"nnoremap <silent> ,u<CR> :<C-u>Unite<CR>
+"nnoremap <silent> ,u<SPACE> :<C-u>Unite<CR>
+"
+"if executable('pt')
+"  let g:unite_source_grep_command = 'pt'
+"elseif executable('ag')
+"  let g:unite_source_grep_command = 'ag'
+"endif
+"
+"let g:unite_source_grep_default_opts = '--nocolor --nogroup'
+"let g:unite_source_grep_recursive_opt = ''
+"let g:unite_source_grep_max_candidates = 200
 
 
 "" ruby補完(効かないような気がする)
