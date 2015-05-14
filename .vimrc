@@ -46,6 +46,7 @@ NeoBundle 'kshenoy/vim-signature'
 
 " フォルダツリー
 NeoBundle 'scrooloose/nerdtree'
+NeoBundle 'jistr/vim-nerdtree-tabs'
 
 " コメント
 NeoBundle 'tyru/caw.vim'
@@ -485,6 +486,8 @@ let g:NERDTreeDirArrows = 0
 " 隠しファイルも表示する
 let g:NERDTreeShowHidden = 1
 
+" ツリーを開いた状態で起動する
+let g:nerdtree_tabs_open_on_console_startup = 1
 
 " ------------------------------------------------------------------------------
 " Tagbar
