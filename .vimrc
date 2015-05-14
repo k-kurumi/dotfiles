@@ -489,6 +489,32 @@ let g:NERDTreeShowHidden = 1
 " ツリーを開いた状態で起動する
 let g:nerdtree_tabs_open_on_console_startup = 1
 
+
+" Move tabpage
+function! s:MoveTabpage(num)
+  if type(a:num) != type(0)
+    return
+  endif
+
+  let pos = tabpagenr() - 1 + a:num
+  let tabcount = tabpagenr("$")
+
+  if pos < 0
+    let pos = tabcount - 1
+  elseif pos >= tabcount
+    let pos = 0
+  endif
+
+  execute "tabmove " . pos
+endfunction
+
+" TabMove: Move tabpage with reltive number
+command! -nargs=1 TabMove :call <SID>MoveTabpage(<f-args>)
+
+" タブを左右に移動する
+nnoremap tH :call <SID>MoveTabpage(-1)<Return>
+nnoremap tL :call <SID>MoveTabpage(1)<Return>
+
 " ------------------------------------------------------------------------------
 " Tagbar
 " ------------------------------------------------------------------------------
