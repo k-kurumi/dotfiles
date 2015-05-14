@@ -158,6 +158,12 @@ let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 "  \ 'link': 'some_bad_symbolic_links',
 "  \ }
 
+" git-branch切り替えでも対応可能なように逐次検索する
+if executable('ag')
+  let g:ctrlp_use_caching = 0
+  let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup -g ""'
+endif
+
 " yankの一覧
 NeoBundle 'LeafCage/yankround.vim'
 nnoremap ,p :CtrlPYankRound<CR>
