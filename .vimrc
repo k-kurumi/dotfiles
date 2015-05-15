@@ -46,6 +46,7 @@ NeoBundle 'kshenoy/vim-signature'
 
 " フォルダツリー
 NeoBundle 'scrooloose/nerdtree'
+NeoBundle 'jistr/vim-nerdtree-tabs'
 
 " コメント
 NeoBundle 'tyru/caw.vim'
@@ -157,6 +158,14 @@ let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 "  \ 'file': '\v\.(exe|so|dll)$',
 "  \ 'link': 'some_bad_symbolic_links',
 "  \ }
+
+" aaa:100 などの行番号が使えなくなるのでやめた
+" git-checkoutしたらF5で更新するとよい
+"" git-branch切り替えでも対応可能なように逐次検索する
+"if executable('ag')
+"  let g:ctrlp_use_caching = 0
+"  let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup -g ""'
+"endif
 
 " yankの一覧
 NeoBundle 'LeafCage/yankround.vim'
@@ -477,6 +486,34 @@ let g:NERDTreeDirArrows = 0
 " 隠しファイルも表示する
 let g:NERDTreeShowHidden = 1
 
+" ツリーを開いた状態で起動する
+let g:nerdtree_tabs_open_on_console_startup = 1
+
+
+" Move tabpage
+function! s:MoveTabpage(num)
+  if type(a:num) != type(0)
+    return
+  endif
+
+  let pos = tabpagenr() - 1 + a:num
+  let tabcount = tabpagenr("$")
+
+  if pos < 0
+    let pos = tabcount - 1
+  elseif pos >= tabcount
+    let pos = 0
+  endif
+
+  execute "tabmove " . pos
+endfunction
+
+" TabMove: Move tabpage with reltive number
+command! -nargs=1 TabMove :call <SID>MoveTabpage(<f-args>)
+
+" タブを左右に移動する
+nnoremap tH :call <SID>MoveTabpage(-1)<Return>
+nnoremap tL :call <SID>MoveTabpage(1)<Return>
 
 " ------------------------------------------------------------------------------
 " Tagbar
