@@ -691,6 +691,26 @@ vmap ,c <Plug>(caw:i:toggle)
 
 """"""""""""""""""""""""""""""
 
+" markdownのtodo
+" todoリストを簡単に入力する
+abbreviate tl - [ ]
+
+" todoリストのon/offを切り替える
+nnoremap <silent> <buffer> ,do :call ToggleCheckbox()<CR>
+
+function! ToggleCheckbox()
+  let l:line = getline('.')
+  if l:line =~ '^\-\s\[\s\]'
+    let l:result = substitute(l:line, '^-\s\[\s\]', '- [x]', '')
+    call setline('.', l:result)
+  elseif l:line =~ '^\-\s\[x\]'
+    let l:result = substitute(l:line, '^-\s\[x\]', '- [ ]', '')
+    call setline('.', l:result)
+  end
+endfunction
+
+""""""""""""""""""""""""""""""
+
 " vim-go tagbar
 let g:go_gotags_bin=$GOPATH . "/bin/gotags"
 
