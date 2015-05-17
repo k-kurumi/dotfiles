@@ -12,4 +12,5 @@ vendor/
 .ruby-version
 tags
 
-.vimsessions/
+# vim session
+default.vim
