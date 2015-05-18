@@ -46,16 +46,9 @@ NeoBundle 'kshenoy/vim-signature'
 
 " フォルダツリー
 NeoBundle 'scrooloose/nerdtree'
-
-" startup=1にするとsessionが壊れるため、タブ名を正しく表示するためだけに使う
 NeoBundle 'jistr/vim-nerdtree-tabs'
-" 開くときNERDTreeも開く(sessionが壊れる)
-"let g:nerdtree_tabs_open_on_console_startup = 1
-
-" mkdir .vimsessions して :SaveSession で保存、:OpenSession でリストア(vi引数なしで自動読み込み)
-NeoBundle 'xolox/vim-session', {
-      \ 'depends' : 'xolox/vim-misc'
-      \ }
+" 開くときNERDTreeも開く(:mksessionが壊れる)
+let g:nerdtree_tabs_open_on_console_startup = 1
 
 
 " コメント
@@ -752,18 +745,6 @@ function! ToggleCheckbox()
     call setline('.', l:result)
   end
 endfunction
-
-""""""""""""""""""""""""""""""
-
-" NOTE nerdtree-tabsと相性が悪い(自動でNERDTreeを開く設定の時sessionが壊れるため注意する)"
-" default.vim(session)の保存先(デフォルトは.vim/sessions)
-let g:session_directory = getcwd()
-" vimを辞める時に自動保存
-let g:session_autosave = 'yes'
-" 引数なしでvimを起動した時にsession保存ディレクトリのdefault.vimを開く
-let g:session_autoload = 'yes'
-" 1分間に1回自動保存
-let g:session_autosave_periodic = 1
 
 """"""""""""""""""""""""""""""
 
