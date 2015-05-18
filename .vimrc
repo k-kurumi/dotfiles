@@ -614,6 +614,15 @@ nnoremap tn :tabnew<CR>
 nnoremap tl :tabnext<CR>
 nnoremap th :tabprevious<CR>
 nnoremap tq :tabclose<CR>
+nnoremap t1 :tabnext1<CR>
+nnoremap t2 :tabnext2<CR>
+nnoremap t3 :tabnext3<CR>
+nnoremap t4 :tabnext4<CR>
+nnoremap t5 :tabnext5<CR>
+nnoremap t6 :tabnext6<CR>
+nnoremap t7 :tabnext7<CR>
+nnoremap t8 :tabnext8<CR>
+nnoremap t9 :tabnext9<CR>
 
 " ビジュアルモードの選択部分のみ置換する
 " 通常の s ではなく :s とする
