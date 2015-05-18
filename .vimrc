@@ -49,6 +49,7 @@ NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'jistr/vim-nerdtree-tabs'
 " 開くときNERDTreeも開く(:mksessionが壊れる)
 let g:nerdtree_tabs_open_on_console_startup = 1
+let g:nerdtree_tabs_open_on_gui_startup = 0
 
 
 " コメント
