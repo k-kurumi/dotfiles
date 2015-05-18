@@ -387,7 +387,7 @@ augroup MyGroup
   autocmd BufNewFile,BufRead .pryrc  set filetype=ruby  et sw=2 ts=2 sts=2 nocindent autoindent
 
   " coffee-script
-  autocmd BufNewFile,BufRead *.bats set filetype=coffee sw=2 ts=2 sts=2 et nocindent autoindent
+  autocmd BufNewFile,BufRead *.coffee set filetype=coffee sw=2 ts=2 sts=2 et nocindent autoindent
 
   " python settings
   autocmd BufNewFile,BufRead *.py set filetype=python et sw=2 ts=2 sts=2 nocindent autoindent
