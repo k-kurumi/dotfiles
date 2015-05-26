@@ -758,6 +758,26 @@ endfunction
 
 """"""""""""""""""""""""""""""
 
+" vim-easy-align
+" Start interactive EasyAlign in visual mode (e.g. vip<Enter>)
+vmap <Enter> <Plug>(EasyAlign)
+
+function! GFM()
+  let langs = ['ruby', 'yaml', 'vim', 'c']
+
+  for lang in langs
+    unlet b:current_syntax
+    silent! exec printf("syntax include @%s syntax/%s.vim", lang, lang)
+    exec printf("syntax region %sSnip matchgroup=Snip start='```%s' end='```' contains=@%s",
+                \ lang, lang, lang)
+  endfor
+  let b:current_syntax='mkd'
+
+  syntax sync fromstart
+endfunction
+
+""""""""""""""""""""""""""""""
+
 " vim-go tagbar
 let g:go_gotags_bin=$GOPATH . "/bin/gotags"
 
