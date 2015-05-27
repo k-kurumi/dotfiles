@@ -12,6 +12,6 @@
     "C-u": "peco.ScrollPageUp",
     "C-d": "peco.ScrollPageDown",
     "C-v": "peco.ToggleSelection",
-    "C-m": "peco.ToggleRangeMode"
+    "C-t": "peco.ToggleRangeMode"
   }
 }
