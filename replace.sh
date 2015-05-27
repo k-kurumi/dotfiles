@@ -14,7 +14,8 @@ echo ".Xmodmap
 .tmux.conf
 .vimrc
 .zshrc
-.ideavimrc" | while read f
+.ideavimrc
+.peco" | while read f
 do
   echo "mv $HOME/$f $temp"
   mv $HOME/$f $temp
