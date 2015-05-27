@@ -1,0 +1,5 @@
+inoremap <c-]> <esc>
+inoremap ¥ \
+inoremap \ ¥
+
+source ~/.vimrc
