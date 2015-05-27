@@ -188,6 +188,28 @@ NeoBundle 'Shougo/vimproc.vim', {
 " status line
 NeoBundle 'itchyny/lightline.vim'
 
+
+" python
+let $PATH = "~/.pyenv/shims:".$PATH
+
+" DJANGO_SETTINGS_MODULE を自動設定
+NeoBundleLazy "lambdalisue/vim-django-support", {
+      \ "autoload": {
+      \   "filetypes": ["python", "python3", "djangohtml"]
+      \ }}
+
+" 補完用に jedi-vim を追加
+NeoBundle "davidhalter/jedi-vim"
+
+" pyenv 処理用に vim-pyenv を追加
+" Note: depends が指定されているため jedi-vim より後にロードされる（ことを期待）
+NeoBundleLazy "lambdalisue/vim-pyenv", {
+      \ "depends": ['davidhalter/jedi-vim'],
+      \ "autoload": {
+      \   "filetypes": ["python", "python3", "djangohtml"]
+      \ }}
+
+
 call neobundle#end()
 
 " Required:
