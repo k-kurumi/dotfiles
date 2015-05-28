@@ -175,6 +175,12 @@ let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 NeoBundle 'LeafCage/yankround.vim'
 nnoremap ,p :CtrlPYankRound<CR>
 
+" tab周り
+NeoBundle 'DavidEGx/ctrlp-smarttabs'
+let g:ctrlp_extensions = ['smarttabs']
+nnoremap ,t :CtrlPSmartTabs<CR>
+
+
 NeoBundle 'Shougo/vimproc.vim', {
       \ 'build' : {
       \     'windows' : 'tools\\update-dll-mingw',
@@ -595,7 +601,7 @@ nnoremap ,mg  :MemoGrep<CR>
 " 日付の挿入
 " 2015-02-23 (月) 09:04:14
 " -------------------------
-nnoremap ,t i<C-R>=strftime("%Y-%m-%d (%a) %H:%M:%S")<CR><CR><ESC>25i-<ESC>a<CR>
+"nnoremap ,t i<C-R>=strftime("%Y-%m-%d (%a) %H:%M:%S")<CR><CR><ESC>25i-<ESC>a<CR>
 
 let g:memolist_path = "~/Dropbox/memo"
 "let g:memolist_memo_suffix = "txt"
