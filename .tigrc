@@ -1,3 +1,11 @@
+#
+# # lncurseswを指定しないと日本語が化ける
+#
+# make configure
+# LDLIBS=-lncursesw CFLAGS=-I/usr/include/ncursesw ./configure --prefix=/usr/local
+# make
+# sudo make install
+#
 # keybind
 #bind generic G move-last-line
 #bind generic g move-first-line
