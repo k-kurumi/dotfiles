@@ -15,6 +15,7 @@ echo ".Xmodmap
 .vimrc
 .zshrc
 .ideavimrc
+.pryrc
 .peco" | while read f
 do
   echo "mv $HOME/$f $temp"
