@@ -7,8 +7,8 @@
     }
   },
   "KeyMap": {
-    "C-j": "peco.SelectDown",
-    "C-k": "peco.SelectUp",
+    "C-n": "peco.SelectDown",
+    "C-p": "peco.SelectUp",
     "C-u": "peco.ScrollPageUp",
     "C-d": "peco.ScrollPageDown",
     "C-v": "peco.ToggleSelection",
