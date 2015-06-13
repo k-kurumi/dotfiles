@@ -14,3 +14,6 @@ tags
 
 # vim session
 default.vim
+
+# direnv
+.envrc
