@@ -9,6 +9,8 @@
 .kitchen/
 vendor/
 
+.node-version
+.python-version
 .ruby-version
 tags
 
