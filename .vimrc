@@ -215,6 +215,8 @@ NeoBundleLazy "lambdalisue/vim-pyenv", {
       \   "filetypes": ["python", "python3", "djangohtml"]
       \ }}
 
+" docker
+NeoBundle 'docker/docker' , {'rtp': '/contrib/syntax/vim/'}
 
 call neobundle#end()
 
