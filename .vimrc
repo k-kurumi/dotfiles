@@ -218,6 +218,9 @@ NeoBundleLazy "lambdalisue/vim-pyenv", {
 " docker
 NeoBundle 'docker/docker' , {'rtp': '/contrib/syntax/vim/'}
 
+" rspec
+NeoBundle 'keith/rspec.vim'
+
 call neobundle#end()
 
 " Required:
@@ -452,6 +455,12 @@ augroup MyGroup
 
   " 保存時に末尾の半角スペースを強制削除する(既存ソースのものも消してしまいdiff多くなる)
   "autocmd BufWritePre * FixWhitespace
+
+  " direnv
+  autocmd BufNewFile,BufRead .envrc  set filetype=sh  et sw=2 ts=2 sts=2 nocindent autoindent
+
+  " rspec
+  autocmd BufNewFile,BufRead *_spec.rb  set filetype=rspec  et sw=2 ts=2 sts=2 nocindent autoindent
 
 augroup END
 
