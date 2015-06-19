@@ -368,7 +368,7 @@ ab #- ####----------------------------------------------------------------------
 
 " 行、列のハイライト表示
 set cursorline
-"set cursorcolumn
+set cursorcolumn
 
 " フリーカーソル {block, insert, all, onemore}
 set virtualedit=all
@@ -676,7 +676,7 @@ nnoremap ,g :GitGutterToggle<CR>
 "nnoremap ,p :GitGutterPrevHunk<CR>
 
 " カーソルのハイライト
-nnoremap ,c :set cursorcolumn!<CR>
+"nnoremap ,c :set cursorcolumn!<CR>
 "nnoremap ,cl :set cursorline!<CR>
 
 " 画面分割時に間違って:onlyしてしまうのを抑制(tmuxのペイン間移動)
