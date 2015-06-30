@@ -665,7 +665,7 @@ nnoremap t8 :tabnext8<CR>
 nnoremap t9 :tabnext9<CR>
 
 " paste
-nnoremap pp :set paste!<CR>
+nnoremap <SPACE>p :set paste!<CR>
 
 " ビジュアルモードの選択部分のみ置換する
 " 通常の s ではなく :s とする
