@@ -399,6 +399,8 @@ set guicursor=a:blinkon0
 " visual copy: a, 右スクロールバー: r, 縦分割時左スクロールバー: L
 set guioptions=rL
 
+" ビジュアルモードで選択したところを*で検索する
+vnoremap * "zy:let @/ = @z<CR>n
 
 " rubyの%ジャンプ
 if !exists('loaded_matchit')
