@@ -100,6 +100,8 @@ NeoBundle 'elzr/vim-json'
 
 " rails
 NeoBundle 'tpope/vim-rails'
+NeoBundle 'tpope/vim-cucumber'
+" <c-w><c-d>でsplitして開く
 
 " color
 "NeoBundle 'jpo/vim-railscasts-theme'
