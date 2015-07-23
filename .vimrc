@@ -129,6 +129,11 @@ NeoBundle 'bronson/vim-trailing-whitespace'
 " coffee-script
 NeoBundle 'kchmck/vim-coffee-script'
 
+" typescript
+NeoBundle 'leafgarland/typescript-vim'
+NeoBundle 'jason0x43/vim-js-indent'
+NeoBundle 'Quramy/tsuquyomi'
+
 " protocolbuffer syntax color
 NeoBundle 'uarun/vim-protobuf'
 
@@ -425,6 +430,9 @@ augroup MyGroup
 
   " coffee-script
   autocmd BufNewFile,BufRead *.coffee set filetype=coffee sw=2 ts=2 sts=2 et nocindent autoindent
+
+  " typescript
+  autocmd BufNewFile,BufRead *.ts set filetype=typescript sw=2 ts=2 sts=2 et
 
   " python settings
   autocmd BufNewFile,BufRead *.py set filetype=python et sw=2 ts=2 sts=2 nocindent autoindent
