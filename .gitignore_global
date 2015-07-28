@@ -15,8 +15,8 @@ vendor/
 .ruby-version
 tags
 
-# vim session
-default.vim
+# npm
+node_modules/
 
 # direnv
 .envrc
