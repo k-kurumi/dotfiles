@@ -822,6 +822,11 @@ endfunction
 
 """"""""""""""""""""""""""""""
 
+" typescriptのrefを補完
+" npm install -g tsd して
+" tsd query react -a install などで定義を取得する
+abbreviate tsref /// <reference path="typings/xxx/xxx.d.ts" />
+
 " vim-easy-align
 " Start interactive EasyAlign in visual mode (e.g. vip<Enter>)
 vmap <Enter> <Plug>(EasyAlign)
