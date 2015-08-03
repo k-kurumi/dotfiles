@@ -125,6 +125,9 @@ NeoBundle 'jtratner/vim-flavored-markdown'
 " zencoding
 " <c-y>,で展開
 NeoBundle 'mattn/emmet-vim'
+" reactjsのclassName補完(.zzzでclassName="zzz")
+" TODO: あとで個人的な補完を追加する
+let g:user_emmet_settings = 1
 
 " 末尾半角スペースの可視化(:FixWhitespace で削除)
 " ntpeters/vim-better-whitespace が高機能だがssh経由で赤色が出ない
