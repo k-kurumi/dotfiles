@@ -80,6 +80,7 @@ let g:syntastic_javascript_checkers = ['jsxhint']
 " react"
 NeoBundle "pangloss/vim-javascript"
 NeoBundle "mxw/vim-jsx"
+NeoBundle 'mtscout6/vim-cjsx'
 
 " golang
 NeoBundle 'fatih/vim-go'
