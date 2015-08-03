@@ -80,10 +80,6 @@ let g:syntastic_javascript_checkers = ['jsxhint']
 " react"
 NeoBundle "pangloss/vim-javascript"
 NeoBundle "mxw/vim-jsx"
-" js 拡張子でも有効にする
-let g:jsx_ext_required = 0
-" @jsx React.DOM プラグマがある場合のみ有効にする
-let g:jsx_pragma_required = 1
 
 " golang
 NeoBundle 'fatih/vim-go'
