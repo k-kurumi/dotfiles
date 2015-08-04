@@ -75,6 +75,10 @@ let g:syntastic_javascript_eslint_args = '--env es6'
 let g:syntastic_jsx_checkers           = ['eslint']
 let g:syntastic_jsx_eslint_args        = '--env es6'
 
+" TODO: tslintでファイル指定がおかしい感じなのであとで調べる
+" let g:syntastic_typescript_checkers    = ['tslint']
+" let g:syntastic_typescript_tslint_args = ''
+
 " javascript
 " NeoBundle 'jiangmiao/simple-javascript-indenter'
 " NeoBundle 'jQuery'
