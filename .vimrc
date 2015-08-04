@@ -69,8 +69,11 @@ NeoBundle 'vim-scripts/DrawIt'
 "     coffee : npm install -g coffeelint
 "         go : go get github.com/golang/lint
 NeoBundle 'scrooloose/syntastic'
-" jsxhintはjshintのラッパーらしい
-let g:syntastic_javascript_checkers = ['jsxhint']
+let g:syntastic_javascript_checkers    = ['eslint']
+let g:syntastic_javascript_eslint_args = '--env es6'
+
+let g:syntastic_jsx_checkers           = ['eslint']
+let g:syntastic_jsx_eslint_args        = '--env es6'
 
 " javascript
 " NeoBundle 'jiangmiao/simple-javascript-indenter'
