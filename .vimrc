@@ -558,6 +558,8 @@ let g:NERDTreeDirArrows = 0
 " 隠しファイルも表示する
 let g:NERDTreeShowHidden = 1
 
+" bashのsyntaxを有効にする
+let g:is_bash = 1
 
 " Move tabpage
 function! s:MoveTabpage(num)
