@@ -126,8 +126,14 @@ NeoBundle 'chriskempson/vim-tomorrow-theme'
 " git diffを表示
 NeoBundle 'airblade/vim-gitgutter'
 
+" gitをvimから使う
+NeoBundle 'tpope/vim-fugitive'
+
 " GitHub Flavored Markdown
 NeoBundle 'jtratner/vim-flavored-markdown'
+
+" 行番号指定で開く
+NeoBundle 'bogado/file-line'
 
 " zencoding
 " <c-y>,で展開
