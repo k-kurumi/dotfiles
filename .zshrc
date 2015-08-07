@@ -135,5 +135,15 @@ docker_rm_images() {
 }
 alias dc=docker-compose
 
+# フォルダごと作成してtouchする
+touchp() {
+  [ -z $1 ] && return
+  p=$1
+  d=$(dirname $p)
+
+  mkdir -p $d
+  touch $p
+}
+
 # read local env
 [[ -s $HOME/.shenv_local ]] && source $HOME/.shenv_local
