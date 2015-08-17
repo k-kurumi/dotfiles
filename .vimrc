@@ -251,6 +251,11 @@ NeoBundle 'docker/docker' , {'rtp': '/contrib/syntax/vim/'}
 " rspec
 NeoBundle 'keith/rspec.vim'
 
+" 括弧囲み
+" v選択後 S" で "囲み
+" ds" で "削除
+NeoBundle 'tpope/vim-surround'
+
 call neobundle#end()
 
 " Required:
