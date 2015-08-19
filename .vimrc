@@ -84,10 +84,13 @@ let g:syntastic_jsx_eslint_args        = '--env es6'
 " NeoBundle 'jQuery'
 " NeoBundle 'jelera/vim-javascript-syntax'
 
-" react"
-NeoBundle "pangloss/vim-javascript"
-NeoBundle "mxw/vim-jsx"
+" react
+NeoBundle 'pangloss/vim-javascript'
+NeoBundle 'mxw/vim-jsx'
 NeoBundle 'mtscout6/vim-cjsx'
+
+" javascript
+NeoBundle 'glanotte/vim-jasmine'
 
 " golang
 NeoBundle 'fatih/vim-go'
@@ -501,6 +504,9 @@ augroup MyGroup
 
   " rspec
   autocmd BufNewFile,BufRead *_spec.rb  set filetype=rspec  et sw=2 ts=2 sts=2 nocindent autoindent
+
+  " jasmine
+  autocmd BufNewFile,BufRead *_spec.js  set filetype=jasmine.javascript et sw=2 ts=2 sts=2 nocindent autoindent
 
 augroup END
 
