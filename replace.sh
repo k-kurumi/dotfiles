@@ -15,6 +15,7 @@ echo ".Xmodmap
 .vimrc
 .zshrc
 .ideavimrc
+.cftools
 .pryrc
 .peco" | while read f
 do

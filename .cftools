@@ -1,0 +1,113 @@
+# cftools
+
+gudpp_organizations() {
+  url=${1:-"/v2/organizations"}
+
+  json=`${GUD:-gud} curl ${url}`
+
+  echo $json | jq -c '.resources[]|
+  {
+    name: .entity.name,
+    guid: .metadata.guid
+  }'
+
+  url=`echo $json | jq -c -r 'if .next_url == null then empty else .next_url end'`
+  [ ! -z $url ] && gudpp_organizations $url
+  return 0
+}
+
+gudpp_spaces() {
+  url=${1:-"/v2/organizations"}
+
+  json=`${GUD:-gud} curl ${url}`
+
+  echo $json | jq -c '.resources[]|
+  {
+    name: .entity.name,
+    guid: .metadata.guid
+  }'
+
+  url=`echo $json | jq -c -r 'if .next_url == null then empty else .next_url end'`
+  [ ! -z $url ] && gudpp_spaces $url
+  return 0
+}
+
+gudpp_apps() {
+  url=${1:-"/v2/apps"}
+
+  json=`${GUD:-gud} curl ${url}`
+
+  echo $json | jq -c '.resources[]|
+  {
+    guid:          .metadata.guid,
+    name:          .entity.name,
+    buildpack:     .entity.detected_buildpack,
+    auto_update:   .entity.auto_update,
+    state:         .entity.state,
+    updated_at:    .metadata.updated_at,
+    package_state: .entity.package_state,
+    instances:     .entity.instances,
+    mem:           .entity.memory
+  }'
+
+  url=`echo $json | jq -c -r 'if .next_url == null then empty else .next_url end'`
+  [ ! -z $url ] && gudpp_apps $url
+  return 0
+}
+
+gudpp_service_instances() {
+  url=${1:-"/v2/service_instances"}
+
+  json=`${GUD:-gud} curl ${url}`
+
+  echo $json | jq -c '.resources[]|
+  {
+    name: .entity.name,
+    guid: .metadata.guid
+  }'
+
+  url=`echo $json | jq -c -r 'if .next_url == null then empty else .next_url end'`
+  [ ! -z $url ] && gudpp_service_instances $url
+  return 0
+}
+
+gudpp_user_provided_service_instances() {
+  url=${1:-"/v2/user_provided_service_instances"}
+
+  json=`${GUD:-gud} curl ${url}`
+
+  echo $json | jq -c '.resources[]|
+  {
+    name: .entity.name,
+    guid: .metadata.guid
+  }'
+
+  url=`echo $json | jq -c -r 'if .next_url == null then empty else .next_url end'`
+  [ ! -z $url ] && gudpp_user_provided_service_instances $url
+  return 0
+}
+
+gudpp_services() {
+  url=${1:-"/v2/services?inline-relations-depth=1"}
+
+  json=`${GUD:-gud} curl ${url}`
+
+  echo $json | jq -c '.resources[]|
+  {
+    label: .entity.label,
+    service_guid: .metadata.guid,
+    service_plans: [
+      .entity.service_plans[]|
+      {
+        name: .entity.name,
+        guid: .metadata.guid
+      }
+    ]
+  }'
+
+  url=`echo $json | jq -c -r 'if .next_url == null then empty else .next_url end'`
+  [ ! -z $url ] && gudpp_services $url
+  return 0
+}
+
+# vim: ft=sh
