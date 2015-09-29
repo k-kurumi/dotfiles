@@ -894,6 +894,7 @@ if has('gui_running')
 else
   "colorscheme default
   "colorscheme desert
+  let g:hybrid_use_Xresources = 1
+  set background=dark
   colorscheme hybrid
-  "colorscheme hybrid-light
 endif
