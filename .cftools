@@ -94,8 +94,8 @@ gudpp_services() {
 
   echo $json | jq -c '.resources[]|
   {
+    guid: .metadata.guid,
     label: .entity.label,
-    service_guid: .metadata.guid,
     service_plans: [
       .entity.service_plans[]|
       {
@@ -107,6 +107,25 @@ gudpp_services() {
 
   url=`echo $json | jq -c -r 'if .next_url == null then empty else .next_url end'`
   [ ! -z $url ] && gudpp_services $url
+  return 0
+}
+
+gudpp_service_bindings() {
+  url=${1:-"/v2/service_bindings?inline-relations-depth=2"}
+
+  json=`${GUD:-gud} curl ${url}`
+
+  echo $json | jq -c '.resources[]|
+  {
+    guid: .metadata.guid,
+    app_guid: .entity.app_guid,
+    app_name: .entity.app.entity.name,
+    service_instance_guid: .entity.service_instance.metadata.guid,
+    service_instance_name: .entity.service_instance.entity.name
+  }'
+
+  url=`echo $json | jq -c -r 'if .next_url == null then empty else .next_url end'`
+  [ ! -z $url ] && gudpp_service_bindings $url
   return 0
 }
 
