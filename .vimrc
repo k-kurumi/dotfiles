@@ -888,13 +888,6 @@ let g:go_gotags_bin=$GOPATH . "/bin/gotags"
 " " 32bit_windows固有の設定
 " endif
 
-if has('gui_running')
-" gvim
-  colorscheme desert
-else
-  "colorscheme default
-  "colorscheme desert
-  let g:hybrid_use_Xresources = 1
-  set background=dark
-  colorscheme hybrid
-endif
+let g:hybrid_use_Xresources = 1
+set background=dark
+colorscheme hybrid
