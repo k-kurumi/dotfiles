@@ -56,14 +56,16 @@ gudpp_apps() {
 }
 
 gudpp_service_instances() {
-  url=${1:-"/v2/service_instances"}
+  url=${1:-"/v2/service_instances?inline-relations-depth=2"}
 
   json=`${GUD:-gud} curl ${url}`
 
   echo $json | jq -c '.resources[]|
   {
+    guid: .metadata.guid,
     name: .entity.name,
-    guid: .metadata.guid
+    service_guid: .entity.service_plan.entity.service.metadata.guid,
+    service_label: .entity.service_plan.entity.service.entity.label
   }'
 
   url=`echo $json | jq -c -r 'if .next_url == null then empty else .next_url end'`
@@ -78,8 +80,9 @@ gudpp_user_provided_service_instances() {
 
   echo $json | jq -c '.resources[]|
   {
+    guid: .metadata.guid,
     name: .entity.name,
-    guid: .metadata.guid
+    credentials: .entity.credentials
   }'
 
   url=`echo $json | jq -c -r 'if .next_url == null then empty else .next_url end'`
