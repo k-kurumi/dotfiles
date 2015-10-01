@@ -129,4 +129,38 @@ gudpp_service_bindings() {
   return 0
 }
 
+gudpp_routes() {
+  url=${1:-"/v2/routes?inline-relations-depth=1"}
+
+  json=`${GUD:-gud} curl ${url}`
+
+  echo $json | jq -c '.resources[]|
+  {
+    guid: .metadata.guid,
+    host: .entity.host,
+    domain_guid: .entity.domain.metadata.guid,
+    domain_name: .entity.domain.entity.name
+  }'
+
+  url=`echo $json | jq -c -r 'if .next_url == null then empty else .next_url end'`
+  [ ! -z $url ] && gudpp_routes $url
+  return 0
+}
+
+gudpp_domains() {
+  url=${1:-"/v2/domains"}
+
+  json=`${GUD:-gud} curl ${url}`
+
+  echo $json | jq -c '.resources[]|
+  {
+    guid: .metadata.guid,
+    name: .entity.name
+  }'
+
+  url=`echo $json | jq -c -r 'if .next_url == null then empty else .next_url end'`
+  [ ! -z $url ] && gudpp_domains $url
+  return 0
+}
+
 # vim: ft=sh
