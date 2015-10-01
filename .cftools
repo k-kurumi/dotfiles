@@ -17,7 +17,7 @@ gudpp_organizations() {
 }
 
 gudpp_spaces() {
-  url=${1:-"/v2/organizations"}
+  url=${1:-"/v2/spaces"}
 
   json=`${GUD:-gud} curl ${url}`
 
