@@ -204,6 +204,10 @@ let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 "  let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup -g ""'
 "endif
 
+" 速いらしい
+NeoBundle 'FelikZ/ctrlp-py-matcher'
+let g:ctrlp_match_func = {'match': 'pymatcher#PyMatch'}
+
 " yankの一覧
 NeoBundle 'LeafCage/yankround.vim'
 nnoremap ,p :CtrlPYankRound<CR>
