@@ -187,6 +187,7 @@ gudrm_apps() {
   if [ -z $app_name ]
   then
     echo ">>> ERROR: need app name keyword"
+    ${GUD:-gud} a
     return 1
   fi
 
