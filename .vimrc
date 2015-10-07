@@ -118,6 +118,7 @@ NeoBundle 'elzr/vim-json'
 " rails
 NeoBundle 'tpope/vim-rails'
 NeoBundle 'tpope/vim-cucumber'
+NeoBundle 'tonekk/vim-ruby-capybara'
 " <c-w><c-d>でsplitして開く
 
 " color
