@@ -7,8 +7,8 @@ gudpp_organizations() {
 
   echo $json | jq -c '.resources[]|
   {
-    name: .entity.name,
-    guid: .metadata.guid
+    guid: .metadata.guid,
+    name: .entity.name
   }'
 
   url=`echo $json | jq -c -r 'if .next_url == null then empty else .next_url end'`
@@ -23,8 +23,8 @@ gudpp_spaces() {
 
   echo $json | jq -c '.resources[]|
   {
-    name: .entity.name,
-    guid: .metadata.guid
+    guid: .metadata.guid,
+    name: .entity.name
   }'
 
   url=`echo $json | jq -c -r 'if .next_url == null then empty else .next_url end'`
