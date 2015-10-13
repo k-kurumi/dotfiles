@@ -145,5 +145,9 @@ touchp() {
   touch $p
 }
 
+killspring() {
+  ps aux | grep spring | grep -v grep | awk '{print $2}' | xargs kill
+}
+
 # read local env
 [[ -s $HOME/.shenv_local ]] && source $HOME/.shenv_local
