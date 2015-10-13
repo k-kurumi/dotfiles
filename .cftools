@@ -41,6 +41,23 @@ gudpp_apps() {
   {
     guid:          .metadata.guid,
     name:          .entity.name,
+    state:         .entity.state
+  }'
+
+  url=`echo $json | jq -c -r 'if .next_url == null then empty else .next_url end'`
+  [ ! -z $url ] && gudpp_apps $url
+  return 0
+}
+
+gudpp_apps_more() {
+  url=${1:-"/v2/apps"}
+
+  json=`${GUD:-gud} curl ${url}`
+
+  echo $json | jq -c '.resources[]|
+  {
+    guid:          .metadata.guid,
+    name:          .entity.name,
     buildpack:     .entity.detected_buildpack,
     auto_update:   .entity.auto_update,
     state:         .entity.state,
@@ -51,7 +68,7 @@ gudpp_apps() {
   }'
 
   url=`echo $json | jq -c -r 'if .next_url == null then empty else .next_url end'`
-  [ ! -z $url ] && gudpp_apps $url
+  [ ! -z $url ] && gudpp_apps_more $url
   return 0
 }
 
