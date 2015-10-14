@@ -70,3 +70,7 @@ com_crashlytics_export_strings.xml
 crashlytics.properties
 crashlytics-build.properties
 ################################################################################
+
+# v3
+app/assets/javascripts/components.js
+app/assets/javascripts/prerequisite.js
