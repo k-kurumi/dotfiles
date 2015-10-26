@@ -85,6 +85,7 @@ alias l='ls -l'
 alias vi='vim'
 alias info='info --vi-keys'
 alias ren='vim -c Renamer'
+alias vir='vim -R'
 
 export EDITOR=vim
 
