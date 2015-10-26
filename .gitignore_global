@@ -17,6 +17,7 @@ tags
 
 # npm
 node_modules/
+npm-debug.log
 
 # direnv
 .envrc
