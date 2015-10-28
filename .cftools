@@ -1,9 +1,9 @@
 # cftools
 
-gudpp_organizations() {
+cfpp_organizations() {
   url=${1:-"/v2/organizations"}
 
-  json=`${GUD:-gud} curl ${url}`
+  json=`${CF:-cf} curl ${url}`
 
   echo $json | jq -c '.resources[]|
   {
@@ -12,14 +12,14 @@ gudpp_organizations() {
   }'
 
   url=`echo $json | jq -c -r 'if .next_url == null then empty else .next_url end'`
-  [ ! -z $url ] && gudpp_organizations $url
+  [ ! -z $url ] && cfpp_organizations $url
   return 0
 }
 
-gudpp_spaces() {
+cfpp_spaces() {
   url=${1:-"/v2/spaces"}
 
-  json=`${GUD:-gud} curl ${url}`
+  json=`${CF:-cf} curl ${url}`
 
   echo $json | jq -c '.resources[]|
   {
@@ -28,14 +28,14 @@ gudpp_spaces() {
   }'
 
   url=`echo $json | jq -c -r 'if .next_url == null then empty else .next_url end'`
-  [ ! -z $url ] && gudpp_spaces $url
+  [ ! -z $url ] && cfpp_spaces $url
   return 0
 }
 
-gudpp_apps() {
+cfpp_apps() {
   url=${1:-"/v2/apps"}
 
-  json=`${GUD:-gud} curl ${url}`
+  json=`${CF:-cf} curl ${url}`
 
   echo $json | jq -c '.resources[]|
   {
@@ -45,14 +45,14 @@ gudpp_apps() {
   }'
 
   url=`echo $json | jq -c -r 'if .next_url == null then empty else .next_url end'`
-  [ ! -z $url ] && gudpp_apps $url
+  [ ! -z $url ] && cfpp_apps $url
   return 0
 }
 
-gudpp_apps_more() {
+cfpp_apps_more() {
   url=${1:-"/v2/apps"}
 
-  json=`${GUD:-gud} curl ${url}`
+  json=`${CF:-cf} curl ${url}`
 
   echo $json | jq -c '.resources[]|
   {
@@ -68,14 +68,14 @@ gudpp_apps_more() {
   }'
 
   url=`echo $json | jq -c -r 'if .next_url == null then empty else .next_url end'`
-  [ ! -z $url ] && gudpp_apps_more $url
+  [ ! -z $url ] && cfpp_apps_more $url
   return 0
 }
 
-gudpp_service_instances() {
+cfpp_service_instances() {
   url=${1:-"/v2/service_instances?inline-relations-depth=2"}
 
-  json=`${GUD:-gud} curl ${url}`
+  json=`${CF:-cf} curl ${url}`
 
   echo $json | jq -c '.resources[]|
   {
@@ -86,14 +86,14 @@ gudpp_service_instances() {
   }'
 
   url=`echo $json | jq -c -r 'if .next_url == null then empty else .next_url end'`
-  [ ! -z $url ] && gudpp_service_instances $url
+  [ ! -z $url ] && cfpp_service_instances $url
   return 0
 }
 
-gudpp_user_provided_service_instances() {
+cfpp_user_provided_service_instances() {
   url=${1:-"/v2/user_provided_service_instances"}
 
-  json=`${GUD:-gud} curl ${url}`
+  json=`${CF:-cf} curl ${url}`
 
   echo $json | jq -c '.resources[]|
   {
@@ -103,14 +103,14 @@ gudpp_user_provided_service_instances() {
   }'
 
   url=`echo $json | jq -c -r 'if .next_url == null then empty else .next_url end'`
-  [ ! -z $url ] && gudpp_user_provided_service_instances $url
+  [ ! -z $url ] && cfpp_user_provided_service_instances $url
   return 0
 }
 
-gudpp_services() {
+cfpp_services() {
   url=${1:-"/v2/services?inline-relations-depth=1"}
 
-  json=`${GUD:-gud} curl ${url}`
+  json=`${CF:-cf} curl ${url}`
 
   echo $json | jq -c '.resources[]|
   {
@@ -126,14 +126,14 @@ gudpp_services() {
   }'
 
   url=`echo $json | jq -c -r 'if .next_url == null then empty else .next_url end'`
-  [ ! -z $url ] && gudpp_services $url
+  [ ! -z $url ] && cfpp_services $url
   return 0
 }
 
-gudpp_service_bindings() {
+cfpp_service_bindings() {
   url=${1:-"/v2/service_bindings?inline-relations-depth=2"}
 
-  json=`${GUD:-gud} curl ${url}`
+  json=`${CF:-cf} curl ${url}`
 
   echo $json | jq -c '.resources[]|
   {
@@ -145,14 +145,14 @@ gudpp_service_bindings() {
   }'
 
   url=`echo $json | jq -c -r 'if .next_url == null then empty else .next_url end'`
-  [ ! -z $url ] && gudpp_service_bindings $url
+  [ ! -z $url ] && cfpp_service_bindings $url
   return 0
 }
 
-gudpp_routes() {
+cfpp_routes() {
   url=${1:-"/v2/routes?inline-relations-depth=1"}
 
-  json=`${GUD:-gud} curl ${url}`
+  json=`${CF:-cf} curl ${url}`
 
   echo $json | jq -c '.resources[]|
   {
@@ -163,14 +163,14 @@ gudpp_routes() {
   }'
 
   url=`echo $json | jq -c -r 'if .next_url == null then empty else .next_url end'`
-  [ ! -z $url ] && gudpp_routes $url
+  [ ! -z $url ] && cfpp_routes $url
   return 0
 }
 
-gudpp_domains() {
+cfpp_domains() {
   url=${1:-"/v2/domains"}
 
-  json=`${GUD:-gud} curl ${url}`
+  json=`${CF:-cf} curl ${url}`
 
   echo $json | jq -c '.resources[]|
   {
@@ -179,44 +179,44 @@ gudpp_domains() {
   }'
 
   url=`echo $json | jq -c -r 'if .next_url == null then empty else .next_url end'`
-  [ ! -z $url ] && gudpp_domains $url
+  [ ! -z $url ] && cfpp_domains $url
   return 0
 }
 
 # 全てのアプリを削除する
-gudrm_apps_all() {
-  ${GUD:-gud} a | sed -ne '/name/,$p' | tail -n +2 | awk '{print $1}'
+cfrm_apps_all() {
+  ${CF:-cf} a | sed -ne '/name/,$p' | tail -n +2 | awk '{print $1}'
 
   echo -n "are you sure? [y/n]: "
   read answer
   [ $answer = "y" ] && echo ">>> DELETE!!" || return 1
 
-  ${GUD:-gud} a | sed -ne '/name/,$p' | tail -n +2 | awk '{print $1}' | while read app
+  ${CF:-cf} a | sed -ne '/name/,$p' | tail -n +2 | awk '{print $1}' | while read app
   do
-    ${GUD:-gud} delete -f -r $app
+    ${CF:-cf} delete -f -r $app
   done
 }
 
 # 引数指定したアプリを削除する
-gudrm_apps() {
+cfrm_apps() {
   app_name=${1}
 
   if [ -z $app_name ]
   then
     echo ">>> ERROR: need app name keyword"
-    ${GUD:-gud} a
+    ${CF:-cf} a
     return 1
   fi
 
-  ${GUD:-gud} a | sed -ne '/name/,$p' | tail -n +2 | awk '{print $1}' | egrep $app_name
+  ${CF:-cf} a | sed -ne '/name/,$p' | tail -n +2 | awk '{print $1}' | egrep $app_name
 
   echo -n "are you sure? [y/n]: "
   read answer
   [ $answer = "y" ] && echo ">>> DELETE!!" || return 1
 
-  gud a | sed -ne '/name/,$p' | tail -n +2 | awk '{print $1}' | egrep $app_name | while read app
+  ${CF:-cf} a | sed -ne '/name/,$p' | tail -n +2 | awk '{print $1}' | egrep $app_name | while read app
   do
-    ${GUD:-gud} delete -f -r $app
+    ${CF:-cf} delete -f -r $app
   done
 }
 
