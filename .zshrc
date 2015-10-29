@@ -150,5 +150,17 @@ killspring() {
   ps aux | grep spring | grep -v grep | awk '{print $2}' | xargs kill
 }
 
+# pecoのように使うセレクタ
+# usage: ls -l | tovim
+# http://vim-jp.org/blog/2015/10/15/tovim-on-shell-command-pipes.html
+tovim() {
+  TOVIMTMP=~/.tovim_tmp_`date +%Y-%m-%d_%H-%M-%S.txt`
+
+  cat > $TOVIMTMP
+  vim --noplugin $TOVIMTMP < /dev/tty > /dev/tty
+  cat $TOVIMTMP
+  rm $TOVIMTMP
+}
+
 # read local env
 [[ -s $HOME/.shenv_local ]] && source $HOME/.shenv_local
