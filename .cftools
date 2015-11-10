@@ -183,6 +183,15 @@ cfpp_domains() {
   return 0
 }
 
+cfpp_stats_guid() {
+  guid=$1
+  [ -z $guid ] && return 1
+
+  url="/v2/apps/${guid}/stats"
+  ${CF:-cf} curl ${url} | jq .
+  return 0
+}
+
 # 全てのアプリを削除する
 cfrm_apps_all() {
   ${CF:-cf} a | sed -ne '/name/,$p' | tail -n +2 | awk '{print $1}'
