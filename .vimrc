@@ -100,6 +100,9 @@ NeoBundle 'dgryski/vim-godef'
 "
 " golang定義へジャンプに必要(gdでジャンプする)
 " go get -v github.com/rogpeppe/godef
+"
+" golangタグ情報生成
+" go get -u github.com/jstemmer/gotags
 
 " 括弧補完(visula+Iなどで括弧補完がおかしい(macvimで確認))
 "NeoBundle 'jiangmiao/auto-pairs'
