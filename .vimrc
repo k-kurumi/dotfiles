@@ -67,7 +67,6 @@ NeoBundle 'vim-scripts/DrawIt'
 " 保存時の構文チェッカ
 " javascript : npm install -g jshint
 "     coffee : npm install -g coffeelint
-"         go : go get github.com/golang/lint
 NeoBundle 'scrooloose/syntastic'
 let g:syntastic_javascript_checkers    = ['eslint']
 let g:syntastic_javascript_eslint_args = '--env es6'
@@ -95,6 +94,12 @@ NeoBundle 'glanotte/vim-jasmine'
 " golang
 NeoBundle 'fatih/vim-go'
 NeoBundle 'dgryski/vim-godef'
+
+" golang補完に必要(保存時にgofmtなどが実行される)
+" go get -u github.com/nsf/gocode
+"
+" golang定義へジャンプに必要(gdでジャンプする)
+" go get -v github.com/rogpeppe/godef
 
 " 括弧補完(visula+Iなどで括弧補完がおかしい(macvimで確認))
 "NeoBundle 'jiangmiao/auto-pairs'
@@ -749,50 +754,6 @@ set conceallevel=0
 " 3. ln -s /Applications/MacVim.app /usr/local/Cellar/macvim/7.3.64/
 
 
-" golang
-" 1. install go commands
-"   go get code.google.com/p/go.tools/cmd/goimports
-"   go get code.google.com/p/rog-go/exp/cmd/godef
-"   go get github.com/golang/lint
-"   go get github.com/jstemmer/gotags
-"   go get github.com/nsf/gocode
-"   go get golang.org/x/tools/cmd/cover
-"   go get golang.org/x/tools/cmd/godoc
-"   go get golang.org/x/tools/cmd/vet
-
-" 2. add .zshrc
-"   [[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
-"   export PATH="$GOPATH/bin:$PATH"
-set rtp+=$GOROOT/misc/vim
-set rtp+=$GOPATH/src/github.com/golang/lint/misc/vim
-exe "set rtp+=".globpath($GOPATH, "src/github.com/nsf/gocode/vim")
-let g:tagbar_type_go = {
-    \ 'ctagstype' : 'go',
-    \ 'kinds'     : [
-        \ 'p:package',
-        \ 'i:imports:1',
-        \ 'c:constants',
-        \ 'v:variables',
-        \ 't:types',
-        \ 'n:interfaces',
-        \ 'w:fields',
-        \ 'e:embedded',
-        \ 'm:methods',
-        \ 'r:constructor',
-        \ 'f:functions'
-    \ ],
-    \ 'sro' : '.',
-    \ 'kind2scope' : {
-        \ 't' : 'ctype',
-        \ 'n' : 'ntype'
-    \ },
-    \ 'scope2kind' : {
-        \ 'ctype' : 't',
-        \ 'ntype' : 'n'
-    \ },
-    \ 'ctagsbin'  : 'gotags',
-    \ 'ctagsargs' : '-sort -silent'
-\ }
 
 " " https://sites.google.com/site/fudist/Home/vim-nihongo-ban/-vimrc-sample
 " """"""""""""""""""""""""""""""
