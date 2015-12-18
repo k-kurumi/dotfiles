@@ -75,3 +75,6 @@ crashlytics-build.properties
 # v3
 app/assets/javascripts/components.js
 app/assets/javascripts/prerequisite.js
+
+# redis db
+dump.rdb
