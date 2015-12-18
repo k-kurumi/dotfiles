@@ -272,6 +272,11 @@ NeoBundle 'keith/rspec.vim'
 " ds" で "削除
 NeoBundle 'tpope/vim-surround'
 
+" ウインドウのリサイズ
+" <C-e>で変更モード
+" FIXME: 複数タブを開くとサイズが別タブへ移動でリセットされているように見えるので確認する
+NeoBundle 'simeji/winresizer'
+
 call neobundle#end()
 
 " Required:
