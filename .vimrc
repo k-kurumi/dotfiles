@@ -165,9 +165,12 @@ NeoBundle 'bronson/vim-trailing-whitespace'
 NeoBundle 'kchmck/vim-coffee-script'
 
 " typescript
-NeoBundle 'leafgarland/typescript-vim'
 NeoBundle 'jason0x43/vim-js-indent'
-NeoBundle 'Quramy/tsuquyomi'
+NeoBundle 'leafgarland/typescript-vim'
+let g:typescript_compiler_options = '-sourcemap'
+" 本来はtypescript-vimと共に使うらしいが--module
+" commonjsがエラーになるので使わない"
+" NeoBundle 'Quramy/tsuquyomi'
 
 " protocolbuffer syntax color
 NeoBundle 'uarun/vim-protobuf'
