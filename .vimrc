@@ -68,15 +68,10 @@ NeoBundle 'vim-scripts/DrawIt'
 " javascript : npm install -g jshint
 "     coffee : npm install -g coffeelint
 NeoBundle 'scrooloose/syntastic'
-let g:syntastic_javascript_checkers    = ['eslint']
-let g:syntastic_javascript_eslint_args = '--env es6'
 
-let g:syntastic_jsx_checkers           = ['eslint']
-let g:syntastic_jsx_eslint_args        = '--env es6'
+" typescriptなどは:SyntasticToggleModeしてチェック無効にする方がよい
+let g:syntastic_disabled_filetypes = ['typescript']
 
-" TODO: tslintでファイル指定がおかしい感じなのであとで調べる
-" let g:syntastic_typescript_checkers    = ['tslint']
-" let g:syntastic_typescript_tslint_args = ''
 
 " javascript
 " NeoBundle 'jiangmiao/simple-javascript-indenter'
@@ -665,11 +660,6 @@ let g:quickrun_config = {
 \       "outputter/buffer/close_on_empty" : 1
 \   },
 \}
-
-" syntastic 構文チェックするかどうかの指定
-let g:syntastic_mode_map = {'mode':'active',
-  \ 'active_filetypes':['python', 'ruby'],
-  \ 'passive_filetypes':['sh']}
 
 
 " memolist
