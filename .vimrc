@@ -55,6 +55,11 @@ let g:nerdtree_tabs_open_on_gui_startup = 0
 " コメント
 NeoBundle 'tyru/caw.vim'
 
+" githubのページで開く
+" ビジュアルモードなどで :OpenGithubFile
+NeoBundle 'tyru/open-browser.vim'
+NeoBundle 'tyru/open-browser-github.vim'
+
 " rubyでend補完
 NeoBundle 'tpope/vim-endwise'
 
