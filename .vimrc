@@ -224,6 +224,8 @@ NeoBundle 'DavidEGx/ctrlp-smarttabs'
 let g:ctrlp_extensions = ['smarttabs']
 nnoremap ,t :CtrlPSmartTabs<CR>
 
+" 標準のyamlハイライトより速いらしい
+NeoBundle 'stephpy/vim-yaml'
 
 NeoBundle 'Shougo/vimproc.vim', {
       \ 'build' : {
