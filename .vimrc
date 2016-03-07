@@ -865,6 +865,10 @@ let g:go_gotags_bin=$GOPATH . "/bin/gotags"
 " " 32bit_windows固有の設定
 " endif
 
-let g:hybrid_use_Xresources = 1
+" hybridは設定が必要
+let g:hybrid_custom_term_colors = 1
+let g:hybrid_reduced_contrast = 1 " Remove this line if using the default palette.
 set background=dark
 colorscheme hybrid
+
+" colorscheme iceberg
