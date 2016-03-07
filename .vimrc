@@ -135,6 +135,9 @@ NeoBundle 'tonekk/vim-ruby-capybara'
 NeoBundle 'w0ng/vim-hybrid'
 NeoBundle 'chriskempson/vim-tomorrow-theme'
 
+" hybridに似た暗い配色
+NeoBundle 'cocopon/iceberg.vim'
+
 " git diffを表示
 NeoBundle 'airblade/vim-gitgutter'
 
