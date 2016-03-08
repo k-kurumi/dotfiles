@@ -96,24 +96,7 @@ NeoBundle 'fatih/vim-go'
 NeoBundle 'dgryski/vim-godef'
 
 " golangで追加インストールするもの
-"
-" コード補完
-" go get -u -v github.com/nsf/gocode
-"
-" タグジャンプ(gdでジャンプする(ctagsは不要))
-" go get -u -v github.com/rogpeppe/godef
-"
-" タグ情報生成
-" go get -u -v github.com/jstemmer/gotags
-"
-" irbみたいなの
-" go get -u -v github.com/motemen/gore
-"
-" プリティプリント
-" go get -u -v github.com/k0kubun/pp
-"
-" ドキュメント
-" go get -u -v golang.org/x/tools/cmd/godoc
+" ~/dotfiles/golang_init.sh
 
 " 括弧補完(visula+Iなどで括弧補完がおかしい(macvimで確認))
 "NeoBundle 'jiangmiao/auto-pairs'
