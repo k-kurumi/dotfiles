@@ -127,6 +127,9 @@ setopt pushd_ignore_dups
 # ctrl+sのロックをやめる(ctrl+sはctrl+qで復帰)
 stty stop undef
 
+# 特定のコマンドの補完を無効にする
+compdef -d npm test
+
 # docker
 docker_rm_container() {
   docker rm `docker ps -a -q`

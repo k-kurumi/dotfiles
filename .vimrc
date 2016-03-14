@@ -73,9 +73,9 @@ NeoBundle 'vim-scripts/DrawIt'
 " javascript : npm install -g jshint
 "     coffee : npm install -g coffeelint
 NeoBundle 'scrooloose/syntastic'
-
-" typescriptなどは:SyntasticToggleModeしてチェック無効にする方がよい
-let g:syntastic_disabled_filetypes = ['typescript']
+" typescriptは上手く動かないのでチェックしない
+let g:loaded_syntastic_typescript_tslint_checker = 0
+let g:loaded_syntastic_typescript_tsc_checker = 0
 
 
 " javascript
