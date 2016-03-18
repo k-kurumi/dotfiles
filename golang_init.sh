@@ -25,3 +25,7 @@ go get -u -v golang.org/x/tools/cmd/goimports
 
 echo ">>> godep"
 go get -u -v github.com/tools/godep
+
+echo ">>> test tool"
+go get -u -v github.com/onsi/ginkgo/ginkgo
+go get -u -v github.com/onsi/gomega
