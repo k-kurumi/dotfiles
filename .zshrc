@@ -85,8 +85,9 @@ alias l='ls -l'
 [ -e `which trash` ] && alias rm='trash'
 alias vi='vim'
 alias info='info --vi-keys'
-alias ren='vim -c Renamer'
-alias vir='vim -R'
+
+# https://github.com/laurent22/massren を使う vimscriptのはverupされてなくて使えない状態
+alias ren='massren'
 
 export EDITOR=vim
 

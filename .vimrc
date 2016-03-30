@@ -38,9 +38,6 @@ NeoBundle 'mileszs/ack.vim'
 " linux: apt-get install silversearcher-ag
 NeoBundle 'rking/ag.vim'
 
-" ファイルリネーム
-NeoBundle 'vim-scripts/renamer.vim'
-
 " markを表示
 NeoBundle 'kshenoy/vim-signature'
 
