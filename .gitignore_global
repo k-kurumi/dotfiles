@@ -78,3 +78,8 @@ app/assets/javascripts/prerequisite.js
 
 # redis db
 dump.rdb
+
+# golang
+Godeps/Readme
+Godeps/_workspace
+
