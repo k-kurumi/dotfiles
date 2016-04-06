@@ -872,4 +872,4 @@ colorscheme hybrid
 " colorscheme iceberg
 
 " hybridだと現在の行がわかりづらいため
-highlight CursorLine cterm=underline
+highlight CursorLine cterm=underline gui=underline
