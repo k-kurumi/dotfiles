@@ -532,6 +532,10 @@ augroup MyGroup
   " jasmine
   autocmd BufNewFile,BufRead *_spec.js  set filetype=jasmine.javascript et sw=2 ts=2 sts=2 nocindent autoindent
 
+  " kapacitor
+  " syntaxなどが見つからないが、jsに似ているため
+  autocmd BufNewFile,BufRead *.tick  set filetype=javascript et sw=2 ts=2 sts=2 nocindent autoindent
+
 augroup END
 
 
