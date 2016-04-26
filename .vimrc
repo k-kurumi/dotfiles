@@ -38,6 +38,9 @@ NeoBundle 'mileszs/ack.vim'
 " linux: apt-get install silversearcher-ag
 NeoBundle 'rking/ag.vim'
 
+" :FindYamlKey {pattern} でyamlキー検索
+NeoBundle 'munen/find_yaml_key'
+
 " markを表示
 NeoBundle 'kshenoy/vim-signature'
 
