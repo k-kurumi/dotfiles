@@ -29,3 +29,6 @@ go get -u -v github.com/tools/godep
 echo ">>> test tool"
 go get -u -v github.com/onsi/ginkgo/ginkgo
 go get -u -v github.com/onsi/gomega
+
+echo "\n\n--- 追加でインストールするもの ---"
+echo "https://github.com/Masterminds/glide/releases"
