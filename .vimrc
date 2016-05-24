@@ -38,8 +38,11 @@ NeoBundle 'mileszs/ack.vim'
 " linux: apt-get install silversearcher-ag
 NeoBundle 'rking/ag.vim'
 
-" :FindYamlKey {pattern} でyamlキー検索
-NeoBundle 'munen/find_yaml_key'
+" yamlでドット区切りでジャンプできる
+" Moving to the parent node ( :YamlGoToParent ),
+" Getting the full path to the current element ( :YamlGetFullPath ),
+" Moving to an element, given the path ( :YamlGoToKey )
+NeoBundle 'lmeijvogel/vim-yaml-helper'
 
 " markを表示
 NeoBundle 'kshenoy/vim-signature'
