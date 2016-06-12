@@ -126,10 +126,6 @@ NeoBundle 'tpope/vim-cucumber'
 NeoBundle 'tonekk/vim-ruby-capybara'
 " <c-w><c-d>でsplitして開く
 
-" http://itchyny.hatenablog.com/entry/2016/03/30/210000
-" 速い括弧のマッチ
-let g:loaded_matchparen = 1
-NeoBundle 'itchyny/vim-parenmatch'
 " カーソル文字に下線を引く
 NeoBundle 'itchyny/vim-cursorword'
 
