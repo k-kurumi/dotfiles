@@ -82,7 +82,6 @@ setopt complete_aliases
 # alias
 alias ll='ls -l'
 alias l='ls -l'
-[ -e `which trash` ] && alias rm='trash'
 alias vi='vim'
 alias info='info --vi-keys'
 
