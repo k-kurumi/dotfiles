@@ -127,7 +127,8 @@ NeoBundle 'tonekk/vim-ruby-capybara'
 " <c-w><c-d>でsplitして開く
 
 " カーソル文字に下線を引く
-NeoBundle 'itchyny/vim-cursorword'
+" カーソル移動が遅いので使わない
+" NeoBundle 'itchyny/vim-cursorword'
 
 " color
 "NeoBundle 'jpo/vim-railscasts-theme'
@@ -431,8 +432,9 @@ ab #- ####----------------------------------------------------------------------
 
 
 " 行、列のハイライト表示
-set cursorline
-set cursorcolumn
+" カーソル移動が遅いので使わない
+" set cursorline
+" set cursorcolumn
 
 " フリーカーソル {block, insert, all, onemore}
 set virtualedit=all

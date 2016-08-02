@@ -173,6 +173,11 @@ httpd_python() {
   python -m SimpleHTTPServer $port
 }
 
+# 進捗表示
+# http://qiita.com/swfz/items/533ed5aaff2ac036dbde#comment-9b7a3a2b62b98404da7d
+echo_bar() {
+  [ "$1" -gt 0 ] && printf '*%.0s' `seq "$1"`
+}
 
 # read local env
 [[ -s $HOME/.shenv_local ]] && source $HOME/.shenv_local
