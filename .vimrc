@@ -49,6 +49,10 @@ NeoBundle 'kshenoy/vim-signature'
 
 " フォルダツリー
 NeoBundle 'scrooloose/nerdtree'
+" ツリーのアイコン
+let g:NERDTreeDirArrowExpandable = '+'
+let g:NERDTreeDirArrowCollapsible = '-'
+
 NeoBundle 'jistr/vim-nerdtree-tabs'
 " 開くときNERDTreeも開く(:mksessionが壊れる)
 let g:nerdtree_tabs_open_on_console_startup = 1
