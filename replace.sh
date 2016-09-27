@@ -27,3 +27,7 @@ do
 
   echo "---"
 done
+
+mkdir -p $HOME/_app/bin
+cp cmd/* $HOME/_app/bin
+chmod +x $HOME/_app/bin/*
