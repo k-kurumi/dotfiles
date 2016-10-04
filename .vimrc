@@ -602,7 +602,8 @@ let g:NERDTreeIgnore = ['\.swp$',
   \ '\.sqlite$',
   \ '__pycache__',
   \ '\.svn$',
-  \ '\.git$'
+  \ '\.git$',
+  \ '\.DS_Store$'
   \ ]
 
 " 0は半角文字(1は全角文字(三角など)は階層がわかりづらい)
