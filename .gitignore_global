@@ -83,3 +83,4 @@ dump.rdb
 Godeps/Readme
 Godeps/_workspace
 
+.cf/

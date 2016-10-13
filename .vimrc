@@ -149,8 +149,8 @@ NeoBundle 'airblade/vim-gitgutter'
 " gitをvimから使う
 NeoBundle 'tpope/vim-fugitive'
 
-" GitHub Flavored Markdown
-NeoBundle 'jtratner/vim-flavored-markdown'
+" github flavored markdown
+NeoBundle 'rhysd/vim-gfm-syntax'
 
 " 行番号指定で開く
 NeoBundle 'bogado/file-line'
@@ -508,7 +508,7 @@ augroup MyGroup
   autocmd BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
 
   " markdown
-  autocmd BufNewFile,BufRead *.md,*.markdown setlocal filetype=ghmarkdown
+  autocmd BufNewFile,BufRead *.md,*.markdown setlocal filetype=markdown.gfm
 
   " rest
   autocmd BufNewFile,BufRead *.rst set  filetype=rest expandtab sw=2 ts=2 sts=2
