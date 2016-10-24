@@ -2,6 +2,11 @@
 set encoding=utf-8
 scriptencoding utf-8
 
+" fishはPOSIX互換ではないためエラーがでるため回避する
+if $SHELL =~ '/fish$'
+  set shell=zsh
+endif
+
 " neobundle
 "   curl https://raw.githubusercontent.com/Shougo/neobundle.vim/master/bin/install.sh | sh
 " or
