@@ -4,7 +4,7 @@ scriptencoding utf-8
 
 " fishはPOSIX互換ではないためエラーがでるため回避する
 if $SHELL =~ '/fish$'
-  set shell=zsh
+  set shell=bash
 endif
 
 " neobundle
