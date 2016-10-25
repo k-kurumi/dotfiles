@@ -63,9 +63,8 @@ NeoBundle 'jistr/vim-nerdtree-tabs'
 let g:nerdtree_tabs_open_on_console_startup = 1
 let g:nerdtree_tabs_open_on_gui_startup = 0
 
-
-" コメント
-NeoBundle 'tyru/caw.vim'
+" gcでコメントトグル
+NeoBundle 'tpope/vim-commentary'
 
 " githubのページで開く
 " ビジュアルモードなどで :OpenGithubFile
@@ -100,22 +99,13 @@ NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'mxw/vim-jsx'
 NeoBundle 'mtscout6/vim-cjsx'
 
-" javascript
-NeoBundle 'glanotte/vim-jasmine'
-
 " golang
 NeoBundle 'fatih/vim-go'
 NeoBundle 'dgryski/vim-godef'
 
-" golangで追加インストールするもの
-" ~/dotfiles/golang_init.sh
-
 " 括弧補完(visula+Iなどで括弧補完がおかしい(macvimで確認))
 "NeoBundle 'jiangmiao/auto-pairs'
 NeoBundle 'MetalPhaeton/easybracket-vim'
-
-" tagbar
-NeoBundle 'majutsushi/tagbar'
 
 " memolist
 NeoBundle 'glidenote/memolist.vim'
@@ -140,13 +130,7 @@ NeoBundle 'tonekk/vim-ruby-capybara'
 " NeoBundle 'itchyny/vim-cursorword'
 
 " color
-"NeoBundle 'jpo/vim-railscasts-theme'
-"NeoBundle 'tomasr/molokai'
 NeoBundle 'w0ng/vim-hybrid'
-NeoBundle 'chriskempson/vim-tomorrow-theme'
-
-" hybridに似た暗い配色
-NeoBundle 'cocopon/iceberg.vim'
 
 " git diffを表示
 NeoBundle 'airblade/vim-gitgutter'
@@ -816,8 +800,6 @@ set conceallevel=0
 "   return hl
 " endfunction
 
-" コメントのトグル
-vmap ,c <Plug>(caw:i:toggle)
 
 """"""""""""""""""""""""""""""
 
