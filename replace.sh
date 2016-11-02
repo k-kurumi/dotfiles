@@ -35,8 +35,10 @@ curl -L http://get.oh-my.fish | fish
 
 # install omf plugin
 omf install peco
-omf install z
 omf install toaster
 
 # toaster base prompt
 ln -sf `pwd`/fish_prompt.fish ~/.config/fish/functions/
+
+# fishの設定ファイル
+ln -sf `pwd`/config.fish ~/.config/fish/
