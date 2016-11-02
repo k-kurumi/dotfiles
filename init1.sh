@@ -32,6 +32,7 @@ chmod +x $HOME/_app/bin/*
 
 
 # toaster base prompt
+mkdir -p ~/.config/fish/functions
 ln -sf `pwd`/fish_prompt.fish ~/.config/fish/functions/fish_prompt.fish
 
 # fishの設定ファイル
