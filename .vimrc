@@ -386,6 +386,10 @@ set laststatus=2
 set fileencodings=utf-8,euc-jp,sjis,iso-2022-jp
 set fileencoding=utf-8
 
+
+" ○△が変に崩れなくなる
+set ambiwidth=double
+
 "ステータスラインにファイルタイプ・文字コード・改行文字を表示
 " powerline使うときは不要
 "set statusline=%<[%n]%F%=\ %m%r%h%w%y%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}\ %l,%c\ %P
