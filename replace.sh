@@ -13,9 +13,7 @@ echo ".Xmodmap
 .tigrc
 .tmux.conf
 .vimrc
-.zshrc
 .ideavimrc
-.cftools
 .pryrc
 .peco" | while read f
 do
@@ -31,3 +29,14 @@ done
 mkdir -p $HOME/_app/bin
 cp cmd/* $HOME/_app/bin
 chmod +x $HOME/_app/bin/*
+
+# install oh-my-fish
+curl -L http://get.oh-my.fish | fish
+
+# install omf plugin
+omf install peco
+omf install z
+omf install toaster
+
+# toaster base prompt
+ln -sf `pwd`/fish_prompt.fish ~/.config/fish/functions/
