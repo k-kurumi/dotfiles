@@ -19,9 +19,6 @@ end
 set -g Z_SCRIPT_PATH $HOME/.config/z/z.sh
 # git clone https://github.com/sjl/z-fish して.config/fish/functions にln -sする(来れなくても動くので不要かも)
 
-# direnv読み込み
-eval (direnv hook fish)
-
 # rbenv
 # macはbrewで入れて ln -s /usr/local/bin/rbenv ~/.rbenv/bin/ しておく
 set -x PATH $HOME/.rbenv/bin $PATH
@@ -34,3 +31,6 @@ pyenv init - | source
 # ndenvはinitするとエラー(記述が古い？)
 set -x PATH $HOME/.ndenv/bin $PATH
 set -x PATH $HOME/.ndenv/shims $PATH
+
+# direnvは最後に実行する
+eval (direnv hook fish)
