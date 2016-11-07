@@ -387,8 +387,8 @@ set fileencodings=utf-8,euc-jp,sjis,iso-2022-jp
 set fileencoding=utf-8
 
 
-" ○△が変に崩れなくなる
-set ambiwidth=double
+" 2バイト文字の記号が崩れなくなるが対応するitem2設定を入れるとtmux分割時に残像が残るため使用しない
+" set ambiwidth=double
 
 "ステータスラインにファイルタイプ・文字コード・改行文字を表示
 " powerline使うときは不要
