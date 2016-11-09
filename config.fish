@@ -13,12 +13,6 @@ function fish_user_key_bindings
   bind \cr 'peco_select_history (commandline -b)'
 end
 
-# zのインストール方法
-# omf install z して
-# git clone https://github.com/rupa/z このz.shを指定する
-set -g Z_SCRIPT_PATH $HOME/.config/z/z.sh
-# git clone https://github.com/sjl/z-fish して.config/fish/functions にln -sする(来れなくても動くので不要かも)
-
 # rbenv
 # macはbrewで入れて ln -s /usr/local/bin/rbenv ~/.rbenv/bin/ しておく
 set -x PATH $HOME/.rbenv/bin $PATH

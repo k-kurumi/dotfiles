@@ -26,13 +26,12 @@ do
   echo "---"
 done
 
-mkdir -p $HOME/_app/bin
-cp cmd/* $HOME/_app/bin
-chmod +x $HOME/_app/bin/*
 
+# fish functions
+mkdir -p ~/.config/fish/functions
+ln -sf `pwd`/fish/functions/* ~/.config/fish/functions/
 
 # toaster base prompt
-mkdir -p ~/.config/fish/functions
 ln -sf `pwd`/fish_prompt.fish ~/.config/fish/functions/fish_prompt.fish
 
 # fishの設定ファイル
