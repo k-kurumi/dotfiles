@@ -7,6 +7,7 @@ set __toaster_color_grey 554F48
 set __toaster_color_white F1F1F1
 set __toaster_color_purple 9458FF
 set __toaster_color_lilac AE81FF
+set __toaster_color_red FF0000
 
 function __toaster_color_echo
   set_color $argv[1]
@@ -33,7 +34,7 @@ end
 
 function __toaster_rainbow
   if echo $argv[1] | grep -q -e $argv[3]
-    __toaster_color_echo $argv[2] "彡ミ "
+    __toaster_color_echo $argv[2] "@@ "
   end
 end
 
@@ -58,7 +59,7 @@ function __toaster_git_status
 
     if test -n (__toaster_git_status_codes)
       __toaster_color_echo $__toaster_color_pink ' xxx '
-      __toaster_color_echo $__toaster_color_white '[^._.^]ﾉ'
+      __toaster_color_echo $__toaster_color_white '[^._.^]/'
       __toaster_git_status_icons
     else
       __toaster_color_echo $__toaster_color_green ' (ok) '
@@ -67,7 +68,18 @@ function __toaster_git_status
 end
 
 function fish_prompt
+
+  # ここでstatusをチェックしないと表示までに上書きされる
+  if [ $status -eq 0 ]
+    set cmd_status $status
+    set cmd_color $__toaster_color_green
+  else
+    set cmd_status $status
+    set cmd_color $__toaster_color_red
+  end
+
   echo
+  __toaster_color_echo $cmd_color " $cmd_status "
   __toaster_color_echo $__toaster_color_blue ">>> "
   __toaster_git_status
   __toaster_color_echo $__toaster_color_purple (__toaster_current_folder)
