@@ -46,7 +46,7 @@ echo
 echo ">>> godep"
 go get -u -v github.com/tools/godep
 
-echo "godepに必要らしい"
+echo ">>> godepに必要らしい"
 go get -u -v github.com/kr/pretty
 go get -u -v github.com/pmezard/go-difflib/difflib
 go get -u -v github.com/gin-gonic/gin
@@ -60,6 +60,8 @@ echo
 echo ">>> rspecみたいなの"
 go get -u -v github.com/onsi/ginkgo/ginkgo
 go get -u -v github.com/onsi/gomega
+echo
 
-
-# glideはソースがgithubになるため消えることがありロックファイルの意味がないためgodepでソースまるごと持つほうがまし
+echo
+echo ">>> bundlerのようなもの"
+go get -u -v github.com/Masterminds/glide
