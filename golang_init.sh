@@ -33,6 +33,16 @@ go get -u -v golang.org/x/tools/cmd/goimports
 echo
 
 echo
+echo "そのた便利ツール一式"
+go get -u -v golang.org/x/tools/cmd/...
+echo
+
+echo
+echo "lint"
+go get -u -v github.com/golang/lint/golint
+echo
+
+echo
 echo ">>> godep"
 go get -u -v github.com/tools/godep
 
