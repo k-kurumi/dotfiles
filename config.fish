@@ -10,8 +10,9 @@ set -x EDITOR vim
 
 # golang
 set -x GOROOT $HOME/go
-set -x GOPATH $HOME/gopath
 set -x PATH $GOROOT/bin $PATH
+set -x GOPATH $HOME/gopath
+set -x PATH $GOPATH/bin $PATH
 
 # <C-r>でpecoで履歴検索
 function fish_user_key_bindings
