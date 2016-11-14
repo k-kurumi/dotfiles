@@ -68,4 +68,4 @@ go get -u -v github.com/Masterminds/glide
 
 echo
 echo ">>> 今後はghq経由でcloneする"
-go get -u -v go get github.com/motemen/ghq
+go get -u -v github.com/motemen/ghq
