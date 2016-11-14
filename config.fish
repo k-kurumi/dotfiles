@@ -11,7 +11,7 @@ set -x EDITOR vim
 # golang
 set -x GOROOT $HOME/go
 set -x PATH $GOROOT/bin $PATH
-set -x GOPATH $HOME/gopath
+set -x GOPATH $HOME/dev
 set -x PATH $GOPATH/bin $PATH
 
 # <C-r>でpecoで履歴検索

@@ -37,11 +37,22 @@ ln -sf `pwd`/fish_prompt.fish ~/.config/fish/functions/fish_prompt.fish
 # fishの設定ファイル
 ln -sf `pwd`/config.fish ~/.config/fish/config.fish
 
-# bass
-(
-  cd /tmp
-  rm -rf bass
-  git clone https://github.com/edc/bass
-  cd bass
-  make install
-)
+
+# # bass fishからbashスクリプトが使えるらしいが今のところ使わない
+# (
+#   cd /tmp
+#   rm -rf bass
+#   git clone https://github.com/edc/bass
+#   cd bass
+#   make install
+# )
+
+# ghqの設定
+mkdir -p ~/dev/src
+mkdir -p ~/dev/bin
+
+grep ghq ~/.gitconfig
+if [ $? -ne 0 ]; then
+  echo "[ghq]"              >> ~/.gitconfig
+  echo "  root = ~/dev/src" >> ~/.gitconfig
+fi
