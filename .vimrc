@@ -100,7 +100,37 @@ NeoBundle 'mxw/vim-jsx'
 NeoBundle 'mtscout6/vim-cjsx'
 
 " golang
+" gdで定義へ飛ぶ
 NeoBundle 'fatih/vim-go'
+au FileType go nmap <leader>r <Plug>(go-run)
+au FileType go nmap <leader>b <Plug>(go-build)
+au FileType go nmap <leader>t <Plug>(go-test)
+au FileType go nmap <leader>c <Plug>(go-coverage)
+
+au FileType go nmap <Leader>ds <Plug>(go-def-split)
+au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
+au FileType go nmap <Leader>dt <Plug>(go-def-tab)
+
+au FileType go nmap <Leader>gd <Plug>(go-doc)
+au FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
+
+au FileType go nmap <Leader>i <Plug>(go-info)
+au FileType go nmap <Leader>e <Plug>(go-rename)
+
+" 色付け
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_types = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
+
+" 保存時にimport補完
+let g:go_fmt_command = "goimports"
+
+let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
+let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
+
 NeoBundle 'dgryski/vim-godef'
 
 " 括弧補完(visula+Iなどで括弧補完がおかしい(macvimで確認))
@@ -908,9 +938,6 @@ function! GFM()
 endfunction
 
 """"""""""""""""""""""""""""""
-
-" vim-go tagbar
-let g:go_gotags_bin=$GOPATH . "/bin/gotags"
 
 " if has("mac")
 " " mac用の設定

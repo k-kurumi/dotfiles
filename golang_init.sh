@@ -69,3 +69,8 @@ go get -u -v github.com/Masterminds/glide
 echo
 echo ">>> 今後はghq経由でcloneする"
 go get -u -v github.com/motemen/ghq
+
+
+echo
+echo ">>> vimで\gdからドキュメントを引くときに使う"
+go get -u -v github.com/zmb3/gogetdoc
