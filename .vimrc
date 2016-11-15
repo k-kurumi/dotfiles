@@ -517,7 +517,7 @@ ab #- ####----------------------------------------------------------------------
 
 " 行、列のハイライト表示
 " カーソル移動が遅いので使わない
-" set cursorline
+set cursorline
 " set cursorcolumn
 
 " フリーカーソル {block, insert, all, onemore}
