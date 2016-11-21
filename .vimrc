@@ -366,6 +366,9 @@ NeoBundle 'tpope/vim-surround'
 " FIXME: 複数タブを開くとサイズが別タブへ移動でリセットされているように見えるので確認する
 NeoBundle 'simeji/winresizer'
 
+" fish
+NeoBundle 'dag/vim-fish'
+
 call neobundle#end()
 
 " Required:
