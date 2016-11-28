@@ -8,6 +8,10 @@
 
 set -x EDITOR vim
 
+# java
+set -x JAVA_HOME $HOME/_app/jdk
+set -x PATH $JAVA_HOME/bin $PATH
+
 # golang
 set -x GOROOT $HOME/go
 set -x PATH $GOROOT/bin $PATH
