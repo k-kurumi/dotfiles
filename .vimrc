@@ -369,6 +369,37 @@ NeoBundle 'simeji/winresizer'
 " fish
 NeoBundle 'dag/vim-fish'
 
+" 複数のハイライト検索
+NeoBundle 't9md/vim-quickhl'
+" ハイライトを付ける
+nmap <Space>m <Plug>(quickhl-manual-this)
+xmap <Space>m <Plug>(quickhl-manual-this)
+" ハイライトをリセット
+nmap <Space>M <Plug>(quickhl-manual-reset)
+xmap <Space>M <Plug>(quickhl-manual-reset)
+
+" ビジュアルモード中に * で検索対象になる
+NeoBundle 'thinca/vim-visualstar'
+
+" +luaのvimで有効になる補完
+NeoBundle 'Shougo/neocomplete.vim'
+"Note: This option must be set in .vimrc(_vimrc).  NOT IN .gvimrc(_gvimrc)!
+" Disable AutoComplPop.
+let g:acp_enableAtStartup = 0
+" Use neocomplete.
+let g:neocomplete#enable_at_startup = 1
+" Use smartcase.
+let g:neocomplete#enable_smart_case = 1
+" Set minimum syntax keyword length.
+let g:neocomplete#sources#syntax#min_keyword_length = 3
+
+" Define dictionary.
+let g:neocomplete#sources#dictionary#dictionaries = {
+    \ 'default' : '',
+    \ 'vimshell' : $HOME.'/.vimshell_hist',
+    \ 'go' : $HOME.'/dev/bin/gocode'
+		\ }
+
 call neobundle#end()
 
 " Required:
