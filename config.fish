@@ -8,9 +8,15 @@
 
 set -x EDITOR vim
 
-# java
-set -x JAVA_HOME $HOME/_app/jdk
-set -x PATH $JAVA_HOME/bin $PATH
+switch (uname)
+case Darwin
+  # javaはインストーラで場所指定できないがPATHが通ったところに入るためJAVA_HOME指定はしない
+
+case Linux
+  # java
+  set -x JAVA_HOME $HOME/_app/jdk
+  set -x PATH $JAVA_HOME/bin $PATH
+end
 
 # golang
 set -x GOROOT $HOME/go
