@@ -1,3 +1,3 @@
 function less
-  less -r $argv
+  command less -r $argv
 end
