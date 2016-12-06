@@ -1,3 +1,3 @@
 function vi
-	vim $argv
+  vim $argv
 end
