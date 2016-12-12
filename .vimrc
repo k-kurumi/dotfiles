@@ -191,14 +191,6 @@ NeoBundle 'bronson/vim-trailing-whitespace'
 " coffee-script
 NeoBundle 'kchmck/vim-coffee-script'
 
-" typescript
-NeoBundle 'jason0x43/vim-js-indent'
-NeoBundle 'leafgarland/typescript-vim'
-let g:typescript_compiler_options = '-sourcemap'
-" 本来はtypescript-vimと共に使うらしいが--module
-" commonjsがエラーになるので使わない"
-" NeoBundle 'Quramy/tsuquyomi'
-
 " protocolbuffer syntax color
 NeoBundle 'uarun/vim-protobuf'
 
@@ -268,6 +260,12 @@ NeoBundle 'Shougo/vimproc.vim', {
   \     'unix' : 'gmake',
   \    },
   \ }
+
+" typescript
+NeoBundle 'Quramy/tsuquyomi'
+" 追加でインストールが必要 npm -g install typescript
+NeoBundle 'jason0x43/vim-js-indent'
+NeoBundle 'leafgarland/typescript-vim'
 
 " status line
 NeoBundle 'itchyny/lightline.vim'
