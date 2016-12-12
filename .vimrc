@@ -264,7 +264,7 @@ NeoBundle 'Shougo/vimproc.vim', {
 " typescript
 NeoBundle 'Quramy/tsuquyomi'
 " 追加でインストールが必要 npm -g install typescript
-NeoBundle 'jason0x43/vim-js-indent'
+" NeoBundle 'jason0x43/vim-js-indent'
 NeoBundle 'leafgarland/typescript-vim'
 
 " status line
