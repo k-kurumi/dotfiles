@@ -13,6 +13,7 @@ echo ".Xmodmap
 .tigrc
 .tmux.conf
 .tmux.mac.conf
+.tmux.linux.conf
 .vimrc
 .ideavimrc
 .pryrc
