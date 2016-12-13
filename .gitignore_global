@@ -84,3 +84,5 @@ Godeps/Readme
 Godeps/_workspace
 
 .cf/
+
+.vscode/
