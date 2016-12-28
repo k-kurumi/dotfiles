@@ -34,14 +34,9 @@ NeoBundle 'junegunn/vim-easy-align'
 " undo redo
 NeoBundle 'sjl/gundo.vim'
 
-" 高速なgrep
-NeoBundle 'mileszs/ack.vim'
-
-" ackより高速らしい
-" the_silver_searcher
-" mac:   brew install the_silver_searcher
-" linux: apt-get install silversearcher-ag
-NeoBundle 'rking/ag.vim'
+" :Rg <string|pattern>で検索
+NeoBundle 'jremmen/vim-ripgrep'
+let g:rg_highlight = 1
 
 " yamlでドット区切りでジャンプできる
 " Moving to the parent node ( :YamlGoToParent ),
