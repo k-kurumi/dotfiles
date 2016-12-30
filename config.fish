@@ -18,6 +18,11 @@ case Linux
   set -x PATH $JAVA_HOME/bin $PATH
 end
 
+# その他の個人ツール
+set local_bin ~/_app/bin
+mkdir -p $local_bin
+set -x PATH $local_bin $PATH
+
 # golang
 set -x GOROOT $HOME/go
 set -x PATH $GOROOT/bin $PATH
