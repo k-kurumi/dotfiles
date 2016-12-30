@@ -2,51 +2,37 @@
 #
 # golangを使う上で必要なツール一式をインストールする
 
-echo
-echo ">>> コード補完"
+echo "### コード補完"
 go get -u -v github.com/nsf/gocode
 
-echo
-echo ">>> タグジャンプ(gdでジャンプする(ctagsは不要))"
+echo "### タグジャンプ(gdでジャンプする(ctagsは不要))"
 go get -u -v github.com/rogpeppe/godef
 
-echo
-echo ">>> タグ情報生成"
+echo "### タグ情報生成"
 go get -u -v github.com/jstemmer/gotags
 
-echo
-echo ">>> irbみたいなの"
+echo "### irbみたいなの"
 go get -u -v github.com/motemen/gore
 
-echo
-echo ">>> pretty print"
+echo "### pretty print"
 go get -u -v github.com/k0kubun/pp
 
-echo
-echo ">>> ドキュメント"
+echo "### ドキュメント"
 go get -u -v golang.org/x/tools/cmd/godoc
-echo
 
-echo
-echo "import補完"
+echo "### import補完"
 go get -u -v golang.org/x/tools/cmd/goimports
-echo
 
-echo
-echo "そのた便利ツール一式"
+echo "### そのた便利ツール一式"
 go get -u -v golang.org/x/tools/cmd/...
-echo
 
-echo
-echo "lint"
+echo "### lint"
 go get -u -v github.com/golang/lint/golint
-echo
 
-echo
-echo ">>> godep"
+echo "### godep"
 go get -u -v github.com/tools/godep
 
-echo ">>> godepに必要らしい"
+echo "### godepに必要らしい"
 go get -u -v github.com/kr/pretty
 go get -u -v github.com/pmezard/go-difflib/difflib
 go get -u -v github.com/gin-gonic/gin
@@ -56,21 +42,18 @@ go get -u -v github.com/mattn/go-isatty
 go get -u -v golang.org/x/sys/unix
 go get -u -v gopkg.in/bluesuncorp/validator.v5
 
-echo
-echo ">>> rspecみたいなの"
+echo "### rspecみたいなの"
 go get -u -v github.com/onsi/ginkgo/ginkgo
 go get -u -v github.com/onsi/gomega
-echo
 
-echo
-echo ">>> bundlerのようなもの"
+echo "### bundlerのようなもの"
 go get -u -v github.com/Masterminds/glide
 
-echo
-echo ">>> 今後はghq経由でcloneする"
+echo "### 今後はghq経由でcloneする"
 go get -u -v github.com/motemen/ghq
 
-
-echo
-echo ">>> vimで\gdからドキュメントを引くときに使う"
+echo "### vimで\gdからドキュメントを引くときに使う"
 go get -u -v github.com/zmb3/gogetdoc
+
+echo "### リネームツール"
+go get -u -v github.com/laurent22/massren
