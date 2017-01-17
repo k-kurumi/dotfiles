@@ -988,3 +988,6 @@ colorscheme hybrid
 
 " hybridだと現在の行がわかりづらいため
 highlight CursorLine cterm=underline gui=underline
+
+" macvimは\で円マークが入るため入れ替える
+noremap! ¥ \
