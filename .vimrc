@@ -393,6 +393,9 @@ let g:neocomplete#sources#dictionary#dictionaries = {
     \ 'go' : $HOME.'/dev/bin/gocode'
 		\ }
 
+" gvimのフォントを+拡大、-縮小
+NeoBundle 'thinca/vim-fontzoom'
+
 call neobundle#end()
 
 " Required:
