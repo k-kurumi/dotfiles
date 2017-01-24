@@ -57,3 +57,6 @@ go get -u -v github.com/zmb3/gogetdoc
 
 echo "### リネームツール"
 go get -u -v github.com/laurent22/massren
+
+echo "### 公式のバージョン固定ツール"
+go get -u -v github.com/golang/dep
