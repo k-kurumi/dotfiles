@@ -84,10 +84,9 @@ let g:loaded_syntastic_typescript_tslint_checker = 0
 let g:loaded_syntastic_typescript_tsc_checker = 0
 
 
-" javascript
-" NeoBundle 'jiangmiao/simple-javascript-indenter'
-" NeoBundle 'jQuery'
-" NeoBundle 'jelera/vim-javascript-syntax'
+" javascript syntax
+NeoBundle 'jiangmiao/simple-javascript-indenter'
+NeoBundle 'othree/yajs.vim'
 
 " react
 NeoBundle 'pangloss/vim-javascript'
