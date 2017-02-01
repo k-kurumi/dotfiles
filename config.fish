@@ -15,6 +15,7 @@ case Darwin
 case Linux
   # java
   set -x JAVA_HOME $HOME/_app/jdk
+  mkdir -p $JAVA_HOME
   set -x PATH $JAVA_HOME/bin $PATH
 end
 
@@ -43,9 +44,9 @@ rbenv init - | source
 set -x PATH $HOME/.pyenv/bin $PATH
 pyenv init - | source
 
-# ndenvはinitするとエラー(記述が古い？)
-set -x PATH $HOME/.ndenv/bin $PATH
-set -x PATH $HOME/.ndenv/shims $PATH
+# node.js
+set -x PATH $HOME/.nodebrew/current/bin $PATH
+
 
 # direnvは最後に実行する
 eval (direnv hook fish)
