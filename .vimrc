@@ -94,10 +94,11 @@ NeoBundle 'ternjs/tern_for_vim'
 
 " react
 NeoBundle 'pangloss/vim-javascript'
-NeoBundle 'mtscout6/vim-cjsx'
-NeoBundle 'MaxMEllon/vim-jsx-pretty'
-let g:jsx_ext_required = 1        " ファイルタイプがjsxのとき読み込む
-let g:jsx_pragma_required = 0     " @から始まるプラグマでは読み込まない
+" es6だとインデントがおかしくなるので自分で対応する
+" NeoBundle 'mtscout6/vim-cjsx'
+" NeoBundle 'MaxMEllon/vim-jsx-pretty'
+" let g:jsx_ext_required = 1        " ファイルタイプがjsxのとき読み込む
+" let g:jsx_pragma_required = 0     " @から始まるプラグマでは読み込まない
 
 " golang
 " gdで定義へ飛ぶ
