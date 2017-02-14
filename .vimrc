@@ -98,9 +98,12 @@ NeoBundle 'pangloss/vim-javascript'
 " let g:jsx_ext_required = 1        " ファイルタイプがjsxのとき読み込む
 " let g:jsx_pragma_required = 0     " @から始まるプラグマでは読み込まない
 
-" npm install -g tern でインストールが必要
-" tern を起動しておくと補完が効く
+" ternはnpmでインストールする
+" cd ~/.vim/bundle/tern_for_vim
+" npm install
+" npm install tern-coffee
 NeoBundle 'ternjs/tern_for_vim'
+NeoBundle 'othree/tern_for_vim_coffee'
 
 " golang
 " gdで定義へ飛ぶ
