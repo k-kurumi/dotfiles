@@ -85,20 +85,22 @@ let g:loaded_syntastic_typescript_tsc_checker = 0
 
 
 " javascript syntax
-NeoBundle 'jiangmiao/simple-javascript-indenter'
+
+" 8スペースなどインデントがおかしくなるので使わない
+" NeoBundle 'jiangmiao/simple-javascript-indenter'
 NeoBundle 'othree/yajs.vim'
 NeoBundle 'othree/es.next.syntax.vim'
 
-" npm install -g tern で補完ツールのインストールが必要
-NeoBundle 'ternjs/tern_for_vim'
-
-" react
 NeoBundle 'pangloss/vim-javascript'
 " es6だとインデントがおかしくなるので自分で対応する
 " NeoBundle 'mtscout6/vim-cjsx'
 " NeoBundle 'MaxMEllon/vim-jsx-pretty'
 " let g:jsx_ext_required = 1        " ファイルタイプがjsxのとき読み込む
 " let g:jsx_pragma_required = 0     " @から始まるプラグマでは読み込まない
+
+" npm install -g tern でインストールが必要
+" tern を起動しておくと補完が効く
+NeoBundle 'ternjs/tern_for_vim'
 
 " golang
 " gdで定義へ飛ぶ
