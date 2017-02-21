@@ -1,0 +1,31 @@
+---
+env:
+  es6: true
+  node: true
+extends:
+  - eslint:recommended
+plugins: []
+parserOptions: {}
+globals: {}
+
+# http://eslint.org/docs/user-guide/configuring
+# jsonよりyamlを選択したのはvimでコメント付きハイライトができるため
+rules:
+  # 第1引数: 0=off, 2=error
+  # 第2引数: オプション
+
+  # console.logを許可
+  no-console: off
+
+  # 配列末尾のカンマを許可
+  comma-dangle: off
+
+  semi:
+    - error
+    - always
+  indent: # 2スペースを強制
+    - error
+    - 2
+  quotes: # シングルクォートを強制
+    - error
+    - single

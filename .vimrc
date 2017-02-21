@@ -76,13 +76,15 @@ NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'vim-scripts/DrawIt'
 
 " 保存時の構文チェッカ
-" javascript : npm install -g jshint
+" javascript : npm install -g eslint
 "     coffee : npm install -g coffeelint
 NeoBundle 'scrooloose/syntastic'
+let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
+let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
 " typescriptは上手く動かないのでチェックしない
 let g:loaded_syntastic_typescript_tslint_checker = 0
 let g:loaded_syntastic_typescript_tsc_checker = 0
-
 
 " javascript syntax
 
@@ -133,9 +135,6 @@ let g:go_highlight_build_constraints = 1
 
 " 保存時にimport補完
 let g:go_fmt_command = "goimports"
-
-let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
-let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
 
 NeoBundle 'dgryski/vim-godef'
 

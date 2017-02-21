@@ -8,16 +8,17 @@ mkdir -p $temp
 echo ".Xmodmap
 .ackrc
 .ctags
+.eslintrc.yml
 .gitignore_global
+.ideavimrc
+.peco
+.pryrc
 .railsrc
 .tigrc
 .tmux.conf
-.tmux.mac.conf
 .tmux.linux.conf
-.vimrc
-.ideavimrc
-.pryrc
-.peco" | while read f
+.tmux.mac.conf
+.vimrc" | while read f
 do
   echo "mv $HOME/$f $temp"
   mv $HOME/$f $temp
