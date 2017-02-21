@@ -7,78 +7,58 @@ if $SHELL =~ '/fish$'
   set shell=bash
 endif
 
-" neobundle
-"   curl https://raw.githubusercontent.com/Shougo/neobundle.vim/master/bin/install.sh | sh
-" or
-"   mkdir -p ~/.vim/bundle
-"   git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
+" ================================================================================
+"   vim-plug
+"
+"   INSTALL:
+"     curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+"
+call plug#begin()
 
-if &compatible
-  " nocompatibleのタイミングでhistoryがクリアされる
-  set nocompatible
-endif
-
-if has('vim_starting')
-  set runtimepath+=~/.vim/bundle/neobundle.vim/
-endif
-call neobundle#begin(expand('~/.vim/bundle/'))
-NeoBundleFetch 'Shougo/neobundle.vim'
-
-" ------------------------------------------------------------------------------
-"  plugin
-" ------------------------------------------------------------------------------
+Plug 'tpope/vim-sensible'
 
 " 整形
-NeoBundle 'junegunn/vim-easy-align'
+Plug 'junegunn/vim-easy-align'
 
 " undo redo
-NeoBundle 'sjl/gundo.vim'
+Plug 'sjl/gundo.vim'
 
 " :Rg <string|pattern>で検索
-NeoBundle 'jremmen/vim-ripgrep'
+Plug 'jremmen/vim-ripgrep'
 let g:rg_highlight = 1
 
-" yamlでドット区切りでジャンプできる
-" Moving to the parent node ( :YamlGoToParent ),
-" Getting the full path to the current element ( :YamlGetFullPath ),
-" Moving to an element, given the path ( :YamlGoToKey )
-NeoBundle 'lmeijvogel/vim-yaml-helper'
-
 " markを表示
-NeoBundle 'kshenoy/vim-signature'
+Plug 'kshenoy/vim-signature'
 
 " フォルダツリー
-NeoBundle 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree'
 " ツリーのアイコン
 let g:NERDTreeDirArrowExpandable = '+'
 let g:NERDTreeDirArrowCollapsible = '-'
 
-NeoBundle 'jistr/vim-nerdtree-tabs'
+Plug 'jistr/vim-nerdtree-tabs'
 " 開くときNERDTreeも開く(:mksessionが壊れる)
 let g:nerdtree_tabs_open_on_console_startup = 1
 let g:nerdtree_tabs_open_on_gui_startup = 0
 
 " gcでコメントトグル
-NeoBundle 'tpope/vim-commentary'
+Plug 'tpope/vim-commentary'
 
 " githubのページで開く
 " ビジュアルモードなどで :OpenGithubFile
-NeoBundle 'tyru/open-browser.vim'
-NeoBundle 'tyru/open-browser-github.vim'
-
-" rubyでend補完
-NeoBundle 'tpope/vim-endwise'
+Plug 'tyru/open-browser.vim'
+Plug 'tyru/open-browser-github.vim'
 
 " \rで実行
-NeoBundle 'thinca/vim-quickrun'
+Plug 'thinca/vim-quickrun'
 
 " アスキーアート作成
-NeoBundle 'vim-scripts/DrawIt'
+Plug 'vim-scripts/DrawIt'
 
 " 保存時の構文チェッカ
 " javascript : npm install -g eslint
 "     coffee : npm install -g coffeelint
-NeoBundle 'scrooloose/syntastic'
+Plug 'scrooloose/syntastic'
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
 let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
@@ -86,102 +66,43 @@ let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
 let g:loaded_syntastic_typescript_tslint_checker = 0
 let g:loaded_syntastic_typescript_tsc_checker = 0
 
-" javascript syntax
-
-" 8スペースなどインデントがおかしくなるので使わない
-" NeoBundle 'jiangmiao/simple-javascript-indenter'
-NeoBundle 'othree/yajs.vim'
-NeoBundle 'othree/es.next.syntax.vim'
-
-NeoBundle 'pangloss/vim-javascript'
-" es6だとインデントがおかしくなるので自分で対応する
-" NeoBundle 'mtscout6/vim-cjsx'
-" NeoBundle 'MaxMEllon/vim-jsx-pretty'
-" let g:jsx_ext_required = 1        " ファイルタイプがjsxのとき読み込む
-" let g:jsx_pragma_required = 0     " @から始まるプラグマでは読み込まない
-
-" ternはnpmでインストールする
-" cd ~/.vim/bundle/tern_for_vim
-" npm install
-" npm install tern-coffee
-NeoBundle 'ternjs/tern_for_vim'
-NeoBundle 'othree/tern_for_vim_coffee'
-
-" golang
-" gdで定義へ飛ぶ
-NeoBundle 'fatih/vim-go'
-au FileType go nmap <leader>r <Plug>(go-run)
-au FileType go nmap <leader>b <Plug>(go-build)
-au FileType go nmap <leader>t <Plug>(go-test)
-au FileType go nmap <leader>c <Plug>(go-coverage)
-
-au FileType go nmap <Leader>ds <Plug>(go-def-split)
-au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
-au FileType go nmap <Leader>dt <Plug>(go-def-tab)
-
-au FileType go nmap <Leader>gd <Plug>(go-doc)
-au FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
-
-au FileType go nmap <Leader>i <Plug>(go-info)
-au FileType go nmap <Leader>e <Plug>(go-rename)
-
-" 色付け
-let g:go_highlight_functions = 1
-let g:go_highlight_methods = 1
-let g:go_highlight_fields = 1
-let g:go_highlight_types = 1
-let g:go_highlight_operators = 1
-let g:go_highlight_build_constraints = 1
-
-" 保存時にimport補完
-let g:go_fmt_command = "goimports"
-
-NeoBundle 'dgryski/vim-godef'
-
-" 括弧補完(visula+Iなどで括弧補完がおかしい(macvimで確認))
-"NeoBundle 'jiangmiao/auto-pairs'
-NeoBundle 'MetalPhaeton/easybracket-vim'
-
 " memolist
-NeoBundle 'glidenote/memolist.vim'
-
-" json
-NeoBundle 'elzr/vim-json'
+Plug 'glidenote/memolist.vim'
 
 " インデント(concealを使ったものでvimでも動く)
-"NeoBundle 'Yggdroot/indentLine'
+"Plug 'Yggdroot/indentLine'
 
 " バイナリエディタ
-"NeoBundle 'Shougo/vinarise.vim'
+"Plug 'Shougo/vinarise.vim'
 
 " rails
-NeoBundle 'tpope/vim-rails'
-NeoBundle 'tpope/vim-cucumber'
-NeoBundle 'tonekk/vim-ruby-capybara'
+Plug 'tpope/vim-rails'
+Plug 'tpope/vim-cucumber'
+Plug 'tonekk/vim-ruby-capybara'
 " <c-w><c-d>でsplitして開く
 
 " カーソル文字に下線を引く
 " カーソル移動が遅いので使わない
-" NeoBundle 'itchyny/vim-cursorword'
+" Plug 'itchyny/vim-cursorword'
 
 " color
-NeoBundle 'w0ng/vim-hybrid'
+Plug 'w0ng/vim-hybrid'
 
 " git diffを表示
-NeoBundle 'airblade/vim-gitgutter'
+Plug 'airblade/vim-gitgutter'
 
 " gitをvimから使う
-NeoBundle 'tpope/vim-fugitive'
+Plug 'tpope/vim-fugitive'
 
 " github flavored markdown
-NeoBundle 'rhysd/vim-gfm-syntax'
+Plug 'rhysd/vim-gfm-syntax'
 
 " 行番号指定で開く
-NeoBundle 'bogado/file-line'
+Plug 'bogado/file-line'
 
 " zencoding
 " <c-y>,で展開
-NeoBundle 'mattn/emmet-vim'
+Plug 'mattn/emmet-vim'
 " reactjsのclassName補完(.zzzでclassName="zzz")
 " TODO: あとで個人的な補完を追加する
 let g:user_emmet_settings = 1
@@ -189,91 +110,34 @@ let g:user_emmet_settings = 1
 " 末尾半角スペースの可視化(:FixWhitespace で削除)
 " ntpeters/vim-better-whitespace が高機能だがssh経由で赤色が出ない
 " 色設定を調整するのが面倒なのでvim-trailing-whitespaceを使う
-NeoBundle 'bronson/vim-trailing-whitespace'
+Plug 'bronson/vim-trailing-whitespace'
 " uniteで赤くなるため無効にする"
 "let g:extra_whitespace_ignored_filetypes = ['unite']
 
-" coffee-script
-NeoBundle 'kchmck/vim-coffee-script'
 
-" protocolbuffer syntax color
-NeoBundle 'uarun/vim-protobuf'
-
-"NeoBundle 'Shougo/neosnippet'
-"NeoBundle 'Shougo/neosnippet-snippets'
-
-if v:version > 703 && has('lua')
-  NeoBundle 'Shougo/neocomplete'
-  " neocomplete用設定
-  let g:neocomplete#enable_at_startup = 1
-  let g:neocomplete#enable_ignore_case = 1
-  let g:neocomplete#enable_smart_case = 1
-  if !exists('g:neocomplete#keyword_patterns')
-      let g:neocomplete#keyword_patterns = {}
-  endif
-  let g:neocomplete#keyword_patterns._ = '\h\w*'
-  inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
-  inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>"
-else
-  " https://github.com/Shougo/neocomplcache.vim
-  " 設定が多いので使うときに作る
-endif
-
-NeoBundle 'ctrlpvim/ctrlp.vim'
+Plug 'ctrlpvim/ctrlp.vim'
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
 set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
-
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
-"let g:ctrlp_custom_ignore = {
-"  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
-"  \ 'file': '\v\.(exe|so|dll)$',
-"  \ 'link': 'some_bad_symbolic_links',
-"  \ }
-
-" aaa:100 などの行番号が使えなくなるのでやめた
-" git-checkoutしたらF5で更新するとよい
-"" git-branch切り替えでも対応可能なように逐次検索する
-"if executable('ag')
-"  let g:ctrlp_use_caching = 0
-"  let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup -g ""'
-"endif
-
-" 速いらしい
-NeoBundle 'FelikZ/ctrlp-py-matcher'
-let g:ctrlp_match_func = {'match': 'pymatcher#PyMatch'}
-
-" yankの一覧
-NeoBundle 'LeafCage/yankround.vim'
-nnoremap ,p :CtrlPYankRound<CR>
 
 " tab周り
-NeoBundle 'DavidEGx/ctrlp-smarttabs'
+Plug 'DavidEGx/ctrlp-smarttabs'
 let g:ctrlp_extensions = ['smarttabs']
 nnoremap ,t :CtrlPSmartTabs<CR>
 
-" 標準のyamlハイライトより速いらしい
-NeoBundle 'stephpy/vim-yaml'
+" 速いらしい
+Plug 'FelikZ/ctrlp-py-matcher'
+let g:ctrlp_match_func = {'match': 'pymatcher#PyMatch'}
 
-NeoBundle 'Shougo/vimproc.vim', {
-  \ 'build' : {
-  \     'windows' : 'tools\\update-dll-mingw',
-  \     'cygwin' : 'make -f make_cygwin.mak',
-  \     'mac' : 'make -f make_mac.mak',
-  \     'linux' : 'make',
-  \     'unix' : 'gmake',
-  \    },
-  \ }
+" 過去のyank一覧
+Plug 'LeafCage/yankround.vim'
+nnoremap ,p :CtrlPYankRound<CR>
 
-" typescript
-NeoBundle 'Quramy/tsuquyomi'
-" 追加でインストールが必要 npm -g install typescript
-" NeoBundle 'jason0x43/vim-js-indent'
-NeoBundle 'leafgarland/typescript-vim'
 
-" status line
-NeoBundle 'itchyny/lightline.vim'
+" ステータスラインのカスタマイズ
+Plug 'itchyny/lightline.vim'
 let g:lightline = {
   \   'mode_map': {'c': 'NORMAL'},
   \   'active': {
@@ -333,47 +197,22 @@ function! LightlineMode()
 endfunction
 
 
-" python
-let $PATH = "~/.pyenv/shims:".$PATH
-
-" DJANGO_SETTINGS_MODULE を自動設定
-NeoBundleLazy "lambdalisue/vim-django-support", {
-      \ "autoload": {
-      \   "filetypes": ["python", "python3", "djangohtml"]
-      \ }}
-
-" 補完用に jedi-vim を追加
-NeoBundle "davidhalter/jedi-vim"
-
-" pyenv 処理用に vim-pyenv を追加
-" Note: depends が指定されているため jedi-vim より後にロードされる（ことを期待）
-NeoBundleLazy "lambdalisue/vim-pyenv", {
-      \ "depends": ['davidhalter/jedi-vim'],
-      \ "autoload": {
-      \   "filetypes": ["python", "python3", "djangohtml"]
-      \ }}
-
-" docker
-NeoBundle 'docker/docker' , {'rtp': '/contrib/syntax/vim/'}
-
-" rspec
-NeoBundle 'keith/rspec.vim'
+" 括弧の補完
+Plug 'MetalPhaeton/easybracket-vim'
 
 " 括弧囲み
 " v選択後 S" で "囲み
 " ds" で "削除
-NeoBundle 'tpope/vim-surround'
+Plug 'tpope/vim-surround'
 
 " ウインドウのリサイズ
 " <C-e>で変更モード
 " FIXME: 複数タブを開くとサイズが別タブへ移動でリセットされているように見えるので確認する
-NeoBundle 'simeji/winresizer'
+Plug 'simeji/winresizer'
 
-" fish
-NeoBundle 'dag/vim-fish'
 
 " 複数のハイライト検索
-NeoBundle 't9md/vim-quickhl'
+Plug 't9md/vim-quickhl'
 " ハイライトを付ける
 nmap <Space>m <Plug>(quickhl-manual-this)
 xmap <Space>m <Plug>(quickhl-manual-this)
@@ -382,40 +221,141 @@ nmap <Space>M <Plug>(quickhl-manual-reset)
 xmap <Space>M <Plug>(quickhl-manual-reset)
 
 " ビジュアルモード中に * で検索対象になる
-NeoBundle 'thinca/vim-visualstar'
+Plug 'thinca/vim-visualstar'
 
-" +luaのvimで有効になる補完
-NeoBundle 'Shougo/neocomplete.vim'
-"Note: This option must be set in .vimrc(_vimrc).  NOT IN .gvimrc(_gvimrc)!
-" Disable AutoComplPop.
-let g:acp_enableAtStartup = 0
-" Use neocomplete.
-let g:neocomplete#enable_at_startup = 1
-" Use smartcase.
-let g:neocomplete#enable_smart_case = 1
-" Set minimum syntax keyword length.
-let g:neocomplete#sources#syntax#min_keyword_length = 3
+" いろいろ非同期にする
+Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 
-" Define dictionary.
-let g:neocomplete#sources#dictionary#dictionaries = {
-    \ 'default' : '',
-    \ 'vimshell' : $HOME.'/.vimshell_hist',
-    \ 'go' : $HOME.'/dev/bin/gocode'
-		\ }
+if v:version > 703 && has('lua')
+  " +luaのvimで有効になる補完
+  Plug 'Shougo/neocomplete'
+  " neocomplete用設定
+  let g:neocomplete#enable_at_startup = 1
+  let g:neocomplete#enable_ignore_case = 1
+  let g:neocomplete#enable_smart_case = 1
+  if !exists('g:neocomplete#keyword_patterns')
+      let g:neocomplete#keyword_patterns = {}
+  endif
+  let g:neocomplete#keyword_patterns._ = '\h\w*'
+  inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+  inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>"
+
+  " Disable AutoComplPop.
+  let g:acp_enableAtStartup = 0
+
+  " Set minimum syntax keyword length.
+  let g:neocomplete#sources#syntax#min_keyword_length = 3
+
+  " Define dictionary.
+  let g:neocomplete#sources#dictionary#dictionaries = {
+      \ 'default' : '',
+      \ 'vimshell' : $HOME.'/.vimshell_hist',
+      \ 'go' : $HOME.'/dev/bin/gocode'
+      \ }
+
+  " luaなしのときはneocomplcacheが使えるが、vimをコンパイルした方がよい"
+endif
+
 
 " gvimのフォントを+拡大、-縮小
-NeoBundle 'thinca/vim-fontzoom'
+Plug 'thinca/vim-fontzoom'
 
-call neobundle#end()
-
-" Required:
-filetype plugin indent on
-
-" If there are uninstalled bundles found on startup,
-" this will conveniently prompt you to install them.
-NeoBundleCheck
-"----------------------------------
 "
+" 以下は言語特有のプラグイン
+"
+" --------------------------------------------------------------------------------
+" ruby
+"
+" rspec
+Plug 'keith/rspec.vim'
+
+" yamlでドット区切りでジャンプできる
+" Moving to the parent node ( :YamlGoToParent ),
+" Getting the full path to the current element ( :YamlGetFullPath ),
+" Moving to an element, given the path ( :YamlGoToKey )
+Plug 'lmeijvogel/vim-yaml-helper'
+
+" 標準のyamlハイライトより速いらしい
+Plug 'stephpy/vim-yaml'
+
+" rubyでend補完
+Plug 'tpope/vim-endwise'
+
+" --------------------------------------------------------------------------------
+" typescript
+"
+Plug 'Quramy/tsuquyomi'
+" 追加でインストールが必要 npm -g install typescript
+" Plug 'jason0x43/vim-js-indent'
+Plug 'leafgarland/typescript-vim'
+
+" --------------------------------------------------------------------------------
+" javascript
+
+" 8スペースなどインデントがおかしくなるので使わない
+" Plug 'jiangmiao/simple-javascript-indenter'
+Plug 'othree/yajs.vim'
+Plug 'othree/es.next.syntax.vim'
+
+Plug 'pangloss/vim-javascript'
+" es6だとインデントがおかしくなるので自分で対応する
+" Plug 'mtscout6/vim-cjsx'
+" Plug 'MaxMEllon/vim-jsx-pretty'
+" let g:jsx_ext_required = 1        " ファイルタイプがjsxのとき読み込む
+" let g:jsx_pragma_required = 0     " @から始まるプラグマでは読み込まない
+
+" ternはnpmでインストールする
+" cd ~/.vim/bundle/tern_for_vim
+" npm install
+" npm install tern-coffee
+Plug 'ternjs/tern_for_vim'
+Plug 'othree/tern_for_vim_coffee'
+Plug 'kchmck/vim-coffee-script'
+Plug 'elzr/vim-json'
+
+
+" --------------------------------------------------------------------------------
+" golang
+
+" gdで定義へ飛ぶ
+Plug 'fatih/vim-go'
+au FileType go nmap <leader>r <Plug>(go-run)
+au FileType go nmap <leader>b <Plug>(go-build)
+au FileType go nmap <leader>t <Plug>(go-test)
+au FileType go nmap <leader>c <Plug>(go-coverage)
+
+au FileType go nmap <Leader>ds <Plug>(go-def-split)
+au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
+au FileType go nmap <Leader>dt <Plug>(go-def-tab)
+
+au FileType go nmap <Leader>gd <Plug>(go-doc)
+au FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
+
+au FileType go nmap <Leader>i <Plug>(go-info)
+au FileType go nmap <Leader>e <Plug>(go-rename)
+
+" 色付け
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_types = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
+
+" 保存時にimport補完
+let g:go_fmt_command = "goimports"
+
+Plug 'dgryski/vim-godef'
+
+" --------------------------------------------------------------------------------
+" fish
+"
+Plug 'dag/vim-fish'
+
+
+call plug#end()
+" ================================================================================
+
 
 syntax on
 
