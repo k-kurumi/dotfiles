@@ -948,3 +948,9 @@ noremap! ¥ \
 " ターミナルでスクロールが遅いのを改善する
 set lazyredraw
 set ttyfast
+
+" vimdiffで元ファイルとの差分を表示する
+if !exists(":DiffOrig")
+  command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
+    \ | wincmd p | diffthis
+endif
