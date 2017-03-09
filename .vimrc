@@ -49,9 +49,6 @@ Plug 'tpope/vim-commentary'
 Plug 'tyru/open-browser.vim'
 Plug 'tyru/open-browser-github.vim'
 
-" \rで実行
-Plug 'thinca/vim-quickrun'
-
 " アスキーアート作成
 Plug 'vim-scripts/DrawIt'
 
@@ -714,9 +711,6 @@ let g:tagbar_left = 1
 " \di 線の開始
 " \ds 線の停止
 
-" quickrunの実行
-" \r
-
 
 " コピーに付いて
 " viの削除したりコピーした文字をコマンド行で使用する
@@ -731,16 +725,6 @@ let g:tagbar_left = 1
 let g:SimpleJsIndenter_BriefMode = 1
 " この設定入れるとswitchのインデントがいくらかマシに
 let g:SimpleJsIndenter_CaseIndentLevel = -1
-
-
-
-" quickrun
-let g:quickrun_config = {
-\   "_" : {
-\       "outputter/buffer/split" : ":botright",
-\       "outputter/buffer/close_on_empty" : 1
-\   },
-\}
 
 
 " memolist
