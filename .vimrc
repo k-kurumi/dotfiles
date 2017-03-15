@@ -271,6 +271,7 @@ Plug 'keith/rspec.vim'
 " Getting the full path to the current element ( :YamlGetFullPath ),
 " Moving to an element, given the path ( :YamlGoToKey )
 Plug 'lmeijvogel/vim-yaml-helper'
+noremap <C-y> :YamlGetFullPath<CR>
 
 " 標準のyamlハイライトより速いらしい
 Plug 'stephpy/vim-yaml'
