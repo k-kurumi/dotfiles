@@ -22,6 +22,8 @@ Plug 'junegunn/vim-easy-align'
 
 " undo redo
 Plug 'sjl/gundo.vim'
+" toggle gundo
+nnoremap <leader>u :GundoToggle<CR>
 
 " :Rg <string|pattern>で検索
 Plug 'jremmen/vim-ripgrep'
@@ -122,7 +124,7 @@ let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 " tab周り
 Plug 'DavidEGx/ctrlp-smarttabs'
 let g:ctrlp_extensions = ['smarttabs']
-nnoremap ,t :CtrlPSmartTabs<CR>
+nnoremap <Leader>t :CtrlPSmartTabs<CR>
 
 " 速いらしい
 Plug 'FelikZ/ctrlp-py-matcher'
@@ -130,7 +132,7 @@ let g:ctrlp_match_func = {'match': 'pymatcher#PyMatch'}
 
 " 過去のyank一覧
 Plug 'LeafCage/yankround.vim'
-nnoremap ,p :CtrlPYankRound<CR>
+nnoremap <Leader>p :CtrlPYankRound<CR>
 
 
 " ステータスラインのカスタマイズ
@@ -356,6 +358,9 @@ call plug#end()
 
 
 syntax on
+
+" デフォルトの\ではなく,を使う
+let mapleader=","
 
 " バックスペースで文字削除
 set bs=2
@@ -732,10 +737,8 @@ let g:SimpleJsIndenter_CaseIndentLevel = -1
 
 
 " memolist
-nnoremap ,mn  :MemoNew<CR>
-nnoremap ,ml  :MemoList<CR>
-" agなど使うほうが便利
-nnoremap ,mg  :MemoGrep<CR>
+nnoremap <Leader>mn :MemoNew<CR>
+nnoremap <Leader>ml :MemoList<CR>
 
 " 日付の挿入
 " 2015-02-23 (月) 09:04:14
