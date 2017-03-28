@@ -645,12 +645,6 @@ augroup END
 set directory=~/.vim
 
 " ------------------------------------------------------------------------------
-" Gundo用のツリー展開
-" ------------------------------------------------------------------------------
-" ツリーの開閉
-nnoremap ,u :GundoToggle<CR>
-
-" ------------------------------------------------------------------------------
 " NERDTree
 " ------------------------------------------------------------------------------
 " 開いているファイルをツリーで表示
@@ -805,7 +799,7 @@ nnoremap <SPACE>p :set paste!<CR>
 
 " gitgutter
 " 変更箇所へ飛ぶ
-nnoremap ,g :GitGutterToggle<CR>
+" nnoremap ,g :GitGutterToggle<CR>
 "nnoremap ,n :GitGutterNextHunk<CR>
 "nnoremap ,p :GitGutterPrevHunk<CR>
 
