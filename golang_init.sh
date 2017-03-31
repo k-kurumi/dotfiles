@@ -60,3 +60,13 @@ go get -u -v github.com/laurent22/massren
 
 echo "### 公式のバージョン固定ツール"
 go get -u -v github.com/golang/dep
+
+
+
+
+# http://pocke.hatenablog.com/entry/2017/03/31/155345
+# importしていないものも補完する
+gocode close
+sleep 1
+gocode set unimported-packages true
+gocode set
