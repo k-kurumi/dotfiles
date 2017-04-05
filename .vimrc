@@ -29,6 +29,10 @@ nnoremap <leader>u :GundoToggle<CR>
 Plug 'jremmen/vim-ripgrep'
 let g:rg_highlight = 1
 
+" :Pt [option] <pattern> [<path>] で検索
+" -w: 正規表現を使う
+Plug 'nazo/pt.vim'
+
 " markを表示
 Plug 'kshenoy/vim-signature'
 
