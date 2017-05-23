@@ -148,12 +148,13 @@ Plug 'itchyny/lightline.vim'
 let g:lightline = {
   \   'mode_map': {'c': 'NORMAL'},
   \   'active': {
-  \     'left': [ [ 'mode', 'paste' ], [ 'filename', 'fugitive' ] ]
+  \     'left': [ [ 'mode', 'paste' ], [ 'filename', 'fugitive', 'ale' ] ]
   \   },
   \   'component_function': {
   \     'modified': 'LightlineModified',
   \     'readonly': 'LightlineReadonly',
   \     'fugitive': 'LightlineFugitive',
+  \     'ale': 'LightlineALE',
   \     'filename': 'LightlineFilename',
   \     'fileformat': 'LightlineFileformat',
   \     'filetype': 'LightlineFiletype',
@@ -168,6 +169,11 @@ endfunction
 
 function! LightlineReadonly()
   return &ft !~? 'help\|vimfiler\|gundo' && &readonly ? 'x' : ''
+endfunction
+
+" lint件数表示
+function! LightlineALE()
+  return ('' != ALEGetStatusLine() ? ALEGetStatusLine() : '')
 endfunction
 
 function! LightlineFilename()
