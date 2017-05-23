@@ -61,13 +61,17 @@ Plug 'vim-scripts/DrawIt'
 " 保存時の構文チェッカ
 " javascript : npm install -g eslint
 "     coffee : npm install -g coffeelint
-Plug 'scrooloose/syntastic'
-let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
-let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
-" typescriptは上手く動かないのでチェックしない
-let g:loaded_syntastic_typescript_tslint_checker = 0
-let g:loaded_syntastic_typescript_tsc_checker = 0
+" Plug 'scrooloose/syntastic'
+" let g:syntastic_javascript_checkers = ['eslint']
+" let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
+" let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
+" " typescriptは上手く動かないのでチェックしない
+" let g:loaded_syntastic_typescript_tslint_checker = 0
+" let g:loaded_syntastic_typescript_tsc_checker = 0
+
+" vim8以上で動作する非同期の構文チェッカ
+" vim7までは同期のsyntasticを使うこと
+Plug 'w0rp/ale'
 
 " memolist
 Plug 'glidenote/memolist.vim'
