@@ -38,11 +38,13 @@ end
 # rbenv
 # macはbrewで入れて ln -s /usr/local/bin/rbenv ~/.rbenv/bin/ しておく
 set -x PATH $HOME/.rbenv/bin $PATH
-rbenv init - | source
+# setenv: Too many arguments とエラーが出るので無効にした
+# rbenv init - | source
 
 # pyenv
 set -x PATH $HOME/.pyenv/bin $PATH
-pyenv init - | source
+# setenv: Too many arguments とエラーが出るので無効にした
+# pyenv init - | source
 
 # node.js
 set -x PATH $HOME/.nodebrew/current/bin $PATH
