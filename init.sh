@@ -42,5 +42,5 @@ fi
 
 grep .zshrc2 ~/.zshrc
 if [ $? -ne 0 ]; then
-  echo "source ${HOME}/.zshrc2" >> ~/.zshrc
+  echo 'source ${HOME}/.zshrc2' >> ~/.zshrc
 fi
