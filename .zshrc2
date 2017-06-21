@@ -30,6 +30,12 @@ eval "$(pyenv init -)"
 export PATH="$HOME/.ndenv/bin:$PATH"
 eval "$(ndenv init -)"
 
+# golang(1.8のデフォルトとは違う)
+export GOPATH=${HOME}/dev
+export GOROOT=${HOME}/go
+export PATH=${GOPATH}/bin:${PATH}
+export PATH=${GOROOT}/bin:${PATH}
+
 # direnv
 eval "$(direnv hook zsh)"
 
