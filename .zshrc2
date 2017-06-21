@@ -1,12 +1,29 @@
 
-# pecoでコマンド履歴検索
-function peco-history-selection() {
-  BUFFER=`history -n 1 | tail -r  | awk '!a[$0]++' | peco`
+# # pecoでコマンド履歴検索
+# function peco-history-selection() {
+#   BUFFER=`history -n 1 | tail -r  | awk '!a[$0]++' | peco`
+#   CURSOR=$#BUFFER
+#   zle reset-prompt
+# }
+# zle -N peco-history-selection
+# bindkey '^R' peco-history-selection
+
+function peco_select_history() {
+  local tac
+  if which tac > /dev/null; then
+    tac="tac"
+  else
+    tac="tail -r"
+  fi
+
+  BUFFER=$(\history -n 1 | \
+    eval $tac | \
+    peco --query "$LBUFFER")
   CURSOR=$#BUFFER
-  zle reset-prompt
+  zle clear-screen
 }
-zle -N peco-history-selection
-bindkey '^R' peco-history-selection
+zle -N peco_select_history
+bindkey '^R' peco_select_history
 
 # ruby
 export PATH="$HOME/.rbenv/bin:$PATH"

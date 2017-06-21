@@ -173,7 +173,8 @@ endfunction
 
 " lint件数表示
 function! LightlineALE()
-  return ('' != ALEGetStatusLine() ? ALEGetStatusLine() : '')
+  " aleはvim8以上
+  return exists('*ALEGetStatusLine') ? ALEGetStatusLine() : 'ale need vim8...'
 endfunction
 
 function! LightlineFilename()
