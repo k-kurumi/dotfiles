@@ -40,6 +40,16 @@ if [ $? -ne 0 ]; then
   echo "  root = ~/dev/src" >> ~/.gitconfig
 fi
 
+
+# preztoの設定ファイルに置き換え
+# readmeの手順をbashで実現したもの
+# https://github.com/sorin-ionescu/prezto
+while read rcfile
+do
+  ln -sf ${rcfile} ~/.$(basename ${rcfile})
+done < <(find "${ZDOTDIR:-$HOME}/.zprezto/runcoms" -maxdepth 1 -type f -name 'z*')
+
+# 設定の追加分
 grep .zshrc2 ~/.zshrc
 if [ $? -ne 0 ]; then
   echo 'source ${HOME}/.zshrc2' >> ~/.zshrc
