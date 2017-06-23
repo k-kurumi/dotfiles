@@ -1,3 +1,4 @@
+export EDITOR=vim
 
 # # pecoでコマンド履歴検索
 function peco_select_history() {
