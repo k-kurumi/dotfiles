@@ -61,3 +61,6 @@ eval "$(direnv hook zsh)"
 # https://github.com/sindresorhus/pure
 PURE_PROMPT_SYMBOL=$
 prompt pure
+
+# ^を展開しないようにするためgitでHEAD^などがエスケープなしで使えるようになる
+unsetopt extended_glob
