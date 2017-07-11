@@ -367,10 +367,34 @@ let g:go_fmt_command = "goimports"
 Plug 'dgryski/vim-godef'
 
 " --------------------------------------------------------------------------------
-" fish
+" rust
 "
-Plug 'dag/vim-fish'
+" rustのインストール
+" curl https://sh.rustup.rs -sSf | sh
+"
+" コンパイルするためインストールに時間がかかる
+"
+" 補完
+" cargo install racer
+"
+" 補完用のソース
+" rustup component add rust-src
+"
+" 整形 rustfmt-nightly でもいいが、コンパイルエラーになる
+" cargo install rustfmt
 
+Plug 'rust-lang/rust.vim'
+Plug 'racer-rust/vim-racer'
+
+set hidden
+let g:racer_cmd = '$HOME/.cargo/bin/racer'
+let g:racer_experimental_completer = 1
+
+" 保存時に整形
+let g:rustfmt_autosave = 1
+let g:rustfmt_command = '$HOME/.cargo/bin/rustfmt'
+
+Plug 'cespare/vim-toml'
 
 call plug#end()
 " ================================================================================
