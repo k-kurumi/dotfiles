@@ -67,3 +67,14 @@ prompt pure
 
 # ^を展開しないようにするためgitでHEAD^などがエスケープなしで使えるようになる
 unsetopt extended_glob
+
+
+# cf a のソート
+cfa() {
+  LANG=en_US.UTF-8 CF_TRACE=false CF_COLOR=false cf a | awk 'BEGIN{idx=0;} (NR <= 4){print} (NR > 4){buf[idx++]=$0} END{asort(buf);for(i=1;i<=idx;i++){print buf[i]}}'
+}
+
+# cf s のソート
+cfs() {
+  LANG=en_US.UTF-8 CF_TRACE=false CF_COLOR=false cf s | awk 'BEGIN{idx=0;} (NR <= 4){print} (NR > 4){buf[idx++]=$0} END{asort(buf);for(i=1;i<=idx;i++){print buf[i]}}'
+}
