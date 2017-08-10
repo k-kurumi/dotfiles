@@ -70,3 +70,10 @@ gocode close
 sleep 1
 gocode set unimported-packages true
 gocode set
+
+# デバッガ(macは最新パッチ版でないと使えない)
+# http://qiita.com/iktakahiro/items/146a1218cbf451f75827
+go get -v -u github.com/derekparker/delve/cmd/dlv
+
+# bundlerと被るので削除
+rm -rf $GOPATH/bin/bundle
