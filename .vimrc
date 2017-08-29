@@ -689,8 +689,6 @@ augroup END
 setlocal iskeyword+=-
 " rubyのクラス変数など @@val を保管できるようにする
 setlocal iskeyword+=@-@
-" bashの変数補完
-setlocal iskeyword+=$
 
 " ------------------------------------------------------------------------------
 " *.swpの出力先
