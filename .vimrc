@@ -327,6 +327,13 @@ Plug 'flowtype/vim-flow'
 " 1のとき保存時にウインドウ分割で結果がでるがaleでチェックするため0にする
 let g:flow#enable = 0
 
+"" jestの定義をインストールする例
+" yarn init -y	# npm init と同じ
+" yarn add --dev flow-bin flow-typed
+" yarn run flow init
+" yarn run flow-typed install jest@20
+let g:flow#flowpath = 'node_modules/.bin/flow'
+
 " --------------------------------------------------------------------------------
 " golang
 
