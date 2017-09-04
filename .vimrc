@@ -319,15 +319,6 @@ Plug 'pangloss/vim-javascript'
 " let g:jsx_ext_required = 1        " ファイルタイプがjsxのとき読み込む
 " let g:jsx_pragma_required = 0     " @から始まるプラグマでは読み込まない
 
-" ternはnpmでインストールする
-" cd ~/.vim/bundle/tern_for_vim
-" npm install
-" npm install tern-coffee
-Plug 'ternjs/tern_for_vim'
-Plug 'othree/tern_for_vim_coffee'
-Plug 'kchmck/vim-coffee-script'
-Plug 'elzr/vim-json'
-
 " typescriptのように補完が効くらしい
 " インストール後実行権限を付ける必要あり
 " npm install -g flow-bin
@@ -938,11 +929,6 @@ function! ToggleCheckbox()
 endfunction
 
 """"""""""""""""""""""""""""""
-
-" typescriptのrefを補完
-" npm install -g tsd して
-" tsd query react -a install などで定義を取得する
-abbreviate tsref ///<reference path="typings/xxx/xxx.d.ts" />
 
 " vim-easy-align
 " Start interactive EasyAlign in visual mode (e.g. vip<Enter>)
