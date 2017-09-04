@@ -8,6 +8,8 @@ npm install -g coffeelint
 npm install -g jsonlint
 npm install -g eslint
 
+npm install -g yarn
+
 npm install -g flow-bin
 npm install -g flow-typed
 
