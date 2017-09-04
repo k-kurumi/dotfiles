@@ -10,3 +10,6 @@ npm install -g eslint
 
 npm install -g flow-bin
 npm install -g flow-typed
+
+# +xしないと動かないため
+find ~/.ndenv/versions -type f -name flow -exec chmod +x {} \;
