@@ -328,6 +328,13 @@ Plug 'othree/tern_for_vim_coffee'
 Plug 'kchmck/vim-coffee-script'
 Plug 'elzr/vim-json'
 
+" typescriptのように補完が効くらしい
+" インストール後実行権限を付ける必要あり
+" npm install -g flow-bin
+" chmod +x ~/.ndenv/versions/v8.4.0/lib/node_modules/flow-bin/flow-linux64-v0.54.0/flow
+Plug 'flowtype/vim-flow'
+" 1のとき保存時にウインドウ分割で結果がでるがaleでチェックするため0にする
+let g:flow#enable = 0
 
 " --------------------------------------------------------------------------------
 " golang
