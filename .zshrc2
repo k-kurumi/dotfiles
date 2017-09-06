@@ -84,3 +84,13 @@ cfa() {
 cfs() {
   LANG=en_US.UTF-8 CF_TRACE=false CF_COLOR=false cf s | awk 'BEGIN{idx=0;} (NR <= 4){print} (NR > 4){buf[idx++]=$0} END{asort(buf);for(i=1;i<=idx;i++){print buf[i]}}'
 }
+
+# json to yaml
+j2y() {
+  ruby -ryaml -rjson -e 'puts YAML.dump(JSON.load(ARGF.read))'
+}
+
+# yaml to json
+y2j() {
+  ruby -ryaml -rjson -e 'puts JSON.pretty_generate(YAML.load(ARGF.read))'
+}
