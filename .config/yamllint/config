@@ -1,4 +1,5 @@
----
+# vim: set ft=yaml :
+
 extends: default
 
 rules:
@@ -7,10 +8,10 @@ rules:
     max: 200
     level: warning
 
-  # CF風の配列にインデント入れないパターン
-  indentation:
-    spaces: 2
-    indent-sequences: whatever
+  # # CF風の配列にインデント入れないパターン
+  # indentation:
+  #   spaces: 2
+  #   indent-sequences: whatever
 
   # デフォルトはコメント前に2スペースが必要なので無効に上書き
   comments:
