@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -ex
 #
 # dotfileを置き換え
 
@@ -54,3 +54,8 @@ grep .zshrc2 ~/.zshrc
 if [ $? -ne 0 ]; then
   echo 'source ${HOME}/.zshrc2' >> ~/.zshrc
 fi
+
+
+# yamllintのconfig
+mkdir -p ~/.config/yamllint
+cp .config/yamllint/config ~/.config/yamllint
