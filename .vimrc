@@ -289,6 +289,8 @@ Plug 'keith/rspec.vim'
 " Moving to an element, given the path ( :YamlGoToKey )
 Plug 'lmeijvogel/vim-yaml-helper'
 noremap <C-y> :YamlGetFullPath<CR>
+let g:vim_yaml_helper#always_get_root = 1
+let g:vim_yaml_helper#auto_display_path = 1
 
 " 標準のyamlハイライトより速いらしい
 Plug 'stephpy/vim-yaml'
@@ -421,6 +423,12 @@ let g:rustfmt_command = '$HOME/.cargo/bin/rustfmt'
 
 " cargoの設定ファイル用
 Plug 'cespare/vim-toml'
+
+" --------------------------------------------------------------------------------
+" ansible
+
+Plug 'pearofducks/ansible-vim'
+
 
 call plug#end()
 " ================================================================================
