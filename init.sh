@@ -59,3 +59,6 @@ fi
 # yamllintのconfig
 mkdir -p ~/.config/yamllint
 cp .config/yamllint/config ~/.config/yamllint
+
+mkdir -p ~/dev/bin
+cp bin/nc_server.sh ~/dev/bin
