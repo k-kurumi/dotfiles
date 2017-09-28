@@ -8,12 +8,11 @@ if [ -d ~/.ndenv ]; then
   cd ~/.ndenv/plugins/node-build && git pull
 fi
 
-# fishと相性が悪いためnodebrewへ移行した
-# if [ -d ~/.rbenv ]; then
-#   echo "-- rbenv --"
-#   cd ~/.rbenv && git pull
-#   cd ~/.rbenv/plugins/ruby-build && git pull
-# fi
+if [ -d ~/.rbenv ]; then
+  echo "-- rbenv --"
+  cd ~/.rbenv && git pull
+  cd ~/.rbenv/plugins/ruby-build && git pull
+fi
 
 if [ -d ~/.pyenv ]; then
   echo "-- pyenv --"
