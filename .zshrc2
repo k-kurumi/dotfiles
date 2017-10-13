@@ -41,6 +41,11 @@ export PATH=${GOROOT}/bin:${PATH}
 # rust
 export RUST_SRC_PATH=${HOME}/.multirust/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src
 
+# nim
+mkdir -p ~/.nim/bin # macはbrewで入れるためダミーとして作っておく
+export NIM_HOME=~/.nim
+export PATH=${NIM_HOME}/bin:$PATH
+
 # direnv
 eval "$(direnv hook zsh)"
 

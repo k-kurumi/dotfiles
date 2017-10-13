@@ -429,6 +429,13 @@ Plug 'cespare/vim-toml'
 
 Plug 'pearofducks/ansible-vim'
 
+" --------------------------------------------------------------------------------
+" nim
+" Plug 'zah/nim.vim'
+
+" これを使えばnimsuggestで補完ができるが精度が悪く遅い
+" zah/nim.vimと併用できない
+Plug 'baabelfish/nvim-nim'
 
 call plug#end()
 " ================================================================================
