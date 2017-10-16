@@ -5,7 +5,8 @@ env:
 extends:
   - eslint:recommended
 plugins: []
-parserOptions: {}
+parserOptions:
+  sourceType: module
 globals: {}
 
 # http://eslint.org/docs/user-guide/configuring
