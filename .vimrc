@@ -351,6 +351,8 @@ augroup fmt
 augroup END
 let g:neoformat_enabled_javascript = ['prettiereslint']
 
+Plug 'kchmck/vim-coffee-script'
+
 " --------------------------------------------------------------------------------
 " golang
 
