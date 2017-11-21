@@ -19,6 +19,18 @@ function peco_select_history() {
 zle -N peco_select_history
 bindkey '^R' peco_select_history
 
+# ghqのリポジトリに移動する
+function peco_select_ghq_repo() {
+  local selected_dir=$(ghq list -p | peco --query "$LBUFFER")
+  if [ -n "$selected_dir" ]; then
+    BUFFER="cd ${selected_dir}"
+    zle accept-line
+  fi
+  zle clear-screen
+}
+zle -N peco_select_ghq_repo
+bindkey '^G' peco_select_ghq_repo
+
 # ruby
 export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH="$HOME/.rbenv/shims:$PATH"  # /usr/local/bin/rubyが先に読まれるため上書きする
