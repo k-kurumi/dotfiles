@@ -77,7 +77,7 @@ Plug 'w0rp/ale'
 Plug 'glidenote/memolist.vim'
 
 " インデント(concealを使ったものでvimでも動く)
-"Plug 'Yggdroot/indentLine'
+Plug 'Yggdroot/indentLine'
 
 " バイナリエディタ
 "Plug 'Shougo/vinarise.vim'
