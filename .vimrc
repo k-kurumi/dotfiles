@@ -76,8 +76,19 @@ Plug 'w0rp/ale'
 " memolist
 Plug 'glidenote/memolist.vim'
 
-" インデント(concealを使ったものでvimでも動く)
-Plug 'Yggdroot/indentLine'
+" インデント表示
+" conceallevel=2が設定されてjsonの"が表示されない
+" 見づらいため使用しないようにする
+" Plug 'Yggdroot/indentLine'
+
+" concealを使わないインデント表示
+Plug 'nathanaelkane/vim-indent-guides'
+let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_start_level = 1
+let g:indent_guides_guide_size = 1
+let g:indent_guides_auto_colors = 0
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=black
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=darkgrey
 
 " バイナリエディタ
 "Plug 'Shougo/vinarise.vim'
