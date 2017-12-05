@@ -597,8 +597,8 @@ ab #- ####----------------------------------------------------------------------
 
 
 " 行、列のハイライト表示
-set cursorline
-set cursorcolumn
+" set cursorline
+" set cursorcolumn
 
 " フリーカーソル {block, insert, all, onemore}
 set virtualedit=all
