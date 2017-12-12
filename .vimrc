@@ -82,8 +82,9 @@ Plug 'glidenote/memolist.vim'
 " Plug 'Yggdroot/indentLine'
 
 " concealを使わないインデント表示
+" ,ig で表示切り替え(,はleader)
 Plug 'nathanaelkane/vim-indent-guides'
-let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_enable_on_vim_startup = 0
 let g:indent_guides_start_level = 1
 let g:indent_guides_guide_size = 1
 let g:indent_guides_auto_colors = 0
@@ -597,8 +598,8 @@ ab #- ####----------------------------------------------------------------------
 
 
 " 行、列のハイライト表示
-" set cursorline
-" set cursorcolumn
+set cursorline
+set cursorcolumn
 
 " フリーカーソル {block, insert, all, onemore}
 set virtualedit=all
