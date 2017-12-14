@@ -349,20 +349,21 @@ let g:flow#enable = 0
 " yarn run flow-typed install jest@20
 let g:flow#flowpath = 'node_modules/.bin/flow'
 
-" javascriptのフォーマッタ
-" yarn add -D eslint prettier-eslint prettier-eslint-cli しておく
-" http://qiita.com/kiida/items/405bb07c4b52bfee0219
-Plug 'sbdchd/neoformat'
-let g:neoformat_javascript_prettiereslint = {
-      \ 'exe': './node_modules/.bin/prettier-eslint',
-      \ 'args': ['--stdin'],
-      \ 'stdin': 1,
-      \ }
-augroup fmt
-  autocmd!
-  autocmd BufWritePre * Neoformat
-augroup END
-let g:neoformat_enabled_javascript = ['prettiereslint']
+" 既存のものをまでフォーマットしてしまうため使用しない
+" " javascriptのフォーマッタ
+" " yarn add -D eslint prettier-eslint prettier-eslint-cli しておく
+" " http://qiita.com/kiida/items/405bb07c4b52bfee0219
+" Plug 'sbdchd/neoformat'
+" let g:neoformat_javascript_prettiereslint = {
+"       \ 'exe': './node_modules/.bin/prettier-eslint',
+"       \ 'args': ['--stdin'],
+"       \ 'stdin': 1,
+"       \ }
+" augroup fmt
+"   autocmd!
+"   autocmd BufWritePre * Neoformat
+" augroup END
+" let g:neoformat_enabled_javascript = ['prettiereslint']
 
 Plug 'kchmck/vim-coffee-script'
 
