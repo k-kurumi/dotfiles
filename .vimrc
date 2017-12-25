@@ -1003,7 +1003,7 @@ endfunction
 
 """"""""""""""""""""""""""""""
 
-if has('mac')
+if has('mac') && executable('/usr/local/bin/swim')
   " macのキーボード切り替えアプリを使って、ノーマルモードへ切り替え時に仮名漢字変換を無効にする
   " https://qiita.com/warashi/items/40f7eecb0e5593efa081
   " https://github.com/mitsuse/swim
