@@ -114,6 +114,9 @@ Plug 'airblade/vim-gitgutter'
 " gitをvimから使う
 Plug 'tpope/vim-fugitive'
 
+" blameにgithubのPR表示
+Plug 'rhysd/ghpr-blame.vim'
+
 " github flavored markdown
 Plug 'rhysd/vim-gfm-syntax'
 
