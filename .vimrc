@@ -116,6 +116,7 @@ Plug 'tpope/vim-fugitive'
 
 " blameにgithubのPR表示
 Plug 'rhysd/ghpr-blame.vim'
+let g:ghpr_github_auth_token = $GHPR_BLAME_GITHUB_TOKEN
 
 " github flavored markdown
 Plug 'rhysd/vim-gfm-syntax'
