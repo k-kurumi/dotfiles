@@ -454,7 +454,7 @@ Plug 'pearofducks/ansible-vim'
 
 " これを使えばnimsuggestで補完ができるが精度が悪く遅い
 " zah/nim.vimと併用できない
-Plug 'baabelfish/nvim-nim'
+" Plug 'baabelfish/nvim-nim'
 
 call plug#end()
 " ================================================================================
