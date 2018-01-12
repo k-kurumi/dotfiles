@@ -602,9 +602,9 @@ ab #- ####----------------------------------------------------------------------
 
 
 
-" 行、列のハイライト表示
-set cursorline
-" set cursorcolumn
+" 行、列のハイライト表示しない
+set nocursorline
+set nocursorcolumn
 
 " フリーカーソル {block, insert, all, onemore}
 set virtualedit=all
