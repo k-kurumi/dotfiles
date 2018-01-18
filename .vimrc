@@ -453,6 +453,9 @@ Plug 'pearofducks/ansible-vim'
 " zah/nim.vimと併用できない
 " Plug 'baabelfish/nvim-nim'
 
+" crystal
+Plug 'rhysd/vim-crystal'
+
 call plug#end()
 " ================================================================================
 
