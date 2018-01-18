@@ -112,3 +112,8 @@ j2y() {
 y2j() {
   ruby -ryaml -rjson -e 'puts JSON.pretty_generate(YAML.load(ARGF.read))'
 }
+
+# tigよりわかりやすいgitツリー
+gitt() {
+  git-foresta --all --style=10 | less -RSX
+}
