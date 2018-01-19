@@ -114,6 +114,7 @@ y2j() {
 }
 
 # tigよりわかりやすいgitツリー
-gitt() {
-  git-foresta --all --style=10 | less -RSX
-}
+function gitt() { git-foresta --style=10 "$@" | less -RSX }
+function gitta() { git-foresta --all --style=10 "$@" | less -RSX }
+compdef _git gitt=git-log
+compdef _git gitta=git-log
