@@ -118,3 +118,10 @@ function gitt() { git-foresta --style=10 "$@" | less -RSX }
 function gitta() { git-foresta --all --style=10 "$@" | less -RSX }
 compdef _git gitt=git-log
 compdef _git gitta=git-log
+
+# mkdir-p風にフォルダを作ってからtouchする
+function touch_p() {
+  local dir=$(dirname $1)
+  mkdir -p ${dir}
+  touch $1
+}
