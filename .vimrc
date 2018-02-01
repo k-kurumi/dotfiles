@@ -75,6 +75,24 @@ Plug 'w0rp/ale'
 
 " memolist
 Plug 'glidenote/memolist.vim'
+nnoremap mn :MemoNew<CR>
+nnoremap ml :MemoList<CR>
+
+" 日付の挿入
+" 2015-02-23 (月) 09:04:14
+" -------------------------
+nnoremap mt O<C-R>=strftime("%Y-%m-%d (%a) %H:%M:%S")<CR><CR><ESC>25i-<ESC>o<ESC>
+
+let g:memolist_path = "~/Dropbox/memo"
+let g:memolist_memo_suffix = "md"
+"let g:memolist_memo_date = "%Y-%m-%d %H:%M"
+"let g:memolist_memo_date = "epoch"
+"let g:memolist_memo_date = "%D %T"
+"let g:memolist_prompt_tags = 1
+"let g:memolist_prompt_categories = 1
+"let g:memolist_qfixgrep = 1
+"let g:memolist_vimfiler = 1
+"let g:memolist_template_dir_path = "path/to/dir"
 
 " インデント表示
 " conceallevel=2が設定されてjsonの"が表示されない
@@ -380,10 +398,10 @@ Plug 'fatih/vim-go'
 " importしていないものも補完する
 let g:go_gocode_unimported_packages = 1
 
-au FileType go nmap <leader>r <Plug>(go-run)
-au FileType go nmap <leader>b <Plug>(go-build)
-au FileType go nmap <leader>t <Plug>(go-test)
-au FileType go nmap <leader>c <Plug>(go-coverage)
+au FileType go nmap <Leader>r <Plug>(go-run)
+au FileType go nmap <Leader>b <Plug>(go-build)
+au FileType go nmap <Leader>t <Plug>(go-test)
+au FileType go nmap <Leader>c <Plug>(go-coverage)
 
 au FileType go nmap <Leader>ds <Plug>(go-def-split)
 au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
@@ -840,26 +858,6 @@ let g:SimpleJsIndenter_BriefMode = 1
 " この設定入れるとswitchのインデントがいくらかマシに
 let g:SimpleJsIndenter_CaseIndentLevel = -1
 
-
-" memolist
-nnoremap <Leader>mn :MemoNew<CR>
-nnoremap <Leader>ml :MemoList<CR>
-
-" 日付の挿入
-" 2015-02-23 (月) 09:04:14
-" -------------------------
-"nnoremap ,t i<C-R>=strftime("%Y-%m-%d (%a) %H:%M:%S")<CR><CR><ESC>25i-<ESC>a<CR>
-
-let g:memolist_path = "~/Dropbox/memo"
-"let g:memolist_memo_suffix = "txt"
-"let g:memolist_memo_date = "%Y-%m-%d %H:%M"
-"let g:memolist_memo_date = "epoch"
-"let g:memolist_memo_date = "%D %T"
-"let g:memolist_prompt_tags = 1
-"let g:memolist_prompt_categories = 1
-"let g:memolist_qfixgrep = 1
-"let g:memolist_vimfiler = 1
-"let g:memolist_template_dir_path = "path/to/dir"
 
 " 複数のタグがあるとき確認できるようにする
 nnoremap <C-]> g<C-]>
