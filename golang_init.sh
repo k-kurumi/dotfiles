@@ -75,5 +75,8 @@ gocode set
 # http://qiita.com/iktakahiro/items/146a1218cbf451f75827
 go get -v -u github.com/derekparker/delve/cmd/dlv
 
+# ymlで書けるmakeのようなもの
+go get -u -v github.com/go-task/task/cmd/task
+
 # bundlerと被るので削除
 rm -rf $GOPATH/bin/bundle
