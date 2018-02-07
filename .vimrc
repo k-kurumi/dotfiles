@@ -75,13 +75,13 @@ Plug 'w0rp/ale'
 
 " memolist
 Plug 'glidenote/memolist.vim'
-nnoremap mn :MemoNew<CR>
-nnoremap ml :MemoList<CR>
+nnoremap ,n :MemoNew<CR>
+nnoremap ,l :MemoList<CR>
 
 " 日付の挿入
 " 2015-02-23 (月) 09:04:14
 " -------------------------
-nnoremap mt O<C-R>=strftime("%Y-%m-%d (%a) %H:%M:%S")<CR><CR><ESC>25i-<ESC>o<ESC>
+" nnoremap mt O<C-R>=strftime("%Y-%m-%d (%a) %H:%M:%S")<CR><CR><ESC>25i-<ESC>o<ESC>
 
 let g:memolist_path = "~/Dropbox/memo"
 let g:memolist_memo_suffix = "md"
@@ -157,17 +157,19 @@ Plug 'bronson/vim-trailing-whitespace'
 "let g:extra_whitespace_ignored_filetypes = ['unite']
 
 
+" :help ctrlp-options
 Plug 'ctrlpvim/ctrlp.vim'
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
 set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:30,results:30'
 
 " tab周り
 Plug 'DavidEGx/ctrlp-smarttabs'
 let g:ctrlp_extensions = ['smarttabs']
-nnoremap <Leader>t :CtrlPSmartTabs<CR>
+nnoremap ,t :CtrlPSmartTabs<CR>
 
 " 速いらしい
 Plug 'FelikZ/ctrlp-py-matcher'
@@ -175,7 +177,7 @@ let g:ctrlp_match_func = {'match': 'pymatcher#PyMatch'}
 
 " 過去のyank一覧
 Plug 'LeafCage/yankround.vim'
-nnoremap <Leader>p :CtrlPYankRound<CR>
+nnoremap ,p :CtrlPYankRound<CR>
 
 
 " ステータスラインのカスタマイズ
