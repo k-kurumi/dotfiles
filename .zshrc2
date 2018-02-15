@@ -75,7 +75,9 @@ eval "$(direnv hook zsh)"
 # PROMPT='
 # %{$fg[black]%(?.$bg[green].$bg[red])%} %? %{$reset_color%} %{$fg[green]%}>>>%{${reset_color}%} ${vcs_info_msg_0_} %{$fg[yellow]%}%~%{${reset_color}%}
 # $ '
-# RPROMPT=''
+
+# 右の表記を消す
+RPROMPT=
 
 # 自作より軽快に動作する気がする
 # 機能も十分なのでしばらく使ってみる
