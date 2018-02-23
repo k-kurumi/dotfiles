@@ -1,3 +1,8 @@
+# プロンプト周りの設定
+# http://blog.darudaru-life.com/entry/2017/08/17/234638
+#
+# 2行表示のものは残像が残ってしまうため1行の方がよい
+#
 export EDITOR=vim
 export VISUAL=vim # macのcrontab用
 
@@ -60,30 +65,6 @@ export RUST_SRC_PATH=${HOME}/.multirust/toolchains/stable-x86_64-unknown-linux-g
 
 # direnv
 eval "$(direnv hook zsh)"
-
-# プロンプトまわりの設定(pureで)
-# autoload -Uz colors
-# colors
-# autoload -Uz vcs_info
-# setopt prompt_subst
-# zstyle ':vcs_info:git:*' check-for-changes true #formats 設定項目で %c,%u が使用可
-# zstyle ':vcs_info:git:*' stagedstr "%F{green}!" #commit されていないファイルがある
-# zstyle ':vcs_info:git:*' unstagedstr "%F{magenta}+" #add されていないファイルがある
-# zstyle ':vcs_info:*' formats "%F{cyan}%c%u(%b)%f" #通常
-# zstyle ':vcs_info:*' actionformats '[%b|%a]' #rebase 途中,merge コンフリクト等 formats 外の表示
-# precmd() { vcs_info }
-# PROMPT='
-# %{$fg[black]%(?.$bg[green].$bg[red])%} %? %{$reset_color%} %{$fg[green]%}>>>%{${reset_color}%} ${vcs_info_msg_0_} %{$fg[yellow]%}%~%{${reset_color}%}
-# $ '
-
-# 右の表記を消す
-RPROMPT=
-
-# 自作より軽快に動作する気がする
-# 機能も十分なのでしばらく使ってみる
-# https://github.com/sindresorhus/pure
-PURE_PROMPT_SYMBOL=$
-prompt pure
 
 # ^を展開しないようにするためgitでHEAD^などがエスケープなしで使えるようになる
 unsetopt extended_glob
