@@ -167,10 +167,6 @@ Plug 'DavidEGx/ctrlp-smarttabs'
 let g:ctrlp_extensions = ['smarttabs']
 nnoremap ,t :CtrlPSmartTabs<CR>
 
-" 速いらしい
-Plug 'FelikZ/ctrlp-py-matcher'
-let g:ctrlp_match_func = {'match': 'pymatcher#PyMatch'}
-
 " 過去のyank一覧
 Plug 'LeafCage/yankround.vim'
 nnoremap ,p :CtrlPYankRound<CR>
