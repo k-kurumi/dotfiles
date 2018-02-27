@@ -76,6 +76,11 @@ SAVEHIST=100000
 setopt hist_ignore_dups     # ignore duplication command history list
 setopt share_history        # share command history data
 
+# pureのような2行表示のプロンプトはmosh接続で使用すると画面下部に残像が残る
+# ssh接続では残らない
+# https://github.com/sindresorhus/pure
+export PURE_PROMPT_SYMBOL=$
+
 # cf a のソート
 cfa() {
   LANG=en_US.UTF-8 CF_TRACE=false CF_COLOR=false cf a | awk 'BEGIN{idx=0;} (NR <= 4){print} (NR > 4){buf[idx++]=$0} END{asort(buf);for(i=1;i<=idx;i++){print buf[i]}}'
