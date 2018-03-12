@@ -113,3 +113,7 @@ function touch_p() {
   mkdir -p ${dir}
   touch $1
 }
+
+# clipper経由でクリップボードにコピー
+# usage:) ls -l | clip
+alias clip='nc localhost 8377'
