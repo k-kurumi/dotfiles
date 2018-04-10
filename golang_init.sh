@@ -78,5 +78,8 @@ go get -v -u github.com/derekparker/delve/cmd/dlv
 # ymlで書けるmakeのようなもの
 go get -u -v github.com/go-task/task/cmd/task
 
+# バイナリエディタ
+go get -u -v github.com/itchyny/bed/cmd/bed
+
 # bundlerと被るので削除
 rm -rf $GOPATH/bin/bundle
