@@ -81,5 +81,8 @@ go get -u -v github.com/go-task/task/cmd/task
 # バイナリエディタ
 go get -u -v github.com/itchyny/bed/cmd/bed
 
+# memolistよりmarkdownに特化している
+go get -u -v github.com/mattn/memo
+
 # bundlerと被るので削除
 rm -rf $GOPATH/bin/bundle
