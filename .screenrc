@@ -1,0 +1,28 @@
+defutf8 on
+defencoding utf8
+encoding utf8 utf8
+
+startup_message off
+vbell off
+
+escape z
+
+defbce on
+term xterm-256color
+
+# あとでカスタマイズする
+# https://qiita.com/t_cyrill/items/54ffb13918cb421a961b
+# hardstatus alwayslastline "%{= cd} %-w%{= wk} %n %t* %{-}%+w"
+hardstatus alwayslastline "%{=u g.} %-w%{= wk} %n %t* %{-}%+w"
+
+# スクロール行数
+defscrollback 100000
+
+# vimとかlessとかtigとかのバッファを終了時に消さない
+altscreen off
+
+# デフォルトシェル
+shell $SHELL
+
+# 設定の再読み込み
+bind R eval "source $HOME/.screenrc" "echo '.screenrc reloaded!'"

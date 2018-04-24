@@ -14,6 +14,7 @@ echo ".Xmodmap
 .peco
 .pryrc
 .railsrc
+.screenrc
 .tigrc
 .tmux.conf
 .tmux.linux.conf
