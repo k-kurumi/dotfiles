@@ -114,6 +114,18 @@ function touch_p() {
   touch $1
 }
 
+# $ echo abc_def | camel
+# AbcDef
+function camel() {
+  perl -pe 's#(_|^)(.)#\u$2#g'
+}
+
+# $ echo AbcDef | snake
+# abc_def
+function snake() {
+  perl -pe 's#([A-Z])#_\L$1#g' | perl -pe 's#^_##'
+}
+
 # clipper経由でクリップボードにコピー
 # usage:) ls -l | clip
 alias clip='nc localhost 8377'

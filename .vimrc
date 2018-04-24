@@ -73,27 +73,6 @@ Plug 'vim-scripts/DrawIt'
 " vim7までは同期のsyntasticを使うこと
 Plug 'w0rp/ale'
 
-" memolist
-Plug 'glidenote/memolist.vim'
-nnoremap ,n :MemoNew<CR>
-nnoremap ,l :MemoList<CR>
-
-" 日付の挿入
-" 2015-02-23 (月) 09:04:14
-" -------------------------
-" nnoremap mt O<C-R>=strftime("%Y-%m-%d (%a) %H:%M:%S")<CR><CR><ESC>25i-<ESC>o<ESC>
-
-let g:memolist_path = "~/Dropbox/memo"
-let g:memolist_memo_suffix = "md"
-"let g:memolist_memo_date = "%Y-%m-%d %H:%M"
-"let g:memolist_memo_date = "epoch"
-"let g:memolist_memo_date = "%D %T"
-"let g:memolist_prompt_tags = 1
-"let g:memolist_prompt_categories = 1
-"let g:memolist_qfixgrep = 1
-"let g:memolist_vimfiler = 1
-"let g:memolist_template_dir_path = "path/to/dir"
-
 " インデント表示
 " conceallevel=2が設定されてjsonの"が表示されない
 " 見づらいため使用しないようにする
