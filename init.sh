@@ -15,6 +15,7 @@ echo ".Xmodmap
 .pryrc
 .railsrc
 .screenrc
+.hyper.js
 .tigrc
 .tmux.conf
 .tmux.linux.conf
@@ -22,13 +23,8 @@ echo ".Xmodmap
 .zshrc2
 .vimrc" | while read f
 do
-  echo "mv $HOME/$f $temp"
-  mv $HOME/$f $temp
-
-  echo "ln -sf `pwd`/$f $HOME"
+  [ -f ${HOME}/${f} ] && mv ${HOME}/${f} ${temp}
   ln -sf `pwd`/$f $HOME
-
-  echo "---"
 done
 
 # ghqの設定
