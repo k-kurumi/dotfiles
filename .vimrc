@@ -298,7 +298,7 @@ Plug 'keith/rspec.vim'
 Plug 'lmeijvogel/vim-yaml-helper'
 noremap <C-y> :YamlGetFullPath<CR>
 let g:vim_yaml_helper#always_get_root = 1
-let g:vim_yaml_helper#auto_display_path = 1
+let g:vim_yaml_helper#auto_display_path = 0
 
 " 標準のyamlハイライトより速いらしい
 Plug 'stephpy/vim-yaml'

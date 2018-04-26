@@ -5,7 +5,7 @@ encoding utf8 utf8
 startup_message off
 vbell off
 
-escape z
+escape ^z^z
 
 defbce on
 term xterm-256color
@@ -25,4 +25,9 @@ altscreen off
 shell $SHELL
 
 # 設定の再読み込み
-bind R eval "source $HOME/.screenrc" "echo '.screenrc reloaded!'"
+bind r eval "source $HOME/.screenrc" "echo '.screenrc reloaded!'"
+
+bind x
+bind l eval 'next'
+bind h eval 'prev'
+bind n eval 'screen'
