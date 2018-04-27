@@ -129,3 +129,6 @@ function snake() {
 # clipper経由でクリップボードにコピー
 # usage:) ls -l | clip
 alias clip='nc localhost 8377'
+
+# 鍵のエージェント
+alias ssh_agent_start='eval `ssh-agent` && ssh-add ~/.ssh/id_rsa'
