@@ -21,6 +21,7 @@ echo ".Xmodmap
 .tmux.linux.conf
 .tmux.mac.conf
 .zshrc2
+.rdb.sh
 .vimrc" | while read f
 do
   [ -f ${HOME}/${f} ] && mv ${HOME}/${f} ${temp}

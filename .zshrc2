@@ -1,8 +1,3 @@
-# プロンプト周りの設定
-# http://blog.darudaru-life.com/entry/2017/08/17/234638
-#
-# 2行表示のものは残像が残ってしまうため1行の方がよい
-#
 export EDITOR=vim
 export VISUAL=vim # macのcrontab用
 
@@ -76,8 +71,6 @@ SAVEHIST=100000
 setopt hist_ignore_dups     # ignore duplication command history list
 setopt share_history        # share command history data
 
-# pureのような2行表示のプロンプトはmosh接続で使用すると画面下部に残像が残る
-# ssh接続では残らない
 # https://github.com/sindresorhus/pure
 export PURE_PROMPT_SYMBOL=$
 
@@ -132,3 +125,5 @@ alias clip='nc localhost 8377'
 
 # 鍵のエージェント
 alias ssh_agent_start='eval `ssh-agent` && ssh-add ~/.ssh/id_rsa'
+
+source ~/.rdb.sh
