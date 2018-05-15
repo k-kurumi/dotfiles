@@ -279,6 +279,9 @@ if v:version > 703 && has('lua')
 endif
 
 
+" bats
+Plug 'vim-scripts/bats.vim'
+
 " gvimのフォントを+拡大、-縮小
 Plug 'thinca/vim-fontzoom'
 
