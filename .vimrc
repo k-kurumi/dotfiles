@@ -806,12 +806,6 @@ nnoremap tH :call <SID>MoveTabpage(-1)<Return>
 nnoremap tL :call <SID>MoveTabpage(1)<Return>
 
 " ------------------------------------------------------------------------------
-" Tagbar
-" ------------------------------------------------------------------------------
-let g:tagbar_left = 1
-
-
-" ------------------------------------------------------------------------------
 " 使い方メモ
 " ------------------------------------------------------------------------------
 
@@ -834,9 +828,8 @@ let g:SimpleJsIndenter_BriefMode = 1
 " この設定入れるとswitchのインデントがいくらかマシに
 let g:SimpleJsIndenter_CaseIndentLevel = -1
 
-
-" 複数のタグがあるとき確認できるようにする
-nnoremap <C-]> g<C-]>
+" タグジャンプ時にタブで開く
+nnoremap <C-]> :<C-u>tab stj <C-R>=expand('<cword>')<CR><CR>
 
 " ESCのとき早く抜ける
 set timeout
