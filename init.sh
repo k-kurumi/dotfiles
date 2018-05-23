@@ -23,6 +23,7 @@ echo ".Xmodmap
 .zshrc2
 .rdb.sh
 .tool.sh
+.ptconfig.toml
 .vimrc" | while read f
 do
   [ -f ${HOME}/${f} ] && mv ${HOME}/${f} ${temp}
