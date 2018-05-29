@@ -12,7 +12,7 @@ module.exports = {
     fontSize: 12,
 
     // font family with optional fallbacks
-    fontFamily: '"Ricty Diminished Discord", Menlo, "DejaVu Sans Mono", Consolas, "Lucida Console", monospace',
+    fontFamily: '"Ricty Diminished Discord"',
 
     // terminal cursor background color and opacity (hex, rgb, hsl, hsv, hwb or cmyk)
     cursorColor: 'rgba(248,28,229,0.8)',
@@ -94,10 +94,10 @@ module.exports = {
     env: {},
 
     // set to false for no bell
-    bell: 'SOUND',
+    bell: false,
 
     // if true, selected text will automatically be copied to the clipboard
-    copyOnSelect: true
+    copyOnSelect: true,
 
     // if true, on right click selected text will be copied or pasted if no
     // selection is present (true by default on Windows)
@@ -127,7 +127,10 @@ module.exports = {
   localPlugins: [],
 
   keymaps: {
-    // Example
-    // 'window:devtools': 'cmd+alt+o',
+    // https://github.com/zeit/hyper/blob/canary/app/keymaps/darwin.json
+
+    "tab:new": "command+n",
+    "tab:next": "command+l",
+    "tab:prev": "command+h",
   }
 };
