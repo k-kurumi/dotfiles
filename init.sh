@@ -34,12 +34,22 @@ done
 mkdir -p ~/dev/src
 mkdir -p ~/dev/bin
 
-grep ghq ~/.gitconfig
-if [ $? -ne 0 ]; then
-  echo "[ghq]"              >> ~/.gitconfig
-  echo "  root = ~/dev/src" >> ~/.gitconfig
+touch ~/.gitconfig
+if ! grep ghq ~/.gitconfig > /dev/null; then
+  cat << 'EOL' >> ~/.gitconfig
+[ghq]
+  root = ~/dev/src
+EOL
 fi
 
+# git gl でグラフ表示
+if ! grep 'gla =' ~/.gitconfig > /dev/null; then
+  cat << 'EOL' >> ~/.gitconfig
+[alias]
+  gl  = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+  gla = log --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+EOL
+fi
 
 # preztoの設定ファイルに置き換え
 # readmeの手順をbashで実現したもの
