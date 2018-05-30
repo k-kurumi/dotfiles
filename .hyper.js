@@ -116,10 +116,13 @@ module.exports = {
   //   `@company/project`
   //   `project#1.0.1`
   plugins: [
-    'hyperterm-material',
+    // https://github.com/bnb/awesome-hyper
+    //
+    // 'hyperline', // 2.0で使えなくなった
+    'hyperterm-material',  // itermとよく似た灰色配色
+    // 'hyper-darkmatter',       // sublimeの黒い配色
+    // 'hyper-statusline',
   ],
-
-
 
   // in development, you can create a directory under
   // `~/.hyper_plugins/local/` and include it here
