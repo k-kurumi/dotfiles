@@ -437,6 +437,9 @@ Plug 'pearofducks/ansible-vim'
 " crystal
 Plug 'rhysd/vim-crystal'
 
+" jira syntax
+Plug 'DanielSiepmann/vim-jira-wrapper'
+
 call plug#end()
 " ================================================================================
 
