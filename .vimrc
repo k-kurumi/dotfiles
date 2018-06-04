@@ -114,6 +114,12 @@ Plug 'tpope/vim-fugitive'
 " github flavored markdown
 Plug 'rhysd/vim-gfm-syntax'
 
+" markdownの目次生成
+" vscodeの https://github.com/AlanWalk/Markdown-TOC と完全に一致しない
+Plug 'mzlogin/vim-markdown-toc'
+let g:vmt_auto_update_on_save = 0
+let g:vmt_list_item_char = '-'
+
 " 行番号指定で開く
 Plug 'bogado/file-line'
 
