@@ -1,0 +1,56 @@
+// Place your settings in this file to overwrite the default settings
+{
+    // Windows %APPDATA%\Code\User\settings.json
+    // Mac $HOME/Library/Application Support/Code/User/settings.json
+    // Linux $HOME/.config/Code/User/settings.json
+
+    // フォントなど
+    "editor.fontSize": 14,
+    "editor.fontFamily": "RictyDiminishedDiscord-Regular",
+
+    // カーソルを点滅させない
+    "editor.cursorBlinking": "solid",
+
+    // golang
+    "go.goroot": "/Users/optpia/go",
+    "go.gopath": "/Users/optpia/dev",
+
+    // タブサイズの変更など
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true,
+    "window.zoomLevel": 0,
+
+    // allのときスペースやタブを可視化
+    // "editor.renderWhitespace": "all",
+
+    // タブで開く
+    // 開きすぎて重くなるので使用しない
+    // ファイルをダブルクリックすればタブ固定の
+    // ようになりタブ再利用されなくなる
+    // "workbench.editor.enablePreview": false,
+
+
+    "vim.hlsearch": true,
+
+    // ウインドウサイズを保持する
+    "window.restoreFullscreen": true,
+    "workbench.iconTheme": "vscode-great-icons",
+
+    "editor.minimap.enabled": true,
+    "editor.minimap.showSlider": "always",
+    "editor.minimap.maxColumn": 240,
+
+    // ファイル末尾は改行を入れる
+    "files.insertFinalNewline": true,
+    "workbench.startupEditor": "newUntitledFile",
+
+
+
+    // 制御文字を表示
+    "editor.renderControlCharacters": true,
+    "workbench.statusBar.feedback.visible": false,
+
+    "files.trimFinalNewlines": true,
+
+    // aaa
+}
