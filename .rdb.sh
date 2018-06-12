@@ -4,14 +4,15 @@
 
 # keystone認証の途中経過も表示する
 function rdb_auth {
-  if [[ $# -ne 3 ]]; then
-    >&2 echo "usage: $0 <region> <username> <password>"
+  if [[ $# -ne 4 ]]; then
+    >&2 echo "usage: $0 <region> <tenant_id> <username> <password>"
     return
   fi
 
   region=$1
-  username=$2
-  password=$3
+  tenant_id=$2
+  username=$3
+  password=$4
 
   curl -v -H "Content-Type: application/json" \
     -d '{
@@ -27,6 +28,11 @@ function rdb_auth {
               "password": "'${password}'"
             }
           }
+        },
+        "scope": {
+          "project": {
+            "id": "'${tenant_id}'"
+          }
         }
       }
   }' https://keystone-${region}-ecl.api.ntt.com/v3/auth/tokens
@@ -34,8 +40,8 @@ function rdb_auth {
 
 # keystone認証してtokenだけ表示する
 function rdb_auth_token {
-  if [[ $# -ne 3 ]]; then
-    >&2 echo "usage: $0 <region> <username> <password>"
+  if [[ $# -ne 4 ]]; then
+    >&2 echo "usage: $0 <region> <tenant_id> <username> <password>"
     return
   fi
 
