@@ -115,13 +115,13 @@ module.exports = {
   //   `hyperpower`
   //   `@company/project`
   //   `project#1.0.1`
-  plugins: [
-    // https://github.com/bnb/awesome-hyper
-    //
-    // 'hyperline', // 2.0で使えなくなった
-    'hyperterm-material',  // itermとよく似た灰色配色
-    // 'hyper-darkmatter',       // sublimeの黒い配色
-    // 'hyper-statusline',
+  plugins: [// https://github.com/bnb/awesome-hyper
+  //
+  // 'hyperline', // 2.0で使えなくなった
+  // 'hyper-statusline',
+  // itermとよく似た灰色配色
+    'hyperterm-material',
+    'hyperpower',
   ],
 
   // in development, you can create a directory under
