@@ -30,7 +30,7 @@
     // "workbench.editor.enablePreview": false,
 
 
-    "vim.hlsearch": true,
+
 
     // ウインドウサイズを保持する
     "window.restoreFullscreen": true,
@@ -52,5 +52,9 @@
 
     "files.trimFinalNewlines": true,
 
-    // aaa
+    // ツリーから選択したとき常にタブで開く
+    "workbench.editor.enablePreview": false,
+
+    // command+pから検索して開くとき常にタブで開く
+    "workbench.editor.enablePreviewFromQuickOpen": false,
 }
