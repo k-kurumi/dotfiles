@@ -84,5 +84,8 @@ go get -u -v github.com/itchyny/bed/cmd/bed
 # memolistよりmarkdownに特化している
 go get -u -v github.com/mattn/memo
 
+# watchdogのようにファイル更新を監視する
+go get -u -v github.com/cespare/reflex
+
 # bundlerと被るので削除
 rm -rf $GOPATH/bin/bundle
