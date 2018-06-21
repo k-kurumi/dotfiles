@@ -19,6 +19,18 @@ function peco_select_history() {
 zle -N peco_select_history
 bindkey '^R' peco_select_history
 
+# git管理のファイルをvimで開く
+function peco_select_gitlsfiles_vim() {
+  local selected_file=$(git ls-files | peco --query "$LBUFFER")
+  if [ -n "$selected_file" ]; then
+    BUFFER="vim ${selected_file}"
+    zle accept-line
+  fi
+  zle clear-screen
+}
+zle -N peco_select_gitlsfiles_vim
+bindkey '^O' peco_select_gitlsfiles_vim
+
 # ghqのリポジトリに移動する
 function peco_select_ghq_repo() {
   local selected_dir=$(ghq list -p | peco --query "$LBUFFER")
