@@ -87,5 +87,8 @@ go get -u -v github.com/mattn/memo
 # watchdogのようにファイル更新を監視する
 go get -u -v github.com/cespare/reflex
 
+# コードの行数表示
+go get -u -v github.com/hhatto/gocloc/cmd/gocloc
+
 # bundlerと被るので削除
 rm -rf $GOPATH/bin/bundle
