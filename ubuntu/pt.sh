@@ -1,8 +1,8 @@
-#!/bin/bash
+#!/bin/bash -x
 #
 # install latest pt
 
-version=${1:-v2.1.6}
+version=$(curl -s https://api.github.com/repos/monochromegane/the_platinum_searcher/tags | jq -r '.[0].name')
 
 pushd /tmp
   rm -rf pt_linux_amd64*
