@@ -57,4 +57,8 @@
 
     // command+pから検索して開くとき常にタブで開く
     "workbench.editor.enablePreviewFromQuickOpen": false,
+    "[markdown]": {
+        "editor.trimAutoWhitespace": false,
+        "files.trimTrailingWhitespace": false
+    },
 }
