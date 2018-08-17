@@ -158,77 +158,31 @@ nnoremap ,p :CtrlPYankRound<CR>
 Plug 'w0rp/ale'
 Plug 'itchyny/lightline.vim'
 Plug 'maximbaz/lightline-ale'
-let g:lightline = {}
-let g:lightline.component_expand = {
-  \  'linter_checking': 'lightline#ale#checking',
-  \  'linter_warnings': 'lightline#ale#warnings',
-  \  'linter_errors': 'lightline#ale#errors',
-  \  'linter_ok': 'lightline#ale#ok',
+
+let g:lightline = {
+  \ 'component_expand': {
+  \   'linter_checking': 'lightline#ale#checking',
+  \   'linter_warnings': 'lightline#ale#warnings',
+  \   'linter_errors': 'lightline#ale#errors',
+  \   'linter_ok': 'lightline#ale#ok',
+  \ },
+  \ 'component_function': {
+  \   'gitbranch': 'fugitive#head',
+  \ },
+  \ 'component_type': {
+  \   'linter_checking': 'left',
+  \   'linter_warnings': 'warning',
+  \   'linter_errors': 'error',
+  \   'linter_ok': 'left',
+  \ },
+  \ 'active': {
+  \   'left': [
+  \     ['mode', 'paste'],
+  \     ['filename', 'modified', 'readonly', 'gitbranch' ],
+  \     ['linter_checking', 'linter_errors', 'linter_warnings', 'linter_ok'],
+  \   ],
+  \ },
   \ }
-
-let g:lightline.component_type = {
-  \     'linter_checking': 'left',
-  \     'linter_warnings': 'warning',
-  \     'linter_errors': 'error',
-  \     'linter_ok': 'left',
-  \ }
-
-let g:lightline.active = {
-  \ 'left': [ [ 'mode', 'paste' ], [ 'filename', 'fugitive' ], [ 'linter_checking', 'linter_errors', 'linter_warnings', 'linter_ok' ] ],
-  \ 'right': [ [ 'fileformat', 'fileencoding', 'filetype' ]],
-  \ }
-
-let g:lightline.component_function = {
-  \     'modified': 'LightlineModified',
-  \     'readonly': 'LightlineReadonly',
-  \     'fugitive': 'LightlineFugitive',
-  \     'filename': 'LightlineFilename',
-  \     'fileformat': 'LightlineFileformat',
-  \     'filetype': 'LightlineFiletype',
-  \     'fileencoding': 'LightlineFileencoding',
-  \     'mode': 'LightlineMode',
-  \ }
-
-function! LightlineModified()
-  return &ft =~ 'help\|vimfiler\|gundo' ? '' : &modified ? '+' : &modifiable ? '' : '-'
-endfunction
-
-function! LightlineReadonly()
-  return &ft !~? 'help\|vimfiler\|gundo' && &readonly ? 'x' : ''
-endfunction
-
-function! LightlineFilename()
-  return ('' != LightlineReadonly() ? LightlineReadonly() . ' ' : '') .
-    \ (&ft == 'vimfiler' ? vimfiler#get_status_string() :
-    \  &ft == 'unite' ? unite#get_status_string() :
-    \  &ft == 'vimshell' ? vimshell#get_status_string() :
-    \ '' != expand('%') ? expand('%') : '[No Name]') .
-    \ ('' != LightlineModified() ? ' ' . LightlineModified() : '')
-endfunction
-
-function! LightlineFugitive()
-  if &ft !~? 'vimfiler\|gundo' && exists('*fugitive#head')
-    return fugitive#head()
-  else
-    return ''
-  endif
-endfunction
-
-function! LightlineFileformat()
-  return winwidth(0) > 70 ? &fileformat : ''
-endfunction
-
-function! LightlineFiletype()
-  return winwidth(0) > 70 ? (&filetype !=# '' ? &filetype : 'no ft') : ''
-endfunction
-
-function! LightlineFileencoding()
-  return winwidth(0) > 70 ? (&fenc !=# '' ? &fenc : &enc) : ''
-endfunction
-
-function! LightlineMode()
-  return winwidth(0) > 60 ? lightline#mode() : ''
-endfunction
 
 
 " 括弧の補完
