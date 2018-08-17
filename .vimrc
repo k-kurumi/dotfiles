@@ -160,20 +160,22 @@ Plug 'itchyny/lightline.vim'
 Plug 'maximbaz/lightline-ale'
 let g:lightline = {}
 let g:lightline.component_expand = {
-      \  'linter_checking': 'lightline#ale#checking',
-      \  'linter_warnings': 'lightline#ale#warnings',
-      \  'linter_errors': 'lightline#ale#errors',
-      \  'linter_ok': 'lightline#ale#ok',
-      \ }
+  \  'linter_checking': 'lightline#ale#checking',
+  \  'linter_warnings': 'lightline#ale#warnings',
+  \  'linter_errors': 'lightline#ale#errors',
+  \  'linter_ok': 'lightline#ale#ok',
+  \ }
+
 let g:lightline.component_type = {
-      \     'linter_checking': 'left',
-      \     'linter_warnings': 'warning',
-      \     'linter_errors': 'error',
-      \     'linter_ok': 'left',
-      \ }
+  \     'linter_checking': 'left',
+  \     'linter_warnings': 'warning',
+  \     'linter_errors': 'error',
+  \     'linter_ok': 'left',
+  \ }
+
 let g:lightline.active = {
   \ 'left': [ [ 'mode', 'paste' ], [ 'filename', 'fugitive' ], [ 'linter_checking', 'linter_errors', 'linter_warnings', 'linter_ok' ] ],
-  \ 'right': [ [ 'fileformat', 'filetype', 'fileencoding' ]]
+  \ 'right': [ [ 'fileformat', 'fileencoding', 'filetype' ]],
   \ }
 
 let g:lightline.component_function = {
@@ -184,7 +186,7 @@ let g:lightline.component_function = {
   \     'fileformat': 'LightlineFileformat',
   \     'filetype': 'LightlineFiletype',
   \     'fileencoding': 'LightlineFileencoding',
-  \     'mode': 'LightlineMode'
+  \     'mode': 'LightlineMode',
   \ }
 
 function! LightlineModified()
