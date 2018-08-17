@@ -167,7 +167,7 @@ let g:lightline = {
   \   'linter_ok': 'lightline#ale#ok',
   \ },
   \ 'component_function': {
-  \   'gitbranch': 'fugitive#head',
+  \   'gitbranch': 'fugitive#statusline',
   \ },
   \ 'component_type': {
   \   'linter_checking': 'left',
