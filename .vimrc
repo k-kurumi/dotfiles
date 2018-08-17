@@ -20,10 +20,11 @@ Plug 'tpope/vim-sensible'
 " 整形
 Plug 'junegunn/vim-easy-align'
 
-" undo redo
-Plug 'sjl/gundo.vim'
-" toggle gundo
-nnoremap <leader>u :GundoToggle<CR>
+" python3で動かない
+" " undo redo
+" Plug 'sjl/gundo.vim'
+" " toggle gundo
+" nnoremap <leader>u :GundoToggle<CR>
 
 " " :Rg <string|pattern>で検索
 " Plug 'jremmen/vim-ripgrep'
@@ -68,10 +69,6 @@ Plug 'vim-scripts/DrawIt'
 " " typescriptは上手く動かないのでチェックしない
 " let g:loaded_syntastic_typescript_tslint_checker = 0
 " let g:loaded_syntastic_typescript_tsc_checker = 0
-
-" vim8以上で動作する非同期の構文チェッカ
-" vim7までは同期のsyntasticを使うこと
-Plug 'w0rp/ale'
 
 " インデント表示
 " conceallevel=2が設定されてjsonの"が表示されない
@@ -158,23 +155,36 @@ nnoremap ,p :CtrlPYankRound<CR>
 
 
 " ステータスラインのカスタマイズ
+Plug 'w0rp/ale'
 Plug 'itchyny/lightline.vim'
-let g:lightline = {
-  \   'mode_map': {'c': 'NORMAL'},
-  \   'active': {
-  \     'left': [ [ 'mode', 'paste' ], [ 'filename', 'fugitive', 'ale' ] ]
-  \   },
-  \   'component_function': {
+Plug 'maximbaz/lightline-ale'
+let g:lightline = {}
+let g:lightline.component_expand = {
+      \  'linter_checking': 'lightline#ale#checking',
+      \  'linter_warnings': 'lightline#ale#warnings',
+      \  'linter_errors': 'lightline#ale#errors',
+      \  'linter_ok': 'lightline#ale#ok',
+      \ }
+let g:lightline.component_type = {
+      \     'linter_checking': 'left',
+      \     'linter_warnings': 'warning',
+      \     'linter_errors': 'error',
+      \     'linter_ok': 'left',
+      \ }
+let g:lightline.active = {
+  \ 'left': [ [ 'mode', 'paste' ], [ 'filename', 'fugitive' ], [ 'linter_checking', 'linter_errors', 'linter_warnings', 'linter_ok' ] ],
+  \ 'right': [ [ 'fileformat', 'filetype', 'fileencoding' ]]
+  \ }
+
+let g:lightline.component_function = {
   \     'modified': 'LightlineModified',
   \     'readonly': 'LightlineReadonly',
   \     'fugitive': 'LightlineFugitive',
-  \     'ale': 'LightlineALE',
   \     'filename': 'LightlineFilename',
   \     'fileformat': 'LightlineFileformat',
   \     'filetype': 'LightlineFiletype',
   \     'fileencoding': 'LightlineFileencoding',
   \     'mode': 'LightlineMode'
-  \   }
   \ }
 
 function! LightlineModified()
@@ -183,12 +193,6 @@ endfunction
 
 function! LightlineReadonly()
   return &ft !~? 'help\|vimfiler\|gundo' && &readonly ? 'x' : ''
-endfunction
-
-" lint件数表示
-function! LightlineALE()
-  " aleはvim8以上
-  return exists('*ALEGetStatusLine') ? ALEGetStatusLine() : 'ale need vim8...'
 endfunction
 
 function! LightlineFilename()
