@@ -90,5 +90,8 @@ go get -u -v github.com/cespare/reflex
 # コードの行数表示
 go get -u -v github.com/hhatto/gocloc/cmd/gocloc
 
+# jqにpecoを足したようなもの
+go get -u -v github.com/simeji/jid/cmd/jid
+
 # bundlerと被るので削除
 rm -rf $GOPATH/bin/bundle
