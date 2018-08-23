@@ -1,6 +1,6 @@
 #!/bin/bash -x
-
+#
+# require: gnu readlink
 
 mkdir -p ~/.hammerspoon
-# hammerspoonはシンボリックリンクが読めない模様
-cp -f .hammerspoon/init.lua ~/.hammerspoon/init.lua
+ln -sf $(readlink -f .hammerspoon/init.lua) ~/.hammerspoon/
