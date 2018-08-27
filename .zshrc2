@@ -44,17 +44,23 @@ zle -N peco_select_ghq_repo
 bindkey '^G' peco_select_ghq_repo
 
 # ruby
-export PATH="$HOME/.rbenv/bin:$PATH"
-export PATH="$HOME/.rbenv/shims:$PATH"  # /usr/local/bin/rubyが先に読まれるため上書きする
+if type rbenv > /dev/null; then
+  export PATH="$HOME/.rbenv/bin:$PATH"
+  export PATH="$HOME/.rbenv/shims:$PATH"  # /usr/local/bin/rubyが先に読まれるため上書きする
+fi
 
 # python
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
+if type pyenv > /dev/null; then
+  export PYENV_ROOT="$HOME/.pyenv"
+  export PATH="$PYENV_ROOT/bin:$PATH"
+  eval "$(pyenv init -)"
+fi
 
 # node
-export PATH="$HOME/.ndenv/bin:$PATH"
-eval "$(ndenv init -)"
+if type ndenv > /dev/null; then
+  export PATH="$HOME/.ndenv/bin:$PATH"
+  eval "$(ndenv init -)"
+fi
 
 # golang(1.8のデフォルトとは違う)
 export GOPATH=${HOME}/dev
@@ -71,7 +77,9 @@ export RUST_SRC_PATH=${HOME}/.multirust/toolchains/stable-x86_64-unknown-linux-g
 # export PATH=${NIM_HOME}/bin:$PATH
 
 # direnv
-eval "$(direnv hook zsh)"
+if type direnv > /dev/null; then
+  eval "$(direnv hook zsh)"
+fi
 
 # ^を展開しないようにするためgitでHEAD^などがエスケープなしで使えるようになる
 unsetopt extended_glob
