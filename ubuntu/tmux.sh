@@ -9,12 +9,12 @@ sudo apt-get install -y \
   git
 
 pushd /tmp
-  rm -rf tmux
-  git clone git@github.com:tmux/tmux.git
+  rm -rf tmux*
+  wget https://github.com/tmux/tmux/releases/download/2.7/tmux-2.7.tar.gz
+  tar zxvf tmux-2.7.tar.gz
 
-  pushd vim
-    ./configure
-    make
+  pushd tmux-2.7
+    ./configure && make
     sudo make install
   popd
 
