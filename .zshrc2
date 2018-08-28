@@ -57,7 +57,7 @@ if [[ -d ~/.pyenv ]]; then
 fi
 
 # node
-if [[ ~/.ndenv ]]; then
+if [[ -d ~/.ndenv ]]; then
   export PATH="$HOME/.ndenv/bin:$PATH"
   eval "$(ndenv init -)"
 fi
