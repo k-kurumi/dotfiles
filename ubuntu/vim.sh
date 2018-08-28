@@ -1,6 +1,6 @@
 #!/bin/bash -x
 #
-# install latest vim
+# install vim
 
 sudo apt-get update
 sudo apt-get install -y \

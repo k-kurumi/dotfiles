@@ -1,6 +1,6 @@
 #!/bin/bash -x
 #
-# install latest tmux
+# install tmux
 
 sudo apt-get update
 sudo apt-get install -y \

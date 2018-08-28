@@ -1,6 +1,6 @@
 #!/bin/bash -x
 #
-# install latest pt
+# install pt
 
 version=$(curl -s https://api.github.com/repos/monochromegane/the_platinum_searcher/tags | jq -r '.[0].name')
 
