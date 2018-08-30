@@ -146,5 +146,15 @@ alias clip='nc localhost 8377'
 # 鍵のエージェント
 alias ssh_agent_start='eval `ssh-agent` && ssh-add ~/.ssh/id_rsa'
 
+if [[ x$(uname) = xLinux ]]; then
+  # Xが起動しているときpbcopy風のalias
+  # sshで入っていると$DISPLAYは空になる
+  if [[ $DISPLAY ]]; then
+    # https://linuxfan.info/xclip
+    alias pbcopy='xclip -selection c'
+    alias pbpaste='xclip -selection c -o'
+  fi
+fi
+
 source ~/.rdb.sh
 source ~/.tool.sh
