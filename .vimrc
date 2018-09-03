@@ -336,6 +336,7 @@ Plug 'kchmck/vim-coffee-script'
 
 " gdで定義へ飛ぶ
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'mdempsky/gocode', { 'rtp': 'vim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh' }
 
 " importしていないものも補完する
 " gocode set unimported-packages true も実行する
