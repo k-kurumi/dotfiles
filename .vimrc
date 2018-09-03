@@ -335,9 +335,10 @@ Plug 'kchmck/vim-coffee-script'
 " golang
 
 " gdで定義へ飛ぶ
-Plug 'fatih/vim-go'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 " importしていないものも補完する
+" gocode set unimported-packages true も実行する
 let g:go_gocode_unimported_packages = 1
 
 " 保存時にimport補完
