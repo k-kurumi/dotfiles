@@ -573,7 +573,7 @@ set novisualbell
 "winpos 10 0
 
 " フォント設定
-set guifont=Ricty\ Diminished\ Discord\ Regular:h12
+set guifont=Ricty\ Diminished\ Discord\ 12
 
 " 保存しなくてもファイルを切り替えることができ
 " undo, redo の情報も保持させる
