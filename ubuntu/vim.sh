@@ -21,16 +21,15 @@ pushd /tmp
   git clone git@github.com:vim/vim.git
 
   pushd vim
-    ./configure \
-      --with-features=huge \
-      --enable-multibyte \
-      --enable-pythoninterp=yes \
-      --enable-python3interp=yes \
-      --enable-rubyinterp=yes \
-      --enable-luainterp=yes \
-      --enable-cscope \
-      --enable-gpm \
-      --enable-fail-if-missing
+
+    opts="--with-features=huge --enable-multibyte --enable-pythoninterp=yes --enable-python3interp=yes --enable-rubyinterp=yes --enable-luainterp=yes --enable-cscope --enable-gpm --enable-fail-if-missing"
+
+    if [[ $DISPLAY ]]; then
+      # Xあり
+      opts="${opts} --enable-gui=auto --enable-gtk2-check --with-x"
+    fi
+
+    ./configure ${opts}
 
     make
     sudo make install
