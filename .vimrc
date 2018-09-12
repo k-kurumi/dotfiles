@@ -966,3 +966,6 @@ if !exists(":DiffOrig")
   command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
     \ | wincmd p | diffthis
 endif
+
+" terminalで端末ノーマルモード(yankできるが編集不可)に切り替える <C-w>N
+" 端末ジョブモード(通常のターミナル)に切り替えるには i や a
