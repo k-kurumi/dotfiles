@@ -2,7 +2,7 @@
 #
 # install pt
 
-version=$(curl -s https://api.github.com/repos/monochromegane/the_platinum_searcher/tags | jq -r '.[0].name')
+version=v2.2.0
 
 pushd /tmp
   rm -rf pt_linux_amd64*

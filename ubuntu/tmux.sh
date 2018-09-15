@@ -2,6 +2,8 @@
 #
 # install tmux
 
+version=2.7
+
 sudo apt-get update
 sudo apt-get install -y \
   libevent-dev \
@@ -10,10 +12,10 @@ sudo apt-get install -y \
 
 pushd /tmp
   rm -rf tmux*
-  wget https://github.com/tmux/tmux/releases/download/2.7/tmux-2.7.tar.gz
-  tar zxvf tmux-2.7.tar.gz
+  wget https://github.com/tmux/tmux/releases/download/${version}/tmux-${version}.tar.gz
+  tar zxvf tmux-${version}.tar.gz
 
-  pushd tmux-2.7
+  pushd tmux-${version}
     ./configure && make
     sudo make install
   popd
