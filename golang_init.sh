@@ -3,7 +3,12 @@
 # golangを使う上で必要なツール一式をインストールする
 
 echo "### コード補完"
-go get -u -v github.com/nsf/gocode
+# 本家(nsf)がメンテ終了のためfork版(mdempsky)を使う
+# go get -u -v github.com/nsf/gocode
+
+# 本家よりオプションが減っていて set unimported-packages などない
+# importしてないファイルから補完ができなくなった
+go get -u -v github.com/mdempsky/gocode
 
 echo "### タグジャンプ(gdでジャンプする(ctagsは不要))"
 go get -u -v github.com/rogpeppe/godef
@@ -63,13 +68,13 @@ go get -u -v github.com/golang/dep/cmd/dep
 
 
 
-
+# mdempsky/gocodeでは動かず(setがない)
 # http://pocke.hatenablog.com/entry/2017/03/31/155345
 # importしていないものも補完する
-gocode close
-sleep 1
-gocode set unimported-packages true
-gocode set
+# gocode close
+# sleep 1
+# gocode set unimported-packages true
+# gocode set
 
 # デバッガ(macは最新パッチ版でないと使えない)
 # http://qiita.com/iktakahiro/items/146a1218cbf451f75827
