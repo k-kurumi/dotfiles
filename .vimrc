@@ -111,6 +111,10 @@ Plug 'tpope/vim-fugitive'
 " github flavored markdown
 Plug 'rhysd/vim-gfm-syntax'
 
+" 括弧の色分け
+Plug 'luochen1990/rainbow'
+let g:rainbow_active = 1
+
 " markdownの目次生成
 " vscodeの https://github.com/AlanWalk/Markdown-TOC と完全に一致しない
 Plug 'mzlogin/vim-markdown-toc'
