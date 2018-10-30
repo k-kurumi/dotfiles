@@ -1,6 +1,6 @@
 // Place your settings in this file to overwrite the default settings
 {
-    "editor.fontFamily": "RictyDiminishedDiscord-Regular",
+    "editor.fontFamily": "RictyDiminishedDiscord-Bold",
 
     // カーソルを点滅させない
     "editor.cursorBlinking": "solid",
@@ -55,4 +55,6 @@
         "files.trimTrailingWhitespace": false
     },
     "workbench.statusBar.feedback.visible": false,
+    "editor.fontSize": 14,
+    "azure-iot-toolkit.showIoTHubInfo": false,
 }
