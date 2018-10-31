@@ -1,6 +1,9 @@
 export EDITOR=vim
 export VISUAL=vim # macのcrontab用
 
+# echo -n aaa など改行がない状態でも表示できるようにする
+unsetopt promptcr
+
 # pecoでコマンド履歴検索
 function peco_select_history() {
   local tac
