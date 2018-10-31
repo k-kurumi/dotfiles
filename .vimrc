@@ -182,7 +182,7 @@ let g:lightline = {
   \ 'active': {
   \   'left': [
   \     ['mode', 'paste'],
-  \     ['filename', 'modified', 'readonly', 'gitbranch' ],
+  \     ['relativepath', 'modified', 'readonly', 'gitbranch' ],
   \     ['linter_checking', 'linter_errors', 'linter_warnings', 'linter_ok'],
   \   ],
   \ },
