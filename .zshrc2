@@ -88,7 +88,7 @@ fi
 unsetopt extended_glob
 
 # history
-HISTFILE=~/.zhistory
+HISTFILE=~/.zsh_history
 HISTSIZE=100000
 SAVEHIST=100000
 setopt hist_ignore_dups     # ignore duplication command history list
