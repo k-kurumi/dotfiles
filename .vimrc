@@ -362,60 +362,15 @@ let g:go_highlight_types = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
 
-" --------------------------------------------------------------------------------
-" rust
-"
-" rustのインストール
-" curl https://sh.rustup.rs -sSf | sh
-"
-" コンパイルするためインストールに時間がかかる
-"
-" 補完
-" cargo install racer
-"
-" 補完用のソース
-" rustup component add rust-src
-"
-" 整形 rustfmt-nightly でもいいが、コンパイルエラーになる
-" cargo install rustfmt
-
-Plug 'rust-lang/rust.vim'
-Plug 'racer-rust/vim-racer'
-
-" golangと同じで gd でソースへジャンプ(上下分割)
-set hidden
-let g:racer_cmd = '$HOME/.cargo/bin/racer'
-let g:racer_experimental_completer = 1
-" au FileType rust nmap gd <Plug>(rust-def)
-au FileType rust nmap gd <Plug>(rust-def-split)
-" au FileType rust nmap gx <Plug>(rust-def-vertical)
-" au FileType rust nmap <leader>gd <Plug>(rust-doc)
-
-" 保存時に整形
-let g:rustfmt_autosave = 1
-let g:rustfmt_command = '$HOME/.cargo/bin/rustfmt'
-
-" cargoの設定ファイル用
+Plug 'pearofducks/ansible-vim'
 Plug 'cespare/vim-toml'
 
-" --------------------------------------------------------------------------------
-" ansible
+" %で飛ぶ括弧の対応を見やすくする
+Plug 'andymass/vim-matchup'
+let g:loaded_matchit = 1
 
-Plug 'pearofducks/ansible-vim'
-
-" --------------------------------------------------------------------------------
-" nim
-" Plug 'zah/nim.vim'
-
-" これを使えばnimsuggestで補完ができるが精度が悪く遅い
-" zah/nim.vimと併用できない
-" Plug 'baabelfish/nvim-nim'
-
-" crystal
-Plug 'rhysd/vim-crystal'
-
-" jira syntax
-Plug 'DanielSiepmann/vim-jira-wrapper'
+" 対になる括弧の補完(標準機能より少し高機能)
+Plug 'cohama/lexima.vim'
 
 call plug#end()
 " ================================================================================
@@ -598,11 +553,6 @@ set guioptions=rL
 " ビジュアルモードで選択したところを*で検索する
 vnoremap * "zy:let @/ = @z<CR>n
 
-" rubyの%ジャンプ
-if !exists('loaded_matchit')
-  " matchitを有効化
-  runtime macros/matchit.vim
-endif
 
 
 " ------------------------------------------------------------------------------
