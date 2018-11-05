@@ -372,6 +372,10 @@ let g:loaded_matchit = 1
 " 対になる括弧の補完(標準機能より少し高機能)
 Plug 'cohama/lexima.vim'
 
+" TODO: README通りでは補完が効かない
+Plug 'elmcast/elm-vim'
+let g:elm_setup_keybindings = 0
+
 call plug#end()
 " ================================================================================
 
