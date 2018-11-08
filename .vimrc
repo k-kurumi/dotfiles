@@ -375,6 +375,11 @@ Plug 'cohama/lexima.vim'
 Plug 'elmcast/elm-vim'
 let g:elm_setup_keybindings = 0
 
+Plug 'glidenote/memolist.vim'
+let g:memolist_path = '$HOME/Dropbox/memo'
+let g:memolist_memo_suffix = "md"
+let g:memolist_filename_prefix_none = 1
+
 call plug#end()
 " ================================================================================
 
