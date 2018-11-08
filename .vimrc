@@ -533,15 +533,7 @@ set virtualedit=all
 " 画面点滅を消す
 set novisualbell
 
-" ウインドウサイズ lines:縦 columns:横
-"set lines=40
-"set columns=100
 
-" ウインドウ表示位置
-"winpos 10 0
-
-" フォント設定
-set guifont=Ricty\ Diminished\ Discord\ 12
 
 " 保存しなくてもファイルを切り替えることができ
 " undo, redo の情報も保持させる
@@ -906,16 +898,8 @@ endfunction
 " " 32bit_windows固有の設定
 " endif
 
-" hybridは設定が必要
-let g:hybrid_custom_term_colors = 1
-let g:hybrid_reduced_contrast = 1 " Remove this line if using the default palette.
-set background=dark
-colorscheme hybrid
-
-" colorscheme iceberg
-
-" hybridだと現在の行がわかりづらいため
-highlight CursorLine cterm=underline gui=underline
+" terminalで端末ノーマルモード(yankできるが編集不可)に切り替える <C-w>N
+" 端末ジョブモード(通常のターミナル)に切り替えるには i や a
 
 " macvimは\で円マークが入るため入れ替える
 noremap! ¥ \
@@ -930,5 +914,27 @@ if !exists(":DiffOrig")
     \ | wincmd p | diffthis
 endif
 
-" terminalで端末ノーマルモード(yankできるが編集不可)に切り替える <C-w>N
-" 端末ジョブモード(通常のターミナル)に切り替えるには i や a
+if has('gui_running')
+  " 主にmvimで起動するgvim
+
+  " フォント設定
+  set guifont=RictyDiminishedDiscord-Bold:h12
+  colorscheme darkblue
+
+  " ウインドウサイズ lines:縦 columns:横
+  "set lines=40
+  "set columns=100
+
+  " ウインドウ表示位置
+  "winpos 10 0
+else
+  " hybridは設定が必要
+  let g:hybrid_custom_term_colors = 1
+  let g:hybrid_reduced_contrast = 1 " Remove this line if using the default palette.
+  set background=dark
+  colorscheme hybrid
+  " colorscheme iceberg
+
+  " hybridだと現在の行がわかりづらいため
+  highlight CursorLine cterm=underline gui=underline
+endif
