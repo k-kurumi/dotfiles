@@ -108,18 +108,17 @@ Plug 'airblade/vim-gitgutter'
 " gitをvimから使う
 Plug 'tpope/vim-fugitive'
 
-" github flavored markdown
-Plug 'rhysd/vim-gfm-syntax'
-
 " 括弧の色分け
 Plug 'luochen1990/rainbow'
 let g:rainbow_active = 1
 
-" markdownの目次生成
-" vscodeの https://github.com/AlanWalk/Markdown-TOC と完全に一致しない
-Plug 'mzlogin/vim-markdown-toc'
-let g:vmt_auto_update_on_save = 0
-let g:vmt_list_item_char = '-'
+" スターが多いmarkdownプラグインをしばらく使ってみる
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
+let g:vim_markdown_folding_disabled = 1
+
+" " github flavored markdown
+" Plug 'rhysd/vim-gfm-syntax'
 
 " 行番号指定で開く
 Plug 'bogado/file-line'
@@ -579,8 +578,8 @@ augroup MyGroup
   autocmd BufNewFile,BufRead *.js set filetype=javascript sw=2 ts=2 sts=2 et ai cin
   autocmd BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
 
-  " markdown
-  autocmd BufNewFile,BufRead *.md,*.markdown setlocal filetype=markdown.gfm
+  " " markdown
+  " autocmd BufNewFile,BufRead *.md,*.markdown setlocal filetype=markdown.gfm
 
   " rest
   autocmd BufNewFile,BufRead *.rst set  filetype=rest expandtab sw=2 ts=2 sts=2
