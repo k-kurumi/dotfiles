@@ -66,16 +66,6 @@ go get -u -v github.com/laurent22/massren
 echo "### 公式のバージョン固定ツール"
 go get -u -v github.com/golang/dep/cmd/dep
 
-
-
-# mdempsky/gocodeでは動かず(setがない)
-# http://pocke.hatenablog.com/entry/2017/03/31/155345
-# importしていないものも補完する
-# gocode close
-# sleep 1
-# gocode set unimported-packages true
-# gocode set
-
 # デバッガ(macは最新パッチ版でないと使えない)
 # http://qiita.com/iktakahiro/items/146a1218cbf451f75827
 go get -v -u github.com/derekparker/delve/cmd/dlv
@@ -95,8 +85,8 @@ go get -u -v github.com/cespare/reflex
 # コードの行数表示
 go get -u -v github.com/hhatto/gocloc/cmd/gocloc
 
-# jqにpecoを足したようなもの
-go get -u -v github.com/simeji/jid/cmd/jid
+# ymlで変数を指定できるテンプレートコマンド
+go get -u -v github.com/cbroglie/mustache
 
 # bundlerと被るので削除
 rm -rf $GOPATH/bin/bundle
