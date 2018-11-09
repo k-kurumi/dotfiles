@@ -1,3 +1,4 @@
+--recurse=yes
 
 --exclude=.git
 --exclude=log
@@ -5,8 +6,8 @@
 --exclude=*_spec.rb
 
 --langdef=js
---langmap=Javascript:.js
 --langmap=js:.js
+--exclude=*min.js
 --regex-js=/([A-Za-z0-9._$()]+)[ \t]*[:=][ \t]*function[ \t]*\(/\1/,function/
 --regex-js=/([A-Za-z0-9._$]+)[ \t]*[:=][ \t]*\[/\1/,array/
 --regex-js=/([A-Za-z0-9._$]+)[ \t]*[:=][ \t]*\{/\1/,object/
