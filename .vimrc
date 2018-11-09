@@ -321,6 +321,11 @@ let g:flow#enable = 0
 " yarn run flow-typed install jest@20
 let g:flow#flowpath = 'node_modules/.bin/flow'
 
+" post install (yarn install | npm install) then load plugin only for editing supported files
+Plug 'prettier/vim-prettier', {
+  \ 'do': 'yarn install',
+  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
+
 " 既存のものをまでフォーマットしてしまうため使用しない
 " " javascriptのフォーマッタ
 " " yarn add -D eslint prettier-eslint prettier-eslint-cli しておく
