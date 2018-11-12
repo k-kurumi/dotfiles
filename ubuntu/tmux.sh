@@ -2,7 +2,7 @@
 #
 # install tmux
 
-version=2.7
+version=2.8
 
 sudo apt-get update
 sudo apt-get install -y \
