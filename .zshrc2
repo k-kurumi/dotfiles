@@ -159,5 +159,9 @@ if [[ x$(uname) = xLinux ]]; then
   fi
 fi
 
+# クエリとファイルパスの順に気をつける
+# curl -s 'https://www.google.com/' | xpath '//head/title' -
+alias xpath="xmllint --html --xpath 2>/dev/null"
+
 source ~/.rdb.sh
 source ~/.tool.sh
