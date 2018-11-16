@@ -32,3 +32,4 @@ code --install-extension rebornix.Ruby
 code --install-extension rogalmic.bash-debug
 code --install-extension vscodevim.vim
 code --install-extension wyze.theme-hybrid-next
+code --install-extension esbenp.prettier-vscode
