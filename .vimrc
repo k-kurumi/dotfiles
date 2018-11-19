@@ -327,9 +327,19 @@ Plug 'prettier/vim-prettier', {
   \ 'do': 'yarn install',
   \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
 
-" vscodeに合わせる(prettierデフォルト値？)
+" prettierデフォルトと違う設定があるためvscodeに寄せる
+" https://github.com/prettier/prettier-vscode
+let g:prettier#config#print_widt = 80
+let g:prettier#config#tab_width = 2
+let g:prettier#config#single_quote = 'false'
 let g:prettier#config#trailing_comma = 'none'
-let g:prettier#config#single_quote = 0
+let g:prettier#config#bracket_spacing = 'true'
+let g:prettier#config#jsx_bracket_same_line = 'false'
+let g:prettier#config#parser = 'babylon'
+let g:prettier#config#semi = 'true'
+let g:prettier#config#use_tabs = 'false'
+let g:prettier#config#prose_wrap = 'preserve'
+let g:prettier#config#arrow_parens = 'avoid'
 
 Plug 'kchmck/vim-coffee-script'
 
