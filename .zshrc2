@@ -1,5 +1,7 @@
 export EDITOR=vim
 export VISUAL=vim # macのcrontab用
+export LANGUAGE=en
+export LANG=en_US.UTF-8
 
 # echo -n aaa など改行がない状態でも表示できるようにする
 unsetopt promptcr
