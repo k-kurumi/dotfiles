@@ -9,10 +9,22 @@ module.exports = {
     updateChannel: 'stable',
 
     // default font size in pixels for all tabs
-    fontSize: 12,
+    fontSize: 14,
 
     // font family with optional fallbacks
-    fontFamily: '"Ricty Diminished Discord"',
+    fontFamily: '"Ricty Diminished Discord", "Ricty Diminished"',
+
+    // default font weight: 'normal' or 'bold'
+    fontWeight: 'normol',
+
+    // font weight for bold characters: 'normal' or 'bold'
+    fontWeightBold: 'bold',
+
+    // line height as a relative unit
+    lineHeight: 1,
+
+    // letter spacing as a relative unit
+    letterSpacing: 0,
 
     // terminal cursor background color and opacity (hex, rgb, hsl, hsv, hwb or cmyk)
     cursorColor: 'rgba(248,28,229,0.8)',
