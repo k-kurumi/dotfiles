@@ -57,4 +57,5 @@
     "workbench.statusBar.feedback.visible": false,
     "editor.fontSize": 14,
     "azure-iot-toolkit.showIoTHubInfo": false,
+    "workbench.colorTheme": "Dark+ Material",
 }

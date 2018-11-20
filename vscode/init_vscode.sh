@@ -16,20 +16,37 @@ esac
 
 # プラグイン一覧の確認
 # code --list-extensions
+
+# uninstall all extensions
+# code --list-extensions | xargs -I@ code --uninstall-extension @
+
+# markdownの目次生成
 code --install-extension AlanWalk.markdown-toc
-code --install-extension DmitryDorofeev.empty-indent
-code --install-extension MS-CEINTL.vscode-language-pack-ja
+
+# docker
 code --install-extension PeterJausovec.vscode-docker
-code --install-extension SirTori.indenticator
-code --install-extension castwide.solargraph
-code --install-extension dbaeumer.vscode-eslint
-code --install-extension emmanuelbeziat.vscode-great-icons
-code --install-extension gcazaciuc.vscode-flow-ide
-code --install-extension idleberg.hopscotch
-code --install-extension ms-vscode.Go
+
+# ペアプロ
 code --install-extension ms-vsliveshare.vsliveshare
-code --install-extension rebornix.Ruby
-code --install-extension rogalmic.bash-debug
+
+# vim kyebind
 code --install-extension vscodevim.vim
-code --install-extension wyze.theme-hybrid-next
+
+# js系の整形ほか
 code --install-extension esbenp.prettier-vscode
+code --install-extension dbaeumer.vscode-eslint
+
+# テーマ
+code --install-extension vangware.dark-plus-material
+
+# アイコン
+code --install-extension emmanuelbeziat.vscode-great-icons
+
+# 日本語の折り返し補助
+code --install-extension MS-CEINTL.vscode-language-pack-ja
+
+# インデント強調
+code --install-extension SirTori.indenticator
+
+# 不要なスペースなど強調
+code --install-extension DmitryDorofeev.empty-indent
