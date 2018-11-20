@@ -28,7 +28,7 @@
 
     // ウインドウサイズを保持する
     "window.restoreFullscreen": true,
-    "workbench.iconTheme": "vscode-great-icons",
+    "workbench.iconTheme": "material-icon-theme",
 
     "editor.minimap.enabled": true,
     "editor.minimap.showSlider": "always",
@@ -57,5 +57,5 @@
     "workbench.statusBar.feedback.visible": false,
     "editor.fontSize": 14,
     "azure-iot-toolkit.showIoTHubInfo": false,
-    "workbench.colorTheme": "Dark+ Material",
+    "workbench.colorTheme": "Dracula",
 }

@@ -40,16 +40,17 @@ code --install-extension esbenp.prettier-vscode
 code --install-extension dbaeumer.vscode-eslint
 
 # テーマ
-code --install-extension vangware.dark-plus-material
+code --install-extension dracula-theme.theme-dracula
 
 # アイコン
-code --install-extension emmanuelbeziat.vscode-great-icons
+code --install-extension PKief.material-icon-theme
+
 
 # 日本語の折り返し補助
 code --install-extension MS-CEINTL.vscode-language-pack-ja
 
 # インデント強調
-code --install-extension SirTori.indenticator
+code --install-extension oderwat.indent-rainbow
 
 # 不要なスペースなど強調
 code --install-extension DmitryDorofeev.empty-indent
