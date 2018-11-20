@@ -5,14 +5,8 @@
 set -e
 set -x
 
-# reinstallではエラーになることがあるため
-brew uninstall vim
-brew uninstall macvim
-
-brew cleanup vim
-brew cleanup macvim
-
 brew install lua
-
 brew install vim --with-luajit
-brew install macvim --with-lua
+
+# xcode(gui)が必要らしい(xcode(cli)だけではエラー)
+# brew install macvim --with-lua
