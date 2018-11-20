@@ -50,3 +50,6 @@ code --install-extension SirTori.indenticator
 
 # 不要なスペースなど強調
 code --install-extension DmitryDorofeev.empty-indent
+
+# 括弧の色付け
+code --install-extension CoenraadS.bracket-pair-colorizer
