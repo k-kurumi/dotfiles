@@ -23,6 +23,9 @@ esac
 # markdownの目次生成
 code --install-extension AlanWalk.markdown-toc
 
+# 標準のより使いやすいmarkdown表示
+code --install-extension shd101wyy.markdown-preview-enhanced
+
 # docker
 code --install-extension PeterJausovec.vscode-docker
 
