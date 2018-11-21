@@ -98,9 +98,10 @@ Plug 'tonekk/vim-ruby-capybara'
 " カーソル移動が遅いので使わない
 " Plug 'itchyny/vim-cursorword'
 
-" color
+" color theme
 Plug 'w0ng/vim-hybrid'
 Plug 'cocopon/iceberg.vim'
+Plug 'dracula/vim', { 'as': 'dracula'  }
 
 " git diffを表示
 Plug 'airblade/vim-gitgutter'
