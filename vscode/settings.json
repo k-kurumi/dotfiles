@@ -58,4 +58,8 @@
     "editor.fontSize": 14,
     "azure-iot-toolkit.showIoTHubInfo": false,
     "workbench.colorTheme": "Dracula",
+
+
+    // vscodevim
+    "vim.hlsearch": true,
 }
