@@ -344,6 +344,12 @@ let g:prettier#config#arrow_parens = 'avoid'
 
 Plug 'kchmck/vim-coffee-script'
 
+" python3.6以上で動く整形ツール
+" system側にインストールしておけばpyenv環境でも動いた
+" sudo apt install python3-pip
+" pip3 install black
+Plug 'ambv/black'
+
 " --------------------------------------------------------------------------------
 " golang
 
