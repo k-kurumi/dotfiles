@@ -349,6 +349,8 @@ Plug 'kchmck/vim-coffee-script'
 " sudo apt install python3-pip
 " pip3 install black
 Plug 'ambv/black'
+Plug 'lambdalisue/vim-pyenv'
+Plug 'davidhalter/jedi-vim'
 
 " --------------------------------------------------------------------------------
 " golang
