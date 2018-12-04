@@ -11,3 +11,6 @@ add Control = Control_L
 ! 16.04あたりから効かなくなったため
 ! apt-get install gnome-tweak-tool を使うこと
 ! タイピング -> Ctrlキーの位置 -> Caps LockをCtrlとして扱う (再起動が必要)
+!
+! 18.04は /etc/default/keyboard 内の XKBOPTIONS を次のように変更して再起動する
+! XKBOPTIONS="ctrl:nocaps"
