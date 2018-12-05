@@ -51,6 +51,14 @@ if ! grep 'gla =' ~/.gitconfig > /dev/null; then
 EOL
 fi
 
+# globalなgitignoreを追加
+if ! grep 'excludesfile =' ~/.gitconfig > /dev/null; then
+  cat << 'EOL' >> ~/.gitconfig
+[core]
+  excludesfile = ~/.gitignore_global
+EOL
+fi
+
 # preztoの設定ファイルに置き換え
 # readmeの手順をbashで実現したもの
 # https://github.com/sorin-ionescu/prezto
