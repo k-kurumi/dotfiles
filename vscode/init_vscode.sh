@@ -30,7 +30,10 @@ code --install-extension shd101wyy.markdown-preview-enhanced
 code --install-extension PeterJausovec.vscode-docker
 
 # ペアプロ
-code --install-extension ms-vsliveshare.vsliveshare
+# code --install-extension ms-vsliveshare.vsliveshare
+
+# golang
+code --install-extension ms-vscode.Go
 
 # vim kyebind
 code --install-extension vscodevim.vim
