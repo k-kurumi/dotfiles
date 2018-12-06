@@ -1,15 +1,14 @@
 // Place your settings in this file to overwrite the default settings
 {
     // RictyDiminishedDiscord-Boldではオブリークが細いままなので、Regularを使ってfontWeightで太くする
-    "editor.fontFamily": "Ricty Diminished Discord",
-    "editor.fontWeight": "bold",
+    "editor.fontFamily": "Hack",
 
     // カーソルを点滅させない
     "editor.cursorBlinking": "solid",
 
     // golang
-    "go.goroot": "/Users/optpia/go",
-    "go.gopath": "/Users/optpia/dev",
+    "go.goroot": "~/go",
+    "go.gopath": "~/dev",
 
     // タブサイズの変更など
     "editor.tabSize": 2,
@@ -57,7 +56,6 @@
         "files.trimTrailingWhitespace": false
     },
     "workbench.statusBar.feedback.visible": false,
-    "editor.fontSize": 14,
     "azure-iot-toolkit.showIoTHubInfo": false,
 
 
