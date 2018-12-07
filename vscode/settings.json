@@ -39,11 +39,13 @@
     "files.insertFinalNewline": true,
     "workbench.startupEditor": "newUntitledFile",
 
-
+    // prettier
+    "prettier.singleQuote": true,
 
     // 制御文字を表示
     "editor.renderControlCharacters": true,
 
+    // スペースのみの行は削除
     "files.trimFinalNewlines": true,
 
     // ツリーから選択したとき常にタブで開く
