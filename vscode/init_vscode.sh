@@ -9,6 +9,7 @@ case $(uname) in
     ;;
   Linux)
     ln -sf $(pwd)/settings.json "${HOME}/.config/Code/User/settings.json"
+    ln -sf $(pwd)/keybindings.json "${HOME}/.config/Code/User/keybindings.json"
     ;;
   *)
     exit 1
