@@ -1,0 +1,11 @@
+// Place your key bindings in this file to overwrite the defaultsauto[]
+[
+  {
+    "key": "meta+l",
+    "command": "workbench.action.nextEditor"
+  },
+  {
+    "key": "meta+h",
+    "command": "workbench.action.previousEditor"
+  },
+]
