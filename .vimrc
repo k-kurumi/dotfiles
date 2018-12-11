@@ -247,7 +247,7 @@ if v:version > 703 && has('lua')
   let g:neocomplete#sources#dictionary#dictionaries = {
       \ 'default' : '',
       \ 'vimshell' : $HOME.'/.vimshell_hist',
-      \ 'go' : $HOME.'/dev/bin/gocode'
+      \ 'go' : $HOME.'/dev/bin/gocode',
       \ }
 
   " luaなしのときはneocomplcacheが使えるが、vimをコンパイルした方がよい"
@@ -357,10 +357,10 @@ Plug 'kchmck/vim-coffee-script'
 
 " gdで定義へ飛ぶ
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-Plug 'mdempsky/gocode', { 'rtp': 'vim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh' }
 
-" importしていないものも補完する
-" gocode set unimported-packages true も実行する
+" 有効にするとimportしてないパッケージが補完できない(-unimported-packagesが効かなくなる)
+" Plug 'mdempsky/gocode', { 'rtp': 'vim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh' }
+" これは必要
 let g:go_gocode_unimported_packages = 1
 
 " 保存時にimport補完
