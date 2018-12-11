@@ -613,6 +613,8 @@ augroup MyGroup
 
   " golang
   autocmd BufNewFile,BufRead *.go set filetype=go sw=2 ts=2 sts=2 cindent autoindent smartindent noet
+  " ,d でタブを開いて参照
+  autocmd FileType go nmap <silent> <Leader>d :<C-u>call go#def#Jump("tab")<CR>
 
   " bats
   autocmd BufNewFile,BufRead *.bats set filetype=sh sw=2 ts=2 sts=2 et nocindent autoindent
