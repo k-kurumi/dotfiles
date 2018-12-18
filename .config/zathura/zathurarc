@@ -1,1 +1,10 @@
-map [normal] <Space> navigate next
+# https://www.systutorials.com/docs/linux/man/5-zathurarc/
+
+set window-height 1024
+set window-width 768
+
+# keybind
+map [normal]      <Space> navigate next
+map [fullscreen]  <Space> navigate next
+map [normal]      f       toggle_fullscreen
+map [fullscreen]  f       toggle_fullscreen
