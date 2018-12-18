@@ -1,0 +1,4 @@
+set nowrapscan
+set hlsearch
+
+source ~/.vimrc
