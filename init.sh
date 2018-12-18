@@ -76,7 +76,11 @@ fi
 
 # yamllintのconfig
 mkdir -p ~/.config/yamllint
-cp .config/yamllint/config ~/.config/yamllint
+ln -sf "$(readlink -f .config/yamllint/config)" ~/.config/yamllint/
+
+# zathura pdf reader
+mkdir -p ~/.config/zathura
+ln -sf "$(readlink -f .config/zathura/zathurarc)" ~/.config/zathura/
 
 mkdir -p ~/dev/bin
 cp bin/nc_server.sh ~/dev/bin
