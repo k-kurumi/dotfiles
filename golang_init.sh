@@ -8,7 +8,7 @@ echo "### コード補完"
 
 # 本家よりオプションが減っていて set unimported-packages などない
 # importしてないファイルから補完ができなくなった
-go get -u -v github.com/mdempsky/gocode
+# go get -u -v github.com/mdempsky/gocode
 
 echo "### タグジャンプ(gdでジャンプする(ctagsは不要))"
 go get -u -v github.com/rogpeppe/godef
@@ -109,6 +109,10 @@ go get -u -v github.com/uudashr/gopkgs/cmd/gopkgs
 go get -u -v github.com/davidrjenni/reftools/cmd/fillstruct
 go get -u -v github.com/alecthomas/gometalinter
 gometalinter --install
+
+# gocode開発終了に伴いできた公式のlsp
+# https://mattn.kaoriya.net/software/lang/go/20181217000056.htm
+go get -u -v golang.org/x/tools/cmd/golsp
 
 # bundlerと被るので削除
 rm -rf $GOPATH/bin/bundle

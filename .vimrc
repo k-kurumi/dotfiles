@@ -223,37 +223,6 @@ Plug 'thinca/vim-visualstar'
 " いろいろ非同期にする
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 
-if v:version > 703 && has('lua')
-  " +luaのvimで有効になる補完
-  Plug 'Shougo/neocomplete'
-  " neocomplete用設定
-  let g:neocomplete#enable_at_startup = 1
-  let g:neocomplete#enable_ignore_case = 1
-  let g:neocomplete#enable_smart_case = 1
-  if !exists('g:neocomplete#keyword_patterns')
-      let g:neocomplete#keyword_patterns = {}
-  endif
-  let g:neocomplete#keyword_patterns._ = '\h\w*'
-  inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
-  inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>"
-
-  " Disable AutoComplPop.
-  let g:acp_enableAtStartup = 0
-
-  " Set minimum syntax keyword length.
-  let g:neocomplete#sources#syntax#min_keyword_length = 3
-
-  " Define dictionary.
-  let g:neocomplete#sources#dictionary#dictionaries = {
-      \ 'default' : '',
-      \ 'vimshell' : $HOME.'/.vimshell_hist',
-      \ 'go' : $HOME.'/dev/bin/gocode',
-      \ }
-
-  " luaなしのときはneocomplcacheが使えるが、vimをコンパイルした方がよい"
-endif
-
-
 " bats
 Plug 'vim-scripts/bats.vim'
 
@@ -355,24 +324,26 @@ Plug 'kchmck/vim-coffee-script'
 " --------------------------------------------------------------------------------
 " golang
 
-" gdで定義へ飛ぶ
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-
-" 有効にするとimportしてないパッケージが補完できない(-unimported-packagesが効かなくなる)
-" Plug 'mdempsky/gocode', { 'rtp': 'vim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh' }
-" これは必要
-let g:go_gocode_unimported_packages = 1
-
-" 保存時にimport補完
-let g:go_fmt_command = "goimports"
-
-" 色付け
-let g:go_highlight_functions = 1
-let g:go_highlight_methods = 1
-let g:go_highlight_fields = 1
-let g:go_highlight_types = 1
-let g:go_highlight_operators = 1
-let g:go_highlight_build_constraints = 1
+" gocode終了によりlspに切り替えた
+" gocodeよりも機能が少ないが今後改善されるかも
+" https://mattn.kaoriya.net/software/lang/go/20181217000056.htm
+Plug 'prabirshrestha/async.vim'
+Plug 'prabirshrestha/vim-lsp'
+Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
+Plug 'natebosch/vim-lsc'
+let g:lsp_async_completion = 1
+if executable('golsp')
+  augroup LspGo
+    au!
+    autocmd User lsp_setup call lsp#register_server({
+        \ 'name': 'go-lang',
+        \ 'cmd': {server_info->['golsp', '-mode', 'stdio']},
+        \ 'whitelist': ['go'],
+        \ })
+    autocmd FileType go setlocal omnifunc=lsp#complete
+  augroup END
+endif
 
 Plug 'pearofducks/ansible-vim'
 Plug 'cespare/vim-toml'
