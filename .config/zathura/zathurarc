@@ -1,5 +1,8 @@
 # https://www.systutorials.com/docs/linux/man/5-zathurarc/
 
+# ファイルパス部分が変わるだけで文書の中身ではない
+set font "hack 10"
+
 set window-height 1024
 set window-width 768
 
