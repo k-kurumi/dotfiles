@@ -73,14 +73,15 @@ if [ $? -ne 0 ]; then
   echo 'source ${HOME}/.zshrc2' >> ~/.zshrc
 fi
 
-
 # yamllintのconfig
-mkdir -p ~/.config/yamllint
-ln -sf "$(readlink -f .config/yamllint/config)" ~/.config/yamllint/
+ln -sf "$(readlink -f .config/yamllint)" ~/.config/yamllint
 
 # zathura pdf reader
-mkdir -p ~/.config/zathura
-ln -sf "$(readlink -f .config/zathura/zathurarc)" ~/.config/zathura/
+ln -sf "$(readlink -f .config/zathura)" ~/.config/zathura
+
+# dockerコンテナ内で<C-p>2度押しを解消
+# https://qiita.com/Yuki-Inoue/items/60ec916383025160fbb8
+ln -sf "$(readlink -f .docker)" ~/.docker
 
 mkdir -p ~/dev/bin
 cp bin/nc_server.sh ~/dev/bin
