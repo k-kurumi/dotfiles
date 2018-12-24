@@ -74,16 +74,16 @@ if [ $? -ne 0 ]; then
 fi
 
 # yamllintのconfig
-mkdir ~/.config/yamllint
+mkdir -p ~/.config/yamllint
 ln -sf "$(readlink -f .config/yamllint/config)" ~/.config/yamllint/
 
 # zathura pdf reader
-mkdir ~/.config/zathura
+mkdir -p ~/.config/zathura
 ln -sf "$(readlink -f .config/zathura/zathurarc)" ~/.config/zathura/
 
 # dockerコンテナ内で<C-p>2度押しを解消
 # https://qiita.com/Yuki-Inoue/items/60ec916383025160fbb8
-mkdir ~/.docker
+mkdir -p ~/.docker
 ln -sf "$(readlink -f .docker/config.json)" ~/.docker/
 
 mkdir -p ~/dev/bin
