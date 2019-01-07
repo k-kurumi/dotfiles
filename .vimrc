@@ -908,7 +908,7 @@ if has('gui_running')
   " 主にmvimで起動するgvim
 
   " フォント設定
-  set guifont=RictyDiminishedDiscord-Bold:h12
+  set guifont=Hack\ Bold\ 10
   colorscheme darkblue
 
   " ウインドウサイズ lines:縦 columns:横
