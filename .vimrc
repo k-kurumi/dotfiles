@@ -364,6 +364,10 @@ let g:memolist_path = '$HOME/Dropbox/memo'
 let g:memolist_memo_suffix = "md"
 let g:memolist_filename_prefix_none = 1
 
+" hackフォントには全角スペース可視機能がないため(rictyにはあった)
+" set list時に表示できる
+Plug 'thinca/vim-zenspace'
+
 call plug#end()
 " ================================================================================
 
