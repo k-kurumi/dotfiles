@@ -4,7 +4,9 @@ export LANGUAGE=en
 export LANG=en_US.UTF-8
 
 # echo -n aaa など改行がない状態でも表示できるようにする
-unsetopt promptcr
+# デフォルトで表示する設定になったため不要になった
+# pureはv1.7.0は表示不可(手動でsubmoduleをv1.8.0に切り替えると表示可能)
+# unsetopt promptcr
 
 # pecoでコマンド履歴検索
 function peco_select_history() {
