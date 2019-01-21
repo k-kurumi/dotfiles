@@ -1,4 +1,4 @@
 set nowrapscan
 set hlsearch
 
-source ~/.vimrc
+set clipboard=unnamed
