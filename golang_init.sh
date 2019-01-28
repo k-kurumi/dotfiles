@@ -114,5 +114,10 @@ gometalinter --install
 # https://mattn.kaoriya.net/software/lang/go/20181217000056.htm
 go get -u -v golang.org/x/tools/cmd/golsp
 
+# prometheus
+go get -u -v github.com/prometheus/alertmanager/cmd/amtool
+go get -u -v github.com/prometheus/prometheus/cmd/promtool
+go get -u -v github.com/prometheus/prom2json/cmd/prom2json
+
 # bundlerと被るので削除
 rm -rf $GOPATH/bin/bundle
