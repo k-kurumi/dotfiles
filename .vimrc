@@ -324,29 +324,28 @@ Plug 'kchmck/vim-coffee-script'
 " --------------------------------------------------------------------------------
 " golang
 
-" <C-o>で補完入力がおかしいのと、<C-n>補完が効かなくなるので
-" golang系のプラグインはしばらく様子を見る
-"
-" " gocode終了によりlspに切り替えた
-" " gocodeよりも機能が少ないが今後改善されるかも
-" " https://mattn.kaoriya.net/software/lang/go/20181217000056.htm
-" Plug 'prabirshrestha/async.vim'
-" Plug 'prabirshrestha/vim-lsp'
-" Plug 'prabirshrestha/asyncomplete.vim'
-" Plug 'prabirshrestha/asyncomplete-lsp.vim'
-" Plug 'natebosch/vim-lsc'
-" let g:lsp_async_completion = 1
-" if executable('golsp')
-"   augroup LspGo
-"     au!
-"     autocmd User lsp_setup call lsp#register_server({
-"         \ 'name': 'go-lang',
-"         \ 'cmd': {server_info->['golsp', '-mode', 'stdio']},
-"         \ 'whitelist': ['go'],
-"         \ })
-"     autocmd FileType go setlocal omnifunc=lsp#complete
-"   augroup END
-" endif
+Plug 'fatih/vim-go'
+
+" gocode終了によりlspに切り替えた
+" gocodeよりも機能が少ないが今後改善されるかも
+" https://mattn.kaoriya.net/software/lang/go/20181217000056.htm
+Plug 'prabirshrestha/async.vim'
+Plug 'prabirshrestha/vim-lsp'
+Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
+Plug 'natebosch/vim-lsc'
+let g:lsp_async_completion = 1
+if executable('golsp')
+  augroup LspGo
+    au!
+    autocmd User lsp_setup call lsp#register_server({
+        \ 'name': 'go-lang',
+        \ 'cmd': {server_info->['golsp', '-mode', 'stdio']},
+        \ 'whitelist': ['go'],
+        \ })
+    autocmd FileType go setlocal omnifunc=lsp#complete
+  augroup END
+endif
 
 Plug 'pearofducks/ansible-vim'
 Plug 'cespare/vim-toml'
@@ -370,6 +369,9 @@ let g:memolist_filename_prefix_none = 1
 " hackフォントには全角スペース可視機能がないため(rictyにはあった)
 " set list時に表示できる
 Plug 'thinca/vim-zenspace'
+
+" jenkins
+Plug 'martinda/Jenkinsfile-vim-syntax'
 
 call plug#end()
 " ================================================================================
