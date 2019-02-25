@@ -121,6 +121,10 @@ let g:vim_markdown_folding_disabled = 1
 " " github flavored markdown
 " Plug 'rhysd/vim-gfm-syntax'
 
+" markdownの目次を :GenTocGFM などで作成
+Plug 'mzlogin/vim-markdown-toc'
+let g:vmt_auto_update_on_save = 0
+
 " 行番号指定で開く
 Plug 'bogado/file-line'
 
