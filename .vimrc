@@ -113,17 +113,24 @@ Plug 'tpope/vim-fugitive'
 Plug 'luochen1990/rainbow'
 let g:rainbow_active = 1
 
-" スターが多いmarkdownプラグインをしばらく使ってみる
-Plug 'godlygeek/tabular'
-Plug 'plasticboy/vim-markdown'
-let g:vim_markdown_folding_disabled = 1
+" :TableFormatがインデント状態のテーブルでうまく動かない
+" vim-gfm-syntax + vim-table-mode の方が使いやすい
+" Plug 'godlygeek/tabular'
+" Plug 'plasticboy/vim-markdown'
+" let g:vim_markdown_folding_disabled = 1
+" let g:vim_markdown_new_list_item_indent = 2
 
-" " github flavored markdown
-" Plug 'rhysd/vim-gfm-syntax'
+" github flavored markdown
+Plug 'rhysd/vim-gfm-syntax'
 
-" markdownの目次を :GenTocGFM などで作成
-Plug 'mzlogin/vim-markdown-toc'
-let g:vmt_auto_update_on_save = 0
+" " markdownの目次を :GenTocGFM などで作成
+" Plug 'mzlogin/vim-markdown-toc'
+" let g:vmt_auto_update_on_save = 0
+
+" markdownのテーブル用
+Plug 'dhruvasagar/vim-table-mode'
+let g:table_mode_corner = '|'
+let g:table_mode_header_fillchar = '-'
 
 " 行番号指定で開く
 Plug 'bogado/file-line'
@@ -358,8 +365,9 @@ Plug 'cespare/vim-toml'
 Plug 'andymass/vim-matchup'
 let g:loaded_matchit = 1
 
-" 対になる括弧の補完(標準機能より少し高機能)
-Plug 'cohama/lexima.vim'
+" " 対になる括弧の補完(標準機能より少し高機能)
+" [  ]のようにスペースが2入って使いづらいので使用しない
+" Plug 'cohama/lexima.vim'
 
 " TODO: README通りでは補完が効かない
 Plug 'elmcast/elm-vim'
@@ -580,8 +588,8 @@ augroup MyGroup
   autocmd BufNewFile,BufRead *.js set filetype=javascript sw=2 ts=2 sts=2 et ai cin
   autocmd BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
 
-  " " markdown
-  " autocmd BufNewFile,BufRead *.md,*.markdown setlocal filetype=markdown.gfm
+  " markdown
+  autocmd BufNewFile,BufRead *.md,*.markdown setlocal filetype=markdown.gfm
 
   " rest
   autocmd BufNewFile,BufRead *.rst set  filetype=rest expandtab sw=2 ts=2 sts=2
