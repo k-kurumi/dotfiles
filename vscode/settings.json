@@ -1,7 +1,7 @@
 // Place your settings in this file to overwrite the default settings
 {
     // RictyDiminishedDiscord-Boldではオブリークが細いままなので、Regularを使ってfontWeightで太くする
-    "editor.fontFamily": "Hack",
+    "editor.fontFamily": "Cica",
 
     // カーソルを点滅させない
     "editor.cursorBlinking": "solid",
@@ -63,6 +63,9 @@
 
     // vscodevim
     "vim.hlsearch": true,
-    "workbench.colorTheme": "Dracula Soft",
+    "workbench.colorTheme": "Tomorrow Night Blue",
     "window.titleBarStyle": "custom",
+    "explorer.confirmDelete": false,
+    "editor.fontLigatures": true,
+    "editor.fontWeight": "bold",
 }
