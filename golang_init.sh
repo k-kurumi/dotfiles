@@ -113,6 +113,7 @@ gometalinter --install
 # gocode開発終了に伴いできた公式のlsp
 # https://mattn.kaoriya.net/software/lang/go/20181217000056.htm
 go get -u -v golang.org/x/tools/cmd/golsp
+go get -u -v golang.org/x/tools/cmd/gopls
 
 # prometheus
 go get -u -v github.com/prometheus/alertmanager/cmd/amtool
