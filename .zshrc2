@@ -147,8 +147,9 @@ function snake() {
 }
 
 # tmuxとguakeのリネーム
-function tn() {
-  local name=${1:-default}
+function t() {
+  # 引数なしはカレントフォルダ名にする
+  local name=${1:-$(basename $PWD)}
   type guake > /dev/null && guake -r "${name}"
   type tmux  > /dev/null && tmux rename-session "${name}"
 }
