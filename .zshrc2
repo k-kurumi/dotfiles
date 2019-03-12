@@ -174,5 +174,9 @@ fi
 # curl -s 'https://www.google.com/' | xpath '//head/title' -
 alias xpath="xmllint --html --xpath 2>/dev/null"
 
+# -v: 自然な並び順
+# 標準の ll='ls -lh' では 頭の_が考慮されない
+alias ll='ls -lv'
+
 source ~/.rdb.sh
 source ~/.tool.sh
