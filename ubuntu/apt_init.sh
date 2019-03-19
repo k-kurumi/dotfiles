@@ -20,6 +20,7 @@ zathura   # vim風pdf reader
 geeqie    # 類似画像検索
 gthumb    # 画像ビューア
 screenkey # 入力キーを画面表示
+dconf-editor # X系の設定エディタ
 EOF
 
 while read pkg
