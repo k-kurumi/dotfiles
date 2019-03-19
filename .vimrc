@@ -123,9 +123,9 @@ let g:rainbow_active = 1
 " github flavored markdown
 Plug 'rhysd/vim-gfm-syntax'
 
-" " markdownの目次を :GenTocGFM などで作成
-" Plug 'mzlogin/vim-markdown-toc'
-" let g:vmt_auto_update_on_save = 0
+" markdownの目次を :GenTocGFM などで作成
+Plug 'mzlogin/vim-markdown-toc'
+let g:vmt_auto_update_on_save = 0
 
 " markdownのテーブル用
 Plug 'dhruvasagar/vim-table-mode'
@@ -385,6 +385,9 @@ Plug 'thinca/vim-zenspace'
 " jenkins
 Plug 'martinda/Jenkinsfile-vim-syntax'
 
+" jiraのsyntax
+Plug 'vim-scripts/confluencewiki.vim'
+
 call plug#end()
 " ================================================================================
 
@@ -590,6 +593,9 @@ augroup MyGroup
 
   " markdown
   autocmd BufNewFile,BufRead *.md,*.markdown setlocal filetype=markdown.gfm
+
+  " jira
+  autocmd BufNewFile,BufRead *.jira setlocal filetype=confluencewiki
 
   " rest
   autocmd BufNewFile,BufRead *.rst set  filetype=rest expandtab sw=2 ts=2 sts=2
