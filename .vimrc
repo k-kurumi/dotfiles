@@ -174,6 +174,13 @@ Plug 'w0rp/ale'
 Plug 'itchyny/lightline.vim'
 Plug 'maximbaz/lightline-ale'
 
+" 文字数取得
+Plug 'anekos/char-counter-vim'
+" 文字数を返す
+function! CCC()
+  return b:charCounterCount
+endfunction
+
 let g:lightline = {
   \ 'component_expand': {
   \   'linter_checking': 'lightline#ale#checking',
@@ -182,7 +189,8 @@ let g:lightline = {
   \   'linter_ok': 'lightline#ale#ok',
   \ },
   \ 'component_function': {
-  \   'gitbranch': 'fugitive#statusline',
+  \   'gitbranch':  'fugitive#statusline',
+  \   'ccc': 'CCC',
   \ },
   \ 'component_type': {
   \   'linter_checking': 'left',
@@ -193,9 +201,17 @@ let g:lightline = {
   \ 'active': {
   \   'left': [
   \     ['mode', 'paste'],
-  \     ['relativepath', 'modified', 'readonly', 'gitbranch'],
+  \     ['relativepath', 'modified', 'readonly', 'ccc', 'gitbranch'],
   \     ['linter_checking', 'linter_errors', 'linter_warnings', 'linter_ok'],
   \   ],
+  \   'right': [
+  \     ['lineinfo'],
+  \     ['percent'],
+  \     ['charvaluehex', 'ccc', 'fileformat', 'fileencoding', 'filetype'],
+  \   ],
+  \ },
+  \ 'component': {
+  \   'charvaluehex': '0x%B',
   \ },
   \ 'inactive': {
   \   'left': [
