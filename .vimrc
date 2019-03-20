@@ -180,7 +180,8 @@ Plug 'maximbaz/lightline-ale'
 Plug 'anekos/char-counter-vim'
 " 文字数を返す
 function! CCC()
-  return b:charCounterCount
+  " nerdtreeのツリー画面ではb:charCounterCountがなくエラーになるための対策
+  return exists('b:charCounterCount') ? b:charCounterCount : ''
 endfunction
 
 let g:lightline = {
