@@ -175,6 +175,8 @@ Plug 'itchyny/lightline.vim'
 Plug 'maximbaz/lightline-ale'
 
 " 文字数取得
+" ghosttextではScratchのため文字数が0になる(実ファイルがないとカウントできないように見える)
+" :'<,'>s/./&/gn で文字を元の文字で置換すれば確認はできる(matchesのところ)
 Plug 'anekos/char-counter-vim'
 " 文字数を返す
 function! CCC()
