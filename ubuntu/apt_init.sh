@@ -13,6 +13,7 @@ package_list=$(tempfile)
 
 # インストールするツール一式
 cat << EOF > ${package_list}
+build-essential # 開発用
 coreutils # 開発用ツール
 exuberant-ctags # ctags
 asunder   # CDのflackリッピング
@@ -21,6 +22,8 @@ geeqie    # 類似画像検索
 gthumb    # 画像ビューア
 screenkey # 入力キーを画面表示
 dconf-editor # X系の設定エディタ
+tcl       # vimのghosttext
+tcllib    # vimのghosttext
 EOF
 
 while read pkg
