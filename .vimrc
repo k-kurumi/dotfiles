@@ -20,11 +20,9 @@ Plug 'tpope/vim-sensible'
 " 整形
 Plug 'junegunn/vim-easy-align'
 
+" undo履歴を可視化する
 " python3で動かない
-" " undo redo
-" Plug 'sjl/gundo.vim'
-" " toggle gundo
-" nnoremap <leader>u :GundoToggle<CR>
+Plug 'sjl/gundo.vim'
 
 " " :Rg <string|pattern>で検索
 " Plug 'jremmen/vim-ripgrep'
