@@ -354,26 +354,30 @@ Plug 'kchmck/vim-coffee-script'
 
 Plug 'fatih/vim-go'
 
-" gocode終了によりlspに切り替えた
-" gocodeよりも機能が少ないが今後改善されるかも
-" https://mattn.kaoriya.net/software/lang/go/20181217000056.htm
-Plug 'prabirshrestha/async.vim'
-Plug 'prabirshrestha/vim-lsp'
-Plug 'prabirshrestha/asyncomplete.vim'
-Plug 'prabirshrestha/asyncomplete-lsp.vim'
-Plug 'natebosch/vim-lsc'
-let g:lsp_async_completion = 1
-if executable('gopls')
-  augroup LspGo
-    au!
-    autocmd User lsp_setup call lsp#register_server({
-        \ 'name': 'go-lang',
-        \ 'cmd': {server_info->['gopls']},
-        \ 'whitelist': ['go'],
-        \ })
-    autocmd FileType go setlocal omnifunc=lsp#complete
-  augroup END
-endif
+" FIXME golangはgoland使うようにしたのでプラグインを見直す
+" FIXME prabirshrestha/asyncomplete.vim の v2.0.0 は<C-n>が効かないバグがある
+"
+" " 治らないようなら削除する
+" " gocode終了によりlspに切り替えた
+" " gocodeよりも機能が少ないが今後改善されるかも
+" " https://mattn.kaoriya.net/software/lang/go/20181217000056.htm
+" Plug 'prabirshrestha/async.vim'
+" Plug 'prabirshrestha/vim-lsp'
+" Plug 'prabirshrestha/asyncomplete.vim'
+" Plug 'prabirshrestha/asyncomplete-lsp.vim'
+" Plug 'natebosch/vim-lsc'
+" let g:lsp_async_completion = 1
+" if executable('gopls')
+"   augroup LspGo
+"     au!
+"     autocmd User lsp_setup call lsp#register_server({
+"         \ 'name': 'go-lang',
+"         \ 'cmd': {server_info->['gopls']},
+"         \ 'whitelist': ['go'],
+"         \ })
+"     autocmd FileType go setlocal omnifunc=lsp#complete
+"   augroup END
+" endif
 
 Plug 'pearofducks/ansible-vim'
 Plug 'cespare/vim-toml'
