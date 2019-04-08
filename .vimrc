@@ -946,6 +946,9 @@ noremap! ¥ \
 set lazyredraw
 set ttyfast
 
+" yankをOSのクリップボードと同期する
+set clipboard=unnamedplus
+
 " vimdiffで元ファイルとの差分を表示する
 if !exists(":DiffOrig")
   command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
