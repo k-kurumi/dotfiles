@@ -260,6 +260,9 @@ Plug 'vim-scripts/bats.vim'
 " gvimのフォントを+拡大、-縮小
 Plug 'thinca/vim-fontzoom'
 
+" htmlなどの閉じタグ補完
+Plug 'alvan/vim-closetag'
+
 "
 " 以下は言語特有のプラグイン
 "
