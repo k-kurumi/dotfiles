@@ -24,6 +24,7 @@ screenkey # 入力キーを画面表示
 dconf-editor # X系の設定エディタ
 tcl       # vimのghosttext
 tcllib    # vimのghosttext
+pinentry-tty  # gpgでgktウインドウの代わりに使う
 EOF
 
 while read pkg

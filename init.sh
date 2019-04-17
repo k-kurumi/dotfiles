@@ -88,3 +88,7 @@ ln -sf "$(readlink -f .docker/config.json)" ~/.docker/
 
 mkdir -p ~/dev/bin
 cp bin/nc_server.sh ~/dev/bin
+
+# gpgでgktウインドウがでてフォーカスが取られて面倒なのでCUIで完結するようにする
+mkdir -p ~/.gnupg
+ln -sf "$(readlink -f .gnupg/gpg-agent.conf)" ~/.gnupg/
