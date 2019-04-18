@@ -953,7 +953,7 @@ set lazyredraw
 set ttyfast
 
 " yankをOSのクリップボードと同期する
-set clipboard=unnamedplus
+" set clipboard=unnamedplus
 
 " vimdiffで元ファイルとの差分を表示する
 if !exists(":DiffOrig")
