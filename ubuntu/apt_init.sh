@@ -36,6 +36,11 @@ done < <(cat ${package_list})
 
 rm -f ${package_list}
 
+# クリップボードマネージャ
+sudo add-apt-repository ppa:hluk/copyq
+sudo apt update
+sudo apt install copyq
+
 # emacs風keybind
 # xfce4-settings-editor -> xsettings -> KeyThemeName を Emacs にする。(再起動などは不要で即使える)
 # http://hidemon-memo.blogspot.com/2014/06/xubuntu-xfce4-emacs.html
