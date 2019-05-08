@@ -88,3 +88,6 @@ Godeps/_workspace
 .vscode/
 
 .vagrant
+
+# 含めたい場合は大文字のMakefileにすること
+makefile
