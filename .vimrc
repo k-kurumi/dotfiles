@@ -952,9 +952,6 @@ noremap! ¥ \
 set lazyredraw
 set ttyfast
 
-" yankをOSのクリップボードと同期する
-" set clipboard=unnamedplus
-
 " vimdiffで元ファイルとの差分を表示する
 if !exists(":DiffOrig")
   command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
@@ -962,7 +959,10 @@ if !exists(":DiffOrig")
 endif
 
 if has('gui_running')
-  " 主にmvimで起動するgvim
+  " 主にghosttext経由でしか使わない
+
+  " yankをOSのクリップボードと同期する
+  set clipboard=unnamedplus
 
   " フォント設定
   set guifont=Hack\ Bold\ 10
