@@ -81,10 +81,19 @@ ln -sf "$(readlink -f .config/yamllint/config)" ~/.config/yamllint/
 mkdir -p ~/.config/zathura
 ln -sf "$(readlink -f .config/zathura/zathurarc)" ~/.config/zathura/
 
-# dockerコンテナ内で<C-p>2度押しを解消
-# https://qiita.com/Yuki-Inoue/items/60ec916383025160fbb8
-mkdir -p ~/.docker
-ln -sf "$(readlink -f .docker/config.json)" ~/.docker/
+# .docker/config.jsonは認証情報が追記されシンボリックリンクにすると差分管理しづらいためファイルにする
+if type jq > /dev/null; then
+  # dockerコンテナ内で<C-p>2度押しを解消
+  # https://qiita.com/Yuki-Inoue/items/60ec916383025160fbb8
+
+  mkdir -p ~/.docker
+  if [ -e ~/.docker/config.json ]; then
+    mv -f ~/.docker/config.json ~/.docker/config.json.old
+    cat ~/.docker/config.json.old | jq -s '.[0] * {"detachKeys": "ctrl-\\"}' > ~/.docker/config.json
+  else
+    echo '{"detachKeys": "ctrl-\\"}' > ~/.docker/config.json
+  fi
+fi
 
 mkdir -p ~/dev/bin
 cp bin/nc_server.sh ~/dev/bin
