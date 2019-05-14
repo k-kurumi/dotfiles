@@ -2,7 +2,9 @@
 #
 # install tmux
 
-version=2.8
+# 2.9でまた設定ファイルの書き方が変わったのでコンバートする
+# https://gist.github.com/tbutts/6abf7fb5b948c066bf180922fb37adcf
+version=2.9a
 
 sudo apt-get update
 sudo apt-get install -y \
