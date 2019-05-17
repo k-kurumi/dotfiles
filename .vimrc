@@ -165,6 +165,10 @@ imap <c-x><c-k> <plug>(fzf-complete-word)
 imap <c-x><c-f> <plug>(fzf-complete-path)
 imap <c-x><c-j> <plug>(fzf-complete-file-ag)
 imap <c-x><c-l> <plug>(fzf-complete-line)
+" ctrlp風のキーバインド
+nmap <C-p> :Files<CR>
+nmap ,a :Ag<CR>
+nmap ,g :Rg<CR>
 
 
 " 過去のyank一覧
@@ -423,7 +427,7 @@ call plug#end()
 syntax on
 
 " デフォルトの\ではなく,を使う
-let mapleader=","
+" let mapleader=","
 
 " バックスペースで文字削除
 set bs=2
