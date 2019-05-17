@@ -8,47 +8,57 @@ export LANG=en_US.UTF-8
 # pureはv1.7.0は表示不可(手動でsubmoduleをv1.8.0に切り替えると表示可能)
 # unsetopt promptcr
 
-# pecoでコマンド履歴検索
-function peco_select_history() {
-  local tac
-  if which tac > /dev/null; then
-    tac="tac"
-  else
-    tac="tail -r"
-  fi
+# # pecoでコマンド履歴検索
+# function peco_select_history() {
+#   local tac
+#   if which tac > /dev/null; then
+#     tac="tac"
+#   else
+#     tac="tail -r"
+#   fi
+#   BUFFER=$(\history -n 1 | \
+#     eval $tac | \
+#     peco --query "$LBUFFER")
+#   CURSOR=$#BUFFER
+#   zle clear-screen
+# }
+# zle -N peco_select_history
+# bindkey '^R' peco_select_history
 
+# # ghqのリポジトリに移動する
+# function peco_select_ghq_repo() {
+#   local selected_dir=$(ghq list -p | peco --query "$LBUFFER")
+#   if [ -n "$selected_dir" ]; then
+#     BUFFER="cd ${selected_dir}"
+#     zle accept-line
+#   fi
+#   zle clear-screen
+# }
+# zle -N peco_select_ghq_repo
+# bindkey '^G' peco_select_ghq_repo
+
+# fzfでhistory表示
+function fzf_select_history() {
   BUFFER=$(\history -n 1 | \
-    eval $tac | \
-    peco --query "$LBUFFER")
+    fzf --toc "$LBUFFER")
   CURSOR=$#BUFFER
   zle clear-screen
 }
-zle -N peco_select_history
-bindkey '^R' peco_select_history
+zle -N fzf_select_history
+bindkey '^R' fzf_select_history
 
-# git管理のファイルをvimで開く
-function peco_select_gitlsfiles_vim() {
-  local selected_file=$(git ls-files | peco --query "$LBUFFER")
-  if [ -n "$selected_file" ]; then
-    BUFFER="vim ${selected_file}"
-    zle accept-line
-  fi
-  zle clear-screen
-}
-zle -N peco_select_gitlsfiles_vim
-bindkey '^O' peco_select_gitlsfiles_vim
-
-# ghqのリポジトリに移動する
-function peco_select_ghq_repo() {
-  local selected_dir=$(ghq list -p | peco --query "$LBUFFER")
+# fzfでghqリポジトリに移動する
+function fzf_select_ghq_repo() {
+  local selected_dir=$(ghq list -p | fzf)
+  echo $selected_dir
   if [ -n "$selected_dir" ]; then
     BUFFER="cd ${selected_dir}"
     zle accept-line
   fi
   zle clear-screen
 }
-zle -N peco_select_ghq_repo
-bindkey '^G' peco_select_ghq_repo
+zle -N fzf_select_ghq_repo
+bindkey '^G' fzf_select_ghq_repo
 
 # ruby
 if [[ -d ~/.rbenv ]]; then
