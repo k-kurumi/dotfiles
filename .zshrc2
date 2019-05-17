@@ -39,9 +39,7 @@ export LANG=en_US.UTF-8
 
 # fzfでhistory表示
 function fzf_select_history() {
-  BUFFER=$(\history -n 1 | \
-    fzf --toc "$LBUFFER")
-  CURSOR=$#BUFFER
+  BUFFER=$(history -n 1 | fzf)
   zle clear-screen
 }
 zle -N fzf_select_history
