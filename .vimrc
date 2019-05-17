@@ -140,35 +140,36 @@ Plug 'bronson/vim-trailing-whitespace'
 "let g:extra_whitespace_ignored_filetypes = ['unite']
 
 
-" " :help ctrlp-options
-" Plug 'ctrlpvim/ctrlp.vim'
-" let g:ctrlp_map = '<c-p>'
-" let g:ctrlp_cmd = 'CtrlP'
-" set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
-" set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
-" let g:ctrlp_custom_ignore = {
-"   \ 'dir':  '\v[\/]\.(git|hg|svn)$',
-"   \ 'file': '\v\.(exe|so|dll)$',
-"   \ }
-" let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:30,results:30'
-
-" " tab周り
-" Plug 'DavidEGx/ctrlp-smarttabs'
-" let g:ctrlp_extensions = ['smarttabs']
-" nnoremap ,t :CtrlPSmartTabs<CR>
-
-" ctrlpの代わりに使う
+" ctrlpより速いらしい
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-
-
-
+" https://github.com/junegunn/fzf.vim#advanced-customization
+" Filesで常にプレビュー表示
+command! -bang -nargs=? -complete=dir Files
+  \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
+" Agで?押すとプレビュー
+command! -bang -nargs=* Ag
+  \ call fzf#vim#ag(<q-args>,
+  \                 <bang>0 ? fzf#vim#with_preview('up:60%')
+  \                         : fzf#vim#with_preview('right:50%:hidden', '?'),
+  \                 <bang>0)
+" Rgで?押すとプレビュー
+command! -bang -nargs=* Rg
+  \ call fzf#vim#grep(
+  \   'rg --column --line-number --no-heading --color=always '.shellescape(<q-args>), 1,
+  \   <bang>0 ? fzf#vim#with_preview('up:60%')
+  \           : fzf#vim#with_preview('right:50%:hidden', '?'),
+  \   <bang>0)
+" 補完系にfzfを使う
+imap <c-x><c-k> <plug>(fzf-complete-word)
+imap <c-x><c-f> <plug>(fzf-complete-path)
+imap <c-x><c-j> <plug>(fzf-complete-file-ag)
+imap <c-x><c-l> <plug>(fzf-complete-line)
 
 
 " 過去のyank一覧
 Plug 'LeafCage/yankround.vim'
 nnoremap ,p :CtrlPYankRound<CR>
-
 
 " ステータスラインのカスタマイズ
 Plug 'w0rp/ale'
