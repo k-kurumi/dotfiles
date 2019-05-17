@@ -25,6 +25,7 @@ dconf-editor # X系の設定エディタ
 tcl       # vimのghosttext
 tcllib    # vimのghosttext
 pinentry-tty  # gpgでgktウインドウの代わりに使う
+silversearcher-ag # better grep
 EOF
 
 while read pkg

@@ -24,14 +24,6 @@ Plug 'junegunn/vim-easy-align'
 " python3で動かない
 Plug 'sjl/gundo.vim'
 
-" " :Rg <string|pattern>で検索
-" Plug 'jremmen/vim-ripgrep'
-" let g:rg_highlight = 1
-
-" :Pt [option] <pattern> [<path>] で検索
-" -w: 正規表現を使う
-Plug 'nazo/pt.vim'
-
 " markを表示
 Plug 'kshenoy/vim-signature'
 
@@ -148,22 +140,30 @@ Plug 'bronson/vim-trailing-whitespace'
 "let g:extra_whitespace_ignored_filetypes = ['unite']
 
 
-" :help ctrlp-options
-Plug 'ctrlpvim/ctrlp.vim'
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP'
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
-set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
-let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
-  \ 'file': '\v\.(exe|so|dll)$',
-  \ }
-let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:30,results:30'
+" " :help ctrlp-options
+" Plug 'ctrlpvim/ctrlp.vim'
+" let g:ctrlp_map = '<c-p>'
+" let g:ctrlp_cmd = 'CtrlP'
+" set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
+" set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
+" let g:ctrlp_custom_ignore = {
+"   \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+"   \ 'file': '\v\.(exe|so|dll)$',
+"   \ }
+" let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:30,results:30'
 
-" tab周り
-Plug 'DavidEGx/ctrlp-smarttabs'
-let g:ctrlp_extensions = ['smarttabs']
-nnoremap ,t :CtrlPSmartTabs<CR>
+" " tab周り
+" Plug 'DavidEGx/ctrlp-smarttabs'
+" let g:ctrlp_extensions = ['smarttabs']
+" nnoremap ,t :CtrlPSmartTabs<CR>
+
+" ctrlpの代わりに使う
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+
+
+
+
 
 " 過去のyank一覧
 Plug 'LeafCage/yankround.vim'
