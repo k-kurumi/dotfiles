@@ -26,6 +26,7 @@ tcl       # vimのghosttext
 tcllib    # vimのghosttext
 pinentry-tty  # gpgでgktウインドウの代わりに使う
 silversearcher-ag # better grep
+synapse   # mac風ランチャー
 EOF
 
 while read pkg
