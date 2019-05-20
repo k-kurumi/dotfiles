@@ -8,34 +8,23 @@ export LANG=en_US.UTF-8
 # pureはv1.7.0は表示不可(手動でsubmoduleをv1.8.0に切り替えると表示可能)
 # unsetopt promptcr
 
-# # pecoでコマンド履歴検索
-# function peco_select_history() {
-#   local tac
-#   if which tac > /dev/null; then
-#     tac="tac"
-#   else
-#     tac="tail -r"
-#   fi
-#   BUFFER=$(\history -n 1 | \
-#     eval $tac | \
-#     peco --query "$LBUFFER")
-#   CURSOR=$#BUFFER
-#   zle clear-screen
-# }
-# zle -N peco_select_history
-# bindkey '^R' peco_select_history
-
-# # ghqのリポジトリに移動する
-# function peco_select_ghq_repo() {
-#   local selected_dir=$(ghq list -p | peco --query "$LBUFFER")
-#   if [ -n "$selected_dir" ]; then
-#     BUFFER="cd ${selected_dir}"
-#     zle accept-line
-#   fi
-#   zle clear-screen
-# }
-# zle -N peco_select_ghq_repo
-# bindkey '^G' peco_select_ghq_repo
+# fzfとコマンドサンプル
+# https://github.com/junegunn/fzf/wiki/examples
+# fe [FUZZY PATTERN] - Open the selected file with the default editor
+#   - Bypass fuzzy finder if there's only one match (--select-1)
+#   - Exit if there's no match (--exit-0)
+fe() {
+  local files
+  IFS=$'\n' files=($(fzf-tmux --query="$1" --multi --select-1 --exit-0))
+  [[ -n "$files" ]] && ${EDITOR:-vim} "${files[@]}"
+}
+# fd - cd to selected directory
+fd() {
+  local dir
+  dir=$(find ${1:-.} -path '*/\.*' -prune \
+                  -o -type d -print 2> /dev/null | fzf +m) &&
+  cd "$dir"
+}
 
 # fzfでhistory表示
 function fzf_select_history() {
@@ -47,7 +36,7 @@ bindkey '^R' fzf_select_history
 
 # fzfでghqリポジトリに移動する
 function fzf_select_ghq_repo() {
-  local selected_dir=$(ghq list -p | fzf)
+  local selected_dir=$(ghq list -p | fzf-tmux --multi --select-1 --exit-0)
   echo $selected_dir
   if [ -n "$selected_dir" ]; then
     BUFFER="cd ${selected_dir}"
