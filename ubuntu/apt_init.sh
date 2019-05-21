@@ -27,6 +27,9 @@ tcllib    # vimのghosttext
 pinentry-tty  # gpgでgktウインドウの代わりに使う
 silversearcher-ag # better grep
 synapse   # mac風ランチャー
+keepassxc # macのkeepassxcはクリップボードが消えるバグがあるのでLinuxだけで使うこと
+p7zip       # 7z utils
+p7zip-full  # 7z utils
 EOF
 
 while read pkg
