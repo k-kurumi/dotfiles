@@ -167,8 +167,6 @@ imap <c-x><c-j> <plug>(fzf-complete-file-ag)
 imap <c-x><c-l> <plug>(fzf-complete-line)
 " ctrlp風のキーバインド
 nmap <C-p> :Files<CR>
-nmap ,a :Ag<CR>
-nmap ,g :Rg<CR>
 
 
 " 過去のyank一覧
