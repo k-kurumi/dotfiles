@@ -7,8 +7,8 @@
 # sudo make install
 #
 # keybind
-bind generic G move-last-line
-bind generic g move-first-line
+# bind generic G move-last-line
+# bind generic g move-first-line
 #
 #bind generic b none
 #bind main b view-refs
@@ -16,7 +16,7 @@ bind generic g move-first-line
 #
 #bind main v view-tree
 
-set tab-size = 2
+#set tab-size = 2
 #bind main G !@hub browse -- commit/%(commit)
 #bind diff G !@hub browse -- commit/%(commit)
 
