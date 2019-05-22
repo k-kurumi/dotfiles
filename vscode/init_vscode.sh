@@ -64,3 +64,6 @@ code --install-extension CoenraadS.bracket-pair-colorizer
 
 # markdownなどのテーブル整形
 code --install-extension shuworks.vscode-table-formatter
+
+# git
+code --install-extension eamodio.gitlens
