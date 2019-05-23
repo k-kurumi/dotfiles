@@ -968,7 +968,7 @@ if has('gui_running')
   set clipboard=unnamedplus
 
   " フォント設定
-  set guifont=Hack\ Bold\ 10
+  set guifont=Cica\ Bold\ 10
   colorscheme darkblue
 
   " ウインドウサイズ lines:縦 columns:横
