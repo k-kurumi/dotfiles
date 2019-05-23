@@ -964,7 +964,10 @@ endif
 if has('gui_running')
   " 主にghosttext経由でしか使わない
 
-  " yankをOSのクリップボードと同期する
+  " クリップボード
+  "   コピー: "+y
+  "   貼り付け: "+p
+  " "*y "*p は中ボタンと同じ扱い
   set clipboard=unnamedplus
 
   " フォント設定
