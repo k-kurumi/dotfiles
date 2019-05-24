@@ -26,6 +26,13 @@ fd() {
   cd "$dir"
 }
 
+# カレントから選択してvimで開く
+vimf() {
+  local text
+  text=$(find . -type f -and -not -path './.git/*' | fzf --select-1 --exit-0)
+  vim ${text}
+}
+
 # fzfでhistory表示
 function fzf_select_history() {
   BUFFER=$(history -n 1 | fzf)
