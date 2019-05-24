@@ -2,7 +2,7 @@
 #
 # install direnv
 
-version=v2.19.2
+version=v2.20.0
 
 pushd /tmp
   rm -rf direnv*
