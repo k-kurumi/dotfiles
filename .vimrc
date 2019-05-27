@@ -418,6 +418,10 @@ Plug 'martinda/Jenkinsfile-vim-syntax'
 " jiraのsyntax
 Plug 'vim-scripts/confluencewiki.vim'
 
+" terraform
+Plug 'hashivim/vim-terraform'
+let g:terraform_fmt_on_save = 1
+
 call plug#end()
 " ================================================================================
 
