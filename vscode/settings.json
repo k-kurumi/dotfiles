@@ -6,6 +6,9 @@
     // カーソルを点滅させない
     "editor.cursorBlinking": "solid",
 
+    // ctrlとマウスホイールでズームする
+    "editor.mouseWheelZoom": true,
+
     // golang
     "go.goroot": "~/go",
     "go.gopath": "~/dev",
@@ -68,4 +71,8 @@
     "explorer.confirmDelete": false,
     "editor.fontLigatures": true,
     "editor.fontWeight": "bold",
+
+    // terraform
+    "terraform.path": "~/.local/bin/terraform",
+    "terraform.lintPath": "~/.local/bin/tflint",
 }
