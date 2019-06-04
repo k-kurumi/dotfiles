@@ -266,6 +266,13 @@ Plug 'thinca/vim-fontzoom'
 " htmlなどの閉じタグ補完
 Plug 'alvan/vim-closetag'
 
+" スペルチェック
+" Zlでカーソル上の候補表示
+" Zg goodとして登録
+" Zw wrongとして登録
+" https://qiita.com/kamykn/items/f65e83820623694c78ca
+Plug 'kamykn/spelunker.vim'
+
 "
 " 以下は言語特有のプラグイン
 "
@@ -851,7 +858,6 @@ noremap! <C-w>o <ESC>
 
 " データは変えずに表示のみ変更する機能(jsonでkeyの""囲みを消したり)は見づらいのでオフ
 set conceallevel=0
-
 
 " brew でインストールした macvim が spotlight に表示されるように変更する
 " 1. brew install macvim
