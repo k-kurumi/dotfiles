@@ -67,3 +67,6 @@ code --install-extension shuworks.vscode-table-formatter
 
 # git
 code --install-extension eamodio.gitlens
+
+# スペルチェック
+code --install-extension streetsidesoftware.code-spell-checker
