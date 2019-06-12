@@ -190,5 +190,17 @@ function c() {
   type xsel > /dev/null && cat "${1}" | xsel -bi
 }
 
+# dockerhubのタグリストの表示(webだとページングされて見づらいため)
+function dockerhub_tag_search {
+  # 引数なしは何もしない
+  if [[ $# -eq 0 ]]; then
+    >&2 echo "usage: $0 <dockerhub-repo-name>"
+    return 1
+  fi
+
+  local repo=${1}
+  curl -s https://registry.hub.docker.com/v1/repositories/${repo}/tags | jq -r '.[]| .name' | fzf
+}
+
 source ~/.rdb.sh
 source ~/.tool.sh
