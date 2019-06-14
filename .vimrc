@@ -38,8 +38,14 @@ Plug 'jistr/vim-nerdtree-tabs'
 let g:nerdtree_tabs_open_on_console_startup = 1
 let g:nerdtree_tabs_open_on_gui_startup = 0
 
+" 文頭に張り付くコメントでいまいち
+" Plug 'scrooloose/nerdcommenter'
+" 途中の空行にコメント記号が入らなくて抜けて見えてしまう
+" Plug 'tpope/vim-commentary'
+"
+" 途中の空行にもコメント記号が入る
 " gcでコメントトグル
-Plug 'tpope/vim-commentary'
+Plug 'tomtom/tcomment_vim'
 
 " githubのページで開く
 " ビジュアルモードなどで :OpenGithubFile
