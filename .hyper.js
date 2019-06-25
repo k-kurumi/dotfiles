@@ -12,10 +12,10 @@ module.exports = {
     fontSize: 14,
 
     // font family with optional fallbacks
-    fontFamily: '"Ricty Diminished Discord", "Ricty Diminished"',
+    fontFamily: 'Cica',
 
     // default font weight: 'normal' or 'bold'
-    fontWeight: 'normol',
+    fontWeight: 'bold',
 
     // font weight for bold characters: 'normal' or 'bold'
     fontWeightBold: 'bold',
