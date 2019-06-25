@@ -20,9 +20,12 @@ Plug 'tpope/vim-sensible'
 " 整形
 Plug 'junegunn/vim-easy-align'
 
-" undo履歴を可視化する
-" python3で動かない
-Plug 'sjl/gundo.vim'
+" undo履歴を可視化する python必要
+" Plug 'sjl/gundo.vim'
+" let g:gundo_prefer_python3 = 1
+
+" undo履歴を可視化する python不要
+Plug 'mbbill/undotree'
 
 " markを表示
 Plug 'kshenoy/vim-signature'
