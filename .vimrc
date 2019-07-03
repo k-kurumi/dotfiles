@@ -87,12 +87,6 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=darkgrey
 " バイナリエディタ
 "Plug 'Shougo/vinarise.vim'
 
-" rails
-Plug 'tpope/vim-rails'
-Plug 'tpope/vim-cucumber'
-Plug 'tonekk/vim-ruby-capybara'
-" <c-w><c-d>でsplitして開く
-
 " カーソル文字に下線を引く
 " カーソル移動が遅いので使わない
 " Plug 'itchyny/vim-cursorword'
@@ -266,9 +260,6 @@ Plug 'thinca/vim-visualstar'
 " いろいろ非同期にする
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 
-" bats
-Plug 'vim-scripts/bats.vim'
-
 " gvimのフォントを+拡大、-縮小
 Plug 'thinca/vim-fontzoom'
 
@@ -306,73 +297,11 @@ Plug 'stephpy/vim-yaml'
 " rubyでend補完
 Plug 'tpope/vim-endwise'
 
-" --------------------------------------------------------------------------------
-" typescript
-"
-" Plug 'Quramy/tsuquyomi'
-" 追加でインストールが必要 npm -g install typescript
-" Plug 'jason0x43/vim-js-indent'
-" Plug 'leafgarland/typescript-vim'
-
-" --------------------------------------------------------------------------------
-" javascript
-
-" 8スペースなどインデントがおかしくなるので使わない
-" Plug 'jiangmiao/simple-javascript-indenter'
-Plug 'othree/yajs.vim'
-Plug 'othree/es.next.syntax.vim'
-
-Plug 'pangloss/vim-javascript'
-" es6だとインデントがおかしくなるので自分で対応する
-" Plug 'mtscout6/vim-cjsx'
-" Plug 'MaxMEllon/vim-jsx-pretty'
-" let g:jsx_ext_required = 1        " ファイルタイプがjsxのとき読み込む
-" let g:jsx_pragma_required = 0     " @から始まるプラグマでは読み込まない
-
-" typescriptのように補完が効くらしい
-" インストール後実行権限を付ける必要あり
-" npm install -g flow-bin
-" chmod +x ~/.ndenv/versions/v8.4.0/lib/node_modules/flow-bin/flow-linux64-v0.54.0/flow
-Plug 'flowtype/vim-flow'
-" 1のとき保存時にウインドウ分割で結果がでるがaleでチェックするため0にする
-let g:flow#enable = 0
-
-"" jestの定義をインストールする例
-" yarn init -y	# npm init と同じ
-" yarn add --dev flow-bin flow-typed
-" yarn run flow init
-" yarn run flow-typed install jest@20
-let g:flow#flowpath = 'node_modules/.bin/flow'
-
-" javascriptの整形
-" :Prettier で手動実行する
-Plug 'prettier/vim-prettier', {
-  \ 'do': 'yarn install',
-  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
-
-" prettierデフォルトと違う設定があるためvscodeに寄せる
-" https://github.com/prettier/prettier-vscode
-let g:prettier#config#print_widt = 80
-let g:prettier#config#tab_width = 2
-let g:prettier#config#single_quote = 'false'
-let g:prettier#config#trailing_comma = 'none'
-let g:prettier#config#bracket_spacing = 'true'
-let g:prettier#config#jsx_bracket_same_line = 'false'
-let g:prettier#config#parser = 'babylon'
-let g:prettier#config#semi = 'true'
-let g:prettier#config#use_tabs = 'false'
-let g:prettier#config#prose_wrap = 'preserve'
-let g:prettier#config#arrow_parens = 'avoid'
-
-Plug 'kchmck/vim-coffee-script'
-
-" " python3.6以上で動く整形ツール
-" " system側にインストールしておけばpyenv環境でも動いた
-" " sudo apt install python3-pip
-" " pip3 install black
-" Plug 'ambv/black'
-" Plug 'lambdalisue/vim-pyenv'
-" Plug 'davidhalter/jedi-vim'
+" rails
+Plug 'tpope/vim-rails'
+Plug 'tpope/vim-cucumber'
+Plug 'tonekk/vim-ruby-capybara'
+" <c-w><c-d>でsplitして開く
 
 " --------------------------------------------------------------------------------
 " golang
@@ -415,24 +344,13 @@ let g:loaded_matchit = 1
 " [  ]のようにスペースが2入って使いづらいので使用しない
 " Plug 'cohama/lexima.vim'
 
-" TODO: README通りでは補完が効かない
-Plug 'elmcast/elm-vim'
-let g:elm_setup_keybindings = 0
-
 Plug 'glidenote/memolist.vim'
 let g:memolist_path = '$HOME/Dropbox/memo'
 let g:memolist_memo_suffix = "md"
 let g:memolist_filename_prefix_none = 1
 
-" hackフォントには全角スペース可視機能がないため(rictyにはあった)
-" set list時に表示できる
-Plug 'thinca/vim-zenspace'
-
-" jenkins
-Plug 'martinda/Jenkinsfile-vim-syntax'
-
 " jiraのsyntax
-Plug 'vim-scripts/confluencewiki.vim'
+" Plug 'vim-scripts/confluencewiki.vim'
 
 " terraform
 Plug 'hashivim/vim-terraform'
