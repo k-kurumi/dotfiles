@@ -15,3 +15,16 @@ function httpd_py() {
 function httpd() {
   httpd_rb "$@"
 }
+
+function countup() {
+  # 時間が指定されていないとき何もしない
+  [[ $# -eq 0 ]] && return
+  local max=${1}
+  local t=0
+  while ((t < max))
+  do
+    ((t++))
+    sleep 1
+    echo -n "$t "
+  done
+}
