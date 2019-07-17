@@ -70,3 +70,9 @@ code --install-extension eamodio.gitlens
 
 # スペルチェック
 code --install-extension streetsidesoftware.code-spell-checker
+
+# bash
+code --install-extension shakram02.bash-beautify
+code --install-extension rogalmic.bash-debug
+code --install-extension mads-hartmann.bash-ide-vscode
+npm i -g bash-language-server
