@@ -66,7 +66,7 @@
 
     // vscodevim
     "vim.hlsearch": true,
-    "workbench.colorTheme": "Tomorrow Night Blue",
+    "workbench.colorTheme": "Dracula",
     "window.titleBarStyle": "custom",
     "explorer.confirmDelete": false,
     "editor.fontLigatures": true,
