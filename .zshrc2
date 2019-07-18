@@ -125,6 +125,14 @@ y2j() {
   ruby -ryaml -rjson -e 'puts JSON.pretty_generate(YAML.load(ARGF.read))'
 }
 
+# python版
+py2j() {
+  python -c 'import sys,yaml,json; print json.dumps(yaml.load(sys.stdin, Loader=yaml.SafeLoader), indent=2)'
+}
+pj2y() {
+  python -c 'import sys,yaml,json; print yaml.safe_dump(json.load(sys.stdin))'
+}
+
 # tigよりわかりやすいgitツリー
 function gitt() { git-foresta --style=10 "$@" | less -RSX }
 function gitta() { git-foresta --all --style=10 "$@" | less -RSX }
