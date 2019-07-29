@@ -43,7 +43,7 @@ bindkey '^R' fzf_select_history
 
 # fzfでghqリポジトリに移動する
 function fzf_select_ghq_repo() {
-  local selected_dir=$(ghq list -p | fzf-tmux --multi --select-1 --exit-0)
+  local selected_dir=$(ghq list -p | fzf --multi --select-1 --exit-0)
   echo $selected_dir
   if [ -n "$selected_dir" ]; then
     BUFFER="cd ${selected_dir}"
