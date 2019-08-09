@@ -563,7 +563,7 @@ augroup MyGroup
   autocmd BufNewFile,BufRead *.md,*.markdown setlocal filetype=markdown.gfm
 
   " jira
-  autocmd BufNewFile,BufRead *.jira setlocal filetype=confluencewiki
+  autocmd BufNewFile,BufRead *.jira setlocal filetype=confluencewiki nowrap paste
 
   " rest
   autocmd BufNewFile,BufRead *.rst set  filetype=rest expandtab sw=2 ts=2 sts=2
