@@ -501,9 +501,9 @@ ab #- ####----------------------------------------------------------------------
 
 
 
-" 行、列のハイライト表示
+" 行の強調(列を有効にするとカーソル移動がもたつくため使わない)
 set cursorline
-set cursorcolumn
+set nocursorcolumn
 
 " フリーカーソル {block, insert, all, onemore}
 set virtualedit=all
