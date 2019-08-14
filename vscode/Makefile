@@ -75,3 +75,12 @@ install_all:
 
 # rest client
 	code --install-extension humao.rest-client
+
+# 整形
+	code --install-extension wwm.better-align
+
+# パスの補完
+	code --install-extension christian-kohler.path-intellisense
+
+# 閉じタグの補完
+	code --install-extension formulahendry.auto-close-tag
