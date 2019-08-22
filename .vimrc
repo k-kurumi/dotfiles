@@ -271,7 +271,8 @@ Plug 'alvan/vim-closetag'
 " Zg goodとして登録
 " Zw wrongとして登録
 " https://qiita.com/kamykn/items/f65e83820623694c78ca
-Plug 'kamykn/spelunker.vim'
+" ログファイルなどサイズが大きいと開くのが遅い
+" Plug 'kamykn/spelunker.vim'
 
 "
 " 以下は言語特有のプラグイン
