@@ -51,6 +51,12 @@ if ! grep 'gla =' ~/.gitconfig > /dev/null; then
 EOL
 fi
 
+# git difftoolでvimdiffを使ったdiffを表示する(git-diffとは別)
+git config --global diff.tool vimdiff
+git config --global difftool.prompt false
+# git config --global merge.tool vimdiff
+# git config --global mergetool.prompt false
+
 # globalなgitignoreを追加
 if ! grep 'excludesfile =' ~/.gitconfig > /dev/null; then
   cat << 'EOL' >> ~/.gitconfig
