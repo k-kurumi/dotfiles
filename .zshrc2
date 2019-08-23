@@ -141,9 +141,12 @@ compdef _git gitta=git-log
 
 # mkdir-p風にフォルダを作ってからtouchする
 function touch_p() {
-  local dir=$(dirname $1)
-  mkdir -p ${dir}
-  touch $1
+  for item in $@
+  do
+    echo "touch: ${item}"
+    mkdir -p $(dirname ${item})
+    touch ${item}
+  done
 }
 
 # $ echo abc_def | camel
