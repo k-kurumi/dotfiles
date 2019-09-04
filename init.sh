@@ -57,6 +57,9 @@ git config --global difftool.prompt false
 # git config --global merge.tool vimdiff
 # git config --global mergetool.prompt false
 
+# git-diff時のタブを4スペースにする
+git config --global core.pager 'less -x4'
+
 # globalなgitignoreを追加
 if ! grep 'excludesfile =' ~/.gitconfig > /dev/null; then
   cat << 'EOL' >> ~/.gitconfig
