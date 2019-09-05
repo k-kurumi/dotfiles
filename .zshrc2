@@ -1,3 +1,6 @@
+# zprezto経由でpureを使う
+prompt pure
+
 export EDITOR=vim
 export VISUAL=vim # macのcrontab用
 export LANGUAGE=en
