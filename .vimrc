@@ -36,10 +36,12 @@ Plug 'scrooloose/nerdtree'
 let g:NERDTreeDirArrowExpandable = '+'
 let g:NERDTreeDirArrowCollapsible = '-'
 
-Plug 'jistr/vim-nerdtree-tabs'
+" nerdtreeのバージョンアップでツリー部分にファイル内容が表示されている
+" vim-nerdtree-tabsはメンテされていない模様
+" Plug 'jistr/vim-nerdtree-tabs'
 " 開くときNERDTreeも開く(:mksessionが壊れる)
-let g:nerdtree_tabs_open_on_console_startup = 1
-let g:nerdtree_tabs_open_on_gui_startup = 0
+" let g:nerdtree_tabs_open_on_console_startup = 1
+" let g:nerdtree_tabs_open_on_gui_startup = 0
 
 " 文頭に張り付くコメントでいまいち
 " Plug 'scrooloose/nerdcommenter'
