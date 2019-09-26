@@ -38,10 +38,10 @@ let g:NERDTreeDirArrowCollapsible = '-'
 
 " nerdtreeのバージョンアップでツリー部分にファイル内容が表示されている
 " vim-nerdtree-tabsはメンテされていない模様
-" Plug 'jistr/vim-nerdtree-tabs'
+Plug 'jistr/vim-nerdtree-tabs'
 " 開くときNERDTreeも開く(:mksessionが壊れる)
-" let g:nerdtree_tabs_open_on_console_startup = 1
-" let g:nerdtree_tabs_open_on_gui_startup = 0
+let g:nerdtree_tabs_open_on_console_startup = 1
+let g:nerdtree_tabs_open_on_gui_startup = 0
 
 " 文頭に張り付くコメントでいまいち
 " Plug 'scrooloose/nerdcommenter'
@@ -339,9 +339,11 @@ Plug 'fatih/vim-go'
 Plug 'pearofducks/ansible-vim'
 Plug 'cespare/vim-toml'
 
+" vim-nerdtree-tabsのツリーがおかしくなるので使用しないこと
+" a0691e7では動くがそれ以降にするとツリー部分にファイルの中身が表示されるようになる
 " %で飛ぶ括弧の対応を見やすくする
-Plug 'andymass/vim-matchup'
-let g:loaded_matchit = 1
+" Plug 'andymass/vim-matchup'
+" let g:loaded_matchit = 1
 
 " " 対になる括弧の補完(標準機能より少し高機能)
 " [  ]のようにスペースが2入って使いづらいので使用しない
