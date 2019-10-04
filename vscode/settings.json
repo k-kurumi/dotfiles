@@ -75,4 +75,5 @@
     // terraform
     "terraform.path": "~/.local/bin/terraform",
     "terraform.lintPath": "~/.local/bin/tflint",
+    "files.eol": "\n",
 }
