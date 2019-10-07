@@ -76,4 +76,9 @@
     "terraform.path": "~/.local/bin/terraform",
     "terraform.lintPath": "~/.local/bin/tflint",
     "files.eol": "\n",
+
+    // gitlens
+    "gitlens.codeLens.enabled": false,
+    "gitlens.currentLine.enabled": false,
+    "gitlens.hovers.currentLine.over": "line",
 }
