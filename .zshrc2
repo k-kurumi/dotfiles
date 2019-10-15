@@ -171,6 +171,5 @@ function dockerhub_tag_search {
   curl -s https://registry.hub.docker.com/v1/repositories/${repo}/tags | jq -r '.[]| .name' | fzf
 }
 
-source ~/.rdb.sh
 source ~/.tool.sh
 source ~/.fzfrc
