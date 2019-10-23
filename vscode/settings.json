@@ -83,4 +83,6 @@
 
     // テーマ
     "workbench.colorTheme": "Material Theme",
+    // 検索の循環を禁止
+    "vim.wrapscan": false,
 }
