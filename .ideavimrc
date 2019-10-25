@@ -1,4 +1,6 @@
 set nowrapscan
 set hlsearch
+set incsearch
 
-set clipboard=unnamed
+" ヤンクでクリップボードにコピー
+" set clipboard=unnamed
