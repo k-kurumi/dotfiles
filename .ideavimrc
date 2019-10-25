@@ -1,6 +1,11 @@
+" https://github.com/JetBrains/ideavim
 set nowrapscan
 set hlsearch
 set incsearch
+
+" commentary.vim風にコメント化する
+" ビジュアルモードでgc
+set commentary
 
 " ヤンクでクリップボードにコピー
 " set clipboard=unnamed
