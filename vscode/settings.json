@@ -85,4 +85,6 @@
     "workbench.colorTheme": "Material Theme",
     // 検索の循環を禁止
     "vim.wrapscan": false,
+    "go.formatTool": "goimports",
+    "go.useLanguageServer": true,
 }
