@@ -1,1 +1,10 @@
-set tab-size = 4
+# set vertical-split = yes
+set vertical-split = no
+# set vertical-split = auto
+
+# set key 'g' / goto file top
+bind generic g      move-first-line
+
+# set key 'G' / goto file bottom
+bind generic G      move-last-line
+bind main    G      move-last-line
