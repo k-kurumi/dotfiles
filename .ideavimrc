@@ -9,3 +9,6 @@ set commentary
 
 " ヤンクでクリップボードにコピー
 " set clipboard=unnamed
+
+" 検索ジャンプしたとき画面中央に表示する
+noremap n nzz
