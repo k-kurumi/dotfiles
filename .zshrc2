@@ -165,3 +165,8 @@ function dockerhub_tag_search {
 
 source ~/.tool.sh
 source ~/.fzfrc
+
+# 右にエラーコードが出るとスペースで埋められてコピペすると不格好なので左側にまとめる
+# TODO 1行目に表示したい
+export PROMPT=${PROMPT}${RPROMPT}
+export RPROMPT=
