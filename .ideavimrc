@@ -12,3 +12,6 @@ set commentary
 
 " 検索ジャンプしたとき画面中央に表示する
 noremap n nzz
+
+" ハイフン区切りも単語扱いにする
+set iskeyword+=-
