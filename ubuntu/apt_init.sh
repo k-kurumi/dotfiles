@@ -50,6 +50,11 @@ sudo apt install copyq
 # xfce4-settings-editor -> xsettings -> KeyThemeName を Emacs にする。(再起動などは不要で即使える)
 # http://hidemon-memo.blogspot.com/2014/06/xubuntu-xfce4-emacs.html
 
+# マウスポインタの強調表示設定
+# 設定マネージャー -> アクセシビリティ -> マウス -> キーを押すと、ポインター位置を表示する をチェックする
+# デフォルトショートカットは Super(windowsキー) + F1
+# これは 設定マネージャー -> キーボード -> アプリケーションショートカットキー -> xfce4-find-cursor で変更できる。
+
 # intellijで日本語をインライン変換する
 # Fcitxの[設定]-[アドオン]-[拡張]（チェック）-[Fcitx XIM Frontend]-[設定]-[XIMでOn The Spotスタイルを使う(起動中は変更できません)]（チェック）-[OK]で、Fcitxの[再起動]
 # https://qiita.com/Huruikagi/items/4651696a0b9bba00c992
