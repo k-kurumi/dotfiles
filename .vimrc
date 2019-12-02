@@ -923,6 +923,7 @@ if has('gui_running')
 
   " ウインドウ表示位置
   "winpos 10 0
+  winsize 150 40
 else
   " hybridは設定が必要
   let g:hybrid_custom_term_colors = 1
