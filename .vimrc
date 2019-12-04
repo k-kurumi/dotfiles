@@ -737,6 +737,7 @@ set ttimeoutlen=70
 
 " vim7.4からundoを保存する.un~ファイルが出来るためまとめる
 set undodir=~/.vim
+set undofile
 
 " macのcrontabで指定しないと怒られる
 set backupskip=/tmp/*,/private/tmp/*
