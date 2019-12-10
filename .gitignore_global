@@ -91,3 +91,6 @@ Godeps/_workspace
 
 # 含めたい場合は大文字のMakefileにすること
 makefile
+
+# ansible
+vault_password.txt
