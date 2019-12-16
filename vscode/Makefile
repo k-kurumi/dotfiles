@@ -69,6 +69,7 @@ install_all:
 
 # git
 	code --install-extension eamodio.gitlens
+	code --install-extension donjayamanne.githistory
 
 # スペルチェック
 	code --install-extension streetsidesoftware.code-spell-checker
