@@ -55,11 +55,8 @@ install_all:
 # 日本語の折り返し補助
 	code --install-extension MS-CEINTL.vscode-language-pack-ja
 
-# インデント強調
-	code --install-extension oderwat.indent-rainbow
-
-# 不要なスペースなど強調
-	code --install-extension DmitryDorofeev.empty-indent
+# キーワードで色分け、インデント強調、行末スペースの色付けなど
+	code --install-extension wraith13.background-phi-colors
 
 # 括弧の色付け
 	code --install-extension CoenraadS.bracket-pair-colorizer
