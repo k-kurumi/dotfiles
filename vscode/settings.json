@@ -30,8 +30,8 @@
 
 
 
-    // ウインドウサイズを保持する
-    "window.restoreFullscreen": true,
+    // フルスクリーンで起動する
+    //"window.restoreFullscreen": true,
     "workbench.iconTheme": "material-icon-theme",
 
     "editor.minimap.enabled": true,
