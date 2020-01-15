@@ -58,18 +58,8 @@ Plug 'tyru/open-browser.vim'
 Plug 'tyru/open-browser-github.vim'
 
 " アスキーアート作成
-Plug 'vim-scripts/DrawIt'
-
-" 保存時の構文チェッカ
-" javascript : npm install -g eslint
-"     coffee : npm install -g coffeelint
-" Plug 'scrooloose/syntastic'
-" let g:syntastic_javascript_checkers = ['eslint']
-" let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
-" let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
-" " typescriptは上手く動かないのでチェックしない
-" let g:loaded_syntastic_typescript_tslint_checker = 0
-" let g:loaded_syntastic_typescript_tsc_checker = 0
+" ほとんど使わないため必要になったら有効にする
+" Plug 'vim-scripts/DrawIt'
 
 " インデント表示
 " conceallevel=2が設定されてjsonの"が表示されない
