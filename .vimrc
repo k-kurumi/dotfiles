@@ -275,18 +275,6 @@ Plug 'alvan/vim-closetag'
 " rspec
 Plug 'keith/rspec.vim'
 
-" yamlでドット区切りでジャンプできる
-" Moving to the parent node ( :YamlGoToParent ),
-" Getting the full path to the current element ( :YamlGetFullPath ),
-" Moving to an element, given the path ( :YamlGoToKey )
-Plug 'lmeijvogel/vim-yaml-helper'
-noremap <C-y> :YamlGetFullPath<CR>
-let g:vim_yaml_helper#always_get_root = 1
-let g:vim_yaml_helper#auto_display_path = 0
-
-" 標準のyamlハイライトより速いらしい
-Plug 'stephpy/vim-yaml'
-
 " rubyでend補完
 Plug 'tpope/vim-endwise'
 
@@ -326,7 +314,12 @@ Plug 'fatih/vim-go'
 "   augroup END
 " endif
 
+" ansibleというよりyamlの改行時インデントを調整するために使う
+Plug 'stephpy/vim-yaml'
 Plug 'pearofducks/ansible-vim'
+let g:ansible_unindent_after_newline = 1
+let g:ansible_yamlKeyName = 'yamlKey'
+
 Plug 'cespare/vim-toml'
 
 " vim-nerdtree-tabsのツリーがおかしくなるので使用しないこと
@@ -565,9 +558,9 @@ augroup MyGroup
   autocmd BufNewFile,BufRead *.rest set filetype=rest expandtab sw=2 ts=2 sts=2
   autocmd BufNewFile,BufRead *.page set filetype=rest expandtab sw=2 ts=2 sts=2
 
-  " yml(dotcloud)
-  autocmd BufNewFile,BufRead *.yml  set filetype=yaml autoindent expandtab sw=2 ts=2 sts=2
-  autocmd BufNewFile,BufRead *.yaml set filetype=yaml autoindent expandtab sw=2 ts=2 sts=2
+  " yml
+  autocmd BufNewFile,BufRead *.yml  set filetype=yaml.ansible expandtab sw=2 ts=2 sts=2
+  autocmd BufNewFile,BufRead *.yaml set filetype=yaml.ansible expandtab sw=2 ts=2 sts=2
 
   " ios(objective-c)
   autocmd BufNewFile,BufRead *.h set filetype=objc sw=4 ts=4 sts=4 cindent autoindent
@@ -597,7 +590,7 @@ augroup MyGroup
   autocmd BufNewFile,BufRead *.tick  set filetype=javascript et sw=2 ts=2 sts=2 nocindent autoindent
 
   " boshのspec
-  autocmd BufNewFile,BufRead spec  set filetype=yaml et sw=2 ts=2 sts=2 nocindent autoindent
+  autocmd BufNewFile,BufRead spec  set filetype=yaml.ansible et sw=2 ts=2 sts=2
 
 augroup END
 
