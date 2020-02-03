@@ -2,7 +2,7 @@
 #
 # install ghq
 
-version=v1.0.1
+version=v1.1.0
 
 pushd /tmp
   rm -rf ghq_linux_amd64*

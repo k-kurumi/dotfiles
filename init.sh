@@ -11,7 +11,6 @@ echo ".Xmodmap
 .eslintrc.yml
 .gitignore_global
 .ideavimrc
-.peco
 .pryrc
 .railsrc
 .screenrc

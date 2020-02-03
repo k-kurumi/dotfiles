@@ -9,6 +9,5 @@ brew install zsh
 brew install tmux
 brew install tree
 brew install mosh
-brew install peco
 
 brew cleanup
