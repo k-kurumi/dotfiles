@@ -898,6 +898,12 @@ if has('gui_running')
 
   " フォント設定
   set guifont=Cica\ Bold\ 12
+
+  " macはフォント指定が違うらしい
+  if has('macunix')
+    set guifont=Cica-Regular:h18
+  endif
+
   colorscheme darkblue
   set nowrap
 
