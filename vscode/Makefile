@@ -56,7 +56,8 @@ install_all:
 	code --install-extension MS-CEINTL.vscode-language-pack-ja
 
 # キーワードで色分け、インデント強調、行末スペースの色付けなど
-	code --install-extension wraith13.background-phi-colors
+# 色付けが多すぎて見づらいので使用しない
+#	code --install-extension wraith13.background-phi-colors
 
 # 括弧の色付け
 	code --install-extension CoenraadS.bracket-pair-colorizer

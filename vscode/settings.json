@@ -82,7 +82,7 @@
     "gitlens.hovers.currentLine.over": "line",
 
     // テーマ
-    "workbench.colorTheme": "Material Theme",
+    "workbench.colorTheme": "Quiet Light",
     // 検索の循環を禁止
     "vim.wrapscan": false,
     "go.formatTool": "goimports",
