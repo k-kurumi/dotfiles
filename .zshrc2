@@ -1,5 +1,6 @@
 # zprezto経由でpureを使う
-prompt pure
+# .zpreztorcの方で指定することにする
+# prompt pure
 
 export EDITOR=vim
 export VISUAL=vim # macのcrontab用
@@ -165,8 +166,3 @@ function dockerhub_tag_search {
 
 source ~/.tool.sh
 source ~/.fzfrc
-
-# 右にエラーコードが出るとスペースで埋められてコピペすると不格好なので左側にまとめる
-# TODO 1行目に表示したい
-export PROMPT=${PROMPT}${RPROMPT}
-export RPROMPT=
