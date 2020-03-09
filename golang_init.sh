@@ -17,7 +17,7 @@ echo "### タグ情報生成"
 go get -u -v github.com/jstemmer/gotags
 
 echo "### irbみたいなの"
-go get -u -v github.com/motemen/gore
+go get -u -v github.com/motemen/gore/cmd/gore
 
 echo "### pretty print"
 go get -u -v github.com/k0kubun/pp
