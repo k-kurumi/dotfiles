@@ -2,6 +2,7 @@
 {
     // RictyDiminishedDiscord-Boldではオブリークが細いままなので、Regularを使ってfontWeightで太くする
     "editor.fontFamily": "Cica",
+    "editor.fontSize": 18,
 
     // カーソルを点滅させない
     "editor.cursorBlinking": "solid",
