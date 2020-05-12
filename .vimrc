@@ -319,6 +319,11 @@ Plug 'stephpy/vim-yaml'
 Plug 'pearofducks/ansible-vim'
 let g:ansible_unindent_after_newline = 1
 let g:ansible_yamlKeyName = 'yamlKey'
+let g:ansible_attribute_highlight = "ob"
+let g:ansible_name_highlight = 'd'
+let g:ansible_extra_keywords_highlight = 1
+let g:ansible_normal_keywords_highlight = 'Constant'
+let g:ansible_with_keywords_highlight = 'Constant'
 
 Plug 'cespare/vim-toml'
 
@@ -559,8 +564,9 @@ augroup MyGroup
   autocmd BufNewFile,BufRead *.page set filetype=rest expandtab sw=2 ts=2 sts=2
 
   " yml
-  autocmd BufNewFile,BufRead *.yml  set filetype=yaml.ansible expandtab sw=2 ts=2 sts=2
-  autocmd BufNewFile,BufRead *.yaml set filetype=yaml.ansible expandtab sw=2 ts=2 sts=2
+  " indentkeysを空にすると改行時にインデントが入らない
+  autocmd BufNewFile,BufRead *.yml  set filetype=yaml.ansible expandtab sw=2 ts=2 sts=2 indentkeys=
+  autocmd BufNewFile,BufRead *.yaml set filetype=yaml.ansible expandtab sw=2 ts=2 sts=2 indentkeys=
 
   " ios(objective-c)
   autocmd BufNewFile,BufRead *.h set filetype=objc sw=4 ts=4 sts=4 cindent autoindent
@@ -588,10 +594,6 @@ augroup MyGroup
   " kapacitor
   " syntaxなどが見つからないが、jsに似ているため
   autocmd BufNewFile,BufRead *.tick  set filetype=javascript et sw=2 ts=2 sts=2 nocindent autoindent
-
-  " boshのspec
-  autocmd BufNewFile,BufRead spec  set filetype=yaml.ansible et sw=2 ts=2 sts=2
-
 augroup END
 
 
