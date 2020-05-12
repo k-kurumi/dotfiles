@@ -2,7 +2,7 @@
 #
 # install ripgrep
 
-version=11.0.2
+version=12.1.0
 
 pushd /tmp
   rm -rf ripgrep-*

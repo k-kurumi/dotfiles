@@ -3,7 +3,7 @@
 set -e
 set -x
 
-version=2.5.0
+version=2.5.1
 
 sudo apt-get update
 sudo apt-get install -y \

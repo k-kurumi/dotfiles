@@ -4,7 +4,7 @@
 
 # 2.9でまた設定ファイルの書き方が変わったのでコンバートする
 # https://gist.github.com/tbutts/6abf7fb5b948c066bf180922fb37adcf
-version=3.0a
+version=3.1b
 
 sudo apt-get update
 sudo apt-get install -y \
