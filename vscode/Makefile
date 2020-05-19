@@ -83,3 +83,6 @@ install_all:
 
 # 閉じタグの補完
 	code --install-extension formulahendry.auto-close-tag
+
+# ghosttext
+	code --install-extension tokoph.ghosttext
