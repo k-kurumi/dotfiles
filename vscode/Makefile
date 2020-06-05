@@ -86,3 +86,6 @@ install_all:
 
 # ghosttext
 	code --install-extension tokoph.ghosttext
+
+# draw.io
+	code --install-extension hediet.vscode-drawio
