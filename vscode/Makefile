@@ -11,7 +11,8 @@ ifeq ($(OS), Linux)
 endif
 
 ifeq ($(OS), Darwin)
-	ln -sf $(CURDIR)/settings.json ~/Library/Application Support/Code/User/settings.json
+# macでスペースがあるときはバックスラッシュが必要(クォートで囲んでもエラーになる)
+	ln -sf $(CURDIR)/settings.json ~/Library/Application\ Support/Code/User/settings.json
 endif
 
 # プラグイン一覧
