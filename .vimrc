@@ -906,7 +906,7 @@ if has('gui_running')
     set guifont=Cica-Regular:h18
   endif
 
-  colorscheme darkblue
+  colorscheme desert
   set nowrap
 
   " ウインドウサイズ lines:縦 columns:横
