@@ -906,7 +906,7 @@ if has('gui_running')
     set guifont=Cica-Regular:h18
   endif
 
-  colorscheme desert
+  colorscheme iceberg
   set nowrap
 
   " ウインドウサイズ lines:縦 columns:横
@@ -922,7 +922,6 @@ else
   let g:hybrid_reduced_contrast = 1 " Remove this line if using the default palette.
   set background=dark
   colorscheme iceberg
-  " colorscheme iceberg
 
   " hybridだと現在の行がわかりづらいため
   highlight CursorLine cterm=underline gui=underline
