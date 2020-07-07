@@ -897,6 +897,7 @@ if has('gui_running')
     set guifont=Cica\ Bold\ 12
   endif
 
+  set background=dark
   colorscheme iceberg
   " set nowrap
 
