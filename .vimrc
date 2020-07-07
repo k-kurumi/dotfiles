@@ -877,7 +877,7 @@ endfunction
 " 端末ジョブモード(通常のターミナル)に切り替えるには i や a
 
 " macvimは\で円マークが入るため入れ替える
-noremap! ¥ \
+" noremap! ¥ \
 
 " ターミナルでスクロールが遅いのを改善する
 set lazyredraw
@@ -890,32 +890,23 @@ if !exists(":DiffOrig")
 endif
 
 if has('gui_running')
-  " 主にghosttext経由でしか使わない
-
-  " クリップボード
-  "   コピー: "+y
-  "   貼り付け: "+p
-  " "*y "*p は中ボタンと同じ扱い
-  set clipboard=unnamedplus
-
   " フォント設定
-  set guifont=Cica\ Bold\ 12
-
-  " macはフォント指定が違うらしい
   if has('macunix')
-    set guifont=Cica-Regular:h18
+    set guifont=Cica-Regular:h24
+  elseif has('unix')
+    set guifont=Cica\ Bold\ 12
   endif
 
   colorscheme iceberg
-  set nowrap
+  " set nowrap
 
   " ウインドウサイズ lines:縦 columns:横
-  "set lines=40
-  "set columns=100
+  set lines=50
+  set columns=150
 
   " ウインドウ表示位置
   "winpos 10 0
-  winsize 150 40
+  " winsize 150 40
 else
   " hybridは設定が必要
   let g:hybrid_custom_term_colors = 1
