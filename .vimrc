@@ -891,8 +891,8 @@ endif
 
 if has('gui_running')
   " フォント設定
-  if has('macunix')
-    set guifont=Cica-Regular:h24
+  if has('mac')
+    set guifont=Cica-Regular:h18
   elseif has('unix')
     set guifont=Cica\ Bold\ 12
   endif
@@ -902,8 +902,8 @@ if has('gui_running')
   " set nowrap
 
   " ウインドウサイズ lines:縦 columns:横
-  set lines=50
-  set columns=150
+  set lines=80
+  set columns=160
 
   " ウインドウ表示位置
   "winpos 10 0
