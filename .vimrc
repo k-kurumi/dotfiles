@@ -877,7 +877,7 @@ endfunction
 " 端末ジョブモード(通常のターミナル)に切り替えるには i や a
 
 " macvimは\で円マークが入るため入れ替える
-" noremap! ¥ \
+noremap! ¥ \
 
 " ターミナルでスクロールが遅いのを改善する
 set lazyredraw
