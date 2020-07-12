@@ -35,7 +35,7 @@ install_all:
 # code --install-extension ms-vsliveshare.vsliveshare
 
 # vim kyebind
-	code --install-extension vscodevim.vim
+# code --install-extension vscodevim.vim
 
 # js系の整形ほか
 	code --install-extension dbaeumer.vscode-eslint
