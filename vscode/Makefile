@@ -90,3 +90,9 @@ install_all:
 
 # draw.io
 	code --install-extension hediet.vscode-drawio
+
+# 行末スペース強調
+	code --install-extension shardulm94.trailing-spaces
+
+# インデントの色付け
+	code --install-extension oderwat.indent-rainbow
