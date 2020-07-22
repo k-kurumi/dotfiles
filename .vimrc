@@ -87,6 +87,9 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=darkgrey
 Plug 'w0ng/vim-hybrid'
 Plug 'cocopon/iceberg.vim'
 Plug 'dracula/vim', { 'as': 'dracula'  }
+Plug 'fatih/molokai'
+let g:rehash256 = 1
+let g:molokai_original = 1
 
 " git diffを表示
 Plug 'airblade/vim-gitgutter'
@@ -288,6 +291,27 @@ Plug 'tonekk/vim-ruby-capybara'
 " golang
 
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+autocmd FileType go nmap <leader>t <Plug>(go-test)
+autocmd FileType go nmap <leader>b <Plug>(go-build)
+autocmd FileType go nmap <Leader>c <Plug>(go-coverage-toggle)
+autocmd FileType go nmap <Leader>i <Plug>(go-info)
+autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4
+autocmd Filetype go command! -bang A call go#alternate#Switch(<bang>0, 'edit')
+autocmd Filetype go command! -bang AV call go#alternate#Switch(<bang>0, 'vsplit')
+autocmd Filetype go command! -bang AS call go#alternate#Switch(<bang>0, 'split')
+autocmd Filetype go command! -bang AT call go#alternate#Switch(<bang>0, 'tabe')
+
+let g:go_highlight_types = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_function_calls = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_extra_types = 1
+let g:go_highlight_build_constraints = 1
+let g:go_auto_sameids = 1
+
+Plug 'AndrewRadev/splitjoin.vim'
+" タブでスニペット選択
+Plug 'SirVer/ultisnips'
 
 " ansibleというよりyamlの改行時インデントを調整するために使う
 Plug 'stephpy/vim-yaml'
@@ -331,7 +355,7 @@ call plug#end()
 syntax on
 
 " デフォルトの\ではなく,を使う
-" let mapleader=","
+let mapleader=","
 
 " バックスペースで文字削除
 set bs=2
@@ -546,8 +570,6 @@ augroup MyGroup
   " ios(objective-c)
   autocmd BufNewFile,BufRead *.h set filetype=objc sw=4 ts=4 sts=4 cindent autoindent
 
-  " golang
-  autocmd BufNewFile,BufRead *.go set filetype=go sw=4 ts=4 sts=4 cindent autoindent smartindent noet
   " ,d でタブを開いて参照
   autocmd FileType go nmap <silent> <Leader>d :<C-u>call go#def#Jump("tab")<CR>
 
@@ -612,7 +634,7 @@ set directory=~/.vim
 " NERDTree
 " ------------------------------------------------------------------------------
 " 開いているファイルをツリーで表示
-nnoremap ,f :NERDTreeFind<CR>
+nnoremap <leader>f :NERDTreeFind<CR>
 
 " ツリーの開閉
 "nnoremap ,t :NERDTreeToggle<CR>
@@ -873,7 +895,7 @@ if has('gui_running')
   endif
 
   set background=dark
-  colorscheme iceberg
+  colorscheme molokai
   " set nowrap
 
   " ウインドウサイズ lines:縦 columns:横
@@ -888,7 +910,7 @@ else
   let g:hybrid_custom_term_colors = 1
   let g:hybrid_reduced_contrast = 1 " Remove this line if using the default palette.
   set background=dark
-  colorscheme iceberg
+  colorscheme molokai
 
   " hybridだと現在の行がわかりづらいため
   highlight CursorLine cterm=underline gui=underline
