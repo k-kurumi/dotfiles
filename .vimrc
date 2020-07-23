@@ -309,7 +309,14 @@ let g:go_highlight_extra_types = 1
 let g:go_highlight_build_constraints = 1
 let g:go_auto_sameids = 1
 
-Plug 'AndrewRadev/splitjoin.vim'
+" 補完はlsp使う方が便利"
+Plug 'prabirshrestha/async.vim'
+Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
+Plug 'prabirshrestha/vim-lsp'
+Plug 'mattn/vim-lsp-settings'
+Plug 'mattn/vim-goimports'
+
 " タブでスニペット選択
 Plug 'SirVer/ultisnips'
 
