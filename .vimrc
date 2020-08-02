@@ -907,7 +907,7 @@ if has('gui_running')
 
   " ウインドウサイズ lines:縦 columns:横
   set lines=80
-  set columns=160
+  set columns=180
 
   " ウインドウ表示位置
   "winpos 10 0
