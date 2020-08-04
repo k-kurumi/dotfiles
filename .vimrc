@@ -307,7 +307,7 @@ let g:go_highlight_function_calls = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_extra_types = 1
 let g:go_highlight_build_constraints = 1
-let g:go_auto_sameids = 1
+" let g:go_auto_sameids = 1
 
 " 補完はlsp使う方が便利"
 Plug 'prabirshrestha/async.vim'
@@ -368,7 +368,7 @@ let mapleader=","
 set bs=2
 
 " 検索などの履歴
-set viminfo+=n~/.viminfo
+" set viminfo+=n~/.viminfo
 
 " カーソル位置をバーに表示
 set ruler
