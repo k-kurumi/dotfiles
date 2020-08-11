@@ -11,7 +11,12 @@ set commentary
 " set clipboard=unnamed
 
 " 検索ジャンプしたとき画面中央に表示する
-noremap n nzz
+map n nzz
+map N Nzz
 
 " ハイフン区切りも単語扱いにする
 set iskeyword+=-
+
+" エディタタブ間の移動
+map tl :action NextTab<CR>
+map th :action PreviousTab<CR>
