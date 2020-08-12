@@ -21,8 +21,7 @@ npm-debug.log
 
 # direnv
 .envrc
-
-
+.env
 
 ################################################################################
 # Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio
