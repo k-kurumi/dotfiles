@@ -20,3 +20,6 @@ set iskeyword+=-
 " エディタタブ間の移動
 map tl :action NextTab<CR>
 map th :action PreviousTab<CR>
+
+" vimと同じ文字列補完は <A-/>
+" :actionlist でショートカットなど確認できる
