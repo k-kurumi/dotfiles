@@ -906,8 +906,8 @@ if has('gui_running')
   " set nowrap
 
   " ウインドウサイズ lines:縦 columns:横
-  set lines=80
-  set columns=180
+  set lines=100
+  set columns=220
 
   " ウインドウ表示位置
   "winpos 10 0
