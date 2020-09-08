@@ -52,10 +52,11 @@ let g:nerdtree_tabs_open_on_gui_startup = 0
 " gcでコメントトグル
 Plug 'tomtom/tcomment_vim'
 
-" githubのページで開く
-" ビジュアルモードなどで :OpenGithubFile
-Plug 'tyru/open-browser.vim'
-Plug 'tyru/open-browser-github.vim'
+" githubを開く
+" :OpenGithubで開く
+" :CopyGithubでURLをコピー
+" open-browser-githubより使いやすい
+Plug 'k0kubun/vim-open-github'
 
 " アスキーアート作成
 " ほとんど使わないため必要になったら有効にする
