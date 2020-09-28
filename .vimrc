@@ -318,8 +318,13 @@ Plug 'prabirshrestha/vim-lsp'
 Plug 'mattn/vim-lsp-settings'
 Plug 'mattn/vim-goimports'
 
-" タブでスニペット選択
-Plug 'SirVer/ultisnips'
+" タブでスニペット補完
+" ultisnipsは同じテンプレが2つ出て選ぶのが面倒なので使わない
+" Plug 'SirVer/ultisnips'
+Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'tomtom/tlib_vim'
+Plug 'garbas/vim-snipmate'
+Plug 'honza/vim-snippets'
 
 " ansibleというよりyamlの改行時インデントを調整するために使う
 Plug 'stephpy/vim-yaml'
