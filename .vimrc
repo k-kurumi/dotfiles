@@ -291,6 +291,14 @@ Plug 'tonekk/vim-ruby-capybara'
 " --------------------------------------------------------------------------------
 " golang
 
+" デバッグ用
+" :DlvAddBreakPoint して :DlvDebug から実行する
+Plug 'benmills/vimux'
+Plug 'sebdah/vim-delve'
+" terminalではなくtmuxのペインで開く
+let g:delve_use_vimux = 1
+
+" vim-goのデバッグ機能は表示がおかしくなるので使わないようにする
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 autocmd FileType go nmap <leader>t <Plug>(go-test)
 autocmd FileType go nmap <leader>b <Plug>(go-build)
@@ -582,9 +590,6 @@ augroup MyGroup
 
   " ios(objective-c)
   autocmd BufNewFile,BufRead *.h set filetype=objc sw=4 ts=4 sts=4 cindent autoindent
-
-  " ,d でタブを開いて参照
-  autocmd FileType go nmap <silent> <Leader>d :<C-u>call go#def#Jump("tab")<CR>
 
   " bats
   autocmd BufNewFile,BufRead *.bats set filetype=sh sw=2 ts=2 sts=2 et nocindent autoindent
