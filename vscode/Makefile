@@ -1,7 +1,19 @@
-# 設定ファイルはsetting syncで同期する
-#
+OS := $(shell uname)
+
 help:
 	@echo "vscodeの初期設定用"
+
+# 設定ファイルの作成
+init:
+ifeq ($(OS), Linux)
+	ln -sf $(CURDIR)/settings.json ~/.config/Code/User/settings.json
+	ln -sf $(CURDIR)/keybindings.json ~/.config/Code/User/keybindings.json
+endif
+
+ifeq ($(OS), Darwin)
+# macでスペースがあるときはバックスラッシュが必要(クォートで囲んでもエラーになる)
+	ln -sf $(CURDIR)/settings.json ~/Library/Application\ Support/Code/User/settings.json
+endif
 
 # プラグイン一覧
 list:
