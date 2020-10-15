@@ -84,11 +84,11 @@ fi
 
 # yamllintのconfig
 mkdir -p ~/.config/yamllint
-ln -sf "$(readlink -f .config/yamllint/config)" ~/.config/yamllint/
+ln -sf "$(realpath .config/yamllint/config)" ~/.config/yamllint/
 
 # zathura pdf reader
 mkdir -p ~/.config/zathura
-ln -sf "$(readlink -f .config/zathura/zathurarc)" ~/.config/zathura/
+ln -sf "$(realpath .config/zathura/zathurarc)" ~/.config/zathura/
 
 # .docker/config.jsonは認証情報が追記されシンボリックリンクにすると差分管理しづらいためファイルにする
 if type jq > /dev/null; then
@@ -109,4 +109,4 @@ cp bin/nc_server.sh ~/dev/bin
 
 # gpgでgktウインドウがでてフォーカスが取られて面倒なのでCUIで完結するようにする
 mkdir -p ~/.gnupg
-ln -sf "$(readlink -f .gnupg/gpg-agent.conf)" ~/.gnupg/
+ln -sf "$(realpath .gnupg/gpg-agent.conf)" ~/.gnupg/
