@@ -298,25 +298,25 @@ Plug 'sebdah/vim-delve'
 " terminalではなくtmuxのペインで開く
 let g:delve_use_vimux = 1
 
-" vim-goのデバッグ機能は表示がおかしくなるので使わないようにする
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-autocmd FileType go nmap <leader>t <Plug>(go-test)
-autocmd FileType go nmap <leader>b <Plug>(go-build)
-autocmd FileType go nmap <Leader>c <Plug>(go-coverage-toggle)
-autocmd FileType go nmap <Leader>i <Plug>(go-info)
-autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4
-autocmd Filetype go command! -bang A call go#alternate#Switch(<bang>0, 'edit')
-autocmd Filetype go command! -bang AV call go#alternate#Switch(<bang>0, 'vsplit')
-autocmd Filetype go command! -bang AS call go#alternate#Switch(<bang>0, 'split')
-autocmd Filetype go command! -bang AT call go#alternate#Switch(<bang>0, 'tabe')
-
-let g:go_highlight_types = 1
-let g:go_highlight_fields = 1
-let g:go_highlight_function_calls = 1
-let g:go_highlight_operators = 1
-let g:go_highlight_extra_types = 1
-let g:go_highlight_build_constraints = 1
-" let g:go_auto_sameids = 1
+" " vim-goなくても他のプラグインで問題なさそう
+" Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+" autocmd FileType go nmap <leader>t <Plug>(go-test)
+" autocmd FileType go nmap <leader>b <Plug>(go-build)
+" autocmd FileType go nmap <Leader>c <Plug>(go-coverage-toggle)
+" autocmd FileType go nmap <Leader>i <Plug>(go-info)
+" autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4
+" autocmd Filetype go command! -bang A call go#alternate#Switch(<bang>0, 'edit')
+" autocmd Filetype go command! -bang AV call go#alternate#Switch(<bang>0, 'vsplit')
+" autocmd Filetype go command! -bang AS call go#alternate#Switch(<bang>0, 'split')
+" autocmd Filetype go command! -bang AT call go#alternate#Switch(<bang>0, 'tabe')
+"
+" let g:go_highlight_types = 1
+" let g:go_highlight_fields = 1
+" let g:go_highlight_function_calls = 1
+" let g:go_highlight_operators = 1
+" let g:go_highlight_extra_types = 1
+" let g:go_highlight_build_constraints = 1
+" " let g:go_auto_sameids = 1
 
 " 補完はlsp使う方が便利"
 Plug 'prabirshrestha/async.vim'
