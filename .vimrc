@@ -167,11 +167,6 @@ imap <c-x><c-l> <plug>(fzf-complete-line)
 " ctrlp風のキーバインド
 nmap <C-p> :Files<CR>
 
-
-" 過去のyank一覧
-Plug 'LeafCage/yankround.vim'
-nnoremap ,p :CtrlPYankRound<CR>
-
 " ステータスラインのカスタマイズ
 Plug 'w0rp/ale'
 Plug 'itchyny/lightline.vim'
@@ -956,3 +951,8 @@ command! -nargs=? Yamlpath call Yamlpath(<args>)
 if has("autocmd") && g:yamlpath_auto
   au FileType yaml :autocmd CursorMoved * call Yamlpath()
 endif
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" yankした文字一覧を確認する
+" :registers
+" "3p のように貼り付ける
