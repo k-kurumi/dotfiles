@@ -364,6 +364,39 @@ let g:memolist_filename_prefix_none = 1
 Plug 'hashivim/vim-terraform'
 let g:terraform_fmt_on_save = 1
 
+" yank履歴を保持するために使う
+Plug 'svermeulen/vim-easyclip'
+let g:EasyClipShareYanks = 1
+
+" https://github.com/junegunn/fzf.vim/issues/647#issuecomment-520259307
+function! s:yank_list()
+  redir => ys
+  silent Yanks
+  redir END
+  return split(ys, '\n')[1:]
+endfunction
+
+function! s:yank_handler(reg)
+  if empty(a:reg)
+    echo "aborted register paste"
+  else
+    let token = split(a:reg, ' ')
+    execute 'Paste' . token[0]
+  endif
+endfunction
+
+command! FZFYank call fzf#run({
+\ 'source': <sid>yank_list(),
+\ 'sink': function('<sid>yank_handler'),
+\ 'options': '-m',
+\ 'down': 12
+\ })
+
+" yank一覧から選んで貼り付け
+" 通常のバッファ貼り付け(p)とは別扱い
+nnoremap <C-y><C-y> :<C-u>FZFYank<CR>
+inoremap <C-y><C-y> <C-o>:<C-u>FZFYank<CR>
+
 call plug#end()
 " ================================================================================
 
