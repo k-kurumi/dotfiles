@@ -368,7 +368,7 @@ let g:terraform_fmt_on_save = 1
 Plug 'svermeulen/vim-easyclip'
 let g:EasyClipShareYanks = 1
 
-" https://github.com/junegunn/fzf.vim/issues/647#issuecomment-520259307
+" https://github.com/svermeulen/vim-easyclip/issues/62#issuecomment-158275008
 function! s:yank_list()
   redir => ys
   silent Yanks
