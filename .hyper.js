@@ -135,11 +135,11 @@ module.exports = {
 
     // ダーク系(全部確認はしていないがどれも大差ない)
     // 'hyper-ramda',
-    // 'hyper-cobalt-next',
+    'hyper-cobalt-next',
     // 'hyper-dracula',
     // 'hyper-darkmatter',
     // 'hyperterm-material-spacegray',
-    'hyper-bloody',
+    // 'hyper-bloody',
     // 'hyper-materialshell',
 
     // 背景透過
