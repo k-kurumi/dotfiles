@@ -119,6 +119,7 @@ module.exports = {
     // bellSoundURL: 'http://example.com/bell.mp3',
 
     // for advanced config flags please refer to https://hyper.is/#cfg
+    //
   },
 
   // a list of plugins to fetch and install from npm
@@ -128,12 +129,28 @@ module.exports = {
   //   `@company/project`
   //   `project#1.0.1`
   plugins: [// https://github.com/bnb/awesome-hyper
-  //
-  // 'hyperline', // 2.0で使えなくなった
-  // 'hyper-statusline',
-  // itermとよく似た灰色配色
-    'hyperterm-material',
+    // 複数行の貼り付け時に確認ウインドウを出す
+    'hyperterm-safepaste',
+
+
+    // ダーク系(全部確認はしていないがどれも大差ない)
+    // 'hyper-ramda',
+    // 'hyper-cobalt-next',
+    // 'hyper-dracula',
+    // 'hyper-darkmatter',
+    // 'hyperterm-material-spacegray',
+    'hyper-bloody',
+    // 'hyper-materialshell',
+
+    // 背景透過
+    // 'hyper-clean',
+    // 'hyper-firewatch',
+
+    // カーソルが目立つ
     'hyperpower',
+
+    // マウスでタブを移動する
+    'hyper-dnd-tabs',
   ],
 
   // in development, you can create a directory under
