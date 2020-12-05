@@ -137,13 +137,13 @@ module.exports = {
     // 'hyper-ramda',
     // 'hyper-cobalt-next',
     // 'hyper-dracula',
-    // 'hyper-darkmatter',
+    'hyper-darkmatter',
     // 'hyperterm-material-spacegray',
     // 'hyper-bloody',
     // 'hyper-materialshell',
 
     // 背景透過
-    'hyper-clean',
+    // 'hyper-clean',
     // 'hyper-firewatch',
 
     // カーソルが目立つ
