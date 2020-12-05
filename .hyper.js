@@ -135,7 +135,7 @@ module.exports = {
 
     // ダーク系(全部確認はしていないがどれも大差ない)
     // 'hyper-ramda',
-    'hyper-cobalt-next',
+    // 'hyper-cobalt-next',
     // 'hyper-dracula',
     // 'hyper-darkmatter',
     // 'hyperterm-material-spacegray',
@@ -143,7 +143,7 @@ module.exports = {
     // 'hyper-materialshell',
 
     // 背景透過
-    // 'hyper-clean',
+    'hyper-clean',
     // 'hyper-firewatch',
 
     // カーソルが目立つ
