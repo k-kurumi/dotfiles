@@ -103,7 +103,7 @@ module.exports = {
     shellArgs: ['--login'],
 
     // for environment variables
-    env: {},
+    env: {LANG: 'ja_JP.UTF-8'},
 
     // set to false for no bell
     bell: false,
@@ -137,10 +137,11 @@ module.exports = {
     // 'hyper-ramda',
     // 'hyper-cobalt-next',
     // 'hyper-dracula',
-    'hyper-darkmatter',
+    // 'hyper-darkmatter',
     // 'hyperterm-material-spacegray',
     // 'hyper-bloody',
     // 'hyper-materialshell',
+    'hyper-material-theme',
 
     // 背景透過
     // 'hyper-clean',
