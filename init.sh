@@ -114,3 +114,7 @@ ln -sf "$(realpath .gnupg/gpg-agent.conf)" ~/.gnupg/
 # wezterm 日本語変換途中が表示されないがそれ以外は問題なく使える
 mkdir -p ~/.config/wezterm
 ln -sf "$(realpath wezterm/wezterm.lua)" ~/.config/wezterm/
+
+# kitty weztermのようなターミナル
+mkdir -p ~/.config/kitty
+ln -sf "$(realpath kitty/kitty.conf)" ~/.config/kitty/
