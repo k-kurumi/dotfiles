@@ -108,8 +108,18 @@ mkdir -p ~/dev/bin
 cp bin/nc_server.sh ~/dev/bin
 
 # gpgでgktウインドウがでてフォーカスが取られて面倒なのでCUIで完結するようにする
+# OSによりpinentry-ttyのパスが違うため
 mkdir -p ~/.gnupg
-ln -sf "$(realpath .gnupg/gpg-agent.conf)" ~/.gnupg/
+case $(uname) in
+  Linux)
+    ln -sf "$(realpath gnupg/linux_gpg-agent.conf)" ~/.gnupg/gpg-agent.conf
+    ;;
+  Darwin)
+    ln -sf "$(realpath gnupg/mac_gpg-agent.conf)" ~/.gnupg/gpg-agent.conf
+    ;;
+  *)
+    ;;
+esac
 
 # wezterm 日本語変換途中が表示されないがそれ以外は問題なく使える
 mkdir -p ~/.config/wezterm
