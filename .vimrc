@@ -364,11 +364,9 @@ let g:memolist_filename_prefix_none = 1
 Plug 'hashivim/vim-terraform'
 let g:terraform_fmt_on_save = 1
 
-" " <c-p>などを上書きしているので使わない
-" Plug 'vim-scripts/YankRing.vim'
-" " コピーバッファ履歴表示
-" nnoremap <C-y><C-y> :YRShow<CR>
-" nnoremap <C-y><C-s> :YRSearch<CR>
+" yankringなどはキーバインドを書き換えすぎるので使用しない
+" "でレジスタを表示できる
+Plug 'junegunn/vim-peekaboo'
 
 call plug#end()
 " ================================================================================
