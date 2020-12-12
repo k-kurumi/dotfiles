@@ -165,7 +165,7 @@ imap <c-x><c-f> <plug>(fzf-complete-path)
 imap <c-x><c-j> <plug>(fzf-complete-file-ag)
 imap <c-x><c-l> <plug>(fzf-complete-line)
 " ctrlp風のキーバインド
-nmap <c-@> :Files<CR>
+nmap <c-p> :Files<CR>
 
 " ステータスラインのカスタマイズ
 Plug 'w0rp/ale'
@@ -364,11 +364,11 @@ let g:memolist_filename_prefix_none = 1
 Plug 'hashivim/vim-terraform'
 let g:terraform_fmt_on_save = 1
 
-" <c-p>などを上書きしている
-Plug 'vim-scripts/YankRing.vim'
-" コピーバッファ履歴表示
-nnoremap <C-y><C-y> :YRShow<CR>
-nnoremap <C-y><C-s> :YRSearch<CR>
+" " <c-p>などを上書きしているので使わない
+" Plug 'vim-scripts/YankRing.vim'
+" " コピーバッファ履歴表示
+" nnoremap <C-y><C-y> :YRShow<CR>
+" nnoremap <C-y><C-s> :YRSearch<CR>
 
 call plug#end()
 " ================================================================================
