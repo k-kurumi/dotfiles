@@ -1,6 +1,7 @@
 #!/bin/bash
 #
 # install jq
+# https://github.com/stedolan/jq/releases
 
 version=1.6
 

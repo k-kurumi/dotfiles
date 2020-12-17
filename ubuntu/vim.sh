@@ -1,12 +1,9 @@
 #!/bin/bash
 #
 # install vim
-
-set -e
-set -x
+# https://github.com/vim/vim
 
 sudo apt-get update
-
 sudo apt-get install -y \
   ncurses-dev \
   python-dev \

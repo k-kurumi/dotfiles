@@ -1,8 +1,9 @@
-#!/bin/bash -x
+#!/bin/bash
 #
 # install ghq
+# https://github.com/x-motemen/ghq/releases
 
-version=v1.1.0
+version=v1.1.5
 
 pushd /tmp
   rm -rf ghq_linux_amd64*

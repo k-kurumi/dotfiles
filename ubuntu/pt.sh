@@ -1,6 +1,7 @@
-#!/bin/bash -x
+#!/bin/bash
 #
 # install pt
+# https://github.com/monochromegane/the_platinum_searcher/releases
 
 version=v2.2.0
 

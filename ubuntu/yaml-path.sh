@@ -1,6 +1,7 @@
 #!/bin/bash
 #
 # install yaml-path
+# https://github.com/psycofdj/yaml-path/releases
 
 version=0.4
 

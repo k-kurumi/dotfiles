@@ -1,7 +1,7 @@
 #!/bin/bash
-
-set -e
-set -x
+#
+# install tig
+# https://github.com/jonas/tig/releases
 
 version=2.5.1
 

@@ -1,8 +1,9 @@
 #!/bin/bash
 #
 # install direnv
+# https://github.com/direnv/direnv/releases
 
-version=v2.21.3
+version=v2.25.2
 
 pushd /tmp
   rm -rf direnv*

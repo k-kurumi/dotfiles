@@ -1,8 +1,9 @@
-#!/bin/bash -x
+#!/bin/bash
 #
 # install ripgrep
+# https://github.com/BurntSushi/ripgrep/releases
 
-version=12.1.0
+version=12.1.1
 
 pushd /tmp
   rm -rf ripgrep-*
