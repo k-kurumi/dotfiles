@@ -132,19 +132,11 @@ module.exports = {
     // 複数行の貼り付け時に確認ウインドウを出す
     'hyperterm-safepaste',
 
-
-    // ダーク系(全部確認はしていないがどれも大差ない)
-    // 'hyper-ramda',
-    // 'hyper-cobalt-next',
-    // 'hyper-dracula',
-    // 'hyper-darkmatter',
-    // 'hyperterm-material-spacegray',
-    // 'hyper-bloody',
-    // 'hyper-materialshell',
-    'hyper-material-theme',
+    // ダーク系はどれも似たような感じなのでこれでいい
+    // 'hyper-material-theme',
 
     // 背景透過
-    // 'hyper-clean',
+    'hyper-clean',
     // 'hyper-firewatch',
 
     // カーソルが目立つ
