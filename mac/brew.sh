@@ -22,6 +22,9 @@ brew install \
   ag \
   mosh \
   pyenv \
-  pyenv-virtualenv
+  pyenv-virtualenv \
+  tfenv \
+  direnv \
+  pinentry
 
 brew cleanup
