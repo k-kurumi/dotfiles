@@ -133,10 +133,10 @@ module.exports = {
     'hyperterm-safepaste',
 
     // ダーク系はどれも似たような感じなのでこれでいい
-    // 'hyper-material-theme',
+    'hyper-material-theme',
 
     // 背景透過
-    'hyper-clean',
+    // 'hyper-clean',
     // 'hyper-firewatch',
 
     // カーソルが目立つ

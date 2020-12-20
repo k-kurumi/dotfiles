@@ -4,7 +4,7 @@
 # フォルダは移動する
 # ファイルはvimで開く
 fzf_open_file() {
-  local selected=$(find . -not -path './.git/*' -print 2> /dev/null | fzf-tmux -d 30)
+  local selected=$(find . -not -path './.git/*' -print 2> /dev/null | fzf)
   echo $selected
   if [ -n "$selected" ]; then
     if [[ -d "$selected" ]]; then
@@ -21,7 +21,7 @@ bindkey '^O' fzf_open_file
 
 # history表示
 function fzf_select_history() {
-  BUFFER=$(history -n 1 | fzf-tmux -d 30)
+  BUFFER=$(history -n 1 | fzf)
   zle clear-screen
 }
 zle -N fzf_select_history
@@ -29,7 +29,7 @@ bindkey '^R' fzf_select_history
 
 # ghqリポジトリに移動する
 function fzf_select_ghq_repo() {
-  local selected_dir=$(ghq list -p | fzf-tmux -d30 --multi --select-1 --exit-0)
+  local selected_dir=$(ghq list -p | fzf)
   echo $selected_dir
   if [ -n "$selected_dir" ]; then
     BUFFER="cd ${selected_dir}"

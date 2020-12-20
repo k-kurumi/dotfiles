@@ -19,6 +19,9 @@ brew install \
   tig \
   ghq \
   fzf \
-  ag
+  ag \
+  mosh \
+  pyenv \
+  pyenv-virtualenv
 
 brew cleanup
