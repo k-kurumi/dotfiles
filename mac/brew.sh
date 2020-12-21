@@ -25,6 +25,7 @@ brew install \
   pyenv-virtualenv \
   tfenv \
   direnv \
+  gpg \
   pinentry
 
 brew cleanup
