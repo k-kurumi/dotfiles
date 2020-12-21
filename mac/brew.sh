@@ -34,6 +34,7 @@ brew install \
   direnv \
   gpg \
   pinentry \
-  trash-cli
+  trash-cli \
+  grip
 
 brew cleanup
