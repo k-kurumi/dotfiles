@@ -15,7 +15,7 @@ bind main R !git rebase -i %(commit)
 bind diff R !git rebase -i %(commit)
 
 # main view の左端にコミットIDを表示する
-set main-view = id date author:email-user commit-title:graph=yes,refs=yes
+set main-view = id date author author:email commit-title:graph=yes,refs=yes
 
 # blame view の行数表示をON、intervalを1に
 set blame-view  = date:default author:email-user id:yes,color line-number:yes,interval=1 text
