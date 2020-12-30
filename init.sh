@@ -30,6 +30,10 @@ do
   ln -sf `pwd`/$f $HOME
 done
 
+# neovim(vimと同じ設定ファイルを使う)
+mkdir -p ~/.config/nvim
+ln -sf `pwd`/.vimrc ~/.config/nvim/init.vim
+
 # ghqの設定
 mkdir -p ~/dev/src
 mkdir -p ~/dev/bin

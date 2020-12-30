@@ -1,28 +1,15 @@
-" .vimrc
-set encoding=utf-8
-scriptencoding utf-8
-
-" fishはPOSIX互換ではないためエラーがでるため回避する
-if $SHELL =~ '/fish$'
-  set shell=bash
-endif
-
-" ================================================================================
-"   vim-plug
+" vim
+" curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 "
-"   INSTALL:
-"     curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-"
-call plug#begin()
+" neovim
+" sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+
+call plug#begin('~/.vim/plugged')
 
 Plug 'tpope/vim-sensible'
 
-" 整形
+" コード整形
 Plug 'junegunn/vim-easy-align'
-
-" undo履歴を可視化する python必要
-" Plug 'sjl/gundo.vim'
-" let g:gundo_prefer_python3 = 1
 
 " undo履歴を可視化する python不要
 Plug 'mbbill/undotree'
@@ -60,6 +47,8 @@ Plug 'k0kubun/vim-open-github'
 
 " アスキーアート作成
 " ほとんど使わないため必要になったら有効にする
+" \di 線の開始
+" \ds 線の停止
 " Plug 'vim-scripts/DrawIt'
 
 " インデント表示
@@ -67,7 +56,7 @@ Plug 'k0kubun/vim-open-github'
 " 見づらいため使用しないようにする
 " Plug 'Yggdroot/indentLine'
 
-" concealを使わないインデント表示
+" concealを使わないインデント色付け
 " ,ig で表示切り替え(,はleader)
 Plug 'nathanaelkane/vim-indent-guides'
 let g:indent_guides_enable_on_vim_startup = 0
@@ -77,25 +66,23 @@ let g:indent_guides_auto_colors = 0
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=black
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=darkgrey
 
-" バイナリエディタ
-"Plug 'Shougo/vinarise.vim'
-
-" カーソル文字に下線を引く
-" カーソル移動が遅いので使わない
-" Plug 'itchyny/vim-cursorword'
+" カーソルの文字列を下線で協調する
+Plug 'itchyny/vim-cursorword'
 
 " color theme
-Plug 'w0ng/vim-hybrid'
-Plug 'cocopon/iceberg.vim'
-Plug 'dracula/vim', { 'as': 'dracula'  }
+" Plug 'w0ng/vim-hybrid'
+" Plug 'cocopon/iceberg.vim'
+" Plug 'dracula/vim', { 'as': 'dracula'  }
+
+" カラフルなカラーテーマ
 Plug 'fatih/molokai'
 let g:rehash256 = 1
 let g:molokai_original = 1
 
-" git diffを表示
+" gitの差分をmark部分に表示
 Plug 'airblade/vim-gitgutter'
 
-" gitをvimから使う
+" git周りのGblameなどが使える
 Plug 'tpope/vim-fugitive'
 
 " 括弧の色分け
@@ -121,23 +108,17 @@ Plug 'dhruvasagar/vim-table-mode'
 let g:table_mode_corner = '|'
 let g:table_mode_header_fillchar = '-'
 
-" 行番号指定で開く
+" 行番号指定で開く(vim a.txt:20のような感じ)
 Plug 'bogado/file-line'
 
 " zencoding
 " <c-y>,で展開
-Plug 'mattn/emmet-vim'
-" reactjsのclassName補完(.zzzでclassName="zzz")
-" TODO: あとで個人的な補完を追加する
-let g:user_emmet_settings = 1
+" Plug 'mattn/emmet-vim'
 
 " 末尾半角スペースの可視化(:FixWhitespace で削除)
 " ntpeters/vim-better-whitespace が高機能だがssh経由で赤色が出ない
 " 色設定を調整するのが面倒なのでvim-trailing-whitespaceを使う
 Plug 'bronson/vim-trailing-whitespace'
-" uniteで赤くなるため無効にする"
-"let g:extra_whitespace_ignored_filetypes = ['unite']
-
 
 " ctrlpより速いらしい
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -249,69 +230,21 @@ xmap <Space>M <Plug>(quickhl-manual-reset)
 Plug 'thinca/vim-visualstar'
 
 " いろいろ非同期にする
-Plug 'Shougo/vimproc.vim', {'do' : 'make'}
+" Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 
 " gvimのフォントを+拡大、-縮小
-Plug 'thinca/vim-fontzoom'
+" Plug 'thinca/vim-fontzoom'
 
 " htmlなどの閉じタグ補完
 Plug 'alvan/vim-closetag'
 
-" スペルチェック
-" Zlでカーソル上の候補表示
-" Zg goodとして登録
-" Zw wrongとして登録
-" https://qiita.com/kamykn/items/f65e83820623694c78ca
-" ログファイルなどサイズが大きいと開くのが遅い
-" Plug 'kamykn/spelunker.vim'
-
-"
-" 以下は言語特有のプラグイン
-"
-" --------------------------------------------------------------------------------
-" ruby
-"
-" rspec
-Plug 'keith/rspec.vim'
-
-" rubyでend補完
-Plug 'tpope/vim-endwise'
-
-" rails
-Plug 'tpope/vim-rails'
-Plug 'tpope/vim-cucumber'
-Plug 'tonekk/vim-ruby-capybara'
-" <c-w><c-d>でsplitして開く
-
-" --------------------------------------------------------------------------------
 " golang
-
 " デバッグ用
 " :DlvAddBreakPoint して :DlvDebug から実行する
 Plug 'benmills/vimux'
 Plug 'sebdah/vim-delve'
 " terminalではなくtmuxのペインで開く
 let g:delve_use_vimux = 1
-
-" " vim-goなくても他のプラグインで問題なさそう
-" Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-" autocmd FileType go nmap <leader>t <Plug>(go-test)
-" autocmd FileType go nmap <leader>b <Plug>(go-build)
-" autocmd FileType go nmap <Leader>c <Plug>(go-coverage-toggle)
-" autocmd FileType go nmap <Leader>i <Plug>(go-info)
-" autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4
-" autocmd Filetype go command! -bang A call go#alternate#Switch(<bang>0, 'edit')
-" autocmd Filetype go command! -bang AV call go#alternate#Switch(<bang>0, 'vsplit')
-" autocmd Filetype go command! -bang AS call go#alternate#Switch(<bang>0, 'split')
-" autocmd Filetype go command! -bang AT call go#alternate#Switch(<bang>0, 'tabe')
-"
-" let g:go_highlight_types = 1
-" let g:go_highlight_fields = 1
-" let g:go_highlight_function_calls = 1
-" let g:go_highlight_operators = 1
-" let g:go_highlight_extra_types = 1
-" let g:go_highlight_build_constraints = 1
-" " let g:go_auto_sameids = 1
 
 " 補完はlsp使う方が便利"
 Plug 'prabirshrestha/async.vim'
@@ -320,6 +253,8 @@ Plug 'prabirshrestha/asyncomplete-lsp.vim'
 Plug 'prabirshrestha/vim-lsp'
 Plug 'mattn/vim-lsp-settings'
 Plug 'mattn/vim-goimports'
+
+Plug 'cespare/vim-toml'
 
 " タブでスニペット補完
 " ultisnipsは同じテンプレが2つ出て選ぶのが面倒なので使わない
@@ -340,7 +275,6 @@ let g:ansible_extra_keywords_highlight = 1
 let g:ansible_normal_keywords_highlight = 'Constant'
 let g:ansible_with_keywords_highlight = 'Constant'
 
-Plug 'cespare/vim-toml'
 
 " vim-nerdtree-tabsのツリーがおかしくなるので使用しないこと
 " a0691e7では動くがそれ以降にするとツリー部分にファイルの中身が表示されるようになる
@@ -357,9 +291,6 @@ let g:memolist_path = '$HOME/Dropbox/memo'
 let g:memolist_memo_suffix = "md"
 let g:memolist_filename_prefix_none = 1
 
-" jiraのsyntax
-" Plug 'vim-scripts/confluencewiki.vim'
-
 " terraform
 Plug 'hashivim/vim-terraform'
 let g:terraform_fmt_on_save = 1
@@ -369,8 +300,15 @@ let g:terraform_fmt_on_save = 1
 Plug 'junegunn/vim-peekaboo'
 
 call plug#end()
-" ================================================================================
+" -------------------------------------------------------------------------------
 
+" neovim固有の設定
+if has('nvim')
+
+  " インタラクティブな置換など
+  set inccommand=split
+
+endif
 
 syntax on
 
@@ -472,12 +410,8 @@ set fileencodings=utf-8,euc-jp,sjis,iso-2022-jp
 set fileencoding=utf-8
 
 
-" 2バイト文字の記号が崩れなくなるが対応するitem2設定を入れるとtmux分割時に残像が残るため使用しない
+" 2バイト文字の記号が崩れなくなるが対応するiterm2設定を入れるとtmux分割時に残像が残るため使用しない
 " set ambiwidth=double
-
-"ステータスラインにファイルタイプ・文字コード・改行文字を表示
-" powerline使うときは不要
-"set statusline=%<[%n]%F%=\ %m%r%h%w%y%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}\ %l,%c\ %P
 
 " ------------------------------------------------------------------------------
 "  keymap
@@ -508,11 +442,6 @@ vnoremap /s "xy:%s/<C-R>=escape(@x, '\\/.*$^~[]')<CR>//gc<Left><Left><Left>
 " 間違って押しやすいから
 inoremap <C-@> <ESC>
 
-" 短縮入力のような
-ab #- ####----------------------------------------------------------------------------
-
-
-
 " 行の強調(列を有効にするとカーソル移動がもたつくため使わない)
 set cursorline
 set nocursorcolumn
@@ -520,12 +449,8 @@ set nocursorcolumn
 " フリーカーソル {block, insert, all, onemore}
 set virtualedit=all
 
-
-
 " 画面点滅を消す
 set novisualbell
-
-
 
 " 保存しなくてもファイルを切り替えることができ
 " undo, redo の情報も保持させる
@@ -540,8 +465,6 @@ set guioptions=rL
 
 " ビジュアルモードで選択したところを*で検索する
 vnoremap * "zy:let @/ = @z<CR>n
-
-
 
 " ------------------------------------------------------------------------------
 " 拡張子ごとの個別設定
@@ -707,9 +630,6 @@ nnoremap tL :call <SID>MoveTabpage(1)<Return>
 " 使い方メモ
 " ------------------------------------------------------------------------------
 
-" drawitの操作
-" \di 線の開始
-" \ds 線の停止
 
 
 " コピーに付いて
@@ -791,49 +711,6 @@ noremap! <C-w>o <ESC>
 " データは変えずに表示のみ変更する機能(jsonでkeyの""囲みを消したり)は見づらいのでオフ
 set conceallevel=0
 
-" brew でインストールした macvim が spotlight に表示されるように変更する
-" 1. brew install macvim
-" 2. Finderで /usr/local/Cellar/macvim/7.3.64 から MacVim.app をアプリケーションへ移動する
-" 3. ln -s /Applications/MacVim.app /usr/local/Cellar/macvim/7.3.64/
-
-
-
-" " https://sites.google.com/site/fudist/Home/vim-nihongo-ban/-vimrc-sample
-" """"""""""""""""""""""""""""""
-" " 挿入モード時、ステータスラインの色を変更
-" """"""""""""""""""""""""""""""
-" let g:hi_insert = 'highlight StatusLine guifg=darkblue guibg=darkyellow gui=none ctermfg=blue ctermbg=yellow cterm=none'
-"
-" if has('syntax')
-"   augroup InsertHook
-"     autocmd!
-"     autocmd InsertEnter * call s:StatusLine('Enter')
-"     autocmd InsertLeave * call s:StatusLine('Leave')
-"   augroup END
-" endif
-"
-" let s:slhlcmd = ''
-" function! s:StatusLine(mode)
-"   if a:mode == 'Enter'
-"     silent! let s:slhlcmd = 'highlight ' . s:GetHighlight('StatusLine')
-"     silent exec g:hi_insert
-"   else
-"     highlight clear StatusLine
-"     silent exec s:slhlcmd
-"   endif
-" endfunction
-"
-" function! s:GetHighlight(hi)
-"   redir => hl
-"   exec 'highlight '.a:hi
-"   redir END
-"   let hl = substitute(hl, '[\r\n]', '', 'g')
-"   let hl = substitute(hl, 'xxx', '', '')
-"   return hl
-" endfunction
-
-
-""""""""""""""""""""""""""""""
 
 " markdownのtodo
 " todoリストを簡単に入力する
