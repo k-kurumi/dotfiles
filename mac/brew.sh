@@ -35,6 +35,7 @@ brew install \
   gpg \
   pinentry \
   trash-cli \
-  grip
+  grip \
+  p7zip
 
 brew cleanup
