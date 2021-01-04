@@ -36,6 +36,7 @@ brew install \
   pinentry \
   trash-cli \
   grip \
-  p7zip
+  p7zip \
+  neovim
 
 brew cleanup
