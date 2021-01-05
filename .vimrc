@@ -70,9 +70,9 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=darkgrey
 Plug 'itchyny/vim-cursorword'
 
 " color theme
-" Plug 'w0ng/vim-hybrid'
-" Plug 'cocopon/iceberg.vim'
-" Plug 'dracula/vim', { 'as': 'dracula'  }
+Plug 'w0ng/vim-hybrid'
+Plug 'cocopon/iceberg.vim'
+Plug 'dracula/vim', { 'as': 'dracula'  }
 
 " カラフルなカラーテーマ
 Plug 'fatih/molokai'
@@ -254,6 +254,10 @@ Plug 'prabirshrestha/vim-lsp'
 Plug 'mattn/vim-lsp-settings'
 Plug 'mattn/vim-goimports'
 
+" aleなどのワーニング文字が入力文字と同じ行に表示されるが
+" colorschemeによっては見づらいので無効にする
+let g:lsp_diagnostics_enabled = 0
+
 Plug 'cespare/vim-toml'
 
 " タブでスニペット補完
@@ -307,6 +311,10 @@ if has('nvim')
 
   " インタラクティブな置換など
   set inccommand=split
+
+  " ghosttext
+  " nvimを別で起動して :GhostStart しておく
+  Plug 'raghur/vim-ghost', {'do': ':GhostInstall'}
 
 endif
 
