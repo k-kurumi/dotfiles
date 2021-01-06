@@ -37,6 +37,7 @@ brew install \
   trash-cli \
   grip \
   p7zip \
-  neovim
+  neovim \
+  yamllint
 
 brew cleanup

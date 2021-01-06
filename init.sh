@@ -1,9 +1,11 @@
-#!/bin/bash -ex
+#!/bin/bash
 #
-# dotfileを置き換え
+# 設定ファイルなどの初期設定
 
-temp="/tmp/dotfiles_`date '+%s'`"
-mkdir -p $temp
+set -x
+set -eu
+
+tmp_dir=$(mktemp -d)
 
 echo ".Xmodmap
 .ackrc
@@ -26,17 +28,38 @@ echo ".Xmodmap
 .fzfrc
 .vimrc" | while read f
 do
-  [ -f ${HOME}/${f} ] && mv ${HOME}/${f} ${temp}
-  ln -sf `pwd`/$f $HOME
+  if [[ -f "${HOME}/${f}" ]]; then
+    # 念のため既存ファイルは退避扱いにする
+    mv "${HOME}/${f}" "${tmp_dir}"
+  fi
+  ln -sf "$(realpath ${f})" "${HOME}"
 done
+
+################################################################################
+#
+# vim
+#
+
+# for vim
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+# for neovim
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
 # neovim(vimと同じ設定ファイルを使う)
 mkdir -p ~/.config/nvim
-ln -sf `pwd`/.vimrc ~/.config/nvim/init.vim
+ln -sf "$(realpath .vimrc)" ~/.config/nvim/init.vim
 
-# ghqの設定
+################################################################################
+#
+# git
+#
+
+# ghqが使用するフォルダ
 mkdir -p ~/dev/src
 mkdir -p ~/dev/bin
+
+git config --global user.name k-kurumi
+git config --global user.email optpia.kurumi@gmail.com
 
 touch ~/.gitconfig
 if ! grep ghq ~/.gitconfig > /dev/null; then
@@ -72,25 +95,40 @@ if ! grep 'excludesfile =' ~/.gitconfig > /dev/null; then
 EOL
 fi
 
-# preztoの設定ファイルに置き換え
-# readmeの手順をbashで実現したもの
-# https://github.com/sorin-ionescu/prezto
-while read rcfile
-do
-  ln -sf ${rcfile} ~/.$(basename ${rcfile})
-done < <(find "${ZDOTDIR:-$HOME}/.zprezto/runcoms" -maxdepth 1 -type f -name 'z*')
+################################################################################
+#
+# zsh
+#
 
-# 設定の追加分
-grep .zshrc2 ~/.zshrc
-if [ $? -ne 0 ]; then
-  echo 'source ${HOME}/.zshrc2' >> ~/.zshrc
+if [[ ! -d "${HOME}/.zprezto" ]]; then
+
+  git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
+
+  # readmeの設定ファイル置き換え手順をbashで動くようにしたもの
+  # https://github.com/sorin-ionescu/prezto
+  while read rcfile
+  do
+    ln -sf ${rcfile} ~/.$(basename ${rcfile})
+  done < <(find "${ZDOTDIR:-$HOME}/.zprezto/runcoms" -maxdepth 1 -type f -name 'z*')
+
+  # .zshrcはpreztoで管理されるため、追加分は別ファイル(.zshrc2)で作り参照させる
+  grep .zshrc2 ~/.zshrc
+  if [ $? -ne 0 ]; then
+    echo 'source ${HOME}/.zshrc2' >> ~/.zshrc
+  fi
+
 fi
 
-# yamllintのconfig
+################################################################################
+#
+# その他のツール
+#
+
+# yamllintの設定ファイル
 mkdir -p ~/.config/yamllint
 ln -sf "$(realpath .config/yamllint/config)" ~/.config/yamllint/
 
-# zathura pdf reader
+# zathura vi風のPDFリーダー設定ファイル
 mkdir -p ~/.config/zathura
 ln -sf "$(realpath .config/zathura/zathurarc)" ~/.config/zathura/
 
@@ -108,11 +146,7 @@ if type jq > /dev/null; then
   fi
 fi
 
-mkdir -p ~/dev/bin
-cp bin/nc_server.sh ~/dev/bin
-
-# gpgでgktウインドウがでてフォーカスが取られて面倒なのでCUIで完結するようにする
-# OSによりpinentry-ttyのパスが違うため
+# gpgのシークレット入力プロンプトをシンプルなものに変更する(OSによりpinentry-ttyのパスが違う)
 mkdir -p ~/.gnupg
 case $(uname) in
   Linux)
@@ -132,3 +166,7 @@ ln -sf "$(realpath wezterm/wezterm.lua)" ~/.config/wezterm/
 # kitty weztermのようなターミナル
 mkdir -p ~/.config/kitty
 ln -sf "$(realpath kitty/kitty.conf)" ~/.config/kitty/
+
+# デバッグツール周り
+mkdir -p ~/dev/bin
+cp bin/nc_server.sh ~/dev/bin
