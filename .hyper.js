@@ -140,7 +140,7 @@ module.exports = {
     // 'hyper-firewatch',
 
     // カーソルが目立つ
-    'hyperpower',
+    // 'hyperpower',
 
     // マウスでタブを移動する
     'hyper-dnd-tabs',
