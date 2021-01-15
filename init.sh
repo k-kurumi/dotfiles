@@ -19,8 +19,6 @@ echo ".Xmodmap
 .hyper.js
 .tigrc
 .tmux.conf
-.tmux.linux.conf
-.tmux.mac.conf
 .zshrc2
 .rdb.sh
 .tool.sh
