@@ -22,6 +22,8 @@ Plug 'scrooloose/nerdtree'
 " ツリーのアイコン
 let g:NERDTreeDirArrowExpandable = '+'
 let g:NERDTreeDirArrowCollapsible = '-'
+" ,fでツリーに移動
+nnoremap ,f :NERDTreeFind<CR>
 
 " nerdtreeのバージョンアップでツリー部分にファイル内容が表示されている
 " vim-nerdtree-tabsはメンテされていない模様
@@ -29,6 +31,58 @@ Plug 'jistr/vim-nerdtree-tabs'
 " 開くときNERDTreeも開く(:mksessionが壊れる)
 let g:nerdtree_tabs_open_on_console_startup = 1
 let g:nerdtree_tabs_open_on_gui_startup = 0
+
+let g:nerdtree_tabs_focus_on_files = 1
+
+let g:nerdtree_tabs_autofind = 1
+
+" 表示しないもの
+let g:NERDTreeIgnore = ['\.swp$',
+  \ '\~$',
+  \ '\.pyc$',
+  \ '\.pyo$',
+  \ '\.class$',
+  \ '\.sqlite$',
+  \ '__pycache__',
+  \ '\.svn$',
+  \ '\.git$',
+  \ '\.DS_Store$'
+  \ ]
+
+" 0は半角文字(1は全角文字(三角など)は階層がわかりづらい)
+let g:NERDTreeDirArrows = 0
+
+" 隠しファイルも表示する
+let g:NERDTreeShowHidden = 1
+
+" bashのsyntaxを有効にする
+let g:is_bash = 1
+
+" タブ移動周り
+function! s:MoveTabpage(num)
+  if type(a:num) != type(0)
+    return
+  endif
+
+  let pos = tabpagenr() - 1 + a:num
+  let tabcount = tabpagenr("$")
+
+  if pos < 0
+    let pos = tabcount - 1
+  elseif pos >= tabcount
+    let pos = 0
+  endif
+
+  execute "tabmove " . pos
+endfunction
+
+" TabMove: Move tabpage with reltive number
+command! -nargs=1 TabMove :call <SID>MoveTabpage(<f-args>)
+
+" タブを左右に移動する
+nnoremap tH :call <SID>MoveTabpage(-1)<Return>
+nnoremap tL :call <SID>MoveTabpage(1)<Return>
+
 
 " 文頭に張り付くコメントでいまいち
 " Plug 'scrooloose/nerdcommenter'
@@ -58,13 +112,13 @@ Plug 'k0kubun/vim-open-github'
 
 " concealを使わないインデント色付け
 " ,ig で表示切り替え(,はleader)
-Plug 'nathanaelkane/vim-indent-guides'
-let g:indent_guides_enable_on_vim_startup = 0
-let g:indent_guides_start_level = 1
-let g:indent_guides_guide_size = 1
-let g:indent_guides_auto_colors = 0
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=black
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=darkgrey
+" Plug 'nathanaelkane/vim-indent-guides'
+" let g:indent_guides_enable_on_vim_startup = 0
+" let g:indent_guides_start_level = 1
+" let g:indent_guides_guide_size = 1
+" let g:indent_guides_auto_colors = 0
+" autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=black
+" autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=darkgrey
 
 " カーソルの文字列を下線で協調する
 Plug 'itchyny/vim-cursorword'
@@ -321,7 +375,7 @@ endif
 syntax on
 
 " デフォルトの\ではなく,を使う
-let mapleader=","
+" let mapleader=","
 
 " バックスペースで文字削除
 set bs=2
@@ -578,61 +632,6 @@ setlocal iskeyword+=@-@
 " ------------------------------------------------------------------------------
 set directory=~/.vim
 
-" ------------------------------------------------------------------------------
-" NERDTree
-" ------------------------------------------------------------------------------
-" 開いているファイルをツリーで表示
-nnoremap <leader>f :NERDTreeFind<CR>
-
-" ツリーの開閉
-"nnoremap ,t :NERDTreeToggle<CR>
-
-" 表示しないもの
-let g:NERDTreeIgnore = ['\.swp$',
-  \ '\~$',
-  \ '\.pyc$',
-  \ '\.pyo$',
-  \ '\.class$',
-  \ '\.sqlite$',
-  \ '__pycache__',
-  \ '\.svn$',
-  \ '\.git$',
-  \ '\.DS_Store$'
-  \ ]
-
-" 0は半角文字(1は全角文字(三角など)は階層がわかりづらい)
-let g:NERDTreeDirArrows = 0
-
-" 隠しファイルも表示する
-let g:NERDTreeShowHidden = 1
-
-" bashのsyntaxを有効にする
-let g:is_bash = 1
-
-" Move tabpage
-function! s:MoveTabpage(num)
-  if type(a:num) != type(0)
-    return
-  endif
-
-  let pos = tabpagenr() - 1 + a:num
-  let tabcount = tabpagenr("$")
-
-  if pos < 0
-    let pos = tabcount - 1
-  elseif pos >= tabcount
-    let pos = 0
-  endif
-
-  execute "tabmove " . pos
-endfunction
-
-" TabMove: Move tabpage with reltive number
-command! -nargs=1 TabMove :call <SID>MoveTabpage(<f-args>)
-
-" タブを左右に移動する
-nnoremap tH :call <SID>MoveTabpage(-1)<Return>
-nnoremap tL :call <SID>MoveTabpage(1)<Return>
 
 " ------------------------------------------------------------------------------
 " 使い方メモ
