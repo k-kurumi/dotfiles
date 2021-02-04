@@ -356,6 +356,10 @@ let g:terraform_fmt_on_save = 1
 " "でレジスタを表示できる
 Plug 'junegunn/vim-peekaboo'
 
+" markdownで使うよりvimwikiフォーマットのまま使う方がリンクなど扱いやすい
+Plug 'vimwiki/vimwiki'
+let g:vimwiki_list = [{'path': '~/Dropbox/memo/vimwiki'}]
+
 call plug#end()
 " -------------------------------------------------------------------------------
 
@@ -592,6 +596,9 @@ augroup MyGroup
   " kapacitor
   " syntaxなどが見つからないが、jsに似ているため
   autocmd BufNewFile,BufRead *.tick  set filetype=javascript et sw=2 ts=2 sts=2 nocindent autoindent
+
+  " 保存したときHTMLを生成する
+  autocmd BufWritePost *.wiki VimwikiAll2HTML
 augroup END
 
 
