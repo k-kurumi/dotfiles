@@ -38,6 +38,7 @@ brew install \
   grip \
   p7zip \
   neovim \
-  yamllint
+  yamllint \
+  ansifilter
 
 brew cleanup
