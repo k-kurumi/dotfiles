@@ -174,5 +174,9 @@ function dockerhub_tag_search {
   curl -s https://registry.hub.docker.com/v1/repositories/${repo}/tags | jq -r '.[]| .name' | fzf
 }
 
+# start vimwiki directory from shell
+alias wiki='nvim -c VimwikiIndex'
+alias wiki_httpd='cd ~/Dropbox/memo/vimwiki_html; httpd'
+
 source ~/.tool.sh
 source ~/.fzfrc

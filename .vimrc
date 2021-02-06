@@ -350,7 +350,11 @@ Plug 'junegunn/vim-peekaboo'
 
 " markdownで使うよりvimwikiフォーマットのまま使う方がリンクなど扱いやすい
 Plug 'vimwiki/vimwiki'
-let g:vimwiki_list = [{'path': '~/Dropbox/memo/vimwiki'}]
+let g:vimwiki_list = [{
+  \ 'path': '~/Dropbox/memo/vimwiki'
+  \ }]
+" 実際のコードと見た目が乖離して使いづらいので無効にする
+let g:vimwiki_conceallevel = 0
 
 call plug#end()
 " -------------------------------------------------------------------------------
@@ -370,7 +374,7 @@ endif
 syntax on
 
 " デフォルトの\ではなく,を使う
-" let mapleader=","
+let mapleader=","
 
 " バックスペースで文字削除
 set bs=2
