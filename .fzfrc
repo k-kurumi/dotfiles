@@ -10,7 +10,7 @@ fzf_open_file() {
     if [[ -d "$selected" ]]; then
       BUFFER="cd ${selected}"
     else
-      BUFFER="vim ${selected}"
+      BUFFER="nvim ${selected}"
     fi
     zle accept-line
   fi
