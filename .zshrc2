@@ -175,8 +175,8 @@ function dockerhub_tag_search {
 }
 
 # start vimwiki directory from shell
-alias wiki='cd ~/Dropbox/memo/vimwiki; nvim -c VimwikiIndex; cd -'
-alias wiki_httpd='cd ~/Dropbox/memo/vimwiki_html; httpd; cd -'
+alias wiki='(cd ~/vimwiki; nvim -c VimwikiIndex)'
+alias wiki_httpd='(cd ~/vimwiki_html; httpd)'
 
 source ~/.tool.sh
 source ~/.fzfrc

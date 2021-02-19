@@ -351,7 +351,8 @@ Plug 'junegunn/vim-peekaboo'
 " markdownで使うよりvimwikiフォーマットのまま使う方がリンクなど扱いやすい
 Plug 'vimwiki/vimwiki'
 let g:vimwiki_list = [{
-  \ 'path': '~/Dropbox/memo/vimwiki'
+  \ 'path': '~/vimwiki',
+  \ 'path_html': '~/vimwiki_html'
   \ }]
 " 実際のコードと見た目が乖離して使いづらいので無効にする
 let g:vimwiki_conceallevel = 0
