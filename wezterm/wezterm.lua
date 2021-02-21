@@ -14,8 +14,8 @@ return {
   -- https://github.com/mbadolato/iTerm2-Color-Schemes#screenshots
   color_scheme = "Espresso",
 
-  -- 背景透過 1.0が不透過
-  window_background_opacity = 0.9,
+  -- 背景透過 1.0が不透過 キー入力の度に点滅するので使わない
+  -- window_background_opacity = 0.9,
 
   -- キーバインド変更
   -- https://wezfurlong.org/wezterm/config/keys.html#default-shortcut--key-binding-assignments
