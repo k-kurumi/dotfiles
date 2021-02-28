@@ -356,6 +356,8 @@ let g:vimwiki_list = [{
   \ }]
 " 実際のコードと見た目が乖離して使いづらいので無効にする
 let g:vimwiki_conceallevel = 0
+" ブラウザで開く(サーバ不要)
+nnoremap ,b :Vimwiki2HTMLBrowse<CR>
 
 call plug#end()
 " -------------------------------------------------------------------------------
