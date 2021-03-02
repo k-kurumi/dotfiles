@@ -359,6 +359,10 @@ let g:vimwiki_conceallevel = 0
 " ブラウザで開く(サーバ不要)
 nnoremap ,b :Vimwiki2HTMLBrowse<CR>
 
+" terminalなどで使う(terminalは <c-\><c-n> でノーマルモード切替)
+" <space>h, j, k, l で選択した部分を指定したウインドウに貼り付け
+Plug 'karoliskoncevicius/vim-sendtowindow'
+
 call plug#end()
 " -------------------------------------------------------------------------------
 
@@ -776,7 +780,9 @@ endfunction
 " " 32bit_windows固有の設定
 " endif
 
-" terminalで端末ノーマルモード(yankできるが編集不可)に切り替える <C-w>N
+" terminalのノーマルインサート切り替え(vimとneoで違う)
+" neo: <c-\><c-n>
+" vim: <c-w>N
 " 端末ジョブモード(通常のターミナル)に切り替えるには i や a
 
 " macvimは\で円マークが入るため入れ替える
