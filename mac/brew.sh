@@ -39,6 +39,8 @@ brew install \
   p7zip \
   neovim \
   yamllint \
-  ansifilter
+  ansifilter \
+  bat \
+  git-delta
 
 brew cleanup
