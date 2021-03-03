@@ -22,14 +22,15 @@ Plug 'scrooloose/nerdtree'
 " ツリーのアイコン
 let g:NERDTreeDirArrowExpandable = '+'
 let g:NERDTreeDirArrowCollapsible = '-'
-" ,fでツリーに移動
-nnoremap ,f :NERDTreeFind<CR>
+" 開いているファイルのツリーに移動
+nnoremap ,F :NERDTreeFind<CR>
 
 " nerdtreeのバージョンアップでツリー部分にファイル内容が表示されている
 " vim-nerdtree-tabsはメンテされていない模様
 Plug 'jistr/vim-nerdtree-tabs'
 " 開くときNERDTreeも開く(:mksessionが壊れる)
-let g:nerdtree_tabs_open_on_console_startup = 1
+" terminalを使うと常時表示ではずれるため非表示にする
+let g:nerdtree_tabs_open_on_console_startup = 0
 let g:nerdtree_tabs_open_on_gui_startup = 0
 
 " Gblameで表示がおかしくなるため使わない
@@ -174,6 +175,7 @@ Plug 'bogado/file-line'
 Plug 'bronson/vim-trailing-whitespace'
 
 " ctrlpより速いらしい
+" TODO denite乗り換えを検討中(ag,rgがファイル名まで対象にしてしまい絞りづらいため)
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 " https://github.com/junegunn/fzf.vim#advanced-customization
@@ -189,7 +191,7 @@ command! -bang -nargs=* Ag
 " Rgで?押すとプレビュー
 command! -bang -nargs=* Rg
   \ call fzf#vim#grep(
-  \   'rg --column --line-number --no-heading --color=always '.shellescape(<q-args>), 1,
+  \   'rg --column --line-number --no-heading --color=always --smart-case -- '.shellescape(<q-args>), 1,
   \   <bang>0 ? fzf#vim#with_preview('up:60%')
   \           : fzf#vim#with_preview('right:50%:hidden', '?'),
   \   <bang>0)
@@ -363,19 +365,57 @@ nnoremap ,b :Vimwiki2HTMLBrowse<CR>
 " <space>h, j, k, l で選択した部分を指定したウインドウに貼り付け
 Plug 'karoliskoncevicius/vim-sendtowindow'
 
+" terminalをフローティングウインドウで開く
+Plug 'Shougo/deol.nvim'
+nnoremap <silent> ,t :<C-u>Deol -split=floating -winheight=60 -winwidth=130<CR>
+
+if has('nvim')
+  " ghosttext
+  " nvimを別で起動して :GhostStart しておく
+  Plug 'raghur/vim-ghost', {'do': ':GhostInstall'}
+
+  " python3が必要
+  Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
+endif
+
 call plug#end()
 " -------------------------------------------------------------------------------
 
 " neovim固有の設定
 if has('nvim')
-
-  " インタラクティブな置換など
+  " インタラクティブな置換
   set inccommand=split
 
-  " ghosttext
-  " nvimを別で起動して :GhostStart しておく
-  Plug 'raghur/vim-ghost', {'do': ':GhostInstall'}
-
+  " Define mappings
+  autocmd FileType denite call s:denite_my_settings()
+  function! s:denite_my_settings() abort
+    nnoremap <silent><buffer><expr> <CR>
+    \ denite#do_map('do_action')
+    nnoremap <silent><buffer><expr> d
+    \ denite#do_map('do_action', 'delete')
+    nnoremap <silent><buffer><expr> p
+    \ denite#do_map('do_action', 'preview')
+    nnoremap <silent><buffer><expr> q
+    \ denite#do_map('quit')
+    nnoremap <silent><buffer><expr> i
+    \ denite#do_map('open_filter_buffer')
+    nnoremap <silent><buffer><expr> <Space>
+    \ denite#do_map('toggle_select').'j'
+  endfunction
+  let s:denite_win_width_percent = 0.85
+  let s:denite_win_height_percent = 0.7
+  " Change denite default options
+  call denite#custom#option('default', {
+      \ 'split': 'floating',
+      \ 'winwidth': float2nr(&columns * s:denite_win_width_percent),
+      \ 'wincol': float2nr((&columns - (&columns * s:denite_win_width_percent)) / 2),
+      \ 'winheight': float2nr(&lines * s:denite_win_height_percent),
+      \ 'winrow': float2nr((&lines - (&lines * s:denite_win_height_percent)) / 2),
+      \ })
+  nnoremap <silent> ,f :<C-u>Denite file/rec<CR>
+  nnoremap <silent> ,g :<C-u>Denite grep<CR>
+  nnoremap <silent> ,b :<C-u>Denite buffer<CR>
+  nnoremap <silent> ,l :<C-u>Denite line<CR>
 endif
 
 syntax on
@@ -784,6 +824,9 @@ endfunction
 " neo: <c-\><c-n>
 " vim: <c-w>N
 " 端末ジョブモード(通常のターミナル)に切り替えるには i や a
+
+" terminalでターミナルモードから抜ける
+tnoremap <silent> <C-[> <C-\><C-n>
 
 " macvimは\で円マークが入るため入れ替える
 noremap! ¥ \
