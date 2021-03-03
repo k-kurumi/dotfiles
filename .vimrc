@@ -123,10 +123,11 @@ Plug 'k0kubun/vim-open-github'
 " カーソルの文字列を下線で協調する
 Plug 'itchyny/vim-cursorword'
 
-" color theme
+" colorscheme
 Plug 'w0ng/vim-hybrid'
 Plug 'cocopon/iceberg.vim'
 Plug 'dracula/vim', { 'as': 'dracula'  }
+Plug 'rakr/vim-one'
 
 " カラフルなカラーテーマ
 Plug 'fatih/molokai'
@@ -823,7 +824,8 @@ if has('gui_running')
   endif
 
   set background=dark
-  colorscheme molokai
+  colorscheme one
+  set termguicolors
   " set nowrap
 
   " ウインドウサイズ lines:縦 columns:横
