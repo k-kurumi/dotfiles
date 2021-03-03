@@ -374,6 +374,10 @@ if has('nvim')
   Plug 'raghur/vim-ghost', {'do': ':GhostInstall'}
 endif
 
+" ruby, rails
+Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-rails'
+
 call plug#end()
 " -------------------------------------------------------------------------------
 
