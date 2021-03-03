@@ -17,43 +17,26 @@ Plug 'mbbill/undotree'
 " markを表示
 Plug 'kshenoy/vim-signature'
 
-" フォルダツリー
-Plug 'scrooloose/nerdtree'
-" ツリーのアイコン
-let g:NERDTreeDirArrowExpandable = '+'
-let g:NERDTreeDirArrowCollapsible = '-'
-" 開いているファイルのツリーに移動
-nnoremap ,f :NERDTreeFind<CR>
+" nerdtreeの代わりに使う(nnnの追加インストールが必要)
+" ,nでフローティングウインドウで表示する
+" nnnのキーバインド参照
+" https://github.com/jarun/nnn/wiki/Usage#keyboard-mouse
+Plug 'mcchrish/nnn.vim'
+" Opens the nnn window in a split
+let g:nnn#layout = 'new' " or vnew, tabnew etc.
+" Or pass a dictionary with window size
+let g:nnn#layout = { 'left': '~20%' } " or right, up, down
+" Floating window (neovim latest and vim with patch 8.2.191)
+let g:nnn#layout = { 'window': { 'width': 0.9, 'height': 0.6, 'highlight': 'Debug' } }
+let g:nnn#action = {
+  \ '<c-t>': 'tab split',
+  \ '<c-s>': 'split',
+  \ '<c-v>': 'vsplit' }
 
-" nerdtreeのバージョンアップでツリー部分にファイル内容が表示されている
-" vim-nerdtree-tabsはメンテされていない模様
-Plug 'jistr/vim-nerdtree-tabs'
-" 開くときNERDTreeも開く(:mksessionが壊れる)
-" terminalを使うと常時表示ではずれるため非表示にする
-let g:nerdtree_tabs_open_on_console_startup = 0
-let g:nerdtree_tabs_open_on_gui_startup = 0
-
-" Gblameで表示がおかしくなるため使わない
-" let g:nerdtree_tabs_autofind = 1
-
-" 表示しないもの
-let g:NERDTreeIgnore = ['\.swp$',
-  \ '\~$',
-  \ '\.pyc$',
-  \ '\.pyo$',
-  \ '\.class$',
-  \ '\.sqlite$',
-  \ '__pycache__',
-  \ '\.svn$',
-  \ '\.git$',
-  \ '\.DS_Store$'
-  \ ]
-
-" 0は半角文字(1は全角文字(三角など)は階層がわかりづらい)
-let g:NERDTreeDirArrows = 0
-
-" 隠しファイルも表示する
-let g:NERDTreeShowHidden = 1
+" :SaveSession, :LoadSession, :DeleteSessionでウインドウ状態を保存
+" nerdtreeと併用できない
+Plug 'skanehira/vsession'
+let g:vsession_use_fzf = 1
 
 " bashのsyntaxを有効にする
 let g:is_bash = 1
@@ -216,11 +199,6 @@ Plug 'maximbaz/lightline-ale'
 " ghosttextではScratchのため文字数が0になる(実ファイルがないとカウントできないように見える)
 " :'<,'>s/./&/gn で文字を元の文字で置換すれば確認はできる(matchesのところ)
 Plug 'anekos/char-counter-vim'
-" 文字数を返す
-function! CCC()
-  " nerdtreeのツリー画面ではb:charCounterCountがなくエラーになるための対策
-  return exists('b:charCounterCount') ? b:charCounterCount : ''
-endfunction
 
 let g:lightline = {
   \ 'component_expand': {
@@ -330,12 +308,6 @@ let g:ansible_extra_keywords_highlight = 1
 let g:ansible_normal_keywords_highlight = 'Constant'
 let g:ansible_with_keywords_highlight = 'Constant'
 
-
-" vim-nerdtree-tabsのツリーがおかしくなるので使用しないこと
-" a0691e7では動くがそれ以降にするとツリー部分にファイルの中身が表示されるようになる
-" %で飛ぶ括弧の対応を見やすくする
-" Plug 'andymass/vim-matchup'
-" let g:loaded_matchit = 1
 
 " " 対になる括弧の補完(標準機能より少し高機能)
 " [  ]のようにスペースが2入って使いづらいので使用しない

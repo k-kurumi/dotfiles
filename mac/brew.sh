@@ -15,6 +15,12 @@
 
 brew update
 
+# readdirなどstableではポーティングされていない機能を使いたい
+# 事前にインストールされているときはunlink,uninstallする
+# brew unlink neovim
+# brew uninstall neovim
+brew install --HEAD neovim
+
 brew install \
   tmux \
   coreutils \
@@ -37,10 +43,10 @@ brew install \
   trash-cli \
   grip \
   p7zip \
-  neovim \
   yamllint \
   ansifilter \
   bat \
-  git-delta
+  git-delta \
+  nnn
 
 brew cleanup
