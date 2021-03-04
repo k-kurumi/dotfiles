@@ -2,8 +2,8 @@
 # .zpreztorcの方で指定することにする
 # prompt pure
 
-export EDITOR=vim
-export VISUAL=vim # macのcrontab用
+export EDITOR=nvim
+export VISUAL=nvim # macのcrontab用
 export LANGUAGE=en
 export LANG=en_US.UTF-8
 
