@@ -192,6 +192,8 @@ imap <c-x><c-l> <plug>(fzf-complete-line)
 nnoremap <silent> ,F :Files<CR>
 nnoremap <silent> ,f :GFile<CR>
 nnoremap <silent> ,s :GFile?<CR>
+nnoremap <silent> ,b :Buffers<CR>
+nnoremap <silent> ,w :Windows<CR>
 
 " ステータスラインのカスタマイズ
 Plug 'w0rp/ale'
@@ -338,7 +340,7 @@ let g:vimwiki_list = [{
 " 実際のコードと見た目が乖離して使いづらいので無効にする
 let g:vimwiki_conceallevel = 0
 " ブラウザで開く(サーバ不要)
-nnoremap ,wb :Vimwiki2HTMLBrowse<CR>
+nnoremap <Leader>wb :Vimwiki2HTMLBrowse<CR>
 
 " terminalなどで使う(terminalは <c-\><c-n> でノーマルモード切替)
 " <space>h, j, k, l で選択した部分を指定したウインドウに貼り付け
@@ -369,8 +371,8 @@ endif
 
 syntax on
 
-" デフォルトの\ではなく,を使う
-let mapleader=","
+" デフォルトの\ではなく<space>を使う
+" let mapleader="\<space>"
 
 " バックスペースで文字削除
 set bs=2
