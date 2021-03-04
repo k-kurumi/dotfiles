@@ -180,3 +180,11 @@ alias wiki_httpd='(cd ~/vimwiki_html; httpd)'
 
 source ~/.tool.sh
 source ~/.fzfrc
+
+# fzfだけ打ったときの元データ(vimのfzfも同じ)
+# --hidden: 隠しファイル表示する
+# --skip-vcs-ignores: .gitignoreを無視して表示する
+# --ignore-dir: .gitフォルダは無視する
+# --filename-pattern: find . 相当のファイル一覧表示
+# rg版 export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*"'
+export FZF_DEFAULT_COMMAND='ag --hidden --skip-vcs-ignores --ignore-dir ".git" --filename-pattern ""'

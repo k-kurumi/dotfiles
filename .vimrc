@@ -186,8 +186,11 @@ imap <c-x><c-k> <plug>(fzf-complete-word)
 imap <c-x><c-f> <plug>(fzf-complete-path)
 imap <c-x><c-j> <plug>(fzf-complete-file-ag)
 imap <c-x><c-l> <plug>(fzf-complete-line)
-" ctrlp風のキーバインド
-nmap <c-p> :Files<CR>
+
+" ,Fは隠しファイルなども表示する($FZF_DEFAULT_COMMANDに依存する)
+nnoremap <silent> ,F :Files<CR>
+nnoremap <silent> ,f :GFile<CR>
+nnoremap <silent> ,s :GFile?<CR>
 
 " ステータスラインのカスタマイズ
 Plug 'w0rp/ale'
@@ -334,7 +337,7 @@ let g:vimwiki_list = [{
 " 実際のコードと見た目が乖離して使いづらいので無効にする
 let g:vimwiki_conceallevel = 0
 " ブラウザで開く(サーバ不要)
-nnoremap ,b :Vimwiki2HTMLBrowse<CR>
+nnoremap ,wb :Vimwiki2HTMLBrowse<CR>
 
 " terminalなどで使う(terminalは <c-\><c-n> でノーマルモード切替)
 " <space>h, j, k, l で選択した部分を指定したウインドウに貼り付け
