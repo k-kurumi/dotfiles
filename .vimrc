@@ -107,6 +107,7 @@ Plug 'itchyny/vim-cursorword'
 
 " colorscheme
 Plug 'w0ng/vim-hybrid'
+let g:hybrid_custom_term_colors = 1
 Plug 'cocopon/iceberg.vim'
 Plug 'dracula/vim', { 'as': 'dracula'  }
 Plug 'rakr/vim-one'
@@ -592,7 +593,6 @@ augroup MyGroup
   autocmd BufWritePost *.wiki VimwikiAll2HTML
 augroup END
 
-
 " ------------------------------------------------------------------------------
 " 新しくファイルを作ったときのテンプレ
 " ------------------------------------------------------------------------------
@@ -799,7 +799,6 @@ if has('gui_running')
 
   set background=dark
   colorscheme one
-  set termguicolors
   " set nowrap
 
   " ウインドウサイズ lines:縦 columns:横
@@ -810,14 +809,13 @@ if has('gui_running')
   "winpos 10 0
   " winsize 150 40
 else
-  " hybridは設定が必要
-  let g:hybrid_custom_term_colors = 1
-  let g:hybrid_reduced_contrast = 1 " Remove this line if using the default palette.
   set background=dark
   colorscheme molokai
-
-  " hybridだと現在の行がわかりづらいため
-  highlight CursorLine cterm=underline gui=underline
+  set termguicolors
+  " ポップアップとウインドウの透過(100に近いほど透明)
+  " 枠がないので透過しすぎるとわかりづらい
+  set pumblend=10
+  set winblend=10
 endif
 
 " https://github.com/psycofdj/yaml-path をインストールして呼び出す
