@@ -77,10 +77,9 @@ nnoremap tL :call <SID>MoveTabpage(1)<Return>
 Plug 'tomtom/tcomment_vim'
 
 " githubを開く
-" :OpenGithubで開く
-" :CopyGithubでURLをコピー
-" open-browser-githubより使いやすい
-Plug 'k0kubun/vim-open-github'
+" :OpenGithubFile
+Plug 'tyru/open-browser.vim'
+Plug 'tyru/open-browser-github.vim'
 
 " アスキーアート作成
 " ほとんど使わないため必要になったら有効にする
