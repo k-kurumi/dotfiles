@@ -30,6 +30,7 @@ synapse   # mac風ランチャー
 keepassxc # macのkeepassxcはクリップボードが消えるバグがあるのでLinuxだけで使うこと
 p7zip       # 7z utils
 p7zip-full  # 7z utils
+nnn         # file manager
 EOF
 
 while read pkg
