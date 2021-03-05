@@ -113,9 +113,10 @@ Plug 'dracula/vim', { 'as': 'dracula'  }
 Plug 'rakr/vim-one'
 
 " カラフルなカラーテーマ
-Plug 'fatih/molokai'
+Plug 'tomasr/molokai'
 let g:rehash256 = 1
-let g:molokai_original = 1
+" 背景色をオリジナルに書き換えるためか起動時にもたつく感じがするのでオフにする
+let g:molokai_original = 0
 
 " gitの差分をmark部分に表示
 Plug 'airblade/vim-gitgutter'
