@@ -18,8 +18,6 @@ Plug 'mbbill/undotree'
 Plug 'kshenoy/vim-signature'
 
 " nerdtreeの代わりに使う(nnnの追加インストールが必要)
-" ,nでフローティングウインドウで表示する
-" nnnのキーバインド参照
 " https://github.com/jarun/nnn/wiki/Usage#keyboard-mouse
 Plug 'mcchrish/nnn.vim'
 " Opens the nnn window in a split
@@ -32,6 +30,7 @@ let g:nnn#action = {
   \ '<c-t>': 'tab split',
   \ '<c-s>': 'split',
   \ '<c-v>': 'vsplit' }
+nnoremap <silent> ,n :NnnPicker<CR>
 
 " :SaveSession, :LoadSession, :DeleteSessionでウインドウ状態を保存
 " nerdtreeと併用できない
