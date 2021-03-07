@@ -19,11 +19,9 @@ echo ".Xmodmap
 .hyper.js
 .tigrc
 .tmux.conf
-.zshrc2
+.zshrc
 .rdb.sh
-.tool.sh
 .ptconfig.toml
-.fzfrc
 .vimrc" | while read f
 do
   if [[ -f "${HOME}/${f}" ]]; then
@@ -95,26 +93,11 @@ fi
 
 ################################################################################
 #
-# zsh
+# zsh zinit
 #
 
-if [[ ! -d "${HOME}/.zprezto" ]]; then
-
-  git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
-
-  # readmeの設定ファイル置き換え手順をbashで動くようにしたもの
-  # https://github.com/sorin-ionescu/prezto
-  while read rcfile
-  do
-    ln -sf ${rcfile} ~/.$(basename ${rcfile})
-  done < <(find "${ZDOTDIR:-$HOME}/.zprezto/runcoms" -maxdepth 1 -type f -name 'z*')
-
-  # .zshrcはpreztoで管理されるため、追加分は別ファイル(.zshrc2)で作り参照させる
-  grep .zshrc2 ~/.zshrc
-  if [ $? -ne 0 ]; then
-    echo 'source ${HOME}/.zshrc2' >> ~/.zshrc
-  fi
-
+if [[ ! -d "${HOME}/.zinit" ]]; then
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zinit/master/doc/install.sh)"
 fi
 
 ################################################################################
