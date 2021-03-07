@@ -119,6 +119,10 @@ fi
 # 標準の ll='ls -lh' では 頭の_が考慮されない
 alias ll='ls -lv'
 
+if type trash > /dev/null; then
+  alias rm='trash'
+fi
+
 # start vimwiki directory from shell
 alias wiki='(cd ~/vimwiki; nvim -c VimwikiIndex)'
 alias wiki_httpd='(cd ~/vimwiki_html; httpd)'
