@@ -161,39 +161,40 @@ Plug 'bronson/vim-trailing-whitespace'
 " ctrlpより速いらしい
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-" https://github.com/junegunn/fzf.vim#advanced-customization
-" Filesで常にプレビュー表示
-command! -bang -nargs=? -complete=dir Files
-  \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
-" Agで?押すとプレビュー
-command! -bang -nargs=* Ag
-  \ call fzf#vim#ag(<q-args>,
-  \                 <bang>0 ? fzf#vim#with_preview('up:60%')
-  \                         : fzf#vim#with_preview('right:50%:hidden', '?'),
-  \                 <bang>0)
-" Rgで?押すとプレビュー
-command! -bang -nargs=* Rg
-  \ call fzf#vim#grep(
-  \   'rg --column --line-number --no-heading --color=always --smart-case -- '.shellescape(<q-args>), 1,
-  \   <bang>0 ? fzf#vim#with_preview('up:60%')
-  \           : fzf#vim#with_preview('right:50%:hidden', '?'),
-  \   <bang>0)
-command! -bang -nargs=* GGrep
-  \ call fzf#vim#grep(
-  \   'git grep --line-number -- '.shellescape(<q-args>), 0,
-  \   fzf#vim#with_preview({'dir': systemlist('git rev-parse --show-toplevel')[0]}), <bang>0)
-" 補完系にfzfを使う
-imap <C-x><C-k> <plug>(fzf-complete-word)
-imap <C-x><C-f> <plug>(fzf-complete-path)
-imap <C-x><C-j> <plug>(fzf-complete-file-ag)
-imap <C-x><C-l> <plug>(fzf-complete-line)
+  " https://github.com/junegunn/fzf.vim#advanced-customization
+  " Filesで常にプレビュー表示
+  command! -bang -nargs=? -complete=dir Files
+    \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
+  " Agで?押すとプレビュー
+  command! -bang -nargs=* Ag
+    \ call fzf#vim#ag(<q-args>,
+    \                 <bang>0 ? fzf#vim#with_preview('up:60%')
+    \                         : fzf#vim#with_preview('right:50%:hidden', '?'),
+    \                 <bang>0)
+  " Rgで?押すとプレビュー
+  command! -bang -nargs=* Rg
+    \ call fzf#vim#grep(
+    \   'rg --column --line-number --no-heading --color=always --smart-case -- '.shellescape(<q-args>), 1,
+    \   <bang>0 ? fzf#vim#with_preview('up:60%')
+    \           : fzf#vim#with_preview('right:50%:hidden', '?'),
+    \   <bang>0)
+  command! -bang -nargs=* GGrep
+    \ call fzf#vim#grep(
+    \   'git grep --line-number -- '.shellescape(<q-args>), 0,
+    \   fzf#vim#with_preview({'dir': systemlist('git rev-parse --show-toplevel')[0]}), <bang>0)
+  " 補完系にfzfを使う
+  imap <C-x><C-k> <plug>(fzf-complete-word)
+  imap <C-x><C-f> <plug>(fzf-complete-path)
+  imap <C-x><C-j> <plug>(fzf-complete-file-ag)
+  imap <C-x><C-l> <plug>(fzf-complete-line)
 
-" ,Fは隠しファイルなども表示する($FZF_DEFAULT_COMMANDに依存する)
-nnoremap <silent> ,F :Files<CR>
-nnoremap <silent> ,f :GFile<CR>
-nnoremap <silent> ,s :GFile?<CR>
-nnoremap <silent> ,b :Buffers<CR>
-nnoremap <silent> ,w :Windows<CR>
+  " ,Fは隠しファイルなども表示する($FZF_DEFAULT_COMMANDに依存する)
+  nnoremap <silent> ,f  :Files<CR>
+  nnoremap <silent> ,gf :GFile<CR>
+  nnoremap <silent> ,gs :GFile?<CR>
+  nnoremap <silent> ,gc :Commits<CR>
+  nnoremap <silent> ,b  :Buffers<CR>
+  nnoremap <silent> ,w  :Windows<CR>
 
 " ステータスラインのカスタマイズ
 Plug 'w0rp/ale'
@@ -352,7 +353,7 @@ Plug 'voldikss/vim-floaterm'
   let g:floaterm_width = 0.7
   let g:floaterm_width = 0.7
   nnoremap <silent> ,t :FloatermToggle<CR>
-  tnoremap <silent> :: <C-\><C-n>:FloatermToggle<CR>
+  tnoremap <silent> :: <C-\><C-n>:q<CR>
 
 if has('nvim')
   " ghosttext
