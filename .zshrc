@@ -32,9 +32,12 @@ zinit load "mafredri/zsh-async"
 # https://github.com/sindresorhus/pure
 zinit load "sindresorhus/pure"
 
+  # プロンプトを $ に変更
+  export PURE_PROMPT_SYMBOL=$
+
 # 構文のハイライト
 # https://github.com/zsh-users/zsh-syntax-highlighting
-zinit ice wait'!0'; zinit load "zsh-users/zsh-syntax-highlighting"
+zinit ice wait'!0'; zinit light "zsh-users/zsh-syntax-highlighting"
 
 # コマンド入力途中で上下キー押したときの過去履歴がいい感じに出るようになる
 # https://github.com/zsh-users/zsh-history-substring-search
@@ -43,33 +46,54 @@ zinit load "zsh-users/zsh-history-substring-search"
 # 過去に入力したコマンドの履歴が灰色のサジェストで出る
 zinit load "zsh-users/zsh-autosuggestions"
 
-# 補完強化
-zinit ice wait'!0'; zinit load "zsh-users/zsh-completions"
-
 # 256色表示にする
 zinit load "chrissicool/zsh-256color"
 
+# 補完強化
+zinit ice wait'!0'; zinit light "zsh-users/zsh-completions"
+
+  # 補完時に大文字小文字の区別をなくす
+  zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+
+  # 補完時にtabで選択
+  zstyle ':completion:*:default' menu select=1
+
+  # これがないとmacでzsh-completionsが効かない
+  autoload -Uz compinit && compinit
+
+  # 環境変数を補完
+  setopt AUTO_PARAM_KEYS
 
 export EDITOR=nvim
 export VISUAL=nvim # macのcrontabが参照する
 export LANGUAGE=en
 export LANG=en_US.UTF-8
 
-# https://github.com/sindresorhus/pure
-export PURE_PROMPT_SYMBOL=$
-
 # ^を展開しないようにするためgitでHEAD^などがエスケープなしで使えるようになる
 unsetopt extended_glob
 
 # <c-a>などのemacsキーバインドを有効にする
 bindkey -e
+# <C-w>でフォルダパス単位の削除するため
+export WORDCHARS='*?_.[]~-=&;!#$%^(){}<>'
 
-# history
+# history周り
 HISTFILE=~/.zsh_history
 HISTSIZE=100000
-SAVEHIST=100000
-setopt hist_ignore_dups     # ignore duplication command history list
-setopt share_history        # share command history data
+SAVEHIST=1000000
+setopt hist_ignore_all_dups  # 重複するコマンド行は古い方を削除
+setopt hist_ignore_dups      # 直前と同じコマンドラインはヒストリに追加しない
+setopt share_history         # コマンド履歴ファイルを共有する
+setopt append_history        # 履歴を追加 (毎回 .zsh_history を作るのではなく)
+setopt inc_append_history    # 履歴をインクリメンタルに追加
+setopt hist_no_store         # historyコマンドは履歴に登録しない
+setopt hist_reduce_blanks    # 余分な空白は詰めて記録
+zstyle ':completion:*:default' menu select
+
+# パスを直接入力してもcdする
+setopt AUTO_CD
+
+################################################################################
 
 # ruby
 if [[ -d ~/.rbenv ]]; then
