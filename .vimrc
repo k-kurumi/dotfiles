@@ -27,9 +27,9 @@ let g:nnn#layout = { 'left': '~20%' } " or right, up, down
 " Floating window (neovim latest and vim with patch 8.2.191)
 let g:nnn#layout = { 'window': { 'width': 0.9, 'height': 0.6, 'highlight': 'Debug' } }
 let g:nnn#action = {
-  \ '<c-t>': 'tab split',
-  \ '<c-s>': 'split',
-  \ '<c-v>': 'vsplit' }
+  \ '<C-t>': 'tab split',
+  \ '<C-s>': 'split',
+  \ '<C-v>': 'vsplit' }
 nnoremap <silent> ,n :NnnPicker<CR>
 
 " :SaveSession, :LoadSession, :DeleteSessionでウインドウ状態を保存
@@ -150,7 +150,7 @@ let g:table_mode_header_fillchar = '-'
 Plug 'bogado/file-line'
 
 " zencoding
-" <c-y>,で展開
+" <C-y>,で展開
 " Plug 'mattn/emmet-vim'
 
 " 末尾半角スペースの可視化(:FixWhitespace で削除)
@@ -183,10 +183,10 @@ command! -bang -nargs=* GGrep
   \   'git grep --line-number -- '.shellescape(<q-args>), 0,
   \   fzf#vim#with_preview({'dir': systemlist('git rev-parse --show-toplevel')[0]}), <bang>0)
 " 補完系にfzfを使う
-imap <c-x><c-k> <plug>(fzf-complete-word)
-imap <c-x><c-f> <plug>(fzf-complete-path)
-imap <c-x><c-j> <plug>(fzf-complete-file-ag)
-imap <c-x><c-l> <plug>(fzf-complete-line)
+imap <C-x><C-k> <plug>(fzf-complete-word)
+imap <C-x><C-f> <plug>(fzf-complete-path)
+imap <C-x><C-j> <plug>(fzf-complete-file-ag)
+imap <C-x><C-l> <plug>(fzf-complete-line)
 
 " ,Fは隠しファイルなども表示する($FZF_DEFAULT_COMMANDに依存する)
 nnoremap <silent> ,F :Files<CR>
@@ -342,14 +342,17 @@ let g:vimwiki_conceallevel = 0
 " ブラウザで開く(サーバ不要)
 nnoremap <Leader>wb :Vimwiki2HTMLBrowse<CR>
 
-" terminalなどで使う(terminalは <c-\><c-n> でノーマルモード切替)
+" terminalなどで使う(terminalは <C-\><C-n> でノーマルモード切替)
 " <space>h, j, k, l で選択した部分を指定したウインドウに貼り付け
 Plug 'karoliskoncevicius/vim-sendtowindow'
 
 " deolより使いやすいフローティングウインドウ
 " https://github.com/voldikss/vim-floaterm
 Plug 'voldikss/vim-floaterm'
-  nnoremap <silent> ,t  :FloatermToggle<CR>
+  let g:floaterm_width = 0.7
+  let g:floaterm_width = 0.7
+  nnoremap <silent> ,t :FloatermToggle<CR>
+  tnoremap <silent> :: <C-\><C-n>:FloatermToggle<CR>
 
 if has('nvim')
   " ghosttext
@@ -772,8 +775,8 @@ endfunction
 " endif
 
 " terminalのノーマルインサート切り替え(vimとneoで違う)
-" neo: <c-\><c-n>
-" vim: <c-w>N
+" neo: <C-\><C-n>
+" vim: <C-w>N
 " 端末ジョブモード(通常のターミナル)に切り替えるには i や a
 
 " terminalでターミナルモードから抜ける
