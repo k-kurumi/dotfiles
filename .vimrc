@@ -352,7 +352,11 @@ Plug 'karoliskoncevicius/vim-sendtowindow'
 Plug 'voldikss/vim-floaterm'
   let g:floaterm_width = 0.7
   let g:floaterm_width = 0.7
+  " 基本は1つのターミナルを再利用する
   nnoremap <silent> ,t :FloatermToggle<CR>
+  " 追加で新しいターミナルが必要になったときのため
+  nnoremap <silent> ,T :FloatermNew<CR>
+  " fzfなど全てのterminalで::すると閉じる"
   tnoremap <silent> :: <C-\><C-n>:q<CR>
 
 if has('nvim')
