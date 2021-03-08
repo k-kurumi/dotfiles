@@ -346,9 +346,10 @@ nnoremap <Leader>wb :Vimwiki2HTMLBrowse<CR>
 " <space>h, j, k, l で選択した部分を指定したウインドウに貼り付け
 Plug 'karoliskoncevicius/vim-sendtowindow'
 
-" terminalをフローティングウインドウで開く
-Plug 'Shougo/deol.nvim'
-nnoremap <silent> ,t :<C-u>Deol -split=floating -winheight=60 -winwidth=130<CR>
+" deolより使いやすいフローティングウインドウ
+" https://github.com/voldikss/vim-floaterm
+Plug 'voldikss/vim-floaterm'
+  nnoremap <silent> ,t  :FloatermToggle<CR>
 
 if has('nvim')
   " ghosttext
