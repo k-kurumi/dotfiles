@@ -1,0 +1,16 @@
+# https://pkg.go.dev/github.com/gokcehan/lf
+
+# vimのように番号付ける
+set number
+
+# 隠しファイルも表示する
+set hidden
+
+# プレビューのタブのスペース数
+set tabstop 4
+
+# インクリメンタルサーチ
+set incsearch
+
+# 巡回しない
+set nowrapscan

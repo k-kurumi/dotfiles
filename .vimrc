@@ -348,7 +348,7 @@ Plug 'voldikss/vim-floaterm'
   " fzfなど全てのterminalで::すると閉じる"
   tnoremap <silent> :: <C-\><C-n>:q<CR>
   " nerdtreeの代替
-  nnoremap <silent> ,r :FloatermNew ranger<CR>
+  nnoremap <silent> ,l :FloatermNew lf<CR>
 
 if has('nvim')
   " ghosttext
