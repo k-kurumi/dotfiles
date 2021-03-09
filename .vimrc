@@ -334,14 +334,17 @@ Plug 'junegunn/vim-peekaboo'
 
 " markdownで使うよりvimwikiフォーマットのまま使う方がリンクなど扱いやすい
 Plug 'vimwiki/vimwiki'
-let g:vimwiki_list = [{
-  \ 'path': '~/vimwiki',
-  \ 'path_html': '~/vimwiki_html'
-  \ }]
-" 実際のコードと見た目が乖離して使いづらいので無効にする
-let g:vimwiki_conceallevel = 0
-" ブラウザで開く(サーバ不要)
-nnoremap <Leader>wb :Vimwiki2HTMLBrowse<CR>
+  let g:vimwiki_list = [{
+    \ 'path': '~/vimwiki',
+    \ 'path_html': '~/vimwiki_html',
+    \ 'ext': '.wiki'
+    \ }]
+  " markdownでリストのインクリメントなどが邪魔なので無効にする"
+  let g:vimwiki_global_ext = 0
+  " 実際のコードと見た目が乖離して使いづらいので無効にする
+  let g:vimwiki_conceallevel = 0
+  " ブラウザで開く(サーバ不要)
+  nnoremap <Leader>wb :Vimwiki2HTMLBrowse<CR>
 
 " terminalなどで使う(terminalは <C-\><C-n> でノーマルモード切替)
 " <space>h, j, k, l で選択した部分を指定したウインドウに貼り付け
