@@ -148,6 +148,9 @@ ln -sf "$(realpath wezterm/wezterm.lua)" ~/.config/wezterm/
 mkdir -p ~/.config/kitty
 ln -sf "$(realpath kitty/kitty.conf)" ~/.config/kitty/
 
+mkdir -p ~/.config/ranger
+ln -sf "$(realpath ranger/rc.conf)" ~/.config/ranger/
+
 # デバッグツール周り
 mkdir -p ~/dev/bin
 cp bin/nc_server.sh ~/dev/bin
