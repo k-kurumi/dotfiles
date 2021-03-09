@@ -47,6 +47,6 @@ brew install \
   ansifilter \
   bat \
   git-delta \
-  nnn
+  ranger
 
 brew cleanup
