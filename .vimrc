@@ -17,21 +17,6 @@ Plug 'mbbill/undotree'
 " markを表示
 Plug 'kshenoy/vim-signature'
 
-" nerdtreeの代わりに使う(nnnの追加インストールが必要)
-" https://github.com/jarun/nnn/wiki/Usage#keyboard-mouse
-Plug 'mcchrish/nnn.vim'
-" Opens the nnn window in a split
-let g:nnn#layout = 'new' " or vnew, tabnew etc.
-" Or pass a dictionary with window size
-let g:nnn#layout = { 'left': '~20%' } " or right, up, down
-" Floating window (neovim latest and vim with patch 8.2.191)
-let g:nnn#layout = { 'window': { 'width': 0.9, 'height': 0.6, 'highlight': 'Debug' } }
-let g:nnn#action = {
-  \ '<C-t>': 'tab split',
-  \ '<C-s>': 'split',
-  \ '<C-v>': 'vsplit' }
-nnoremap <silent> ,n :NnnPicker<CR>
-
 " :SaveSession, :LoadSession, :DeleteSessionでウインドウ状態を保存
 " nerdtreeと併用できない
 Plug 'skanehira/vsession'
@@ -355,12 +340,15 @@ Plug 'karoliskoncevicius/vim-sendtowindow'
 Plug 'voldikss/vim-floaterm'
   let g:floaterm_width = 0.7
   let g:floaterm_width = 0.7
+  let g:floaterm_opener = 'tabe'
   " 基本は1つのターミナルを再利用する
   nnoremap <silent> ,t :FloatermToggle<CR>
   " 追加で新しいターミナルが必要になったときのため
   nnoremap <silent> ,T :FloatermNew<CR>
   " fzfなど全てのterminalで::すると閉じる"
   tnoremap <silent> :: <C-\><C-n>:q<CR>
+  " nerdtreeの代替
+  nnoremap <silent> ,r :FloatermNew ranger<CR>
 
 if has('nvim')
   " ghosttext
