@@ -185,50 +185,43 @@ Plug 'junegunn/fzf.vim'
 Plug 'w0rp/ale'
 Plug 'itchyny/lightline.vim'
 Plug 'maximbaz/lightline-ale'
-
-" 文字数取得
-" ghosttextではScratchのため文字数が0になる(実ファイルがないとカウントできないように見える)
-" :'<,'>s/./&/gn で文字を元の文字で置換すれば確認はできる(matchesのところ)
-Plug 'anekos/char-counter-vim'
-
-let g:lightline = {
-  \ 'component_expand': {
-  \   'linter_checking': 'lightline#ale#checking',
-  \   'linter_warnings': 'lightline#ale#warnings',
-  \   'linter_errors': 'lightline#ale#errors',
-  \   'linter_ok': 'lightline#ale#ok',
-  \ },
-  \ 'component_function': {
-  \   'gitbranch':  'fugitive#statusline',
-  \   'ccc': 'CCC',
-  \ },
-  \ 'component_type': {
-  \   'linter_checking': 'left',
-  \   'linter_warnings': 'warning',
-  \   'linter_errors': 'error',
-  \   'linter_ok': 'left',
-  \ },
-  \ 'active': {
-  \   'left': [
-  \     ['mode', 'paste'],
-  \     ['relativepath', 'modified', 'readonly', 'gitbranch'],
-  \     ['linter_checking', 'linter_errors', 'linter_warnings', 'linter_ok'],
-  \   ],
-  \   'right': [
-  \     ['lineinfo'],
-  \     ['percent'],
-  \     ['charvaluehex', 'ccc', 'fileformat', 'fileencoding', 'filetype'],
-  \   ],
-  \ },
-  \ 'component': {
-  \   'charvaluehex': '0x%B',
-  \ },
-  \ 'inactive': {
-  \   'left': [
-  \     ['relativepath', 'modified'],
-  \   ],
-  \ },
-  \ }
+  let g:lightline = {
+    \ 'component_expand': {
+    \   'linter_checking': 'lightline#ale#checking',
+    \   'linter_warnings': 'lightline#ale#warnings',
+    \   'linter_errors': 'lightline#ale#errors',
+    \   'linter_ok': 'lightline#ale#ok',
+    \ },
+    \ 'component_function': {
+    \   'gitbranch':  'fugitive#statusline'
+    \ },
+    \ 'component_type': {
+    \   'linter_checking': 'left',
+    \   'linter_warnings': 'warning',
+    \   'linter_errors': 'error',
+    \   'linter_ok': 'left',
+    \ },
+    \ 'active': {
+    \   'left': [
+    \     ['mode', 'paste'],
+    \     ['relativepath', 'modified', 'readonly', 'gitbranch'],
+    \     ['linter_checking', 'linter_errors', 'linter_warnings', 'linter_ok'],
+    \   ],
+    \   'right': [
+    \     ['lineinfo'],
+    \     ['percent'],
+    \     ['charvaluehex', 'fileformat', 'fileencoding', 'filetype'],
+    \   ],
+    \ },
+    \ 'component': {
+    \   'charvaluehex': '0x%B',
+    \ },
+    \ 'inactive': {
+    \   'left': [
+    \     ['relativepath', 'modified'],
+    \   ],
+    \ },
+    \ }
 
 
 " 括弧の補完
@@ -847,3 +840,7 @@ endif
 " yankした文字一覧を確認する
 " :registers
 " "3p のように貼り付ける
+
+" ファイルの文字数取得について
+"  g<C-g> して確認する
+" または :'<,'>s/./&/gn で文字を元の文字で置換すれば確認はできる(matchesのところ)
