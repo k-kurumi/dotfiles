@@ -13,6 +13,8 @@
 # /usr/local/Cellar/trash-cli/0.20.11.23/libexec/bin/pip3 install psutil
 # のように追加するとエラーが出なくなる
 
+xcode-select --install
+
 brew update
 
 # readdirなどstableではポーティングされていない機能を使いたい
