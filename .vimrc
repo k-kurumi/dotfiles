@@ -103,10 +103,21 @@ let g:rehash256 = 1
 let g:molokai_original = 0
 
 " gitの差分をmark部分に表示
-Plug 'airblade/vim-gitgutter'
+" vim-gitgutterの方がシンプルな表示
+" Plug 'airblade/vim-gitgutter'
+Plug 'mhinz/vim-signify'
+  " default updatetime 4000ms is not good for async update
+  set updatetime=100
 
 " git周りのGblameなどが使える
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rhubarb'
+
+" gitのコミットログブラウザ gbで:Gbrowse(githubを開く)
+" :GV to open commit browser
+" :GV! will only list commits that affected the current file
+" :GV? fills the location list with the revisions of the current file
+Plug 'junegunn/gv.vim'
 
 " 括弧の色分け
 Plug 'luochen1990/rainbow'
