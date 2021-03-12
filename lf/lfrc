@@ -1,5 +1,8 @@
 # https://pkg.go.dev/github.com/gokcehan/lf
 
+# 枠の表示
+set drawbox
+
 # vimのように番号付ける
 set number
 
@@ -14,3 +17,28 @@ set incsearch
 
 # 巡回しない
 set nowrapscan
+
+# 選択状態にする(lでまとめて開くため)
+# :glob-select でまとめて指定もできる
+# u でunselect
+map t toggle
+
+# lで開くコマンドを指定する
+# vimのfloatermから開くときはfloaterm側の設定が効いていてこの部分は使われない
+cmd open ${{
+  case $(file --mime-type $f -b) in
+    text/*)
+      # 複数ファイルの場合はタブで開く
+      nvim -p $fx;;
+    *)
+      case $(uname) in
+      Darwin)
+        for f in $fx; do open $f > /dev/null 2> /dev/null & done;;
+      Linux)
+        for f in $fx; do xdg-open $f > /dev/null 2> /dev/null & done;;
+      *)
+        ;;
+      esac
+      ;;
+  esac
+}}
