@@ -95,6 +95,7 @@ let g:hybrid_custom_term_colors = 1
 Plug 'cocopon/iceberg.vim'
 Plug 'dracula/vim', { 'as': 'dracula'  }
 Plug 'rakr/vim-one'
+Plug 'morhetz/gruvbox'
 
 " カラフルなカラーテーマ
 Plug 'tomasr/molokai'
@@ -665,7 +666,7 @@ set timeoutlen=1000
 set ttimeoutlen=70
 
 " vim7.4からundoを保存する.un~ファイルが出来るためまとめる
-set undodir=~/.vim
+set undodir=~/.vim/undodir
 set undofile
 
 " macのcrontabで指定しないと怒られる
