@@ -205,7 +205,8 @@ Plug 'maximbaz/lightline-ale'
     \   'linter_ok': 'lightline#ale#ok',
     \ },
     \ 'component_function': {
-    \   'gitbranch':  'fugitive#statusline'
+    \   'gitbranch':  'fugitive#statusline',
+    \   'cocstatus': 'coc#status',
     \ },
     \ 'component_type': {
     \   'linter_checking': 'left',
@@ -218,6 +219,7 @@ Plug 'maximbaz/lightline-ale'
     \     ['mode', 'paste'],
     \     ['relativepath', 'modified', 'readonly', 'gitbranch'],
     \     ['linter_checking', 'linter_errors', 'linter_warnings', 'linter_ok'],
+    \     ['cocstatus'],
     \   ],
     \   'right': [
     \     ['lineinfo'],
@@ -270,26 +272,6 @@ Plug 'thinca/vim-visualstar'
 
 " htmlなどの閉じタグ補完
 Plug 'alvan/vim-closetag'
-
-" golang
-" デバッグ用
-" :DlvAddBreakPoint して :DlvDebug から実行する
-Plug 'benmills/vimux'
-Plug 'sebdah/vim-delve'
-" terminalではなくtmuxのペインで開く
-let g:delve_use_vimux = 1
-
-" 補完はlsp使う方が便利"
-Plug 'prabirshrestha/async.vim'
-Plug 'prabirshrestha/asyncomplete.vim'
-Plug 'prabirshrestha/asyncomplete-lsp.vim'
-Plug 'prabirshrestha/vim-lsp'
-Plug 'mattn/vim-lsp-settings'
-Plug 'mattn/vim-goimports'
-
-" aleなどのワーニング文字が入力文字と同じ行に表示されるが
-" colorschemeによっては見づらいので無効にする
-let g:lsp_diagnostics_enabled = 0
 
 Plug 'cespare/vim-toml'
 
@@ -359,7 +341,32 @@ if has('nvim')
   " ghosttext
   " nvimを別で起動して :GhostStart しておく
   Plug 'raghur/vim-ghost', {'do': ':GhostInstall'}
+
+  " lsp nvimとvimで別のものを使う(cocにはnodeなど必要になるため)
+  Plug 'neoclide/coc.nvim', {'branch': 'release'}
+  " golang
+  Plug 'mattn/vim-goimports'
+  " :DlvAddBreakPoint して :DlvDebug から実行する
+  Plug 'sebdah/vim-delve'
+else
+  " lsp nvimとvimで別のものを使う(cocにはnodeなど必要になるため)
+  Plug 'prabirshrestha/async.vim'
+  Plug 'prabirshrestha/asyncomplete.vim'
+  Plug 'prabirshrestha/asyncomplete-lsp.vim'
+  Plug 'prabirshrestha/vim-lsp'
+  Plug 'mattn/vim-lsp-settings'
+  Plug 'mattn/vim-goimports'
+  " :DlvAddBreakPoint して :DlvDebug から実行する
+  Plug 'sebdah/vim-delve'
+
+  " aleなどのワーニング文字が入力文字と同じ行に表示されるが
+  " colorschemeによっては見づらいので無効にする
+  let g:lsp_diagnostics_enabled = 0
 endif
+
+" vimからtmuxのペインを開く
+" Plug 'benmills/vimux'
+" let g:delve_use_vimux = 1
 
 " ruby, rails
 Plug 'tpope/vim-endwise'
@@ -372,6 +379,12 @@ call plug#end()
 if has('nvim')
   " インタラクティブな置換
   set inccommand=split
+
+  " ポップアップとウインドウの透過(100に近いほど透明)
+  " 枠がないので透過しすぎるとわかりづらい
+  set pumblend=10
+  set winblend=10
+  set termguicolors
 endif
 
 syntax on
@@ -818,11 +831,6 @@ if has('gui_running')
 else
   set background=dark
   colorscheme molokai
-  set termguicolors
-  " ポップアップとウインドウの透過(100に近いほど透明)
-  " 枠がないので透過しすぎるとわかりづらい
-  set pumblend=10
-  set winblend=10
 endif
 
 " https://github.com/psycofdj/yaml-path をインストールして呼び出す
