@@ -198,6 +198,7 @@ Plug 'w0rp/ale'
 Plug 'itchyny/lightline.vim'
 Plug 'maximbaz/lightline-ale'
   let g:lightline = {
+    \ 'colorscheme': 'gruvbox',
     \ 'component_expand': {
     \   'linter_checking': 'lightline#ale#checking',
     \   'linter_warnings': 'lightline#ale#warnings',
