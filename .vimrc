@@ -248,18 +248,24 @@ Plug 'tpope/vim-surround'
 
 " ウインドウのリサイズ
 " <C-e>で変更モード
-" FIXME: 複数タブを開くとサイズが別タブへ移動でリセットされているように見えるので確認する
+" nnoremap <Up> :resize +1<CR>
+" nnoremap <Down> :resize -1<CR>
+" nnoremap <Left> :vertical resize +1<CR>
+" nnoremap <Right> :vertical resize -1<CR>
+" でもリサイズできるが
+" ウインドウの配置によっては直感的でないリサイズになる
 Plug 'simeji/winresizer'
+  let g:winresizer_vert_resize  = 1
+  let g:winresizer_horiz_resize = 1
 
-
-" 複数のハイライト検索
+" 文字にハイライトを付ける(検索やビジュアルモードで選択する)
 Plug 't9md/vim-quickhl'
-" ハイライトを付ける
-nmap <Space>m <Plug>(quickhl-manual-this)
-xmap <Space>m <Plug>(quickhl-manual-this)
-" ハイライトをリセット
-nmap <Space>M <Plug>(quickhl-manual-reset)
-xmap <Space>M <Plug>(quickhl-manual-reset)
+  " ハイライトを付ける
+  nmap <Space>m <Plug>(quickhl-manual-this)
+  xmap <Space>m <Plug>(quickhl-manual-this)
+  " ハイライトをリセット
+  nmap <Space>M <Plug>(quickhl-manual-reset)
+  xmap <Space>M <Plug>(quickhl-manual-reset)
 
 " ビジュアルモード中に * で検索対象になる
 Plug 'thinca/vim-visualstar'
@@ -829,7 +835,7 @@ if has('gui_running')
   " winsize 150 40
 else
   set background=dark
-  colorscheme molokai
+  colorscheme gruvbox
 endif
 
 " https://github.com/psycofdj/yaml-path をインストールして呼び出す
