@@ -356,6 +356,9 @@ else
   Plug 'prabirshrestha/vim-lsp'
   Plug 'mattn/vim-lsp-settings'
   Plug 'mattn/vim-goimports'
+  " " vimからtmuxのペインを開く
+  " Plug 'benmills/vimux'
+  " let g:delve_use_vimux = 1
   " :DlvAddBreakPoint して :DlvDebug から実行する
   Plug 'sebdah/vim-delve'
 
@@ -363,10 +366,6 @@ else
   " colorschemeによっては見づらいので無効にする
   let g:lsp_diagnostics_enabled = 0
 endif
-
-" vimからtmuxのペインを開く
-" Plug 'benmills/vimux'
-" let g:delve_use_vimux = 1
 
 " ruby, rails
 Plug 'tpope/vim-endwise'
