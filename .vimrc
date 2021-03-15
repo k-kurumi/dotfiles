@@ -166,16 +166,24 @@ Plug 'junegunn/fzf.vim'
   " Filesで常にプレビュー表示
   command! -bang -nargs=? -complete=dir Files
     \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
+
   " Agで?押すとプレビュー
+  " TODO --hiddenオプションを追加したい
   command! -bang -nargs=* Ag
     \ call fzf#vim#ag(<q-args>,
     \                 <bang>0 ? fzf#vim#with_preview('up:60%')
     \                         : fzf#vim#with_preview('right:50%:hidden', '?'),
     \                 <bang>0)
+
+  " 検索後にファイル名マッチしない設定
+  " TODO ?と併用する方法がわからない
+  " https://qiita.com/uji_/items/9eac71096f2549003880
+  " command! -bang -nargs=* Ag call fzf#vim#ag(<q-args>, {'options': '--hidden --delimiter : --nth 4..'}, <bang>0)
+
   " Rgで?押すとプレビュー
   command! -bang -nargs=* Rg
     \ call fzf#vim#grep(
-    \   'rg --column --line-number --no-heading --color=always --smart-case -- '.shellescape(<q-args>), 1,
+    \   'rg --hidden --column --line-number --no-heading --color=always --smart-case -- '.shellescape(<q-args>), 1,
     \   <bang>0 ? fzf#vim#with_preview('up:60%')
     \           : fzf#vim#with_preview('right:50%:hidden', '?'),
     \   <bang>0)
