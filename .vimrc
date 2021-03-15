@@ -136,8 +136,9 @@ let g:rainbow_active = 1
 " let g:vim_markdown_folding_disabled = 1
 " let g:vim_markdown_new_list_item_indent = 2
 
-" github flavored markdown
+" github固有のmarkdown要素に色づけする
 Plug 'rhysd/vim-gfm-syntax'
+  let g:gfm_syntax_enable_filetypes = ['markdown']
 
 " markdownの目次を :GenTocGFM などで作成
 Plug 'mzlogin/vim-markdown-toc'
@@ -584,9 +585,6 @@ augroup MyGroup
   " javascript settings
   autocmd BufNewFile,BufRead *.js set filetype=javascript sw=2 ts=2 sts=2 et ai cin
   autocmd BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
-
-  " markdown
-  autocmd BufNewFile,BufRead *.md,*.markdown setlocal filetype=markdown.gfm
 
   " jira
   autocmd BufNewFile,BufRead *.jira setlocal filetype=confluencewiki nowrap paste
