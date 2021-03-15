@@ -12,7 +12,9 @@ Plug 'tpope/vim-sensible'
 Plug 'junegunn/vim-easy-align'
 
 " undo履歴を可視化する python不要
-Plug 'mbbill/undotree'
+" Plug 'mbbill/undotree'
+" python依存だがundotreeにできないプレビュー機能がある
+Plug 'simnalamburt/vim-mundo'
 
 " markを表示
 Plug 'kshenoy/vim-signature'
@@ -150,10 +152,9 @@ Plug 'bogado/file-line'
 " <C-y>,で展開
 " Plug 'mattn/emmet-vim'
 
-" 末尾半角スペースの可視化(:FixWhitespace で削除)
-" ntpeters/vim-better-whitespace が高機能だがssh経由で赤色が出ない
-" 色設定を調整するのが面倒なのでvim-trailing-whitespaceを使う
-Plug 'bronson/vim-trailing-whitespace'
+" 末尾スペースを赤く表示する
+" :StripWhitespace で末尾スペースを削除
+Plug 'ntpeters/vim-better-whitespace'
 
 " ctrlpより速いらしい
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
