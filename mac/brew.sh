@@ -35,6 +35,7 @@ brew install \
   ghq \
   fzf \
   ag \
+  ripgrep \
   mosh \
   pyenv \
   pyenv-virtualenv \
