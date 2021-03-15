@@ -13,8 +13,11 @@ Plug 'junegunn/vim-easy-align'
 
 " undo履歴を可視化する python不要
 " Plug 'mbbill/undotree'
-" python依存だがundotreeにできないプレビュー機能がある
+" python依存だがundotreeにできない差分プレビューがある
 Plug 'simnalamburt/vim-mundo'
+  let g:mundo_width = 30
+  let g:mundo_preview_height = 30
+  let g:mundo_preview_bottom = 1
 
 " markを表示
 Plug 'kshenoy/vim-signature'
