@@ -160,37 +160,33 @@ Plug 'bogado/file-line'
 Plug 'ntpeters/vim-better-whitespace'
 
 " ctrlpより速いらしい
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+  " プレビュー表示の切り替え
+  let g:fzf_preview_window = ['right:50%', 'ctrl-/']
+
   " https://github.com/junegunn/fzf.vim#advanced-customization
   " Filesで常にプレビュー表示
   command! -bang -nargs=? -complete=dir Files
     \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
 
-  " Agで?押すとプレビュー
-  " TODO --hiddenオプションを追加したい
-  command! -bang -nargs=* Ag
-    \ call fzf#vim#ag(<q-args>,
-    \                 <bang>0 ? fzf#vim#with_preview('up:60%')
-    \                         : fzf#vim#with_preview('right:50%:hidden', '?'),
-    \                 <bang>0)
-
-  " 検索後にファイル名マッチしない設定
-  " TODO ?と併用する方法がわからない
+  " ファイルの中身で絞り込み
   " https://qiita.com/uji_/items/9eac71096f2549003880
-  " command! -bang -nargs=* Ag call fzf#vim#ag(<q-args>, {'options': '--hidden --delimiter : --nth 4..'}, <bang>0)
+  command! -bang -nargs=* Ag
+    \ call fzf#vim#grep(
+    \   'ag --hidden --column --numbers --noheading --color --smart-case '.shellescape(<q-args>), 1,
+    \   fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}), <bang>0)
 
-  " Rgで?押すとプレビュー
   command! -bang -nargs=* Rg
     \ call fzf#vim#grep(
     \   'rg --hidden --column --line-number --no-heading --color=always --smart-case -- '.shellescape(<q-args>), 1,
-    \   <bang>0 ? fzf#vim#with_preview('up:60%')
-    \           : fzf#vim#with_preview('right:50%:hidden', '?'),
-    \   <bang>0)
+    \   fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}), <bang>0)
+
   command! -bang -nargs=* GGrep
     \ call fzf#vim#grep(
     \   'git grep --line-number -- '.shellescape(<q-args>), 0,
     \   fzf#vim#with_preview({'dir': systemlist('git rev-parse --show-toplevel')[0]}), <bang>0)
+
   " 補完系にfzfを使う
   imap <C-x><C-k> <plug>(fzf-complete-word)
   imap <C-x><C-f> <plug>(fzf-complete-path)
