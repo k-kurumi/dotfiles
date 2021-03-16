@@ -16,12 +16,16 @@
 xcode-select --install
 
 brew update
+brew upgrade
 
-# readdirなどstableではポーティングされていない機能を使いたい
 # 事前にインストールされているときはunlink,uninstallする
 # brew unlink neovim
 # brew uninstall neovim
 brew install --HEAD neovim
+
+# luaで設定できるターミナル(他のGPU利用ターミナルよりは日本語を扱いやすい)
+brew tap wez/wezterm
+brew install --HEAD wezterm
 
 brew install \
   tmux \

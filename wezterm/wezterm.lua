@@ -12,7 +12,7 @@ return {
   font_size = 18.0,
 
   -- https://github.com/mbadolato/iTerm2-Color-Schemes#screenshots
-  color_scheme = "Espresso",
+  color_scheme = "Gruvbox Dark",
 
   -- 背景透過 1.0が不透過 キー入力の度に点滅するので使わない
   -- window_background_opacity = 0.9,
