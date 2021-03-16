@@ -621,8 +621,8 @@ augroup MyGroup
   " syntaxなどが見つからないが、jsに似ているため
   autocmd BufNewFile,BufRead *.tick  set filetype=javascript et sw=2 ts=2 sts=2 nocindent autoindent
 
-  " 保存したときHTMLを生成する
-  autocmd BufWritePost *.wiki VimwikiAll2HTML
+  " 保存したときHTMLを生成する(:VimwikiAll2HTML で全体を生成する)
+  autocmd BufWritePost *.wiki Vimwiki2HTML
 augroup END
 
 " ------------------------------------------------------------------------------
