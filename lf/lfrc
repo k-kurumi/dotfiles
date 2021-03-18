@@ -6,6 +6,10 @@ set drawbox
 # vimのように番号付ける
 set number
 
+# ファイルサイズとフォルダは中のファイル数を表示する
+set dircounts
+set info size
+
 # 隠しファイルも表示する
 set hidden
 
@@ -41,4 +45,14 @@ cmd open ${{
       esac
       ;;
   esac
+}}
+
+# copy the path of the highlighted file
+cmd copy_path ${{
+  set -f
+  if command -v pbcopy > /dev/null 2> /dev/null; then
+    echo "$f" | tr -d '\n' | pbcopy
+  elif command -v xclip > /dev/null 2> /dev/null; then
+    echo "$f" | tr -d '\n' | xclip -sel clip
+  fi
 }}
