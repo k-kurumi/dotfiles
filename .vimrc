@@ -334,8 +334,10 @@ Plug 'vimwiki/vimwiki'
   " ブラウザで開く(サーバ不要)
   nnoremap <Leader>wb :Vimwiki2HTMLBrowse<CR>
 
-" カラーコードを色付け表示
-Plug 'gko/vim-coloresque'
+" カラーコードの色付け
+Plug 'lilydjwg/colorizer'
+" カラーコードの色付け 文字(black)などにも対応しているが入力文字がもたつくため使用しない
+" Plug 'gko/vim-coloresque'
 
 " terminalなどで使う(terminalは <C-\><C-n> でノーマルモード切替)
 " <space>h, j, k, l で選択した部分を指定したウインドウに貼り付け
