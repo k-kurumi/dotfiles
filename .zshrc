@@ -147,8 +147,11 @@ if type trash > /dev/null; then
   alias rm='trash'
 fi
 
-# start vimwiki directory from shell
-alias wiki='nvim -c VimwikiIndex'
+# vimwiki
+alias wiki='tmux rename-window wiki-neovim && nvim -c VimwikiIndex'
+
+# ghosttext
+alias ghost='tmux rename-window ghosttext-neovim && nvim -c GhostStart'
 
 ################################################################################
 # function
