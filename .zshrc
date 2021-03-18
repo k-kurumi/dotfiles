@@ -148,8 +148,7 @@ if type trash > /dev/null; then
 fi
 
 # start vimwiki directory from shell
-alias wiki='(cd ~/vimwiki; nvim -c VimwikiIndex)'
-alias wiki_httpd='(cd ~/vimwiki_html; httpd)'
+alias wiki='nvim -c VimwikiIndex'
 
 ################################################################################
 # function
