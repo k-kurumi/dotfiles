@@ -23,10 +23,6 @@ brew upgrade
 # brew uninstall neovim
 brew install --HEAD neovim
 
-# luaで設定できるターミナル(他のGPU利用ターミナルよりは日本語を扱いやすい)
-brew tap wez/wezterm
-brew install --HEAD wezterm
-
 brew install \
   tmux \
   coreutils \
