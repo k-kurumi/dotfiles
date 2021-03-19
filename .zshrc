@@ -147,9 +147,6 @@ if type trash > /dev/null; then
   alias rm='trash'
 fi
 
-# vimwiki
-alias wiki='tmux rename-window wiki-neovim && nvim -c VimwikiIndex'
-
 # ghosttext
 alias ghost='tmux rename-window ghosttext-neovim && nvim -c GhostStart'
 
@@ -220,10 +217,6 @@ function httpd_rb() {
   ruby -run -e httpd . -p "${port}"
 }
 
-function httpd() {
-  httpd_rb "$@"
-}
-
 # sleepの秒数表示
 function sleep2() {
   # 時間が指定されていないとき何もしない
@@ -236,6 +229,18 @@ function sleep2() {
     sleep 1
     echo -n "$t "
   done
+}
+
+# vimwiki
+function wiki() {
+  tmux rename-window wiki-neovim && nvim -c VimwikiIndex
+}
+
+# vimwiki(MDwikiHTTPサーバ)
+function wiki_httpd() {
+  local wiki_port=${1:-8000}
+  local wiki_home=${2:-"~/vimwiki"}
+  ruby -run -e httpd "${wiki_home}" -p "${wiki_port}"
 }
 
 ################################################################################
