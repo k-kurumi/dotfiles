@@ -233,7 +233,7 @@ function sleep2() {
 
 # vimwiki
 function wiki() {
-  tmux rename-window wiki-neovim && nvim -c VimwikiIndex
+  tmux rename-window wiki-neovim && nvim -c "cd ~/vimwiki" -c VimwikiIndex
 }
 
 # vimwiki(MDwikiHTTPサーバ)
