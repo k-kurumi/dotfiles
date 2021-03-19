@@ -320,19 +320,19 @@ let g:terraform_fmt_on_save = 1
 " "でレジスタを表示できる
 Plug 'junegunn/vim-peekaboo'
 
-" markdownで使うよりvimwikiフォーマットのまま使う方がリンクなど扱いやすい
+" vimwikiはキーバインドだけを利用して、html生成は実行しない(mdのままMDwikiで表示する)
+" ブラウザ表示をMDwikiに任せる方がデフォルトで見た目がよい
 Plug 'vimwiki/vimwiki'
   let g:vimwiki_list = [{
     \ 'path': '~/vimwiki',
-    \ 'path_html': '~/vimwiki_html',
-    \ 'ext': '.wiki'
+    \ 'syntax': 'markdown',
+    \ 'ext': '.md'
     \ }]
-  " markdownでリストのインクリメントなどが邪魔なので無効にする"
   let g:vimwiki_global_ext = 0
   " 実際のコードと見た目が乖離して使いづらいので無効にする
   let g:vimwiki_conceallevel = 0
-  " ブラウザで開く(サーバ不要)
-  nnoremap <Leader>wb :Vimwiki2HTMLBrowse<CR>
+  " リンク作成時に拡張子を付ける
+  let g:vimwiki_markdown_link_ext = 1
 
 " カラーコードの色付け
 Plug 'lilydjwg/colorizer'
@@ -625,9 +625,6 @@ augroup MyGroup
   " kapacitor
   " syntaxなどが見つからないが、jsに似ているため
   autocmd BufNewFile,BufRead *.tick  set filetype=javascript et sw=2 ts=2 sts=2 nocindent autoindent
-
-  " 保存したときHTMLを生成する(:VimwikiAll2HTML で全体を生成する)
-  autocmd BufWritePost *.wiki Vimwiki2HTML
 augroup END
 
 " ------------------------------------------------------------------------------
