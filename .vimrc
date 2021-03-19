@@ -323,6 +323,7 @@ Plug 'junegunn/vim-peekaboo'
 " vimwikiはキーバインドだけを利用して、html生成は実行しない(mdのままMDwikiで表示する)
 " ブラウザ表示をMDwikiに任せる方がデフォルトで見た目がよい
 Plug 'vimwiki/vimwiki'
+Plug 'mattn/calendar-vim'
   let g:vimwiki_list = [{
     \ 'path': '~/vimwiki',
     \ 'syntax': 'markdown',
