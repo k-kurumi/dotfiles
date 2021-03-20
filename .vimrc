@@ -101,6 +101,7 @@ Plug 'cocopon/iceberg.vim'
 Plug 'dracula/vim', { 'as': 'dracula'  }
 Plug 'rakr/vim-one'
 Plug 'morhetz/gruvbox'
+Plug 'NLKNguyen/papercolor-theme'
 
 " カラフルなカラーテーマ
 Plug 'tomasr/molokai'
