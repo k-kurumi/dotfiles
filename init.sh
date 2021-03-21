@@ -147,6 +147,7 @@ ln -sf "$(realpath wezterm/wezterm.lua)" ~/.config/wezterm/
 # kitty weztermのようなターミナル
 mkdir -p ~/.config/kitty
 ln -sf "$(realpath kitty/kitty.conf)" ~/.config/kitty/
+ln -sf "$(realpath kitty/gruvbox_dark.conf)" ~/.config/kitty/
 
 # cui file manager
 mkdir -p ~/.config/lf
