@@ -336,8 +336,10 @@ Plug 'mattn/calendar-vim'
   " リンク作成時に拡張子を付ける
   let g:vimwiki_markdown_link_ext = 1
 
-" カラーコードの色付けは表示がもたつくようになるので必要なときだけ有効にする
-" Plug 'lilydjwg/colorizer'
+" カラーコードの色付け
+" 表示がもたつくようになるので必要なときだけ有効にする(:ColorToggleで切り替える)
+Plug 'lilydjwg/colorizer'
+  let g:colorizer_startup = 0
 " 文字(blackなど)にも色づけされるが文字入力すらもたつくので使用しない
 " Plug 'gko/vim-coloresque'
 
