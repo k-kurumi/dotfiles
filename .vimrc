@@ -395,6 +395,13 @@ endif
 " ruby, rails
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-rails'
+" :Dispatch <command> でtmuxペインを使って実行結果をquickfixに表示できる
+" (docker使っているから？)quickfixから飛べないので普通にtmux切り替えて実行すればいいような気もする
+Plug 'tpope/vim-dispatch'
+Plug 'vim-test/vim-test'
+  let test#strategy = 'dispatch'
+  " FIXME プロジェクトごとに別のコマンドを実行したい
+  let test#ruby#rails#executable = 'docker-compose run --rm api bundle exec rails test -b'
 
 call plug#end()
 " -------------------------------------------------------------------------------
