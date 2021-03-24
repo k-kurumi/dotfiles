@@ -44,7 +44,9 @@ brew-install-all: brew-update ## brew install all package
 		ansifilter \
 		bat \
 		git-delta \
-		lf
+		lf \
+		shellcheck \
+		shfmt
 	brew install --HEAD neovim
 
 .PHONY: brew-install
