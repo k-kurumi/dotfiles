@@ -13,24 +13,22 @@ package_list=$(tempfile)
 
 # インストールするツール一式
 cat << EOF > ${package_list}
-build-essential # 開発用
-coreutils # 開発用ツール
-exuberant-ctags # ctags
-asunder   # CDのflackリッピング
-zathura   # vim風pdf reader
-geeqie    # 類似画像検索
-gthumb    # 画像ビューア
-screenkey # 入力キーを画面表示
-dconf-editor # X系の設定エディタ
-tcl       # vimのghosttext
-tcllib    # vimのghosttext
-pinentry-tty  # gpgでgktウインドウの代わりに使う
+build-essential   # 開発用
+coreutils         # 開発用ツール
+exuberant-ctags   # ctags
+asunder           # CDのflackリッピング
+zathura           # vim風pdf reader
+geeqie            # 類似画像検索
+gthumb            # 画像ビューア
+screenkey         # 入力キーを画面表示
+dconf-editor      # X系の設定エディタ
+pinentry-tty      # gpgでgktウインドウの代わりに使う
 silversearcher-ag # better grep
-synapse   # mac風ランチャー
-keepassxc # macのkeepassxcはクリップボードが消えるバグがあるのでLinuxだけで使うこと
-p7zip       # 7z utils
-p7zip-full  # 7z utils
-trash-cli   # rmの代替
+synapse           # mac風ランチャー
+keepassxc         # macのkeepassxcはクリップボードが消えるバグがあるのでLinuxだけで使うこと
+p7zip             # 7z utils
+p7zip-full        # 7z utils
+trash-cli         # rmの代替
 EOF
 
 while read pkg
