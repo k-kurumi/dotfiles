@@ -290,11 +290,13 @@ zle -N fzf_select_ghq_repo
 bindkey '^G' fzf_select_ghq_repo
 
 # read private config
-for f in ~/Dropbox/dotfiles_private/*.sh
-do
-  [[ -e "$f" ]] || break
-  source "${f}"
-done
+if [[ -d ~/Dropbox/dotfiles_private ]]; then
+  for f in ~/Dropbox/dotfiles_private/*.sh
+  do
+    [[ -e "$f" ]] || break
+    source "${f}"
+  done
+fi
 
 # fzfだけ打ったときの元データ(vimのfzfも同じ)
 # --hidden: 隠しファイル表示する
