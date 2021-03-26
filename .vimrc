@@ -137,19 +137,6 @@ let g:rainbow_active = 1
 " let g:vim_markdown_folding_disabled = 1
 " let g:vim_markdown_new_list_item_indent = 2
 
-" github固有のmarkdown要素に色づけする
-Plug 'rhysd/vim-gfm-syntax'
-  let g:gfm_syntax_enable_filetypes = ['markdown']
-
-" markdownの目次を :GenTocGFM などで作成
-Plug 'mzlogin/vim-markdown-toc'
-let g:vmt_auto_update_on_save = 0
-
-" markdownのテーブル用
-Plug 'dhruvasagar/vim-table-mode'
-let g:table_mode_corner = '|'
-let g:table_mode_header_fillchar = '-'
-
 " 行番号指定で開く(vim a.txt:20のような感じ)
 Plug 'bogado/file-line'
 
@@ -320,6 +307,23 @@ let g:terraform_fmt_on_save = 1
 " yankringなどはキーバインドを書き換えすぎるので使用しない
 " "でレジスタを表示できる
 Plug 'junegunn/vim-peekaboo'
+
+" github固有のmarkdown要素に色づけする
+Plug 'rhysd/vim-gfm-syntax'
+  let g:gfm_syntax_enable_filetypes = ['markdown']
+
+" markdownの目次を :GenTocGFM などで作成
+Plug 'mzlogin/vim-markdown-toc'
+  let g:vmt_auto_update_on_save = 0
+
+" markdownのテーブル用
+Plug 'dhruvasagar/vim-table-mode'
+  let g:table_mode_corner = '|'
+  let g:table_mode_header_fillchar = '-'
+
+" gripと違いリアルタイムでブラウザを更新できる :MarkdownPreview
+" vimwikiでジャンプするとプレビューが修了する
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 
 " vimwikiはキーバインドだけを利用して、html生成は実行しない(mdのままMDwikiで表示する)
 " ブラウザ表示をMDwikiに任せる方がデフォルトで見た目がよい
