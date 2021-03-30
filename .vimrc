@@ -109,12 +109,36 @@ let g:rehash256 = 1
 " 背景色をオリジナルに書き換えるためか起動時にもたつく感じがするのでオフにする
 let g:molokai_original = 0
 
-" gitの差分をmark部分に表示
-" vim-gitgutterの方がシンプルな表示
+" gitの差分をmark部分に表示(ブレークポイントと被る)
+" Git始まりのプラグインが多いのでvim-signifyを使う
 " Plug 'airblade/vim-gitgutter'
+" :SignifyToggleHighlight で差分行に色付け
 Plug 'mhinz/vim-signify'
   " default updatetime 4000ms is not good for async update
   set updatetime=100
+
+  function! s:sy_stats_wrapper()
+    let [added, modified, removed] = sy#repo#get_stats()
+    let symbols = ['+', '-', '~']
+    let stats = [added, removed, modified]  " reorder
+    let statline = ''
+
+    for i in range(3)
+      if stats[i] > 0
+        let statline .= printf('%s%s ', symbols[i], stats[i])
+      endif
+    endfor
+
+    if !empty(statline)
+      let statline = printf('[%s]', statline[:-2])
+    endif
+
+    return statline
+  endfunction
+  " statusline表示用
+  function! MySignify()
+    return s:sy_stats_wrapper()
+  endfunction
 
 " git周りのGblameなどが使える
 Plug 'tpope/vim-fugitive'
@@ -205,6 +229,7 @@ Plug 'maximbaz/lightline-ale'
     \ 'component_function': {
     \   'gitbranch':  'fugitive#statusline',
     \   'cocstatus': 'coc#status',
+    \   'signify': 'MySignify',
     \ },
     \ 'component_type': {
     \   'linter_checking': 'left',
@@ -216,6 +241,7 @@ Plug 'maximbaz/lightline-ale'
     \   'left': [
     \     ['mode', 'paste'],
     \     ['relativepath', 'modified', 'readonly', 'gitbranch'],
+    \     ['signify'],
     \     ['linter_checking', 'linter_errors', 'linter_warnings', 'linter_ok'],
     \     ['cocstatus'],
     \   ],
