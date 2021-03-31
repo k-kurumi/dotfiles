@@ -90,3 +90,6 @@ Godeps/_workspace
 
 # ansible
 vault_password.txt
+
+# coc-pyright
+pyrightconfig.json
