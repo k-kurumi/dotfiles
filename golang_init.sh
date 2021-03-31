@@ -16,3 +16,6 @@ go get -u -v github.com/itchyny/mmv/cmd/mmv
 
 # デバッガ
 go get -v -u github.com/derekparker/delve/cmd/dlv
+
+# 構文チェック(go lintは使えなくなるらしい)
+go get -v -u honnef.co/go/tools/cmd/staticcheck
