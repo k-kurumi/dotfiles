@@ -3,7 +3,7 @@
 .DEFAULT_GOAL := help
 .PHONY: help
 help: ## print help
-	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(word 1,$(MAKEFILE_LIST)) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-20s\033[0m %s\n", $$1, $$2}'
+	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(word 1,$(MAKEFILE_LIST)) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-22s\033[0m %s\n", $$1, $$2}'
 
 .PHONY: rbenv_update
 rbenv_update: ~/.rbenv ## git pull rbenv
@@ -24,3 +24,7 @@ ndenv_update: ~/.ndenv ## git pull ndenv
 .PHONY: cryfs_mount_vimwiki
 cryfs_mount_vimwiki: ## mount dir for vimwiki
 	cryfs ~/Dropbox/cryfs/vimwiki ~/vimwiki
+
+.PHONY: cryfs_unmount_vimwiki
+cryfs_unmount_vimwiki: ## unmount dir for vimwiki
+	cryfs-unmount ~/vimwiki

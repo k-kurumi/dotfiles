@@ -46,7 +46,9 @@ brew-install-all: brew-update ## brew install all package
 		git-delta \
 		lf \
 		shellcheck \
-		shfmt
+		shfmt \
+		osxfuse \
+		cryfs
 	brew install --HEAD neovim
 
 .PHONY: brew-install
