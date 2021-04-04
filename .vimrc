@@ -406,6 +406,11 @@ if has('nvim')
 
   " lsp nvimとvimで別のものを使う(cocにはnodeなど必要になるため)
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    " GoTo code navigation.
+    nmap <silent> gd <Plug>(coc-definition)
+    nmap <silent> gy <Plug>(coc-type-definition)
+    nmap <silent> gi <Plug>(coc-implementation)
+    nmap <silent> gr <Plug>(coc-references)
   " golang
   Plug 'mattn/vim-goimports'
   " :DlvAddBreakPoint して :DlvDebug から実行する
