@@ -83,7 +83,7 @@
     "gitlens.hovers.currentLine.over": "line",
 
     // テーマ
-    "workbench.colorTheme": "Dracula",
+    "workbench.colorTheme": "Gruvbox Dark Medium",
     // 検索の循環を禁止
     "vim.wrapscan": false,
     "go.formatTool": "goimports",

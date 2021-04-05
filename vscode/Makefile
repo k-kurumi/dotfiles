@@ -43,6 +43,7 @@ install_all:
 # テーマ
 	code --install-extension dracula-theme.theme-dracula
 	code --install-extension Equinusocio.vsc-material-theme
+	code --install-extension jdinhlife.gruvbox
 
 # todoをハイライト
 	code --install-extension wayou.vscode-todo-highlight
