@@ -1,10 +1,13 @@
 OS := $(shell uname)
 
-help:
-	@echo "vscodeの初期設定用"
+# https://postd.cc/auto-documented-makefile/
+.DEFAULT_GOAL := help
+.PHONY: help
+help: ## help
+	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(word 1,$(MAKEFILE_LIST)) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-10s\033[0m %s\n", $$1, $$2}'
 
-# 設定ファイルの作成
-init:
+.PHONY: init
+init: ## 設定ファイルをシンボリックリンクで作成する
 ifeq ($(OS), Linux)
 	ln -sf $(CURDIR)/settings.json ~/.config/Code/User/settings.json
 	ln -sf $(CURDIR)/keybindings.json ~/.config/Code/User/keybindings.json
@@ -15,16 +18,16 @@ ifeq ($(OS), Darwin)
 	ln -sf $(CURDIR)/settings.json ~/Library/Application\ Support/Code/User/settings.json
 endif
 
-# プラグイン一覧
-list:
+.PHONY: list
+list: ## プラグイン一覧を表示する
 	code --list-extensions
 
-# 全削除
-uninstall_all:
+.PHONY: uninstall
+uninstall: ## 全てのプラグインを削除する
 	code --list-extensions | xargs -I@ code --uninstall-extension @
 
-# インストール
-install_all:
+.PHONY: install
+install: ## プラグインをインストールする
 # markdownの目次生成
 	code --install-extension AlanWalk.markdown-toc
 
