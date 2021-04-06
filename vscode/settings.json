@@ -17,7 +17,9 @@
     // タブサイズの変更など
     "editor.tabSize": 2,
     "editor.insertSpaces": true,
-    "window.zoomLevel": 0,
+
+    // UI部分のフォントサイズはzoomLevelで調整する
+    "window.zoomLevel": 1,
 
     // allのときスペースやタブを可視化
     // "editor.renderWhitespace": "all",
@@ -88,4 +90,6 @@
     "vim.wrapscan": false,
     "go.formatTool": "goimports",
     "go.useLanguageServer": true,
+    "terminal.integrated.fontSize": 18,
+    "scm.inputFontSize": 18,
 }
