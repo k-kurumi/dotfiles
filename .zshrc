@@ -238,13 +238,13 @@ function wiki() {
   tmux rename-window zsh
 }
 
-# vimwiki(MDwikiHTTPサーバ)
 function wiki_httpd() {
   local wiki_port=${1:-8000}
-  local wiki_home=${2:-"~/vimwiki"}
   tmux rename-window wiki-httpd
-  ruby -run -e httpd "${wiki_home}" -p "${wiki_port}"
-  tmux rename-window zsh
+
+  # ファイル更新時に自動リロードするサーバ
+  type livereloadx > /dev/null || npm install -g livereloadx
+  livereloadx -s --include '*.md' -p ${wiki_port} ~/vimwiki
 }
 
 ################################################################################
