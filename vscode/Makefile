@@ -103,3 +103,6 @@ install: ## プラグインをインストールする
 
 # リロード機能付きhttpサーバ
 	code --install-extension ritwickdey.liveserver
+
+# リモートのファイルを編集数r
+	code --install-extension ms-vscode-remote.vscode-remote-extensionpack
