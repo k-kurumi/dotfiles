@@ -92,4 +92,13 @@
     "go.useLanguageServer": true,
     "terminal.integrated.fontSize": 18,
     "scm.inputFontSize": 18,
+
+    // ターミナルがある状態で終了するとき確認する
+    "terminal.integrated.confirmOnExit": true,
+    "workbench.editorAssociations": [
+        {
+            "viewType": "jupyter.notebook.ipynb",
+            "filenamePattern": "*.ipynb"
+        }
+    ],
 }
