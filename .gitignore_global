@@ -93,3 +93,7 @@ vault_password.txt
 
 # coc-pyright
 pyrightconfig.json
+
+# local vimrc
+_vimrc_local.vim
+.vimrc_local.vim
