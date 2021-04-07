@@ -171,6 +171,8 @@ Plug 'bogado/file-line'
 " 末尾スペースを赤く表示する
 " :StripWhitespace で末尾スペースを削除
 Plug 'ntpeters/vim-better-whitespace'
+  " 表示しないfiletype
+  let g:better_whitespace_filetypes_blacklist = ['diff', 'gitcommit', 'qf', 'help']
 
 " ctrlpより速いらしい
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
