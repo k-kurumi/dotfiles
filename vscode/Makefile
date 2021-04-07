@@ -100,3 +100,6 @@ install: ## プラグインをインストールする
 
 # インデントの色付け
 	code --install-extension oderwat.indent-rainbow
+
+# リロード機能付きhttpサーバ
+	code --install-extension ritwickdey.liveserver
