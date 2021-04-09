@@ -387,19 +387,20 @@ Plug 'voldikss/vim-floaterm'
   let g:floaterm_opener = 'tabe'
   " 基本は1つのターミナルを再利用する
   nnoremap <silent> ,t :FloatermToggle<CR>
-  " " 追加で新しいターミナルが必要になったときのため
-  " nnoremap <silent> ,T :FloatermNew<CR>
+  " 追加で新しいターミナルが必要になったときのため
+  nnoremap <silent> ,T :FloatermNew<CR>
   " fzfなど全てのterminalで::すると閉じる"
   tnoremap <silent> :: <C-\><C-n>:q<CR>
   " nerdtreeの代替
   nnoremap <silent> ,l :FloatermNew lf<CR>
 
-" 標準の:terminalより扱いやすいターミナル
-Plug 'kassio/neoterm'
-  " 上下に分割する
-  let g:neoterm_default_mod = 'botright'
-  " 入力できる状態のターミナルを表示する(<C-w>jiはフォーカスの移動など)
-  nnoremap <silent> ,T :Ttoggle<CR><C-w>ji
+" vim-floatermの起動が遅くなる気がするので使用しない
+" " 標準の:terminalより扱いやすいターミナル
+" Plug 'kassio/neoterm'
+"   " 上下に分割する
+"   let g:neoterm_default_mod = 'botright'
+"   " 入力できる状態のターミナルを表示する(<C-w>jiはフォーカスの移動など)
+"   nnoremap <silent> ,T :Ttoggle<CR><C-w>ji
 
 if has('nvim')
   " ghosttext
