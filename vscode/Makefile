@@ -113,3 +113,7 @@ install: ## プラグインをインストールする
 
 # コード部分をキャプチャしたような画像を生成する(一番上に出てくるのは最新のvscodeに対応していないのか動かない)
 	code --install-extension jeff-hykin.polacode-2019
+
+# シェルスクリプト関連
+	code --install-extension foxundermoon.shell-format
+	code --install-extension timonwong.shellcheck
