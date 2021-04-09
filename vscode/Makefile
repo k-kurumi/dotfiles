@@ -42,6 +42,7 @@ install: ## プラグインをインストールする
 
 # js系の整形ほか
 	code --install-extension dbaeumer.vscode-eslint
+	code --install-extension esbenp.prettier-vscode
 
 # テーマ
 	code --install-extension dracula-theme.theme-dracula
@@ -106,3 +107,9 @@ install: ## プラグインをインストールする
 
 # リモートのファイルを編集数r
 	code --install-extension ms-vscode-remote.vscode-remote-extensionpack
+
+# コメントの色分け
+	code --install-extension aaron-bond.better-comments
+
+# コード部分をキャプチャしたような画像を生成する(一番上に出てくるのは最新のvscodeに対応していないのか動かない)
+	code --install-extension jeff-hykin.polacode-2019

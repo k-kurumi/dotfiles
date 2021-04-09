@@ -19,7 +19,7 @@
     "editor.insertSpaces": true,
 
     // UI部分のフォントサイズはzoomLevelで調整する
-    "window.zoomLevel": 1,
+    "window.zoomLevel": 0,
 
     // allのときスペースやタブを可視化
     // "editor.renderWhitespace": "all",
@@ -63,29 +63,18 @@
         "editor.trimAutoWhitespace": false,
         "files.trimTrailingWhitespace": false
     },
-    "workbench.statusBar.feedback.visible": false,
-    "azure-iot-toolkit.showIoTHubInfo": false,
 
-
-    // vscodevim
-    "vim.hlsearch": true,
     "window.titleBarStyle": "custom",
     "explorer.confirmDelete": false,
     "editor.fontLigatures": true,
     "editor.fontWeight": "bold",
 
-    // terraform
-    "terraform.path": "~/.local/bin/terraform",
-    "terraform.lintPath": "~/.local/bin/tflint",
     "files.eol": "\n",
     "gitlens.hovers.currentLine.over": "line",
 
     // テーマ
     "workbench.colorTheme": "Gruvbox Dark Medium",
-    // 検索の循環を禁止
-    "vim.wrapscan": false,
-    "go.formatTool": "goimports",
-    "go.useLanguageServer": true,
+
     "terminal.integrated.fontSize": 18,
     "scm.inputFontSize": 18,
 
