@@ -78,10 +78,6 @@
     "terraform.path": "~/.local/bin/terraform",
     "terraform.lintPath": "~/.local/bin/tflint",
     "files.eol": "\n",
-
-    // gitlens
-    "gitlens.codeLens.enabled": false,
-    "gitlens.currentLine.enabled": false,
     "gitlens.hovers.currentLine.over": "line",
 
     // テーマ
@@ -101,4 +97,9 @@
             "filenamePattern": "*.ipynb"
         }
     ],
+    "gitlens.currentLine.enabled": false,
+    "gitlens.codeLens.enabled": false,
+    "gitlens.defaultDateFormat": "YYYY-MM-DD",
+    "gitlens.defaultTimeFormat": "HH:mm:ss",
+    "gitlens.defaultDateShortFormat": "YYYY-MM-DD HH:mm:ss",
 }
