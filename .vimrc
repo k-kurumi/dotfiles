@@ -453,9 +453,9 @@ Plug 'z0mbix/vim-shfmt', {'for':'sh'}
   if executable('shfmt')
     let &l:formatprg='shfmt -i ' . &l:shiftwidth . ' -ln posix -sr -ci -s'
   endif
-  " インデントはスペース2
-  let g:shfmt_extra_args = '-i 2'
-  let g:shfmt_fmt_on_save = 1
+  " https://github.com/mvdan/sh/blob/master/cmd/shfmt/shfmt.1.scd#printer-flags
+  " 割とバグってて効いてないようなオプションがあるので :Shfmt で手動実行にする
+  let g:shfmt_extra_args = '-i 2 -bn -ci -sr -kp'
 
 " プロジェクトごとの設定ファイル
 Plug 'LucHermitte/lh-vim-lib'
