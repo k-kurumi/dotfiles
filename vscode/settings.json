@@ -91,4 +91,8 @@
     "gitlens.defaultDateFormat": "YYYY-MM-DD",
     "gitlens.defaultTimeFormat": "HH:mm:ss",
     "gitlens.defaultDateShortFormat": "YYYY-MM-DD HH:mm:ss",
+
+    // python
+    "python.languageServer": "Pylance",
+    "python.analysis.typeCheckingMode": "basic",
 }

@@ -117,3 +117,7 @@ install: ## プラグインをインストールする
 # シェルスクリプト関連
 	code --install-extension foxundermoon.shell-format
 	code --install-extension timonwong.shellcheck
+
+# python
+	code --install-extension ms-python.vscode-pylance
+	code --install-extension ms-pyright.pyright
