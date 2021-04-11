@@ -462,6 +462,16 @@ Plug 'LucHermitte/lh-vim-lib'
 Plug 'LucHermitte/local_vimrc'
   let g:local_vimrc = ['.vimrc_local.vim', '_vimrc_local.vim']
 
+" スペルチェック(popup-menuがなければ下にウインドウが出る)
+" ZN, ZP: ジャンプ
+" Zl: 候補を表示して置き換え(1カ所だけ)
+" ZL: 候補を表示して置き換え(全て)
+" Zg: 正しい文字として辞書に追加(:SpelunkerAddAllで全て追加)
+" 辞書は ~/.config/nvim/spell/en.utf-8.add (デフォルト)
+Plug 'kamykn/spelunker.vim'
+" Plug 'kamykn/popup-menu.nvim'
+  set nospell
+
 call plug#end()
 " -------------------------------------------------------------------------------
 
