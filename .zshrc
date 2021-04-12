@@ -148,7 +148,7 @@ if type trash > /dev/null; then
 fi
 
 # ghosttext
-alias ghost='tmux rename-window ghosttext-neovim && nvim -c GhostStart'
+alias ghost='tmux rename-window ghosttext-neovim && nvim -c GhostStart -c "set paste"'
 
 ################################################################################
 # function
