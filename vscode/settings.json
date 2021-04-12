@@ -1,25 +1,21 @@
 // Place your settings in this file to overwrite the default settings
 {
-    // RictyDiminishedDiscord-Boldではオブリークが細いままなので、Regularを使ってfontWeightで太くする
     "editor.fontFamily": "Cica",
     "editor.fontSize": 18,
+    "terminal.integrated.fontSize": 18,
+    "scm.inputFontSize": 18,
+    // UI部分のフォントサイズはzoomLevelで調整する
+    "window.zoomLevel": 0,
+
+    // タブサイズの変更など
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true,
 
     // カーソルを点滅させない
     "editor.cursorBlinking": "solid",
 
     // ctrlとマウスホイールでズームする
     "editor.mouseWheelZoom": true,
-
-    // golang
-    "go.goroot": "~/go",
-    "go.gopath": "~/dev",
-
-    // タブサイズの変更など
-    "editor.tabSize": 2,
-    "editor.insertSpaces": true,
-
-    // UI部分のフォントサイズはzoomLevelで調整する
-    "window.zoomLevel": 0,
 
     // allのときスペースやタブを可視化
     // "editor.renderWhitespace": "all",
@@ -30,12 +26,8 @@
     // ようになりタブ再利用されなくなる
     // "workbench.editor.enablePreview": false,
 
-
-
-
     // フルスクリーンで起動する
     //"window.restoreFullscreen": true,
-    "workbench.iconTheme": "material-icon-theme",
 
     "editor.minimap.enabled": true,
     "editor.minimap.showSlider": "always",
@@ -45,20 +37,19 @@
     "files.insertFinalNewline": true,
     "workbench.startupEditor": "newUntitledFile",
 
-    // prettier
-    "prettier.singleQuote": true,
-
     // 制御文字を表示
     "editor.renderControlCharacters": true,
 
     // スペースのみの行は削除
     "files.trimFinalNewlines": true,
+    // 末尾の空白を削除
+    "files.trimTrailingWhitespace": true,
 
     // ツリーから選択したとき常にタブで開く
     "workbench.editor.enablePreview": false,
 
     // command+pから検索して開くとき常にタブで開く
-    "workbench.editor.enablePreviewFromQuickOpen": false,
+    "workbench.editor.enablePreviewFromQuickOpen": true,
     "[markdown]": {
         "editor.trimAutoWhitespace": false,
         "files.trimTrailingWhitespace": false
@@ -70,29 +61,36 @@
     "editor.fontWeight": "bold",
 
     "files.eol": "\n",
-    "gitlens.hovers.currentLine.over": "line",
 
     // テーマ
+    "workbench.iconTheme": "material-icon-theme",
     "workbench.colorTheme": "Gruvbox Dark Medium",
-
-    "terminal.integrated.fontSize": 18,
-    "scm.inputFontSize": 18,
 
     // ターミナルがある状態で終了するとき確認する
     "terminal.integrated.confirmOnExit": true,
+
+    // prettier
+    "prettier.singleQuote": true,
+
+    // gitlens
+    "gitlens.currentLine.enabled": false,
+    "gitlens.codeLens.enabled": false,
+    "gitlens.defaultDateFormat": "YYYY-MM-DD",
+    "gitlens.defaultTimeFormat": "HH:mm:ss",
+    "gitlens.defaultDateShortFormat": "YYYY-MM-DD HH:mm:ss",
+    "gitlens.hovers.currentLine.over": "line",
+
+    // python
+    "python.languageServer": "Pylance",
+    "python.analysis.typeCheckingMode": "basic",
     "workbench.editorAssociations": [
         {
             "viewType": "jupyter.notebook.ipynb",
             "filenamePattern": "*.ipynb"
         }
     ],
-    "gitlens.currentLine.enabled": false,
-    "gitlens.codeLens.enabled": false,
-    "gitlens.defaultDateFormat": "YYYY-MM-DD",
-    "gitlens.defaultTimeFormat": "HH:mm:ss",
-    "gitlens.defaultDateShortFormat": "YYYY-MM-DD HH:mm:ss",
 
-    // python
-    "python.languageServer": "Pylance",
-    "python.analysis.typeCheckingMode": "basic",
+        // golang
+        "go.goroot": "~/go",
+        "go.gopath": "~/dev",
 }
