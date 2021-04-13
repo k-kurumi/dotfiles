@@ -5,7 +5,7 @@
     "terminal.integrated.fontSize": 18,
     "scm.inputFontSize": 18,
     // UI部分のフォントサイズはzoomLevelで調整する
-    "window.zoomLevel": 0,
+    "window.zoomLevel": 1.2,
 
     // タブサイズの変更など
     "editor.tabSize": 2,
