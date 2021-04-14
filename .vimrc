@@ -369,7 +369,7 @@ Plug 'mattn/calendar-vim'
   let g:vimwiki_markdown_link_ext = 1
 
 " カラーコードの色付け
-Plug 'norcalli/nvim-colorizer.lua'
+" Plug 'norcalli/nvim-colorizer.lua'
 " 他のプラグインはもたつく
 " Plug 'lilydjwg/colorizer'
 " Plug 'gko/vim-coloresque'
@@ -483,8 +483,6 @@ if has('nvim')
   " 枠がないので透過しすぎるとわかりづらい
   set pumblend=10
   set winblend=10
-
-  lua require'colorizer'.setup()
 
   if has('termguicolors')
     set termguicolors
