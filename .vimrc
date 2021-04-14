@@ -401,41 +401,6 @@ Plug 'voldikss/vim-floaterm'
 "   " 入力できる状態のターミナルを表示する(<C-w>jiはフォーカスの移動など)
 "   nnoremap <silent> ,T :Ttoggle<CR><C-w>ji
 
-if has('nvim')
-  " ghosttext
-  " nvimを別で起動して :GhostStart しておく
-  Plug 'raghur/vim-ghost', {'do': ':GhostInstall'}
-
-  " lsp nvimとvimで別のものを使う(cocにはnodeなど必要になるため)
-  Plug 'neoclide/coc.nvim', {'branch': 'release'}
-    " GoTo code navigation.
-    nmap <silent> gd <Plug>(coc-definition)
-    nmap <silent> gy <Plug>(coc-type-definition)
-    nmap <silent> gi <Plug>(coc-implementation)
-    nmap <silent> gr <Plug>(coc-references)
-  " golang
-  Plug 'mattn/vim-goimports'
-  " :DlvAddBreakPoint して :DlvDebug から実行する
-  Plug 'sebdah/vim-delve'
-else
-  " lsp nvimとvimで別のものを使う(cocにはnodeなど必要になるため)
-  Plug 'prabirshrestha/async.vim'
-  Plug 'prabirshrestha/asyncomplete.vim'
-  Plug 'prabirshrestha/asyncomplete-lsp.vim'
-  Plug 'prabirshrestha/vim-lsp'
-  Plug 'mattn/vim-lsp-settings'
-  Plug 'mattn/vim-goimports'
-  " " vimからtmuxのペインを開く
-  " Plug 'benmills/vimux'
-  " let g:delve_use_vimux = 1
-  " :DlvAddBreakPoint して :DlvDebug から実行する
-  Plug 'sebdah/vim-delve'
-
-  " aleなどのワーニング文字が入力文字と同じ行に表示されるが
-  " colorschemeによっては見づらいので無効にする
-  let g:lsp_diagnostics_enabled = 0
-endif
-
 " ruby, rails
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-rails'
@@ -483,8 +448,6 @@ if has('nvim')
   " 枠がないので透過しすぎるとわかりづらい
   set pumblend=10
   set winblend=10
-
-  lua require'colorizer'.setup()
 
   if has('termguicolors')
     set termguicolors
@@ -962,3 +925,41 @@ endif
 " ファイルの文字数取得について
 "  g<C-g> して確認する
 " または :'<,'>s/./&/gn で文字を元の文字で置換すれば確認はできる(matchesのところ)
+
+if has('nvim')
+  " ghosttext
+  " nvimを別で起動して :GhostStart しておく
+  Plug 'raghur/vim-ghost', {'do': ':GhostInstall'}
+
+  " lsp nvimとvimで別のものを使う(cocにはnodeなど必要になるため)
+  Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    " GoTo code navigation.
+    nmap <silent> gd <Plug>(coc-definition)
+    nmap <silent> gy <Plug>(coc-type-definition)
+    nmap <silent> gi <Plug>(coc-implementation)
+    nmap <silent> gr <Plug>(coc-references)
+  " golang
+  Plug 'mattn/vim-goimports'
+  " :DlvAddBreakPoint して :DlvDebug から実行する
+  Plug 'sebdah/vim-delve'
+
+  " TODO vimrcの最後の方で読み込まないとエラーになる気がする
+  lua require'colorizer'.setup()
+else
+  " lsp nvimとvimで別のものを使う(cocにはnodeなど必要になるため)
+  Plug 'prabirshrestha/async.vim'
+  Plug 'prabirshrestha/asyncomplete.vim'
+  Plug 'prabirshrestha/asyncomplete-lsp.vim'
+  Plug 'prabirshrestha/vim-lsp'
+  Plug 'mattn/vim-lsp-settings'
+  Plug 'mattn/vim-goimports'
+  " " vimからtmuxのペインを開く
+  " Plug 'benmills/vimux'
+  " let g:delve_use_vimux = 1
+  " :DlvAddBreakPoint して :DlvDebug から実行する
+  Plug 'sebdah/vim-delve'
+
+  " aleなどのワーニング文字が入力文字と同じ行に表示されるが
+  " colorschemeによっては見づらいので無効にする
+  let g:lsp_diagnostics_enabled = 0
+endif
