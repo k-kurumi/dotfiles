@@ -219,9 +219,9 @@ Plug 'junegunn/fzf.vim'
 " ステータスラインのカスタマイズ
 Plug 'w0rp/ale'
 Plug 'itchyny/lightline.vim'
+" \ 'colorscheme': 'gruvbox', 指定するとINSERTが分かりづらいのでデフォルトで使用する
 Plug 'maximbaz/lightline-ale'
   let g:lightline = {
-    \ 'colorscheme': 'gruvbox',
     \ 'component_expand': {
     \   'linter_checking': 'lightline#ale#checking',
     \   'linter_warnings': 'lightline#ale#warnings',
@@ -369,10 +369,9 @@ Plug 'mattn/calendar-vim'
   let g:vimwiki_markdown_link_ext = 1
 
 " カラーコードの色付け
-" 表示がもたつくようになるので必要なときだけ有効にする(:ColorToggleで切り替える)
-Plug 'lilydjwg/colorizer'
-  let g:colorizer_startup = 0
-" 文字(blackなど)にも色づけされるが文字入力すらもたつくので使用しない
+Plug 'norcalli/nvim-colorizer.lua'
+" 他のプラグインはもたつく
+" Plug 'lilydjwg/colorizer'
 " Plug 'gko/vim-coloresque'
 
 " terminalなどで使う(terminalは <C-\><C-n> でノーマルモード切替)
@@ -468,9 +467,9 @@ Plug 'LucHermitte/local_vimrc'
 " ZL: 候補を表示して置き換え(全て)
 " Zg: 正しい文字として辞書に追加(:SpelunkerAddAllで全て追加)
 " 辞書は ~/.config/nvim/spell/en.utf-8.add (デフォルト)
-Plug 'kamykn/spelunker.vim'
-" Plug 'kamykn/popup-menu.nvim'
-  set nospell
+" Plug 'kamykn/spelunker.vim'
+" " Plug 'kamykn/popup-menu.nvim'
+"   set nospell
 
 call plug#end()
 " -------------------------------------------------------------------------------
@@ -484,7 +483,12 @@ if has('nvim')
   " 枠がないので透過しすぎるとわかりづらい
   set pumblend=10
   set winblend=10
-  set termguicolors
+
+  lua require'colorizer'.setup()
+
+  if has('termguicolors')
+    set termguicolors
+  endif
 endif
 
 syntax on
