@@ -24,7 +24,7 @@ module.exports = {
     lineHeight: 1,
 
     // letter spacing as a relative unit
-    letterSpacing: 0,
+    letterSpacing: 1,
 
     // terminal cursor background color and opacity (hex, rgb, hsl, hsv, hwb or cmyk)
     cursorColor: 'rgba(248,28,229,0.8)',
@@ -133,7 +133,7 @@ module.exports = {
     'hyperterm-safepaste',
 
     // ダーク系はどれも似たような感じなのでこれでいい
-    'hyper-material-theme',
+    // 'hyper-material-theme',
 
     // 背景透過
     // 'hyper-clean',
@@ -142,9 +142,16 @@ module.exports = {
     // カーソルが目立つ
     // 'hyperpower',
 
+    'hyper-gruvbox',
+
     // マウスでタブを移動する
     'hyper-dnd-tabs',
   ],
+
+  gruvboxTheme: {
+    style: 'dark',
+    contrast: 'normal',
+  },
 
   // in development, you can create a directory under
   // `~/.hyper_plugins/local/` and include it here
