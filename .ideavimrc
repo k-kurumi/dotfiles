@@ -3,10 +3,6 @@ set nowrapscan
 set hlsearch
 set incsearch
 
-" commentary.vim風にコメント化する
-" ビジュアルモードでgc
-set commentary
-
 " ヤンクでクリップボードにコピー
 " set clipboard=unnamed
 
@@ -23,3 +19,22 @@ map th :action PreviousTab<CR>
 
 " vimと同じ文字列補完は <A-/>
 " :actionlist でショートカットなど確認できる
+
+
+" いくつかのプラグインと同じ機能が実装されている
+" https://github.com/JetBrains/ideavim/wiki/Emulated-plugins
+"
+" 括弧で囲んだり
+" https://qiita.com/gesutaka/items/e1160f907f664445d45a
+" ビジュアルモードで選択して
+" S" や S' で囲む
+" ) でスペースなし ( でスペースありで囲む
+" 囲み文字の変更 cs'" で'を"に変更
+set surround
+
+set NERDTree
+  map ,f :NERDTreeFind<CR>
+
+" commentary.vim風にコメント化する
+" ビジュアルモードでgc
+set commentary
