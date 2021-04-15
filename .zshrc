@@ -150,6 +150,10 @@ fi
 # ghosttext
 alias ghost='tmux rename-window ghosttext-neovim && nvim -c GhostStart -c "set paste"'
 
+# デフォルトで隠しファイルまで対象にする
+alias ag='ag --hidden'
+alias rg='rg --hidden'
+
 ################################################################################
 # function
 
@@ -303,6 +307,8 @@ fi
 # --skip-vcs-ignores: .gitignoreを無視して表示する
 # --ignore-dir: .gitフォルダは無視する
 # --filename-pattern: find . 相当のファイル一覧表示
-# rg版 export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*"'
-export FZF_DEFAULT_COMMAND='ag --hidden --skip-vcs-ignores --ignore-dir ".git" --filename-pattern ""'
+# export FZF_DEFAULT_COMMAND='ag --hidden --skip-vcs-ignores --ignore-dir ".git" --filename-pattern ""'
+#
+# rg版
+export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*"'
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
