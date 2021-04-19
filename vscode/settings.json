@@ -1,11 +1,19 @@
 // Place your settings in this file to overwrite the default settings
 {
     "editor.fontFamily": "Cica",
-    "editor.fontSize": 18,
-    "terminal.integrated.fontSize": 18,
-    "scm.inputFontSize": 18,
+    "editor.fontSize": 16,
+    "scm.inputFontSize": 16,
     // UI部分のフォントサイズはzoomLevelで調整する
     "window.zoomLevel": 1.2,
+
+    // terminal
+    "terminal.integrated.fontSize": 16,
+    // 選択でコピー
+    "terminal.integrated.copyOnSelection": true,
+    // 右クリックで貼り付け
+    "terminal.integrated.rightClickBehavior": "paste",
+    // ターミナルがある状態で終了するとき確認する
+    "terminal.integrated.confirmOnExit": true,
 
     // タブサイズの変更など
     "editor.tabSize": 2,
@@ -66,9 +74,6 @@
     "workbench.iconTheme": "material-icon-theme",
     "workbench.colorTheme": "Gruvbox Dark Medium",
 
-    // ターミナルがある状態で終了するとき確認する
-    "terminal.integrated.confirmOnExit": true,
-
     // prettier
     "prettier.singleQuote": true,
 
@@ -93,4 +98,5 @@
         // golang
         "go.goroot": "~/go",
         "go.gopath": "~/dev",
+
 }
