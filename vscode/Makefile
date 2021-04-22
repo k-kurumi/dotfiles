@@ -121,3 +121,6 @@ install: ## プラグインをインストールする
 # python
 	code --install-extension ms-python.vscode-pylance
 	code --install-extension ms-pyright.pyright
+
+# react snippet
+	code --install-extension dsznajder.es7-react-js-snippets
