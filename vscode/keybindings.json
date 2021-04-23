@@ -1,23 +1,33 @@
-// Place your key bindings in this file to overwrite the defaultsauto[]
+// 既定値を上書きするには、このファイル内にキー バインドを挿入します
 [
   {
-    "key": "meta+l",
+    "key": "ctrl+shift+[IntlYen]",
+    "command": "workbench.action.terminal.split",
+    "when": "terminalFocus && terminalProcessSupported"
+  },
+  {
+    "key": "ctrl+shift+5",
+    "command": "-workbench.action.terminal.split",
+    "when": "terminalFocus && terminalProcessSupported"
+  },
+  {
+    "key": "ctrl+shift+p",
+    "command": "workbench.action.toggleMaximizedPanel"
+  },
+  {
+    "key": "ctrl+shift+]",
     "command": "workbench.action.nextEditor"
   },
   {
-    "key": "meta+h",
+    "key": "shift+cmd+]",
+    "command": "-workbench.action.nextEditor"
+  },
+  {
+    "key": "ctrl+shift+[",
     "command": "workbench.action.previousEditor"
   },
-
-  // ctrl+lでエディタとターミナルを移動
   {
-    "key": "ctrl+l",
-    "command": "workbench.action.terminal.focus",
-    "when": "editorTextFocus"
-  },
-  {
-    "key": "ctrl+l",
-    "command": "workbench.action.focusFirstEditorGroup",
-    "when": "terminalFocus"
-  },
+    "key": "shift+cmd+[",
+    "command": "-workbench.action.previousEditor"
+  }
 ]

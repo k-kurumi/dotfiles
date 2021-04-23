@@ -99,4 +99,6 @@
         "go.goroot": "~/go",
         "go.gopath": "~/dev",
 
+        // ruby
+        "ruby.intellisense": "rubyLocate",
 }

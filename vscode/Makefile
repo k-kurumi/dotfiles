@@ -16,6 +16,7 @@ endif
 ifeq ($(OS), Darwin)
 # macでスペースがあるときはバックスラッシュが必要(クォートで囲んでもエラーになる)
 	ln -sf $(CURDIR)/settings.json ~/Library/Application\ Support/Code/User/settings.json
+	ln -sf $(CURDIR)/keybindings.json ~/Library/Application\ Support/Code/User/keybindings.json
 endif
 
 .PHONY: list
@@ -124,3 +125,6 @@ install: ## プラグインをインストールする
 
 # react snippet
 	code --install-extension dsznajder.es7-react-js-snippets
+
+# ruby
+	code --install-extension rebornix.ruby
