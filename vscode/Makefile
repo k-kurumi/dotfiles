@@ -128,3 +128,6 @@ install: ## プラグインをインストールする
 
 # ruby
 	code --install-extension rebornix.ruby
+
+# markdownでスライド作成
+	code --install-extension evilz.vscode-reveal
