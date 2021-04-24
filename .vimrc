@@ -166,7 +166,7 @@ Plug 'bogado/file-line'
 
 " zencoding
 " <C-y>,で展開
-" Plug 'mattn/emmet-vim'
+Plug 'mattn/emmet-vim'
 
 " 末尾スペースを赤く表示する
 " :StripWhitespace で末尾スペースを削除
