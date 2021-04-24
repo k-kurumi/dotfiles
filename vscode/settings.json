@@ -101,4 +101,8 @@
 
         // ruby
         "ruby.intellisense": "rubyLocate",
+        "emmet.triggerExpansionOnTab": true,
+        "emmet.includeLanguages": {
+            "erb": "html,"
+        },
 }
