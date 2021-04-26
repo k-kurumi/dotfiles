@@ -131,3 +131,6 @@ install: ## プラグインをインストールする
 
 # markdownでスライド作成
 	code --install-extension evilz.vscode-reveal
+
+# vim keybind
+	code --install-extension vscodevim.vim

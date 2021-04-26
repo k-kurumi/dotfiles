@@ -15,7 +15,7 @@
     "command": "workbench.action.toggleMaximizedPanel"
   },
   {
-    "key": "ctrl+shift+]",
+    "key": "t l",
     "command": "workbench.action.nextEditor"
   },
   {
@@ -23,7 +23,7 @@
     "command": "-workbench.action.nextEditor"
   },
   {
-    "key": "ctrl+shift+[",
+    "key": "t h",
     "command": "workbench.action.previousEditor"
   },
   {
