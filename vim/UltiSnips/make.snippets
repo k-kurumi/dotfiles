@@ -1,0 +1,15 @@
+# 行末の1,2はawkのものなので展開しないようにエスケープしている
+snippet help "print command"
+# https://postd.cc/auto-documented-makefile/
+# .envをincludeするとMAKEFILE_LISTに追加されるためwordでMakefileのみ指定する
+.DEFAULT_GOAL := help
+.PHONY: help
+help: ## help表示
+	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(word 1,$(MAKEFILE_LIST)) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-${1:スペース数}s\033[0m %s\n", $\$1, $\$2}'
+endsnippet
+
+snippet phony ".PHONY"
+.PHONY: ${1:ターゲット名を入力する}
+${1:ターゲット名を入力する}: ## ${2:実行内容を入力する(ヘルプで表示される)}
+	echo ${1:ターゲット名を入力する}
+endsnippet

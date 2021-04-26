@@ -45,6 +45,9 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 mkdir -p ~/.config/nvim
 ln -sf "$(realpath .vimrc)" ~/.config/nvim/init.vim
 
+# スニペットファイル
+ln -sf "$(realpath vim/UltiSnips)" ~/.config/nvim/UltiSnips
+
 ################################################################################
 #
 # git
