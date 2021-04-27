@@ -1,108 +1,114 @@
 // Place your settings in this file to overwrite the default settings
 {
-    "editor.fontFamily": "Cica",
-    "editor.fontSize": 16,
-    "scm.inputFontSize": 16,
-    // UI部分のフォントサイズはzoomLevelで調整する
-    "window.zoomLevel": 1.2,
+  "editor.fontFamily": "Cica",
+  "editor.fontSize": 16,
+  "scm.inputFontSize": 16,
 
-    // terminal
-    "terminal.integrated.fontSize": 16,
-    // 選択でコピー
-    "terminal.integrated.copyOnSelection": true,
-    // 右クリックで貼り付け
-    "terminal.integrated.rightClickBehavior": "paste",
-    // ターミナルがある状態で終了するとき確認する
-    "terminal.integrated.confirmOnExit": true,
+  // フォントを含めたUI全体の倍率
+  "window.zoomLevel": 0.6,
 
-    // タブサイズの変更など
-    "editor.tabSize": 2,
-    "editor.insertSpaces": true,
+  // terminal
+  "terminal.integrated.fontSize": 16,
+  // 選択でコピー
+  "terminal.integrated.copyOnSelection": true,
+  // 右クリックで貼り付け
+  "terminal.integrated.rightClickBehavior": "paste",
+  // ターミナルがある状態で終了するとき確認する
+  "terminal.integrated.confirmOnExit": true,
 
-    // カーソルを点滅させない
-    "editor.cursorBlinking": "solid",
+  // タブサイズの変更など
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
 
-    // ctrlとマウスホイールでズームする
-    "editor.mouseWheelZoom": true,
+  // カーソルを点滅させない
+  "editor.cursorBlinking": "solid",
 
-    // allのときスペースやタブを可視化
-    // "editor.renderWhitespace": "all",
+  // ctrlとマウスホイールでズームする
+  "editor.mouseWheelZoom": true,
 
-    // タブで開く
-    // 開きすぎて重くなるので使用しない
-    // ファイルをダブルクリックすればタブ固定の
-    // ようになりタブ再利用されなくなる
-    // "workbench.editor.enablePreview": false,
+  // allのときスペースやタブを可視化
+  // "editor.renderWhitespace": "all",
 
-    // フルスクリーンで起動する
-    //"window.restoreFullscreen": true,
+  // タブで開く
+  // 開きすぎて重くなるので使用しない
+  // ファイルをダブルクリックすればタブ固定の
+  // ようになりタブ再利用されなくなる
+  // "workbench.editor.enablePreview": false,
 
-    "editor.minimap.enabled": true,
-    "editor.minimap.showSlider": "always",
-    "editor.minimap.maxColumn": 240,
+  // フルスクリーンで起動する
+  //"window.restoreFullscreen": true,
 
-    // ファイル末尾は改行を入れる
-    "files.insertFinalNewline": true,
-    "workbench.startupEditor": "newUntitledFile",
+  "editor.minimap.enabled": true,
+  "editor.minimap.showSlider": "always",
+  "editor.minimap.maxColumn": 240,
 
-    // 制御文字を表示
-    "editor.renderControlCharacters": true,
+  // ファイル末尾は改行を入れる
+  "files.insertFinalNewline": true,
+  "workbench.startupEditor": "newUntitledFile",
 
-    // スペースのみの行は削除
-    "files.trimFinalNewlines": true,
-    // 末尾の空白を削除
-    "files.trimTrailingWhitespace": true,
+  // 制御文字を表示
+  "editor.renderControlCharacters": true,
 
-    // ツリーから選択したとき常にタブで開く
-    "workbench.editor.enablePreview": false,
+  // スペースのみの行は削除
+  "files.trimFinalNewlines": true,
+  // 末尾の空白を削除
+  "files.trimTrailingWhitespace": true,
 
-    // command+pから検索して開くとき常にタブで開く
-    "workbench.editor.enablePreviewFromQuickOpen": true,
-    "[markdown]": {
-        "editor.trimAutoWhitespace": false,
-        "files.trimTrailingWhitespace": false
-    },
+  // ツリーから選択したとき常にタブで開く
+  "workbench.editor.enablePreview": false,
 
-    "window.titleBarStyle": "custom",
-    "explorer.confirmDelete": false,
-    "editor.fontLigatures": true,
-    "editor.fontWeight": "bold",
+  // command+pから検索して開くとき常にタブで開く
+  "workbench.editor.enablePreviewFromQuickOpen": true,
+  "[markdown]": {
+    "editor.trimAutoWhitespace": false,
+    "files.trimTrailingWhitespace": false
+  },
 
-    "files.eol": "\n",
+  "window.titleBarStyle": "custom",
+  "explorer.confirmDelete": false,
+  "editor.fontLigatures": true,
+  "editor.fontWeight": "bold",
 
-    // テーマ
-    "workbench.iconTheme": "material-icon-theme",
-    "workbench.colorTheme": "Gruvbox Dark Medium",
+  "files.eol": "\n",
 
-    // prettier
-    "prettier.singleQuote": true,
+  // テーマ
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.colorTheme": "Gruvbox Dark Medium",
 
-    // gitlens
-    "gitlens.currentLine.enabled": false,
-    "gitlens.codeLens.enabled": false,
-    "gitlens.defaultDateFormat": "YYYY-MM-DD",
-    "gitlens.defaultTimeFormat": "HH:mm:ss",
-    "gitlens.defaultDateShortFormat": "YYYY-MM-DD HH:mm:ss",
-    "gitlens.hovers.currentLine.over": "line",
+  // prettier
+  "prettier.singleQuote": true,
 
-    // python
-    "python.languageServer": "Pylance",
-    "python.analysis.typeCheckingMode": "basic",
-    "workbench.editorAssociations": [
-        {
-            "viewType": "jupyter.notebook.ipynb",
-            "filenamePattern": "*.ipynb"
-        }
-    ],
+  // gitlens
+  "gitlens.currentLine.enabled": false,
+  "gitlens.codeLens.enabled": false,
+  "gitlens.defaultDateFormat": "YYYY-MM-DD",
+  "gitlens.defaultTimeFormat": "HH:mm:ss",
+  "gitlens.defaultDateShortFormat": "YYYY-MM-DD HH:mm:ss",
+  "gitlens.hovers.currentLine.over": "line",
 
-        // golang
-        "go.goroot": "~/go",
-        "go.gopath": "~/dev",
+  // python
+  "python.languageServer": "Pylance",
+  "python.analysis.typeCheckingMode": "basic",
+  "workbench.editorAssociations": [
+    {
+      "viewType": "jupyter.notebook.ipynb",
+      "filenamePattern": "*.ipynb"
+    }
+  ],
 
-        // ruby
-        "ruby.intellisense": "rubyLocate",
-        "emmet.triggerExpansionOnTab": true,
-        "emmet.includeLanguages": {
-            "erb": "html,"
-        },
+  // golang
+  "go.goroot": "~/go",
+  "go.gopath": "~/dev",
+
+  // ruby
+  "ruby.intellisense": "rubyLocate",
+  "emmet.triggerExpansionOnTab": true,
+  "emmet.includeLanguages": {
+    "erb": "html,"
+  },
+
+  // フォーマッタの指定
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }

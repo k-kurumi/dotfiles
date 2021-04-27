@@ -134,3 +134,6 @@ install: ## プラグインをインストールする
 
 # vim keybind
 	code --install-extension vscodevim.vim
+
+# postmanのようなwebapi用クライアント
+	code --install-extension rangav.vscode-thunder-client
