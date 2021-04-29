@@ -479,10 +479,14 @@ Plug 'prettier/vim-prettier', {
 " let g:prettier#quickfix_enabled = 0
 " autocmd TextChanged,InsertLeave *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
 
-Plug 'mxw/vim-jsx'
-  let g:jsx_ext_required = 1
-  let g:jsx_pragma_required = 1
+" javascript
 Plug 'pangloss/vim-javascript'
+" flow.js
+Plug 'maxmellon/vim-jsx-pretty'
+" typescript
+Plug 'HerringtonDarkholme/yats.vim'
+" react.js
+Plug 'maxmellon/vim-jsx-pretty'
 
 call plug#end()
 " -------------------------------------------------------------------------------
