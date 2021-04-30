@@ -73,7 +73,7 @@
 
   // テーマ
   "workbench.iconTheme": "material-icon-theme",
-  "workbench.colorTheme": "Gruvbox Dark Medium",
+  "workbench.colorTheme": "Gruvbox Dark Hard",
 
   // prettier
   "prettier.singleQuote": true,
