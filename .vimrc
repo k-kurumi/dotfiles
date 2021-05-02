@@ -23,38 +23,9 @@ Plug 'simnalamburt/vim-mundo'
 Plug 'kshenoy/vim-signature'
 
 " :SaveSession, :LoadSession, :DeleteSessionでウインドウ状態を保存
-" nerdtreeと併用できない
+" nerdtreeと併用すると表示が崩れる
 Plug 'skanehira/vsession'
-let g:vsession_use_fzf = 1
-
-" bashのsyntaxを有効にする
-let g:is_bash = 1
-
-" タブ移動周り
-function! s:MoveTabpage(num)
-  if type(a:num) != type(0)
-    return
-  endif
-
-  let pos = tabpagenr() - 1 + a:num
-  let tabcount = tabpagenr("$")
-
-  if pos < 0
-    let pos = tabcount - 1
-  elseif pos >= tabcount
-    let pos = 0
-  endif
-
-  execute "tabmove " . pos
-endfunction
-
-" TabMove: Move tabpage with reltive number
-command! -nargs=1 TabMove :call <SID>MoveTabpage(<f-args>)
-
-" タブを左右に移動する
-nnoremap tH :call <SID>MoveTabpage(-1)<Return>
-nnoremap tL :call <SID>MoveTabpage(1)<Return>
-
+  let g:vsession_use_fzf = 1
 
 " 文頭に張り付くコメントでいまいち
 " Plug 'scrooloose/nerdcommenter'
@@ -96,18 +67,16 @@ Plug 'itchyny/vim-cursorword'
 
 " colorscheme
 Plug 'w0ng/vim-hybrid'
-let g:hybrid_custom_term_colors = 1
+  let g:hybrid_custom_term_colors = 1
 Plug 'cocopon/iceberg.vim'
 Plug 'dracula/vim', { 'as': 'dracula'  }
 Plug 'rakr/vim-one'
 Plug 'morhetz/gruvbox'
 Plug 'NLKNguyen/papercolor-theme'
-
-" カラフルなカラーテーマ
 Plug 'tomasr/molokai'
-let g:rehash256 = 1
-" 背景色をオリジナルに書き換えるためか起動時にもたつく感じがするのでオフにする
-let g:molokai_original = 0
+  let g:rehash256 = 1
+  " 背景色をオリジナルに書き換えるためか起動時にもたつく感じがするのでオフにする
+  let g:molokai_original = 0
 
 " gitの差分をmark部分に表示(ブレークポイントと被る)
 " Git始まりのプラグインが多いのでvim-signifyを使う
@@ -152,7 +121,7 @@ Plug 'junegunn/gv.vim'
 
 " 括弧の色分け
 Plug 'luochen1990/rainbow'
-let g:rainbow_active = 1
+  let g:rainbow_active = 1
 
 " :TableFormatがインデント状態のテーブルでうまく動かない
 " vim-gfm-syntax + vim-table-mode の方が使いやすい
@@ -216,10 +185,12 @@ Plug 'junegunn/fzf.vim'
   nnoremap <silent> ,b  :Buffers<CR>
   nnoremap <silent> ,w  :Windows<CR>
 
+" シンタックスチェッカー
+Plug 'dense-analysis/ale'
+
 " ステータスラインのカスタマイズ
-Plug 'w0rp/ale'
 Plug 'itchyny/lightline.vim'
-" \ 'colorscheme': 'gruvbox', 指定するとINSERTが分かりづらいのでデフォルトで使用する
+" \ 'colorscheme': 'gruvbox', を指定するとINSERTの配色が分かりづらいのでデフォルトで使用する
 Plug 'maximbaz/lightline-ale'
   let g:lightline = {
     \ 'component_expand': {
@@ -265,7 +236,7 @@ Plug 'maximbaz/lightline-ale'
 
 
 " 括弧の補完
-Plug 'MetalPhaeton/easybracket-vim'
+Plug 'jiangmiao/auto-pairs'
 
 " 括弧囲み
 " v選択後 S" で "囲み
@@ -273,7 +244,7 @@ Plug 'MetalPhaeton/easybracket-vim'
 Plug 'tpope/vim-surround'
 
 " ウインドウのリサイズ
-" <C-e>で変更モード
+" <C-e>で変更モード hjkl でサイズ変更
 " nnoremap <Up> :resize +1<CR>
 " nnoremap <Down> :resize -1<CR>
 " nnoremap <Left> :vertical resize +1<CR>
@@ -304,19 +275,62 @@ Plug 'thinca/vim-visualstar'
 
 " htmlなどの閉じタグ補完
 Plug 'alvan/vim-closetag'
+  " filenames like *.xml, *.html, *.xhtml, ...
+  " These are the file extensions where this plugin is enabled.
+  "
+  let g:closetag_filenames = '*.html,*.xhtml,*.phtml'
+
+  " filenames like *.xml, *.xhtml, ...
+  " This will make the list of non-closing tags self-closing in the specified files.
+  "
+  let g:closetag_xhtml_filenames = '*.xhtml,*.jsx'
+
+  " filetypes like xml, html, xhtml, ...
+  " These are the file types where this plugin is enabled.
+  "
+  let g:closetag_filetypes = 'html,xhtml,phtml'
+
+  " filetypes like xml, xhtml, ...
+  " This will make the list of non-closing tags self-closing in the specified files.
+  "
+  let g:closetag_xhtml_filetypes = 'xhtml,jsx'
+
+  " integer value [0|1]
+  " This will make the list of non-closing tags case-sensitive (e.g. `<Link>` will be closed while `<link>` won't.)
+  "
+  let g:closetag_emptyTags_caseSensitive = 1
+
+  " dict
+  " Disables auto-close if not in a "valid" region (based on filetype)
+  "
+  let g:closetag_regions = {
+      \ 'typescript.tsx': 'jsxRegion,tsxRegion',
+      \ 'javascript.jsx': 'jsxRegion',
+      \ 'typescriptreact': 'jsxRegion,tsxRegion',
+      \ 'javascriptreact': 'jsxRegion',
+      \ }
+
+  " Shortcut for closing tags, default is '>'
+  "
+  let g:closetag_shortcut = '>'
+
+  " Add > at current position without closing the current tag, default is ''
+  "
+  let g:closetag_close_shortcut = '<leader>>'
+
 
 Plug 'cespare/vim-toml'
 
-" ansibleというよりyamlの改行時インデントを調整するために使う
+" yamlの改行時インデントを調整するために使う
 Plug 'stephpy/vim-yaml'
 Plug 'pearofducks/ansible-vim'
-let g:ansible_unindent_after_newline = 1
-let g:ansible_yamlKeyName = 'yamlKey'
-let g:ansible_attribute_highlight = "ob"
-let g:ansible_name_highlight = 'd'
-let g:ansible_extra_keywords_highlight = 1
-let g:ansible_normal_keywords_highlight = 'Constant'
-let g:ansible_with_keywords_highlight = 'Constant'
+  let g:ansible_unindent_after_newline = 1
+  let g:ansible_yamlKeyName = 'yamlKey'
+  let g:ansible_attribute_highlight = "ob"
+  let g:ansible_name_highlight = 'd'
+  let g:ansible_extra_keywords_highlight = 1
+  let g:ansible_normal_keywords_highlight = 'Constant'
+  let g:ansible_with_keywords_highlight = 'Constant'
 
 
 " " 対になる括弧の補完(標準機能より少し高機能)
@@ -350,7 +364,7 @@ Plug 'dhruvasagar/vim-table-mode'
   let g:table_mode_header_fillchar = '-'
 
 " gripと違いリアルタイムでブラウザを更新できる :MarkdownPreview
-" vimwikiでジャンプするとプレビューが修了する
+" vimwikiでジャンプするとプレビューが修了するのでft=vimwikiしないようにする
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 
 " vimwikiはキーバインドだけを利用して、html生成は実行しない(mdのままMDwikiで表示する)
@@ -508,6 +522,9 @@ endif
 
 syntax on
 
+" bashのsyntaxを有効にする
+let g:is_bash = 1
+
 " デフォルトの\ではなく<space>を使う
 " let mapleader="\<space>"
 
@@ -605,6 +622,30 @@ set laststatus=2
 set fileencodings=utf-8,euc-jp,sjis,iso-2022-jp
 set fileencoding=utf-8
 
+" タブ移動周り
+function! s:MoveTabpage(num)
+  if type(a:num) != type(0)
+    return
+  endif
+
+  let pos = tabpagenr() - 1 + a:num
+  let tabcount = tabpagenr("$")
+
+  if pos < 0
+    let pos = tabcount - 1
+  elseif pos >= tabcount
+    let pos = 0
+  endif
+
+  execute "tabmove " . pos
+endfunction
+
+" TabMove: Move tabpage with reltive number
+command! -nargs=1 TabMove :call <SID>MoveTabpage(<f-args>)
+
+" タブを左右に移動する
+nnoremap tH :call <SID>MoveTabpage(-1)<Return>
+nnoremap tL :call <SID>MoveTabpage(1)<Return>
 
 " 2バイト文字の記号が崩れなくなるが対応するiterm2設定を入れるとtmux分割時に残像が残るため使用しない
 " set ambiwidth=double
