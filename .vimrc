@@ -13,7 +13,8 @@ Plug 'junegunn/vim-easy-align'
 
 " undo履歴を可視化する python不要
 " Plug 'mbbill/undotree'
-" python依存だがundotreeにできない差分プレビューがある
+"
+"" python依存だがundotreeにできない差分プレビューがある
 Plug 'simnalamburt/vim-mundo'
   let g:mundo_width = 30
   let g:mundo_preview_height = 30
@@ -433,7 +434,9 @@ if has('nvim')
 
     let g:coc_global_extensions = [
       \ 'coc-json',
+      \ 'coc-lua',
       \ 'coc-prettier',
+      \ 'coc-pyright',
       \ 'coc-sh',
       \ 'coc-snippets',
       \ 'coc-solargraph',
@@ -521,6 +524,10 @@ Plug 'maxmellon/vim-jsx-pretty'
 Plug 'HerringtonDarkholme/yats.vim'
 " react.js
 Plug 'maxmellon/vim-jsx-pretty'
+
+" pythonのblackでオートフォーマット
+Plug 'psf/black', { 'branch': 'stable' }
+  autocmd BufWritePre *.py execute ':Black'
 
 call plug#end()
 " -------------------------------------------------------------------------------
