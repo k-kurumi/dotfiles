@@ -48,6 +48,9 @@ ln -sf "$(realpath .vimrc)" ~/.config/nvim/init.vim
 # スニペットファイル
 ln -sf "$(realpath vim/UltiSnips)" ~/.config/nvim/UltiSnips
 
+# coc
+ln -sf "$(realpath vim/coc-settings.json)" ~/.config/nvim/coc-settings.json
+
 ################################################################################
 #
 # git

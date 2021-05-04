@@ -235,7 +235,7 @@ Plug 'maximbaz/lightline-ale'
     \ }
 
 
-" 括弧の補完
+" 括弧やクォートの補完
 Plug 'jiangmiao/auto-pairs'
 
 " 括弧囲み
@@ -415,6 +415,9 @@ Plug 'voldikss/vim-floaterm'
 "   " 入力できる状態のターミナルを表示する(<C-w>jiはフォーカスの移動など)
 "   nnoremap <silent> ,T :Ttoggle<CR><C-w>ji
 
+
+Plug 'neoclide/jsonc.vim'
+
 if has('nvim')
   " ghosttext
   " nvimを別で起動して :GhostStart しておく
@@ -427,6 +430,23 @@ if has('nvim')
     nmap <silent> gy <Plug>(coc-type-definition)
     nmap <silent> gi <Plug>(coc-implementation)
     nmap <silent> gr <Plug>(coc-references)
+
+    let g:coc_global_extensions = [
+      \ 'coc-json',
+      \ 'coc-prettier',
+      \ 'coc-sh',
+      \ 'coc-snippets',
+      \ 'coc-solargraph',
+      \ 'coc-tsserver',
+      \ 'coc-yaml',
+      \ 'coc-yank',
+      \ ]
+
+    " yamlなどは保存時に適用しない(:CocConfig)が :CocCommand prettier.formatFile で適用できる
+
+    " yankring的な使い方
+    nnoremap <silent> <space>y  :<C-u>CocList -A --normal yank<cr>
+
   " golang
   Plug 'mattn/vim-goimports'
   " :DlvAddBreakPoint して :DlvDebug から実行する
@@ -485,10 +505,10 @@ Plug 'LucHermitte/local_vimrc'
 " " Plug 'kamykn/popup-menu.nvim'
 "   set nospell
 
-" prettierで整形する
-Plug 'prettier/vim-prettier', {
-  \ 'do': 'yarn install',
-  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
+" " prettierで整形する coc-prettierに切り替えた
+" Plug 'prettier/vim-prettier', {
+"   \ 'do': 'yarn install',
+"   \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
 " " when running at every change you may want to disable quickfix
 " let g:prettier#quickfix_enabled = 0
 " autocmd TextChanged,InsertLeave *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
