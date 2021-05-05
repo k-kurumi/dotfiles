@@ -1,3 +1,6 @@
+SHELL := /bin/bash
+
+
 # https://postd.cc/auto-documented-makefile/
 # .envをincludeするとMAKEFILE_LISTに追加されるためwordでMakefileのみ指定する
 .DEFAULT_GOAL := help
@@ -22,8 +25,8 @@ ndenv_update: ~/.ndenv ## git pull ndenv
 	cd ~/.ndenv/plugins/node-build; git pull
 
 .PHONY: cryfs_mount_vimwiki
-cryfs_mount_vimwiki: ## mount dir for vimwiki
-	cryfs ~/Dropbox/cryfs/vimwiki ~/vimwiki
+cryfs_mount_vimwiki: ## mount dir for vimwiki (事前に CRYFS_VIMWIKI_PASSWORD を.envrc で設定する)
+	cryfs ~/Dropbox/cryfs/vimwiki ~/vimwiki < <(echo $(CRYFS_VIMWIKI_PASSWORD))
 
 .PHONY: cryfs_unmount_vimwiki
 cryfs_unmount_vimwiki: ## unmount dir for vimwiki
