@@ -49,6 +49,7 @@ install: ## プラグインをインストールする
 	code --install-extension dracula-theme.theme-dracula
 	code --install-extension Equinusocio.vsc-material-theme
 	code --install-extension jdinhlife.gruvbox
+	code --install-extension sdras.night-owl
 
 # todoをハイライト
 	code --install-extension wayou.vscode-todo-highlight

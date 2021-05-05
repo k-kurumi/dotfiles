@@ -26,6 +26,8 @@
   // ctrlとマウスホイールでズームする
   "editor.mouseWheelZoom": true,
 
+  "editor.renderWhitespace": "all",
+
   // allのときスペースやタブを可視化
   // "editor.renderWhitespace": "all",
 
@@ -73,7 +75,7 @@
 
   // テーマ
   "workbench.iconTheme": "material-icon-theme",
-  "workbench.colorTheme": "Gruvbox Dark Hard",
+  "workbench.colorTheme": "Night Owl (No Italics)",
 
   // prettier
   "prettier.singleQuote": true,
@@ -115,17 +117,15 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
 
-  // システムのclipboardにコピー
-  "vim.useSystemClipboard": true,
-
   // 検索に:を入れる
   "vim.cmdLineInitialColon": true,
-
-  "vim.hlsearch": true,
 
   // カーソル上にあるワードを"*"で検索
   "vim.visualstar": true,
 
   // 諸々のctrlキーを使った操作が有効になる
-  "vim.useCtrlKeys": true
+  "vim.useCtrlKeys": true,
+
+  "vim.hlsearch": true,
+  "vim.wrapscan": false
 }
