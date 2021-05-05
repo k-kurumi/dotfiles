@@ -9,4 +9,15 @@
     "typescript",
     "vue"
   ],
+
+  "explorer.width": 36,
+  "explorer.position": "floating",
+  "explorer.openAction.strategy": "tab",
+  "explorer.previewAction.onHover": false,
+  "explorer.keyMappings.global": {
+    "<cr>": ["expandable?", "expand", "open"],
+    "v": "open:vsplit"
+  },
+  "explorer.file.showHiddenFiles": true,
+  "explorer.toggle": false
 }

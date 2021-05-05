@@ -142,7 +142,7 @@ Plug 'mattn/emmet-vim'
 " :StripWhitespace で末尾スペースを削除
 Plug 'ntpeters/vim-better-whitespace'
   " 表示しないfiletype
-  let g:better_whitespace_filetypes_blacklist = ['diff', 'gitcommit', 'qf', 'help']
+  let g:better_whitespace_filetypes_blacklist = ['diff', 'gitcommit', 'qf', 'help', 'coc-explorer']
 
 " ctrlpより速いらしい
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -433,6 +433,7 @@ if has('nvim')
     nmap <silent> gr <Plug>(coc-references)
 
     let g:coc_global_extensions = [
+      \ 'coc-explorer',
       \ 'coc-json',
       \ 'coc-lua',
       \ 'coc-prettier',
@@ -449,6 +450,9 @@ if has('nvim')
 
     " yankring的な使い方
     nnoremap <silent> <space>y  :<C-u>CocList -A --normal yank<cr>
+
+    " nerdtreeのような表示(細かい設定は:CocConfigで指定する)
+    nnoremap <silent> ,e :CocCommand explorer<CR>
 
   " golang
   Plug 'mattn/vim-goimports'
