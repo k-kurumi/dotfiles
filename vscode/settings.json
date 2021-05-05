@@ -113,5 +113,19 @@
   },
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
+
+  // システムのclipboardにコピー
+  "vim.useSystemClipboard": true,
+
+  // 検索に:を入れる
+  "vim.cmdLineInitialColon": true,
+
+  "vim.hlsearch": true,
+
+  // カーソル上にあるワードを"*"で検索
+  "vim.visualstar": true,
+
+  // 諸々のctrlキーを使った操作が有効になる
+  "vim.useCtrlKeys": true
 }
