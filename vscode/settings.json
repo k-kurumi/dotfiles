@@ -75,7 +75,7 @@
 
   // テーマ
   "workbench.iconTheme": "material-icon-theme",
-  "workbench.colorTheme": "Night Owl (No Italics)",
+  "workbench.colorTheme": "Gruvbox Dark Medium",
 
   // prettier
   "prettier.singleQuote": true,
