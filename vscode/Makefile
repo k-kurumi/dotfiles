@@ -51,6 +51,9 @@ install: ## プラグインをインストールする
 	code --install-extension jdinhlife.gruvbox
 	code --install-extension sdras.night-owl
 
+# 枠の配色を変更する
+	code --install-extension johnpapa.vscode-peacock
+
 # todoをハイライト
 	code --install-extension wayou.vscode-todo-highlight
 
