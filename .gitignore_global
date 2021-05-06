@@ -58,6 +58,7 @@ npm-debug.log
 
 # IntelliJ
 /out/
+railways.cache
 
 # mpeltonen/sbt-idea plugin
 .idea_modules/
