@@ -46,6 +46,9 @@ mkdir -p ~/.config/nvim
 ln -sf "$(realpath .vimrc)" ~/.config/nvim/init.vim
 
 # スニペットファイル
+# FIXME ファイルと同じ感じでシンボリックリンクを作るとおかしなリンクができてしまう
+# リンク先が既存のときvim/UltiSnips/UltiSnipsというフォルダができてしまうため事前に削除する
+rm -rf ~/.config/nvim/UltiSnips
 ln -sf "$(realpath vim/UltiSnips)" ~/.config/nvim/UltiSnips
 
 # coc
