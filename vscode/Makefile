@@ -141,3 +141,6 @@ install: ## プラグインをインストールする
 
 # postmanのようなwebapi用クライアント
 	code --install-extension rangav.vscode-thunder-client
+
+# cssをポップアップで確認
+	code --install-extension pranaygp.vscode-css-peek
