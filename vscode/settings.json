@@ -55,6 +55,7 @@
   "files.trimFinalNewlines": true,
   // 末尾の空白を削除
   "files.trimTrailingWhitespace": true,
+  "trailing-spaces.trimOnSave": true,
 
   // ツリーから選択したとき常にタブで開く
   "workbench.editor.enablePreview": false,
