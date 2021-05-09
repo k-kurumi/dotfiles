@@ -120,6 +120,12 @@ if [[ -d ~/.ndenv ]]; then
   eval "$(ndenv init -)"
 fi
 
+# deno
+if [[ -d ~/.deno ]]; then
+  export DENO_INSTALL="${HOME}/.deno"
+  export PATH="$DENO_INSTALL/bin:$PATH"
+fi
+
 # golang(1.8のデフォルトとは違う)
 export GOPATH=${HOME}/dev
 export GOROOT=${HOME}/go
