@@ -142,7 +142,14 @@ Plug 'mattn/emmet-vim'
 " :StripWhitespace で末尾スペースを削除
 Plug 'ntpeters/vim-better-whitespace'
   " 表示しないfiletype
-  let g:better_whitespace_filetypes_blacklist = ['diff', 'gitcommit', 'qf', 'help', 'coc-explorer']
+  let g:better_whitespace_filetypes_blacklist = [
+        \ 'coc-explorer',
+        \ 'diff',
+        \ 'git',
+        \ 'gitcommit',
+        \ 'help',
+        \ 'qf',
+        \ ]
 
 " ctrlpより速いらしい
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
