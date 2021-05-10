@@ -128,5 +128,16 @@
   "vim.useCtrlKeys": true,
 
   "vim.hlsearch": true,
-  "vim.wrapscan": false
+  "vim.wrapscan": false,
+  "vim.normalModeKeyBindingsNonRecursive": [
+    // vscodevimのundoでは最初の状態に戻しても差分あり(未保存)状態になるため本体のundoを使用する
+    {
+      "before": ["u"],
+      "commands": ["undo"]
+    },
+    {
+      "before": ["<C-r>"],
+      "commands": ["redo"]
+    }
+  ]
 }
