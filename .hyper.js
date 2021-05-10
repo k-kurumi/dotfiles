@@ -6,19 +6,19 @@ module.exports = {
   config: {
     // Choose either "stable" for receiving highly polished,
     // or "canary" for less polished but more frequent updates
-    updateChannel: 'stable',
+    updateChannel: "stable",
 
     // default font size in pixels for all tabs
     fontSize: 18,
 
     // font family with optional fallbacks
-    fontFamily: 'Cica',
+    fontFamily: "Cica",
 
     // default font weight: 'normal' or 'bold'
-    fontWeight: 'bold',
+    fontWeight: "bold",
 
     // font weight for bold characters: 'normal' or 'bold'
-    fontWeightBold: 'bold',
+    fontWeightBold: "bold",
 
     // line height as a relative unit
     lineHeight: 1,
@@ -27,61 +27,61 @@ module.exports = {
     letterSpacing: 1,
 
     // terminal cursor background color and opacity (hex, rgb, hsl, hsv, hwb or cmyk)
-    cursorColor: 'rgba(248,28,229,0.8)',
+    cursorColor: "rgba(248,28,229,0.8)",
 
     // `BEAM` for |, `UNDERLINE` for _, `BLOCK` for █
-    cursorShape: 'BLOCK',
+    cursorShape: "BLOCK",
 
     // set to true for blinking cursor
     cursorBlink: false,
 
     // color of the text
-    foregroundColor: '#fff',
+    foregroundColor: "#fff",
 
     // terminal background color
-    backgroundColor: '#000',
+    backgroundColor: "#000",
 
     // border color (window, tabs)
-    borderColor: '#333',
+    borderColor: "#333",
 
     // custom css to embed in the main window
-    css: '',
+    css: "",
 
     // custom css to embed in the terminal window
-    termCSS: '',
+    termCSS: "",
 
     // set to `true` (without backticks) if you're using a Linux setup that doesn't show native menus
     // default: `false` on Linux, `true` on Windows (ignored on macOS)
-    showHamburgerMenu: '',
+    showHamburgerMenu: "",
 
     // set to `false` if you want to hide the minimize, maximize and close buttons
     // additionally, set to `'left'` if you want them on the left, like in Ubuntu
     // default: `true` on windows and Linux (ignored on macOS)
-    showWindowControls: '',
+    showWindowControls: "",
 
     // custom padding (css format, i.e.: `top right bottom left`)
-    padding: '12px 14px',
+    padding: "0px 0px 0px 0px",
 
     // the full list. if you're going to provide the full color palette,
     // including the 6 x 6 color cubes and the grayscale map, just provide
     // an array here instead of a color map object
     colors: {
-      black: '#000000',
-      red: '#ff0000',
-      green: '#33ff00',
-      yellow: '#ffff00',
-      blue: '#0066ff',
-      magenta: '#cc00ff',
-      cyan: '#00ffff',
-      white: '#d0d0d0',
-      lightBlack: '#808080',
-      lightRed: '#ff0000',
-      lightGreen: '#33ff00',
-      lightYellow: '#ffff00',
-      lightBlue: '#0066ff',
-      lightMagenta: '#cc00ff',
-      lightCyan: '#00ffff',
-      lightWhite: '#ffffff'
+      black: "#000000",
+      red: "#ff0000",
+      green: "#33ff00",
+      yellow: "#ffff00",
+      blue: "#0066ff",
+      magenta: "#cc00ff",
+      cyan: "#00ffff",
+      white: "#d0d0d0",
+      lightBlack: "#808080",
+      lightRed: "#ff0000",
+      lightGreen: "#33ff00",
+      lightYellow: "#ffff00",
+      lightBlue: "#0066ff",
+      lightMagenta: "#cc00ff",
+      lightCyan: "#00ffff",
+      lightWhite: "#ffffff",
     },
 
     // the shell to run when spawning a new session (i.e. /usr/local/bin/fish)
@@ -96,14 +96,14 @@ module.exports = {
     //
     // Powershell on Windows
     // - Example: `C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe`
-    shell: '',
+    shell: "",
 
     // for setting shell arguments (i.e. for using interactive shellArgs: ['-i'])
     // by default ['--login'] will be used
-    shellArgs: ['--login'],
+    shellArgs: ["--login"],
 
     // for environment variables
-    env: {LANG: 'ja_JP.UTF-8'},
+    env: { LANG: "ja_JP.UTF-8" },
 
     // set to false for no bell
     bell: false,
@@ -128,9 +128,10 @@ module.exports = {
   //   `hyperpower`
   //   `@company/project`
   //   `project#1.0.1`
-  plugins: [// https://github.com/bnb/awesome-hyper
+  plugins: [
+    // https://github.com/bnb/awesome-hyper
     // 複数行の貼り付け時に確認ウインドウを出す
-    'hyperterm-safepaste',
+    "hyperterm-safepaste",
 
     // ダーク系はどれも似たような感じなのでこれでいい
     // 'hyper-material-theme',
@@ -142,15 +143,15 @@ module.exports = {
     // カーソルが目立つ
     // 'hyperpower',
 
-    'hyper-gruvbox',
+    "hyper-gruvbox",
 
     // マウスでタブを移動する
-    'hyper-dnd-tabs',
+    "hyper-dnd-tabs",
   ],
 
   gruvboxTheme: {
-    style: 'dark',
-    contrast: 'normal',
+    style: "dark",
+    contrast: "normal",
   },
 
   // in development, you can create a directory under
@@ -161,8 +162,8 @@ module.exports = {
   keymaps: {
     // https://github.com/zeit/hyper/blob/canary/app/keymaps/darwin.json
 
-    "tab:new": "command+n",
-    "tab:next": "command+l",
-    "tab:prev": "command+h",
-  }
+    "tab:new": "ctrl+shift+t",
+    "tab:prev": "ctrl+shift+[",
+    "tab:next": "ctrl+shift+]",
+  },
 };
