@@ -118,6 +118,9 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
 
+  // 保存時にフォーマットする
+  "editor.formatOnSave": true,
+
   // 検索に:を入れる
   "vim.cmdLineInitialColon": true,
 
