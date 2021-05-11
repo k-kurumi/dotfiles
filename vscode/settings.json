@@ -142,5 +142,12 @@
       "before": ["<C-r>"],
       "commands": ["redo"]
     }
-  ]
+  ],
+
+  // https://github.com/daipeihust/im-select を使ってインサートモードを抜けたとき英数に変更する
+  // google日本語入力の場合は "vim.autoSwitchInputMethod.defaultIM": "com.google.inputmethod.Japanese.Roman" に変更する
+  "vim.autoSwitchInputMethod.enable": true,
+  "vim.autoSwitchInputMethod.defaultIM": "com.justsystems.inputmethod.atok32.Roman",
+  "vim.autoSwitchInputMethod.obtainIMCmd": "/usr/local/bin/im-select",
+  "vim.autoSwitchInputMethod.switchIMCmd": "/usr/local/bin/im-select {im}"
 }
