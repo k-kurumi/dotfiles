@@ -147,6 +147,9 @@ module.exports = {
 
     // マウスでタブを移動する
     "hyper-dnd-tabs",
+
+    // タブのリネーム
+    "hyper-rename-tab",
   ],
 
   gruvboxTheme: {
