@@ -540,6 +540,19 @@ Plug 'maxmellon/vim-jsx-pretty'
 Plug 'psf/black', { 'branch': 'stable' }
   autocmd BufWritePre *.py execute ':Black'
 
+
+" インサートモードから抜けるときimeを英数に切り替え
+" https://github.com/daipeihust/im-select のインストールが必要
+Plug 'brglng/vim-im-select'
+  if executable('im-select')
+    if has('mac')
+      " 他はデフォルト値で動きそう
+      let g:im_select_default = 'com.justsystems.inputmethod.atok32.Roman'
+    elseif has('unix')
+      " pass
+    endif
+  endif
+
 call plug#end()
 " -------------------------------------------------------------------------------
 
