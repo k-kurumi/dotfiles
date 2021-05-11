@@ -79,36 +79,47 @@ Plug 'tomasr/molokai'
   " 背景色をオリジナルに書き換えるためか起動時にもたつく感じがするのでオフにする
   let g:molokai_original = 0
 
-" gitの差分をmark部分に表示(ブレークポイントと被る)
-" Git始まりのプラグインが多いのでvim-signifyを使う
-" Plug 'airblade/vim-gitgutter'
-" :SignifyToggleHighlight で差分行に色付け
-Plug 'mhinz/vim-signify'
-  " default updatetime 4000ms is not good for async update
-  set updatetime=100
-
-  function! s:sy_stats_wrapper()
-    let [added, modified, removed] = sy#repo#get_stats()
-    let symbols = ['+', '-', '~']
-    let stats = [added, removed, modified]  " reorder
-    let statline = ''
-
-    for i in range(3)
-      if stats[i] > 0
-        let statline .= printf('%s%s ', symbols[i], stats[i])
-      endif
-    endfor
-
-    if !empty(statline)
-      let statline = printf('[%s]', statline[:-2])
-    endif
-
-    return statline
+" hunkは差分の塊のこと
+" 次のhunkに移動 ]c
+" 前のhunkに移動 [c
+" hankをプレビュー <leader>hp
+" hunkをgit的に元に戻す <leader>hu
+" hunkをgit addする <leader>hs
+Plug 'airblade/vim-gitgutter'
+  " hankはフローティングより別ウインドウの方がわかりやすい
+  let g:gitgutter_preview_win_floating = 0
+  function! GitStatus()
+    let [a,m,r] = GitGutterGetHunkSummary()
+    return printf('+%d ~%d -%d', a, m, r)
   endfunction
-  " statusline表示用
-  function! MySignify()
-    return s:sy_stats_wrapper()
-  endfunction
+  set statusline+=%{GitStatus()}
+
+" git以外のvscにも対応しているらしい(gitしか使わないのでvim-gitgutterを使うことにする)
+" 削除行数が表示されたりしてvim-gitgutterよりよい部分もある
+" Plug 'mhinz/vim-signify'
+"
+"   function! s:sy_stats_wrapper()
+"     let [added, modified, removed] = sy#repo#get_stats()
+"     let symbols = ['+', '-', '~']
+"     let stats = [added, removed, modified]  " reorder
+"     let statline = ''
+"
+"     for i in range(3)
+"       if stats[i] > 0
+"         let statline .= printf('%s%s ', symbols[i], stats[i])
+"       endif
+"     endfor
+"
+"     if !empty(statline)
+"       let statline = printf('[%s]', statline[:-2])
+"     endif
+"
+"     return statline
+"   endfunction
+"   " statusline表示用
+"   function! MySignify()
+"     return s:sy_stats_wrapper()
+"   endfunction
 
 " git周りのGblameなどが使える
 Plug 'tpope/vim-fugitive'
@@ -210,7 +221,7 @@ Plug 'maximbaz/lightline-ale'
     \ 'component_function': {
     \   'gitbranch':  'fugitive#statusline',
     \   'cocstatus': 'coc#status',
-    \   'signify': 'MySignify',
+    \   'signify': 'GitStatus',
     \ },
     \ 'component_type': {
     \   'linter_checking': 'left',
@@ -572,6 +583,9 @@ if has('nvim')
 endif
 
 syntax on
+
+" default updatetime 4000ms is not good for async update
+set updatetime=100
 
 " bashのsyntaxを有効にする
 let g:is_bash = 1
