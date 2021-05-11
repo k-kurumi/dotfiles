@@ -145,10 +145,10 @@ module.exports = {
 
     "hyper-gruvbox",
 
-    // マウスでタブを移動する
+    // タブをマウスで移動できる
     "hyper-dnd-tabs",
 
-    // タブのリネーム
+    // タブをクリックしてリネームできる
     "hyper-rename-tab",
   ],
 
