@@ -564,6 +564,11 @@ Plug 'brglng/vim-im-select'
     endif
   endif
 
+
+" curlを使ってリクエスト実行するもの
+" <c-j>で実行
+Plug 'diepm/vim-rest-console'
+
 call plug#end()
 " -------------------------------------------------------------------------------
 
