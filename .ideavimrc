@@ -21,9 +21,11 @@ map th :action PreviousTab<CR>
 " :actionlist でショートカットなど確認できる
 
 
+" ---------------------------------------------------------------------
 " いくつかのプラグインと同じ機能が実装されている
 " https://github.com/JetBrains/ideavim/wiki/Emulated-plugins
 "
+
 " 括弧で囲んだり
 " https://qiita.com/gesutaka/items/e1160f907f664445d45a
 " ビジュアルモードで選択して
@@ -38,3 +40,11 @@ set NERDTree
 " commentary.vim風にコメント化する
 " ビジュアルモードでgc
 set commentary
+
+" ヤンク時にハイライトする
+set highlightedyank
+
+" マルチカーソル
+" option+nしか効かないような気がする
+" vscodeのほど便利ではないので使わない
+" set multiple-cursors
