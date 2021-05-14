@@ -4,7 +4,7 @@ set hlsearch
 set incsearch
 
 " ヤンクでクリップボードにコピー
-set clipboard=unnamed
+" set clipboard=unnamed
 
 " 検索ジャンプしたとき画面中央に表示する
 map n nzz
