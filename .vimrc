@@ -569,6 +569,9 @@ Plug 'brglng/vim-im-select'
 " <c-j>で実行
 Plug 'diepm/vim-rest-console'
 
+" :StartupTime で読み込み時間を表示
+Plug 'tweekmonster/startuptime.vim'
+
 call plug#end()
 " -------------------------------------------------------------------------------
 
