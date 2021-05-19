@@ -144,3 +144,6 @@ install: ## プラグインをインストールする
 
 # cssをポップアップで確認
 	code --install-extension pranaygp.vscode-css-peek
+
+# https://github.com/mattn/memo をvscodeから扱う
+	code --install-extension satokaz.vscode-memo-life-for-you
