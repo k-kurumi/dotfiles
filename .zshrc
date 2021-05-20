@@ -244,7 +244,7 @@ function sleep2() {
 # vimwiki
 function wiki() {
   tmux rename-window wiki-neovim
-  nvim -c "cd ~/vimwiki" -c VimwikiIndex
+  cd ~/vimwiki; nvim index.md
   tmux rename-window zsh
 }
 
