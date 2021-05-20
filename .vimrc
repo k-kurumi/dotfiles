@@ -135,12 +135,6 @@ Plug 'junegunn/gv.vim'
 Plug 'luochen1990/rainbow'
   let g:rainbow_active = 1
 
-" :TableFormatがインデント状態のテーブルでうまく動かない
-" vim-gfm-syntax + vim-table-mode の方が使いやすい
-" Plug 'godlygeek/tabular'
-" Plug 'plasticboy/vim-markdown'
-" let g:vim_markdown_folding_disabled = 1
-" let g:vim_markdown_new_list_item_indent = 2
 
 " 行番号指定で開く(vim a.txt:20のような感じ)
 Plug 'bogado/file-line'
@@ -369,13 +363,22 @@ let g:terraform_fmt_on_save = 1
 " "でレジスタを表示できる
 Plug 'junegunn/vim-peekaboo'
 
+" geでリンクへジャンプする
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
+  let g:vim_markdown_folding_disabled = 1
+  let g:vim_markdown_new_list_item_indent = 2
+
+  let g:vim_markdown_autowrite = 1
+  let g:vim_markdown_edit_url_in = 'tab'
+
 " github固有のmarkdown要素に色づけする
 Plug 'rhysd/vim-gfm-syntax'
   let g:gfm_syntax_enable_filetypes = ['markdown']
 
 " markdownの目次を :GenTocGFM などで作成
-Plug 'mzlogin/vim-markdown-toc'
-  let g:vmt_auto_update_on_save = 0
+" Plug 'mzlogin/vim-markdown-toc'
+"   let g:vmt_auto_update_on_save = 0
 
 " markdownのテーブル用
 Plug 'dhruvasagar/vim-table-mode'
@@ -385,21 +388,6 @@ Plug 'dhruvasagar/vim-table-mode'
 " gripと違いリアルタイムでブラウザを更新できる :MarkdownPreview
 " vimwikiでジャンプするとプレビューが修了するのでft=vimwikiしないようにする
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
-
-" vimwikiはキーバインドだけを利用して、html生成は実行しない(mdのままMDwikiで表示する)
-" ブラウザ表示をMDwikiに任せる方がデフォルトで見た目がよい
-Plug 'vimwiki/vimwiki'
-Plug 'mattn/calendar-vim'
-  let g:vimwiki_list = [{
-    \ 'path': '~/vimwiki',
-    \ 'syntax': 'markdown',
-    \ 'ext': '.md'
-    \ }]
-  let g:vimwiki_global_ext = 0
-  " 実際のコードと見た目が乖離して使いづらいので無効にする
-  let g:vimwiki_conceallevel = 0
-  " リンク作成時に拡張子を付ける
-  let g:vimwiki_markdown_link_ext = 1
 
 " カラーコードの色付け
 " Plug 'norcalli/nvim-colorizer.lua'
