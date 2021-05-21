@@ -377,8 +377,8 @@ Plug 'rhysd/vim-gfm-syntax'
   let g:gfm_syntax_enable_filetypes = ['markdown']
 
 " markdownの目次を :GenTocGFM などで作成
-" Plug 'mzlogin/vim-markdown-toc'
-"   let g:vmt_auto_update_on_save = 0
+Plug 'mzlogin/vim-markdown-toc'
+  let g:vmt_auto_update_on_save = 0
 
 " markdownのテーブル用
 Plug 'dhruvasagar/vim-table-mode'
@@ -386,7 +386,6 @@ Plug 'dhruvasagar/vim-table-mode'
   let g:table_mode_header_fillchar = '-'
 
 " gripと違いリアルタイムでブラウザを更新できる :MarkdownPreview
-" vimwikiでジャンプするとプレビューが修了するのでft=vimwikiしないようにする
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 
 " カラーコードの色付け
