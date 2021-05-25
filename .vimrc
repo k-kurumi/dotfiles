@@ -535,7 +535,7 @@ Plug 'HerringtonDarkholme/yats.vim'
 Plug 'maxmellon/vim-jsx-pretty'
 
 " pythonのblackでオートフォーマット
-Plug 'psf/black', { 'branch': 'stable' }
+Plug 'psf/black'
   autocmd BufWritePre *.py execute ':Black'
 
 
