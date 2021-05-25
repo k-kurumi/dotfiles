@@ -98,3 +98,5 @@ pyrightconfig.json
 # local vimrc
 _vimrc_local.vim
 .vimrc_local.vim
+
+_workaround.mk
