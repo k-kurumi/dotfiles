@@ -11,6 +11,11 @@
     "vue"
   ],
 
+  /* 効いてない気がする */
+  /* "go.goplsOptions": { */
+  /*   "gofumpt": true */
+  /* }, */
+
   "explorer.width": 36,
   "explorer.position": "floating",
   "explorer.openAction.strategy": "tab",
