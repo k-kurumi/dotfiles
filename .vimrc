@@ -460,7 +460,9 @@ if has('nvim')
     nnoremap <silent> ,e :CocCommand explorer<CR>
 
   " golang
-  Plug 'mattn/vim-goimports'
+  Plug 'darrikonn/vim-gofmt'
+    " 保存時にフォーマットする
+    autocmd BufWritePre *.go GoFmt
   " :DlvAddBreakPoint して :DlvDebug から実行する
   Plug 'sebdah/vim-delve'
 else
