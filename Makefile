@@ -23,11 +23,3 @@ pyenv_update: ~/.pyenv ## git pull pyenv
 ndenv_update: ~/.ndenv ## git pull ndenv
 	cd ~/.ndenv; git pull
 	cd ~/.ndenv/plugins/node-build; git pull
-
-.PHONY: cryfs_mount_vimwiki
-cryfs_mount_vimwiki: ## mount dir for vimwiki (事前に CRYFS_VIMWIKI_PASSWORD を.envrc で設定する keepass参照)
-	cryfs ~/Dropbox/cryfs/vimwiki ~/vimwiki < <(echo $(CRYFS_VIMWIKI_PASSWORD))
-
-.PHONY: cryfs_unmount_vimwiki
-cryfs_unmount_vimwiki: ## unmount dir for vimwiki
-	cryfs-unmount ~/vimwiki
