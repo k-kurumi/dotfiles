@@ -147,3 +147,12 @@ install: ## プラグインをインストールする
 
 # https://github.com/mattn/memo をvscodeから扱う
 	code --install-extension satokaz.vscode-memo-life-for-you
+
+# csvを扱いやすくする
+	code --install-extension mechatroner.rainbow-csv
+
+# jsonを扱いやすくする
+	code --install-extension nickdemayo.vscode-json-editor
+
+# gitのgraph表示
+	code --install-extension mhutchie.git-graph
