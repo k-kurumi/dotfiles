@@ -244,17 +244,8 @@ function sleep2() {
 # vimwiki
 function wiki() {
   tmux rename-window wiki-neovim
-  cd ~/vimwiki; nvim index.md
+  cd ~/vimwiki; nvim index.md; cd -
   tmux rename-window zsh
-}
-
-function wiki_httpd() {
-  local wiki_port=${1:-8000}
-  tmux rename-window wiki-httpd
-
-  # ファイル更新時に自動リロードするサーバ
-  type livereloadx > /dev/null || npm install -g livereloadx
-  livereloadx -s --include '*.md' -p ${wiki_port} ~/vimwiki
 }
 
 ################################################################################
