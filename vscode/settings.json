@@ -152,5 +152,6 @@
   "vim.autoSwitchInputMethod.obtainIMCmd": "/usr/local/bin/im-select",
   "vim.autoSwitchInputMethod.switchIMCmd": "/usr/local/bin/im-select {im}",
 
-  "redhat.telemetry.enabled": true
+  "redhat.telemetry.enabled": true,
+  "editor.accessibilitySupport": "on"
 }
