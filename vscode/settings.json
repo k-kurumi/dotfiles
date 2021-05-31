@@ -8,7 +8,7 @@
   "window.zoomLevel": 0.6,
 
   // terminal
-  "terminal.integrated.fontSize": 16,
+  "terminal.integrated.fontSize": 18,
   // 選択でコピー
   "terminal.integrated.copyOnSelection": true,
   // 右クリックで貼り付け
@@ -76,7 +76,7 @@
 
   // テーマ
   "workbench.iconTheme": "material-icon-theme",
-  "workbench.colorTheme": "Dracula",
+  "workbench.colorTheme": "Gruvbox Dark Hard",
 
   // prettier
   "prettier.singleQuote": true,
