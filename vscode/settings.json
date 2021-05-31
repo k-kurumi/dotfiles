@@ -76,7 +76,7 @@
 
   // テーマ
   "workbench.iconTheme": "material-icon-theme",
-  "workbench.colorTheme": "Gruvbox Dark Medium",
+  "workbench.colorTheme": "Dracula",
 
   // prettier
   "prettier.singleQuote": true,

@@ -10,6 +10,9 @@ set incsearch
 map n nzz
 map N Nzz
 
+" *で検索したとき元の文字から始める
+map * *N
+
 " ハイフン区切りも単語扱いにする
 set iskeyword+=-
 
