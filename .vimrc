@@ -494,6 +494,8 @@ Plug 'vim-test/vim-test'
   let test#strategy = 'dispatch'
   " FIXME プロジェクトごとに別のコマンドを実行したい
   let test#ruby#rails#executable = 'docker-compose run --rm api bundle exec rails test -b'
+Plug 'ruby-formatter/rufo-vim'
+  let g:rufo_auto_formatting = 1
 
 " bashのオートフォーマット(shellcheckはale任せ)
 Plug 'z0mbix/vim-shfmt', {'for':'sh'}
