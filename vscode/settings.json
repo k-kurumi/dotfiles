@@ -109,6 +109,7 @@
   "emmet.includeLanguages": {
     "erb": "html,"
   },
+  "rufo.exe": "rufo",
 
   // フォーマッタの指定
   "[jsonc]": {
@@ -116,6 +117,9 @@
   },
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[ruby]": {
+    "editor.defaultFormatter": "jnbt.vscode-rufo"
   },
 
   // 保存時にフォーマットする
