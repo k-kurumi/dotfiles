@@ -76,7 +76,7 @@
 
   // テーマ
   "workbench.iconTheme": "eq-material-theme-icons-light",
-  "workbench.colorTheme": "Gruvbox Dark Hard",
+  "workbench.colorTheme": "Dracula",
 
   // prettier
   "prettier.singleQuote": true,
