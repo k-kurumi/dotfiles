@@ -75,7 +75,7 @@
   "files.eol": "\n",
 
   // テーマ
-  "workbench.iconTheme": "eq-material-theme-icons-light",
+  "workbench.iconTheme": "material-icon-theme",
   "workbench.colorTheme": "Dracula",
 
   // prettier
