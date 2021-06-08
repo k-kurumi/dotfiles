@@ -563,6 +563,14 @@ Plug 'diepm/vim-rest-console'
 " :StartupTime で読み込み時間を表示
 Plug 'tweekmonster/startuptime.vim'
 
+" カーソル移動補助
+Plug 'easymotion/vim-easymotion'
+  " s{char}{char} to move to {char}{char}
+  nmap ,s <Plug>(easymotion-overwin-f2)
+  " Move to word
+  map  ,w <Plug>(easymotion-bd-w)
+  nmap ,w <Plug>(easymotion-overwin-w)
+
 call plug#end()
 " -------------------------------------------------------------------------------
 
