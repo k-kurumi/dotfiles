@@ -800,8 +800,10 @@ augroup MyGroup
   autocmd BufNewFile,BufRead *.yaml set filetype=yaml.ansible expandtab sw=2 ts=2 sts=2 indentkeys=
 
   " direnv
-  autocmd BufNewFile,BufRead .envrc  set filetype=sh  et sw=2 ts=2 sts=2 nocindent autoindent
+  autocmd BufNewFile,BufRead .envrc set filetype=sh  et sw=2 ts=2 sts=2 nocindent autoindent
 
+  " jsonc
+  autocmd BufNewFile,BufRead *.json set filetype=jsonc
 augroup END
 
 " ------------------------------------------------------------------------------
