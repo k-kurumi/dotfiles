@@ -451,7 +451,8 @@ if has('nvim')
       \ 'coc-yank',
       \ ]
 
-    " yamlなどは保存時に適用しない(:CocConfig)が :CocCommand prettier.formatFile で適用できる
+    " 既存ファイルと差分が出るためprettierは手動実行にする
+    nnoremap ,p :CocCommand prettier.formatFile<CR>
 
     " yankring的な使い方
     nnoremap <silent> <space>y  :<C-u>CocList -A --normal yank<cr>
