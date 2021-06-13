@@ -92,12 +92,9 @@
   // python
   "python.languageServer": "Pylance",
   "python.analysis.typeCheckingMode": "basic",
-  "workbench.editorAssociations": [
-    {
-      "viewType": "jupyter.notebook.ipynb",
-      "filenamePattern": "*.ipynb"
-    }
-  ],
+  "workbench.editorAssociations": {
+    "*.ipynb": "jupyter.notebook.ipynb"
+  },
 
   // golang
   "go.goroot": "~/go",
