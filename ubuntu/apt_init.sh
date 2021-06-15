@@ -29,6 +29,7 @@ keepassxc         # macのkeepassxcはクリップボードが消えるバグが
 p7zip             # 7z utils
 p7zip-full        # 7z utils
 trash-cli         # rmの代替
+neofetch          # PC情報表示
 EOF
 
 while read pkg

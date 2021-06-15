@@ -49,7 +49,8 @@ brew-install-all: brew-update ## brew install all package
 		shfmt \
 		osxfuse \
 		cryfs \
-		gibo
+		gibo \
+		neofetch
 	brew install --HEAD neovim
 
 .PHONY: brew-install

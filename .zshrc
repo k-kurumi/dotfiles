@@ -309,3 +309,6 @@ fi
 # rg版
 export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*"'
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# PC情報の表示
+type neofetch > /dev/null && neofetch || :
