@@ -3,7 +3,7 @@
 # install ripgrep
 # https://github.com/BurntSushi/ripgrep/releases
 
-version=12.1.1
+version=13.0.0
 
 pushd /tmp
   rm -rf ripgrep-*
