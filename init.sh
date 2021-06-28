@@ -41,18 +41,18 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.c
 # for neovim
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
-# neovim(vimと同じ設定ファイルを使う)
+# nvim固有の設定が増えてきて条件分岐が多くなってきたため、設定ファイルを分けた
 mkdir -p ~/.config/nvim
-ln -sf "$(realpath .vimrc)" ~/.config/nvim/init.vim
+ln -sf "$(realpath nvim/init.vim)" ~/.config/nvim/init.vim
 
 # スニペットファイル
 # FIXME ファイルと同じ感じでシンボリックリンクを作るとおかしなリンクができてしまう
 # リンク先が既存のときvim/UltiSnips/UltiSnipsというフォルダができてしまうため事前に削除する
 rm -rf ~/.config/nvim/UltiSnips
-ln -sf "$(realpath vim/UltiSnips)" ~/.config/nvim/UltiSnips
+ln -sf "$(realpath nvim/UltiSnips)" ~/.config/nvim/UltiSnips
 
 # coc
-ln -sf "$(realpath vim/coc-settings.json)" ~/.config/nvim/coc-settings.json
+ln -sf "$(realpath nvim/coc-settings.json)" ~/.config/nvim/coc-settings.json
 
 ################################################################################
 #
