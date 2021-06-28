@@ -572,6 +572,14 @@ Plug 'easymotion/vim-easymotion'
   map  ,w <Plug>(easymotion-bd-w)
   nmap ,w <Plug>(easymotion-overwin-w)
 
+" fugitiveの方が使いやすい
+" Plug 'nvim-lua/plenary.nvim'
+" Plug 'TimUntersberger/neogit'
+
+" :DiffviewOpen [<branch>] でgitの差分確認
+Plug 'kyazdani42/nvim-web-devicons'
+Plug 'sindrets/diffview.nvim'
+
 call plug#end()
 " -------------------------------------------------------------------------------
 
