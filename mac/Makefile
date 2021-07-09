@@ -47,11 +47,11 @@ brew-install-all: brew-update ## brew install all package
 		lf \
 		shellcheck \
 		shfmt \
-		osxfuse \
-		cryfs \
 		gibo \
 		neofetch
 	brew install --HEAD neovim
+
+# osxfuse, cryfs はm1にインストールできない
 
 .PHONY: brew-install
 brew-install: brew-update  ## brew install target=package
