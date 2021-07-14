@@ -53,6 +53,10 @@ brew-install-all: brew-update ## brew install all package
 
 # osxfuse, cryfs はm1にインストールできない
 
+# ~/.fzf.zshを追加する(これがないと入力中の文字が引き継がれない)
+	$(brew --prefix)/opt/fzf/install
+
+
 .PHONY: brew-install
 brew-install: brew-update  ## brew install target=package
 ifdef target
