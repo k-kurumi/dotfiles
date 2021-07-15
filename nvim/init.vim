@@ -997,29 +997,12 @@ if !exists(":DiffOrig")
     \ | wincmd p | diffthis
 endif
 
-if has('gui_running')
-  " フォント設定
-  if has('mac')
-    set guifont=Cica-Regular:h18
-  elseif has('unix')
-    set guifont=Cica\ Bold\ 12
-  endif
+" 基本的にcuiで使うが、joplinのexternalとしてnvim-qtを使用するため
+" https://github.com/equalsraf/neovim-qt#macos
+set guifont=Cica:h20:b
 
-  set background=dark
-  colorscheme one
-  " set nowrap
-
-  " ウインドウサイズ lines:縦 columns:横
-  set lines=100
-  set columns=220
-
-  " ウインドウ表示位置
-  "winpos 10 0
-  " winsize 150 40
-else
-  set background=dark
-  colorscheme gruvbox
-endif
+set background=dark
+colorscheme gruvbox
 
 " https://github.com/psycofdj/yaml-path をインストールして呼び出す
 " :Yamlpath でpath表示

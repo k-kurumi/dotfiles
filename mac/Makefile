@@ -4,19 +4,23 @@
 help: ## help
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(word 1,$(MAKEFILE_LIST)) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-20s\033[0m %s\n", $$1, $$2}'
 
+
 .PHONY: brew-update
 brew-update: ## brew update
 # macのアップデートの度に必要になる
 	xcode-select --install || :
 	brew update
 
+
 .PHONY: brew-upgrade
 brew-upgrade: brew-update ## brew upgrade all package
 	brew upgrade
 	brew upgrade --build-from-source --fetch-HEAD neovim
 
+
 .PHONY: brew-install-all
 brew-install-all: brew-update ## brew install all package
+# osxfuse, cryfs はm1にインストールできない
 	brew install \
 		tmux \
 		coreutils \
@@ -49,9 +53,11 @@ brew-install-all: brew-update ## brew install all package
 		shfmt \
 		gibo \
 		neofetch
+
 	brew install --HEAD neovim
 
-# osxfuse, cryfs はm1にインストールできない
+	brew tap equalsraf/neovim-qt
+	brew install --HEAD neovim-qt
 
 # ~/.fzf.zshを追加する(これがないと入力中の文字が引き継がれない)
 	$(brew --prefix)/opt/fzf/install
@@ -64,6 +70,7 @@ ifdef target
 else
 	@echo "Usage: make brew-install target=<package-name>"
 endif
+
 
 .PHONY: brew-uninstall
 brew-uninstall: ## brew uninstall target=package
