@@ -143,7 +143,13 @@ case $(uname) in
     ln -sf "$(realpath gnupg/linux_gpg-agent.conf)" ~/.gnupg/gpg-agent.conf
     ;;
   Darwin)
-    ln -sf "$(realpath gnupg/mac_gpg-agent.conf)" ~/.gnupg/gpg-agent.conf
+    # brew --prefixの値が違うため
+    case $(uname -m) in
+      arm64)
+        ln -sf "$(realpath gnupg/mac_arm64_gpg-agent.conf)" ~/.gnupg/gpg-agent.conf;;
+      x86_64)
+        ln -sf "$(realpath gnupg/mac_x86_64_gpg-agent.conf)" ~/.gnupg/gpg-agent.conf;;
+    esac
     ;;
   *)
     ;;
