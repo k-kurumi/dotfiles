@@ -607,11 +607,9 @@ set ruler
 " nobackup
 set nobackup
 
-" zsh風のファイル名補完しない
+" :e <filename> 時のtab補完
 set nowildmenu
-
-" bash風なtabで補完候補を表示する
-set wildmode=longest,list
+set wildmode=longest,list,full
 
 " undo redo の回数
 set undolevels=1000
