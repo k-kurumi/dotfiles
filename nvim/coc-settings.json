@@ -18,7 +18,7 @@
 
   "explorer.width": 36,
   "explorer.position": "left",
-  "explorer.openAction.strategy": "tab",
+  "explorer.openAction.strategy": "select",
   "explorer.previewAction.onHover": false,
   "explorer.keyMappings.global": {
     "<cr>": ["expandable?", "expand", "open"],
