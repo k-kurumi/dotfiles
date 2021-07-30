@@ -437,12 +437,13 @@ if has('nvim')
     nmap <silent> gi <Plug>(coc-implementation)
     nmap <silent> gr <Plug>(coc-references)
 
+    " coc-pyrightよりcoc-jediの方が補完時のドキュメント表示が多いが動作のもたつきがある
     let g:coc_global_extensions = [
       \ 'coc-explorer',
       \ 'coc-json',
       \ 'coc-lua',
       \ 'coc-prettier',
-      \ 'coc-pyright',
+      \ 'coc-jedi',
       \ 'coc-sh',
       \ 'coc-snippets',
       \ 'coc-solargraph',
