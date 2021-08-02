@@ -73,6 +73,7 @@ Plug 'cocopon/iceberg.vim'
 Plug 'dracula/vim', { 'as': 'dracula'  }
 Plug 'rakr/vim-one'
 Plug 'morhetz/gruvbox'
+Plug 'Murtaza-Udaipurwala/gruvqueen'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'tomasr/molokai'
   let g:rehash256 = 1
