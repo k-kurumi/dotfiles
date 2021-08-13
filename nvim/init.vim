@@ -191,7 +191,7 @@ Plug 'junegunn/fzf.vim'
   imap <C-x><C-j> <plug>(fzf-complete-file-ag)
   imap <C-x><C-l> <plug>(fzf-complete-line)
 
-  " ,Fは隠しファイルなども表示する($FZF_DEFAULT_COMMANDに依存する)
+  " ,fは隠しファイルなども表示する($FZF_DEFAULT_COMMANDに依存する)
   nnoremap <silent> ,f  :Files<CR>
   nnoremap <silent> ,gf :GFile<CR>
   nnoremap <silent> ,gs :GFile?<CR>
