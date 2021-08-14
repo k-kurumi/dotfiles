@@ -74,6 +74,7 @@ Plug 'dracula/vim', { 'as': 'dracula'  }
 Plug 'rakr/vim-one'
 Plug 'morhetz/gruvbox'
 Plug 'sainnhe/gruvbox-material'
+Plug 'Murtaza-Udaipurwala/gruvqueen'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'tomasr/molokai'
   let g:rehash256 = 1
@@ -191,7 +192,7 @@ Plug 'junegunn/fzf.vim'
   imap <C-x><C-j> <plug>(fzf-complete-file-ag)
   imap <C-x><C-l> <plug>(fzf-complete-line)
 
-  " ,Fは隠しファイルなども表示する($FZF_DEFAULT_COMMANDに依存する)
+  " ,fは隠しファイルなども表示する($FZF_DEFAULT_COMMANDに依存する)
   nnoremap <silent> ,f  :Files<CR>
   nnoremap <silent> ,gf :GFile<CR>
   nnoremap <silent> ,gs :GFile?<CR>
