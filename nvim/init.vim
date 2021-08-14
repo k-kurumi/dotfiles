@@ -73,6 +73,7 @@ Plug 'cocopon/iceberg.vim'
 Plug 'dracula/vim', { 'as': 'dracula'  }
 Plug 'rakr/vim-one'
 Plug 'morhetz/gruvbox'
+Plug 'sainnhe/gruvbox-material'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'tomasr/molokai'
   let g:rehash256 = 1
@@ -1001,7 +1002,7 @@ endif
 set guifont=Cica:h20:b
 
 set background=dark
-colorscheme gruvbox
+colorscheme gruvbox-material
 
 " https://github.com/psycofdj/yaml-path をインストールして呼び出す
 " :Yamlpath でpath表示
