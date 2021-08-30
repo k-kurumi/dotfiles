@@ -52,7 +52,8 @@ brew-install-all: brew-update ## brew install all package
 		shellcheck \
 		shfmt \
 		gibo \
-		neofetch
+		neofetch \
+		stats
 
 	brew install --HEAD neovim
 
