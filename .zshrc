@@ -142,6 +142,10 @@ if type direnv > /dev/null; then
   eval "$(direnv hook zsh)"
 fi
 
+if [[ -d ~/.local/bin ]]; then
+  export PATH=${PATH}:~/.local/bin
+fi
+
 ################################################################################
 # alias
 
