@@ -56,9 +56,7 @@ brew-install-all: brew-update ## brew install all package
 		stats
 
 	brew install --HEAD neovim
-
-	brew tap equalsraf/neovim-qt
-	brew install --HEAD neovim-qt
+	brew install --cask goneovim
 
 # ~/.fzf.zshを追加する(これがないと入力中の文字が引き継がれない)
 	$(brew --prefix)/opt/fzf/install

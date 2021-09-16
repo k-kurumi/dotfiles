@@ -31,6 +31,8 @@ do
   ln -sf "$(realpath ${f})" "${HOME}"
 done
 
+mkdir -p ~/.local/bin
+
 ################################################################################
 #
 # vim
@@ -44,6 +46,21 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 # nvim固有の設定が増えてきて条件分岐が多くなってきたため、設定ファイルを分けた
 mkdir -p ~/.config/nvim
 ln -sf "$(realpath nvim/init.vim)" ~/.config/nvim/init.vim
+
+# neovimのgui
+mkdir -p ~/.config/goneovim
+touch ~/.config/goneovim/settings.toml
+
+case $(uname) in
+  Linux)
+    # TODO 使うことになったら埋める
+    ;;
+  Darwin)
+    ln -sf /Applications/goneovim.app/Contents/MacOS/goneovim ~/.local/bin
+    ;;
+  *)
+    ;;
+esac
 
 # スニペットファイル
 # FIXME ファイルと同じ感じでシンボリックリンクを作るとおかしなリンクができてしまう
