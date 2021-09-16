@@ -750,9 +750,9 @@ vnoremap /s "xy:%s/<C-R>=escape(@x, '\\/.*$^~[]')<CR>//gc<Left><Left><Left>
 " 間違って押しやすいから
 inoremap <C-@> <ESC>
 
-" 行の強調(列を有効にするとカーソル移動がもたつくため使わない)
+" 行と列の強調
 set cursorline
-set nocursorcolumn
+set cursorcolumn
 
 " フリーカーソル {block, insert, all, onemore}
 set virtualedit=all
