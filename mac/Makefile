@@ -59,7 +59,7 @@ brew-install-all: brew-update ## brew install all package
 	brew install --cask goneovim
 
 # ~/.fzf.zshを追加する(これがないと入力中の文字が引き継がれない)
-	$(brew --prefix)/opt/fzf/install
+	$(shell brew --prefix)/opt/fzf/install
 
 
 .PHONY: brew-install
