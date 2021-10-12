@@ -164,6 +164,8 @@ alias ghost='tmux rename-window ghosttext-neovim && nvim -c GhostStart -c "set p
 alias ag='ag --hidden'
 alias rg='rg --hidden'
 
+alias tmpfile='nvim $(mktemp)'
+
 ################################################################################
 # function
 
