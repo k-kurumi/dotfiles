@@ -56,7 +56,12 @@ brew-install-all: brew-update ## brew install all package
 		stats
 
 	brew install --HEAD neovim
+
+# gui版nvim
 	brew install --cask goneovim
+
+# クリップボードマネージャー
+	brew install --cask maccy
 
 # ~/.fzf.zshを追加する(これがないと入力中の文字が引き継がれない)
 	$(shell brew --prefix)/opt/fzf/install
