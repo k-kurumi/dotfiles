@@ -572,6 +572,9 @@ Plug 'easymotion/vim-easymotion'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'sindrets/diffview.nvim'
 
+" syntax highlight
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+
 call plug#end()
 " -------------------------------------------------------------------------------
 
@@ -1058,3 +1061,15 @@ endif
 " ファイルの文字数取得について
 "  g<C-g> して確認する
 " または :'<,'>s/./&/gn で文字を元の文字で置換すれば確認はできる(matchesのところ)
+
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = "maintained",
+  ignore_install = {},
+  highlight = {
+    enable = true,
+    disable = {},
+    additional_vim_regex_highlighting = false,
+  },
+}
+EOF
