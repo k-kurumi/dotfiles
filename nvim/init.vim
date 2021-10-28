@@ -390,12 +390,16 @@ Plug 'dhruvasagar/vim-table-mode'
 " gripと違いリアルタイムでブラウザを更新できる :MarkdownPreview
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 
-" markdownの全角半角文字間にスペースが入らないようにparserを変更したもの
-" オプション指定では対応できなかったためフォークした
-Plug 'k-kurumi/vim-prettier', {
+" " markdownの全角半角文字間にスペースが入らないようにparserを変更したもの
+" " オプション指定では対応できなかったためフォークした
+" Plug 'k-kurumi/vim-prettier', {
+"   \ 'do': 'yarn install',
+"   \ 'branch': 'nocjsp'
+"   \ }
+
+" post install (yarn install | npm install) then load plugin only for editing supported files
+Plug 'prettier/vim-prettier', {
   \ 'do': 'yarn install',
-  \ 'branch': 'nocjsp'
-  \ }
 
 " カラーコードの色付け
 " Plug 'norcalli/nvim-colorizer.lua'
