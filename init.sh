@@ -38,14 +38,10 @@ mkdir -p ~/.local/bin
 # vim
 #
 
-# for vim
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-# for neovim
-sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-
 # nvim固有の設定が増えてきて条件分岐が多くなってきたため、設定ファイルを分けた
 mkdir -p ~/.config/nvim
-ln -sf "$(realpath nvim/init.vim)" ~/.config/nvim/init.vim
+# ln -sf "$(realpath nvim/init.vim)" ~/.config/nvim/init.vim
+ln -sf "$(realpath nvim/init.lua)" ~/.config/nvim/init.lua
 
 # neovimのgui
 mkdir -p ~/.config/goneovim
