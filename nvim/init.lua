@@ -6,9 +6,6 @@ end
 vim.cmd [[packadd paq-nvim]]
 local paq = require('paq-nvim').paq
 
-paq 'neovim/nvim-lspconfig'          -- Mind the semi-colons
-paq 'hrsh7th/nvim-cmp'
-
 -- ステータスライン
 paq 'nvim-lualine/lualine.nvim'
 paq 'kyazdani42/nvim-web-devicons'
@@ -16,10 +13,6 @@ paq 'kyazdani42/nvim-web-devicons'
 -- colorscheme
 paq 'sainnhe/gruvbox-material'
 paq 'rakr/vim-one'
-
--- file explorer
-paq 'kyazdani42/nvim-web-devicons'
-paq 'kyazdani42/nvim-tree.lua'
 
 -- telescope
 paq 'nvim-lua/plenary.nvim'
@@ -87,7 +80,6 @@ paq 'thinca/vim-visualstar'
 --------------------------------------------------------------------------------
 
 require('lualine').setup()
-require('nvim-tree').setup()
 require('nvim-treesitter.configs').setup {
   ensure_installed = "maintained",
   ignore_install = {},
@@ -120,12 +112,9 @@ vim.api.nvim_set_keymap("n", "th", ":tabprevious<CR>", {noremap = true, silent =
 vim.api.nvim_set_keymap("n", "tl", ":tabnext<CR>", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", "tq", ":tabclose<CR>", {noremap = true, silent = true})
 
+-- telescope
 vim.api.nvim_set_keymap("n", ",f", ":Telescope find_files<CR>", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", ",g", ":Telescope live_grep<CR>", {noremap = true, silent = true})
-
--- ファイルエクスプローラの開閉
-vim.api.nvim_set_keymap("n", ",e", ":NvimTreeFindFileToggle<CR>", {noremap = true, silent = true})
-
 -- コピーバッファ
 vim.api.nvim_set_keymap("n", ",p", ":Telescope neoclip star<CR>", {noremap = true, silent = true})
 
@@ -134,6 +123,8 @@ vim.api.nvim_set_keymap("n", "gd", ":<Plug>(coc-definition)<CR>", {noremap = tru
 vim.api.nvim_set_keymap("n", "gy", ":<Plug>(coc-type-definition)<CR>", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", "gi", ":<Plug>(coc-implementation)<CR>", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", "gr", ":<Plug>(coc-references)<CR>", {noremap = true, silent = true})
+-- ファイルエクスプローラの開閉
+vim.api.nvim_set_keymap("n", ",e", ":CocCommand explorer<CR>", {noremap = true, silent = true})
 
 vim.cmd [[colorscheme gruvbox-material]]
 -- termguicolorsの違いで色合いが変わる
