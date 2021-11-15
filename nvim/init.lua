@@ -72,6 +72,15 @@ paq 'simeji/winresizer'
 -- prettier
 paq {'prettier/vim-prettier', run = 'npm install'}
 
+-- -- vscodeのproblemパネル
+-- paq 'folke/trouble.nvim'
+
+-- -- 組み込みlspは設定が煩雑なのでcocを使う
+-- paq {'neoclide/coc.nvim', branch = 'release'}
+
+-- *で検索対象に指定
+paq 'thinca/vim-visualstar'
+
 --------------------------------------------------------------------------------
 --
 -- プラグインの設定
@@ -121,6 +130,12 @@ vim.api.nvim_set_keymap("n", ",e", ":NvimTreeFindFileToggle<CR>", {noremap = tru
 -- コピーバッファ
 vim.api.nvim_set_keymap("n", ",p", ":Telescope neoclip star<CR>", {noremap = true, silent = true})
 
+-- -- coc
+-- vim.api.nvim_set_keymap("n", "gd", ":<Plug>(coc-definition)", {noremap = true, silent = true})
+-- vim.api.nvim_set_keymap("n", "gy", ":<Plug>(coc-type-definition)", {noremap = true, silent = true})
+-- vim.api.nvim_set_keymap("n", "gi", ":<Plug>(coc-implementation)", {noremap = true, silent = true})
+-- vim.api.nvim_set_keymap("n", "gr", ":<Plug>(coc-references)", {noremap = true, silent = true})
+
 --------------------------------------------------------------------------------
 --
 -- オプション設定(プラグイン以外の本体側)
@@ -141,6 +156,13 @@ vim.o.wrapscan = false
 vim.o.listchars = 'eol:$,tab:>_'
 vim.o.cursorline = true
 vim.o.cursorcolumn = true
+
+-- 検索周り
+vim.api.nvim_set_keymap("n", "n", "nzz", {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "N", "Nzz", {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "*", "*zz", {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "#", "#zz", {noremap = true, silent = true})
+
 vim.cmd [[colorscheme gruvbox-material]]
 -- termguicolorsの違いで色合いが変わる
 if fn.has('termguicolors') then
