@@ -125,6 +125,22 @@ vim.api.nvim_set_keymap("n", "gi", ":<Plug>(coc-implementation)<CR>", {noremap =
 vim.api.nvim_set_keymap("n", "gr", ":<Plug>(coc-references)<CR>", {noremap = true, silent = true})
 -- ファイルエクスプローラの開閉
 vim.api.nvim_set_keymap("n", ",e", ":CocCommand explorer<CR>", {noremap = true, silent = true})
+-- 事前にインストールするextension
+vim.g.coc_global_extensions = {
+  'coc-docker',
+  'coc-explorer',
+  'coc-go',
+  'coc-jedi',
+  'coc-json',
+  'coc-lua',
+  'coc-pairs',
+  'coc-sh',
+  'coc-snippets',
+  'coc-solargraph',
+  'coc-toml',
+  'coc-tsserver',
+  'coc-yaml',
+}
 
 vim.cmd [[colorscheme gruvbox-material]]
 -- termguicolorsの違いで色合いが変わる
