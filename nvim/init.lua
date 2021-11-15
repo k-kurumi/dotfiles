@@ -1,8 +1,7 @@
 -- paq package manager https://github.com/savq/paq-nvim
-local fn = vim.fn
-local install_path = fn.stdpath('data') .. '/site/pack/paqs/start/paq-nvim'
-if fn.empty(fn.glob(install_path)) > 0 then
-  fn.system({'git', 'clone', '--depth=1', 'https://github.com/savq/paq-nvim.git', install_path})
+local install_path = vim.fn.stdpath('data') .. '/site/pack/paqs/start/paq-nvim'
+if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
+  vim.fn.system({'git', 'clone', '--depth=1', 'https://github.com/savq/paq-nvim.git', install_path})
 end
 vim.cmd [[packadd paq-nvim]]
 local paq = require('paq-nvim').paq
@@ -72,11 +71,11 @@ paq 'simeji/winresizer'
 -- prettier
 paq {'prettier/vim-prettier', run = 'npm install'}
 
--- -- vscodeのproblemパネル
--- paq 'folke/trouble.nvim'
+-- vscodeのproblemパネル
+paq 'folke/trouble.nvim'
 
--- -- 組み込みlspは設定が煩雑なのでcocを使う
--- paq {'neoclide/coc.nvim', branch = 'release'}
+-- 組み込みlspは設定が煩雑なのでcocを使う
+paq {'neoclide/coc.nvim', branch = 'release'}
 
 -- *で検索対象に指定
 paq 'thinca/vim-visualstar'
@@ -130,11 +129,17 @@ vim.api.nvim_set_keymap("n", ",e", ":NvimTreeFindFileToggle<CR>", {noremap = tru
 -- コピーバッファ
 vim.api.nvim_set_keymap("n", ",p", ":Telescope neoclip star<CR>", {noremap = true, silent = true})
 
--- -- coc
--- vim.api.nvim_set_keymap("n", "gd", ":<Plug>(coc-definition)", {noremap = true, silent = true})
--- vim.api.nvim_set_keymap("n", "gy", ":<Plug>(coc-type-definition)", {noremap = true, silent = true})
--- vim.api.nvim_set_keymap("n", "gi", ":<Plug>(coc-implementation)", {noremap = true, silent = true})
--- vim.api.nvim_set_keymap("n", "gr", ":<Plug>(coc-references)", {noremap = true, silent = true})
+-- coc
+vim.api.nvim_set_keymap("n", "gd", ":<Plug>(coc-definition)<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "gy", ":<Plug>(coc-type-definition)<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "gi", ":<Plug>(coc-implementation)<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "gr", ":<Plug>(coc-references)<CR>", {noremap = true, silent = true})
+
+vim.cmd [[colorscheme gruvbox-material]]
+-- termguicolorsの違いで色合いが変わる
+if vim.fn.has('termguicolors') then
+  vim.o.termguicolors = true
+end
 
 --------------------------------------------------------------------------------
 --
@@ -162,9 +167,3 @@ vim.api.nvim_set_keymap("n", "n", "nzz", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", "N", "Nzz", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", "*", "*zz", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", "#", "#zz", {noremap = true, silent = true})
-
-vim.cmd [[colorscheme gruvbox-material]]
--- termguicolorsの違いで色合いが変わる
-if fn.has('termguicolors') then
-  vim.o.termguicolors = true
-end
