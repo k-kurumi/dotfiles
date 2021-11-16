@@ -13,6 +13,7 @@ paq 'kyazdani42/nvim-web-devicons'
 -- colorscheme
 paq 'sainnhe/gruvbox-material'
 paq 'rakr/vim-one'
+paq 'folke/tokyonight.nvim'
 
 -- telescope
 paq 'nvim-lua/plenary.nvim'
