@@ -65,9 +65,6 @@ paq 'simeji/winresizer'
 -- prettier
 paq {'prettier/vim-prettier', run = 'npm install'}
 
--- vscodeのproblemパネル
-paq 'folke/trouble.nvim'
-
 -- 組み込みlspは設定が煩雑なのでcocを使う
 paq {'neoclide/coc.nvim', branch = 'release'}
 
