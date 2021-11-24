@@ -66,6 +66,9 @@ brew-install-all: brew-update ## brew install all package
 # ~/.fzf.zshを追加する(これがないと入力中の文字が引き継がれない)
 	$(shell brew --prefix)/opt/fzf/install
 
+	# ripgrepを整形してようなもの
+	brew tap "rhysd/hgrep" "https://github.com/rhysd/hgrep"
+	brew install hgrep
 
 .PHONY: brew-install
 brew-install: brew-update  ## brew install target=package
