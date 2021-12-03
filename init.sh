@@ -43,21 +43,6 @@ mkdir -p ~/.config/nvim
 # ln -sf "$(realpath nvim/init.vim)" ~/.config/nvim/init.vim
 ln -sf "$(realpath nvim/init.lua)" ~/.config/nvim/init.lua
 
-# neovimのgui
-mkdir -p ~/.config/goneovim
-touch ~/.config/goneovim/settings.toml
-
-case $(uname) in
-  Linux)
-    # TODO 使うことになったら埋める
-    ;;
-  Darwin)
-    ln -sf /Applications/goneovim.app/Contents/MacOS/goneovim ~/.local/bin
-    ;;
-  *)
-    ;;
-esac
-
 # スニペットファイル
 # FIXME ファイルと同じ感じでシンボリックリンクを作るとおかしなリンクができてしまう
 # リンク先が既存のときvim/UltiSnips/UltiSnipsというフォルダができてしまうため事前に削除する

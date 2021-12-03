@@ -57,9 +57,6 @@ brew-install-all: brew-update ## brew install all package
 
 	brew install --HEAD neovim
 
-# gui版nvim
-	brew install --cask goneovim
-
 # クリップボードマネージャー
 	brew install --cask maccy
 
