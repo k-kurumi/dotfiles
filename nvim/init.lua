@@ -77,7 +77,12 @@ paq 'thinca/vim-visualstar'
 --
 --------------------------------------------------------------------------------
 
-require('lualine').setup()
+-- require('lualine').setup()
+require('lualine').setup{
+  options = {
+    theme = 'gruvbox-material'
+  }
+}
 require('nvim-treesitter.configs').setup {
   ensure_installed = "maintained",
   ignore_install = {},
@@ -140,12 +145,6 @@ vim.g.coc_global_extensions = {
   'coc-yaml',
 }
 
-vim.cmd [[colorscheme gruvbox-material]]
--- termguicolorsの違いで色合いが変わる
-if vim.fn.has('termguicolors') then
-  vim.o.termguicolors = true
-end
-
 --------------------------------------------------------------------------------
 --
 -- オプション設定(プラグイン以外の本体側)
@@ -172,3 +171,16 @@ vim.api.nvim_set_keymap("n", "n", "nzz", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", "N", "Nzz", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", "*", "*zz", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", "#", "#zz", {noremap = true, silent = true})
+
+--------------------------------------------------------------------------------
+--
+-- 設定を反映するため最後にテーマを指定する
+--
+--------------------------------------------------------------------------------
+
+-- termguicolorsの違いで色合いが変わる
+if vim.fn.has('termguicolors') then
+  vim.o.termguicolors = true
+end
+vim.g.gruvbox_material_background = 'hard'
+vim.cmd [[colorscheme gruvbox-material]]
