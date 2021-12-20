@@ -122,10 +122,20 @@ vim.api.nvim_set_keymap("n", ",g", ":Telescope live_grep<CR>", {noremap = true, 
 vim.api.nvim_set_keymap("n", ",p", ":Telescope neoclip star<CR>", {noremap = true, silent = true})
 
 -- coc
-vim.api.nvim_set_keymap("n", "gd", ":<Plug>(coc-definition)<CR>", {noremap = true, silent = true})
-vim.api.nvim_set_keymap("n", "gy", ":<Plug>(coc-type-definition)<CR>", {noremap = true, silent = true})
-vim.api.nvim_set_keymap("n", "gi", ":<Plug>(coc-implementation)<CR>", {noremap = true, silent = true})
-vim.api.nvim_set_keymap("n", "gr", ":<Plug>(coc-references)<CR>", {noremap = true, silent = true})
+-- これだとうまく動いてない Plug付きだから？
+-- vim.api.nvim_set_keymap("n", "gd", "<Plug>(coc-definition)<CR>", {noremap = true, silent = true})
+-- vim.api.nvim_set_keymap("n", "gy", "<Plug>(coc-type-definition)<CR>", {noremap = true, silent = true})
+-- vim.api.nvim_set_keymap("n", "gi", "<Plug>(coc-implementation)<CR>", {noremap = true, silent = true})
+-- vim.api.nvim_set_keymap("n", "gr", "<Plug>(coc-references)<CR>", {noremap = true, silent = true})
+
+vim.cmd([[
+" GoTo code navigation.
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+]])
+
 -- ファイルエクスプローラの開閉
 vim.api.nvim_set_keymap("n", ",e", ":CocCommand explorer<CR>", {noremap = true, silent = true})
 -- 事前にインストールするextension
