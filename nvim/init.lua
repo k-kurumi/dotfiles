@@ -4,7 +4,7 @@ if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
   vim.fn.system({'git', 'clone', '--depth=1', 'https://github.com/savq/paq-nvim.git', install_path})
 end
 vim.cmd [[packadd paq-nvim]]
-local paq = require('paq-nvim').paq
+local paq = require('paq').paq
 
 -- ステータスライン
 paq 'nvim-lualine/lualine.nvim'
