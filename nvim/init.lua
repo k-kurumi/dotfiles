@@ -77,7 +77,12 @@ paq 'thinca/vim-visualstar'
 --
 --------------------------------------------------------------------------------
 
-require('lualine').setup()
+-- require('lualine').setup()
+require('lualine').setup{
+  options = {
+    theme = 'gruvbox-material'
+  }
+}
 require('nvim-treesitter.configs').setup {
   ensure_installed = "maintained",
   ignore_install = {},
@@ -117,10 +122,13 @@ vim.api.nvim_set_keymap("n", ",g", ":Telescope live_grep<CR>", {noremap = true, 
 vim.api.nvim_set_keymap("n", ",p", ":Telescope neoclip star<CR>", {noremap = true, silent = true})
 
 -- coc
-vim.api.nvim_set_keymap("n", "gd", ":<Plug>(coc-definition)<CR>", {noremap = true, silent = true})
-vim.api.nvim_set_keymap("n", "gy", ":<Plug>(coc-type-definition)<CR>", {noremap = true, silent = true})
-vim.api.nvim_set_keymap("n", "gi", ":<Plug>(coc-implementation)<CR>", {noremap = true, silent = true})
-vim.api.nvim_set_keymap("n", "gr", ":<Plug>(coc-references)<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "[g", "<Plug>(coc-diagnostic-prev)", {noremap = false, silent = true})
+vim.api.nvim_set_keymap("n", "]g", "<Plug>(coc-diagnostic-next)", {noremap = false, silent = true})
+vim.api.nvim_set_keymap("n", "gd", "<Plug>(coc-definition)", {noremap = false, silent = true})
+vim.api.nvim_set_keymap("n", "gy", "<Plug>(coc-type-definition)", {noremap = false, silent = true})
+vim.api.nvim_set_keymap("n", "gi", "<Plug>(coc-implementation)", {noremap = false, silent = true})
+vim.api.nvim_set_keymap("n", "gr", "<Plug>(coc-references)", {noremap = false, silent = true})
+
 -- ファイルエクスプローラの開閉
 vim.api.nvim_set_keymap("n", ",e", ":CocCommand explorer<CR>", {noremap = true, silent = true})
 -- 事前にインストールするextension
@@ -139,12 +147,6 @@ vim.g.coc_global_extensions = {
   'coc-tsserver',
   'coc-yaml',
 }
-
-vim.cmd [[colorscheme gruvbox-material]]
--- termguicolorsの違いで色合いが変わる
-if vim.fn.has('termguicolors') then
-  vim.o.termguicolors = true
-end
 
 --------------------------------------------------------------------------------
 --
@@ -172,3 +174,16 @@ vim.api.nvim_set_keymap("n", "n", "nzz", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", "N", "Nzz", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", "*", "*zz", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", "#", "#zz", {noremap = true, silent = true})
+
+--------------------------------------------------------------------------------
+--
+-- 設定を反映するため最後にテーマを指定する
+--
+--------------------------------------------------------------------------------
+
+-- termguicolorsの違いで色合いが変わる
+if vim.fn.has('termguicolors') then
+  vim.o.termguicolors = true
+end
+vim.g.gruvbox_material_background = 'hard'
+vim.cmd [[colorscheme gruvbox-material]]
