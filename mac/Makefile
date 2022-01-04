@@ -55,7 +55,8 @@ brew-install-all: brew-update ## brew install all package
 		neofetch \
 		stats \
 		font-fira-code-nerd-font \
-		font-fira-mono-nerd-font
+		font-fira-mono-nerd-font \
+		font-cica
 
 	brew install --HEAD neovim
 
