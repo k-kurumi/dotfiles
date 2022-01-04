@@ -26,6 +26,9 @@ paq 'tami5/sqlite.lua'
 -- treesitter syntax color
 paq 'nvim-treesitter/nvim-treesitter'
 
+-- コードの階層を表示する
+paq 'SmiteshP/nvim-gps'
+
 -- 閉じ括弧の追加
 paq 'windwp/nvim-autopairs'
 
@@ -76,13 +79,6 @@ paq 'thinca/vim-visualstar'
 -- プラグインの設定
 --
 --------------------------------------------------------------------------------
-
--- require('lualine').setup()
-require('lualine').setup{
-  options = {
-    theme = 'gruvbox-material'
-  }
-}
 require('nvim-treesitter.configs').setup {
   ensure_installed = "maintained",
   ignore_install = {},
@@ -106,6 +102,35 @@ require('neoclip').setup({
   -- ~/.local/share/nvim/databases/neoclip.sqlite3 に保存
   enable_persistant_history = true
 })
+
+require('nvim-gps').setup()
+local gps = require("nvim-gps")
+require('lualine').setup{
+  sections = {
+    lualine_c = {
+    {
+      'filename',
+      file_status = true,      -- Displays file status (readonly status, modified status)
+      path = 1,                -- 0: Just the filename
+                               -- 1: Relative path
+                               -- 2: Absolute path
+
+      shorting_target = 40,    -- Shortens path to leave 40 spaces in the window
+                               -- for other components. (terrible name, any suggestions?)
+      symbols = {
+        modified = '[+]',      -- Text to show when the file is modified.
+        readonly = '[-]',      -- Text to show when the file is non-modifiable or readonly.
+        unnamed = '[No Name]', -- Text to show for unnamed buffers.
+      }
+    },
+      { gps.get_location, cond = gps.is_available },
+    }
+  },
+  options = {
+    theme = 'gruvbox-material'
+  }
+}
+
 -- ウインドウリサイズの移動量
 vim.g.winresizer_vert_resize  = 1
 vim.g.winresizer_horiz_resize = 1
