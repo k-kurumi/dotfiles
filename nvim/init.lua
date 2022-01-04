@@ -103,7 +103,9 @@ require('neoclip').setup({
   enable_persistant_history = true
 })
 
-require('nvim-gps').setup()
+require('nvim-gps').setup({
+  disable_icons = true,
+})
 local gps = require("nvim-gps")
 require('lualine').setup{
   sections = {
