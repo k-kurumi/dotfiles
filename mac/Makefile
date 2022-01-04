@@ -53,7 +53,9 @@ brew-install-all: brew-update ## brew install all package
 		shfmt \
 		gibo \
 		neofetch \
-		stats
+		stats \
+		font-fira-code-nerd-font \
+		font-fira-mono-nerd-font
 
 	brew install --HEAD neovim
 
