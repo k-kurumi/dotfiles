@@ -140,10 +140,11 @@ module.exports = {
     // 'hyper-clean',
     // 'hyper-firewatch',
 
+    // "hyper-gruvbox",
+    "hyper-dracula",
+
     // カーソルが目立つ
     // 'hyperpower',
-
-    "hyper-gruvbox",
 
     // タブをマウスで移動できる
     "hyper-dnd-tabs",
