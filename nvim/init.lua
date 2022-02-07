@@ -202,6 +202,8 @@ vim.api.nvim_set_keymap("n", "n", "nzz", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", "N", "Nzz", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", "*", "*zz", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", "#", "#zz", {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "*", "*N",  {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "#", "#N",  {noremap = true, silent = true})
 
 --------------------------------------------------------------------------------
 --
