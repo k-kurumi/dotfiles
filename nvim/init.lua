@@ -100,7 +100,7 @@ require('surround').setup{
 require('neoclip').setup({
   history = 1000,
   -- ~/.local/share/nvim/databases/neoclip.sqlite3 に保存
-  enable_persistant_history = true
+  enable_persistent_history = true
 })
 
 require('nvim-gps').setup({
