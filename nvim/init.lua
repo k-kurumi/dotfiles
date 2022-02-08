@@ -159,14 +159,15 @@ vim.api.nvim_set_keymap("n", "gr", "<Plug>(coc-references)", {noremap = false, s
 -- ファイルエクスプローラの開閉
 vim.api.nvim_set_keymap("n", ",e", ":CocCommand explorer<CR>", {noremap = true, silent = true})
 -- 事前にインストールするextension
+-- coc-jediは対応が遅いので使用しない(matchへの対応など)
 vim.g.coc_global_extensions = {
   'coc-docker',
   'coc-explorer',
   'coc-go',
-  'coc-jedi',
   'coc-json',
   'coc-lua',
   'coc-pairs',
+  'coc-pyright',
   'coc-rust-analyzer',
   'coc-sh',
   'coc-snippets',
