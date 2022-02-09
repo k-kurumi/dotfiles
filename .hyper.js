@@ -12,7 +12,8 @@ module.exports = {
     fontSize: 18,
 
     // font family with optional fallbacks
-    fontFamily: "Cica",
+    // fontFamily: "Cica",
+    fontFamily: "HackGenNerd Console",
 
     // default font weight: 'normal' or 'bold'
     fontWeight: "bold",
