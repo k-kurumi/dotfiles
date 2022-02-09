@@ -56,7 +56,8 @@ brew-install-all: brew-update ## brew install all package
 		stats \
 		font-fira-code-nerd-font \
 		font-fira-mono-nerd-font \
-		font-cica
+		font-cica \
+		font-hackgen-nerd
 
 	brew install --HEAD neovim
 
