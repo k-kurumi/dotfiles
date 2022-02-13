@@ -1,20 +1,7 @@
 {
-  /* "coc.preferences.formatOnSaveFiletypes": [ */
-  /*   "css", */
-  /*   "html", */
-  /*   "javascript", */
-  /*   "json", */
-  /*   "less", */
-  /*   "markdown", */
-  /*   "scss", */
-  /*   "typescript", */
-  /*   "vue" */
-  /* ], */
-
-  /* 効いてない気がする */
-  /* "go.goplsOptions": { */
-  /*   "gofumpt": true */
-  /* }, */
+  // poetry の virtualenvs.in-project true でインストールするパス
+  "python.venvPath": "./.venv",
+  "python.pythonPath": "./.venv/bin/python",
 
   "explorer.width": 36,
   "explorer.position": "left",
@@ -26,4 +13,5 @@
   },
   "explorer.file.showHiddenFiles": true,
   "explorer.toggle": false
+
 }
