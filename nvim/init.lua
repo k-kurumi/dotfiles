@@ -143,7 +143,7 @@ vim.api.nvim_set_keymap("n", "tl", ":tabnext<CR>", {noremap = true, silent = tru
 vim.api.nvim_set_keymap("n", "tq", ":tabclose<CR>", {noremap = true, silent = true})
 
 -- telescope
-vim.api.nvim_set_keymap("n", ",f", ":Telescope find_files<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", ",f", ":Telescope find_files hidden=true no_ignore=true<CR>", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", ",g", ":Telescope live_grep<CR>", {noremap = true, silent = true})
 -- コピーバッファ
 vim.api.nvim_set_keymap("n", ",p", ":Telescope neoclip star<CR>", {noremap = true, silent = true})
