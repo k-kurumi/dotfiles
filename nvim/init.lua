@@ -145,8 +145,9 @@ vim.api.nvim_set_keymap("n", "tq", ":tabclose<CR>", {noremap = true, silent = tr
 -- telescope
 vim.api.nvim_set_keymap("n", ",f", ":Telescope find_files hidden=true no_ignore=true<CR>", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", ",g", ":Telescope live_grep<CR>", {noremap = true, silent = true})
--- コピーバッファ
-vim.api.nvim_set_keymap("n", ",p", ":Telescope neoclip star<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", ",b", ":Telescope buffers<CR>", {noremap = true, silent = true})
+-- コピーバッファ(ペースト入るようにunnamedを指定する)
+vim.api.nvim_set_keymap("n", ",p", ":Telescope neoclip unnamed<CR>", {noremap = true, silent = true})
 
 -- coc
 vim.api.nvim_set_keymap("n", "[g", "<Plug>(coc-diagnostic-prev)", {noremap = false, silent = true})
