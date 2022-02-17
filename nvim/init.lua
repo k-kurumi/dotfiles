@@ -33,7 +33,7 @@ paq 'SmiteshP/nvim-gps'
 paq 'windwp/nvim-autopairs'
 
 -- 括弧の囲み
-paq 'blackCauldron7/surround.nvim'
+paq 'tpope/vim-surround'
 
 -- 括弧の色付け
 paq 'p00f/nvim-ts-rainbow'
@@ -94,9 +94,6 @@ require('nvim-treesitter.configs').setup {
   }
 }
 require('nvim-autopairs').setup()
-require('surround').setup{
-  mapping_style = "sandwich"
-}
 require('neoclip').setup({
   history = 1000,
   -- ~/.local/share/nvim/databases/neoclip.sqlite3 に保存
