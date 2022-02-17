@@ -130,7 +130,7 @@ require('lualine').setup{
   }
 }
 
--- live_grepはrgを使用しているため --hidden を付けて隠しファイルも対象にする
+-- live_grepはrgを使用しているため隠しファイルや.env系も表示できるようにオプションを追加
 -- https://github.com/nvim-telescope/telescope.nvim/blob/master/lua/telescope/config.lua
 require('telescope').setup{
   defaults = {
@@ -142,7 +142,10 @@ require('telescope').setup{
       '--line-number',
       '--column',
       '--smart-case',
-      '--hidden'
+      '--hidden',
+      '--no-ignore',
+      '--glob',
+      '!.git/'
     }
   }
 }
@@ -158,7 +161,7 @@ vim.api.nvim_set_keymap("n", "tq", ":tabclose<CR>", {noremap = true, silent = tr
 
 -- telescope
 -- .git/以外の隠しファイルを表示する
-vim.api.nvim_set_keymap("n", ",f", ":Telescope find_files find_command=rg,--ignore,--hidden,--files,--glob,!.git/<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", ",f", ":Telescope find_files find_command=rg,--files,--no-ignore,--hidden,--glob,!.git/<CR>", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", ",g", ":Telescope live_grep<CR>", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", ",b", ":Telescope buffers<CR>", {noremap = true, silent = true})
 -- コピーバッファ(ペースト入るようにunnamedを指定する)
