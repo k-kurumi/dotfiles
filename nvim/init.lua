@@ -157,7 +157,8 @@ vim.api.nvim_set_keymap("n", "tl", ":tabnext<CR>", {noremap = true, silent = tru
 vim.api.nvim_set_keymap("n", "tq", ":tabclose<CR>", {noremap = true, silent = true})
 
 -- telescope
-vim.api.nvim_set_keymap("n", ",f", ":Telescope find_files hidden=true no_ignore=true<CR>", {noremap = true, silent = true})
+-- .git/以外の隠しファイルを表示する
+vim.api.nvim_set_keymap("n", ",f", ":Telescope find_files find_command=rg,--ignore,--hidden,--files,--glob,!.git/<CR>", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", ",g", ":Telescope live_grep<CR>", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", ",b", ":Telescope buffers<CR>", {noremap = true, silent = true})
 -- コピーバッファ(ペースト入るようにunnamedを指定する)
