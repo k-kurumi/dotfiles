@@ -130,6 +130,23 @@ require('lualine').setup{
   }
 }
 
+-- live_grepはrgを使用しているため --hidden を付けて隠しファイルも対象にする
+-- https://github.com/nvim-telescope/telescope.nvim/blob/master/lua/telescope/config.lua
+require('telescope').setup{
+  defaults = {
+    vimgrep_arguments = {
+      'rg',
+      '--color=never',
+      '--no-heading',
+      '--with-filename',
+      '--line-number',
+      '--column',
+      '--smart-case',
+      '--hidden'
+    }
+  }
+}
+
 -- ウインドウリサイズの移動量
 vim.g.winresizer_vert_resize  = 1
 vim.g.winresizer_horiz_resize = 1
