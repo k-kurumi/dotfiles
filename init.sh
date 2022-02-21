@@ -100,12 +100,11 @@ fi
 
 ################################################################################
 #
-# zsh zinit
+# zsh plugin manager sheldon
 #
 
-if [[ ! -d "${HOME}/.zinit" ]]; then
-  sh -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zinit/master/doc/install.sh)"
-fi
+mkdir -p ~/.sheldon
+ln -sf "$(realpath sheldon/plugins.toml)" ~/.sheldon/plugins.toml
 
 ################################################################################
 #

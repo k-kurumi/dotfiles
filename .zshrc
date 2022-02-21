@@ -1,68 +1,16 @@
-### Added by Zinit's installer
-if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
-    print -P "%F{33}▓▒░ %F{220}Installing %F{33}DHARMA%F{220} Initiative Plugin Manager (%F{33}zdharma/zinit%F{220})…%f"
-    command mkdir -p "$HOME/.zinit" && command chmod g-rwX "$HOME/.zinit"
-    command git clone https://github.com/zdharma/zinit "$HOME/.zinit/bin" && \
-        print -P "%F{33}▓▒░ %F{34}Installation successful.%f%b" || \
-        print -P "%F{160}▓▒░ The clone has failed.%f%b"
-fi
+eval "$(sheldon source)"
 
-source "$HOME/.zinit/bin/zinit.zsh"
-autoload -Uz _zinit
-(( ${+_comps} )) && _comps[zinit]=_zinit
+# 補完時に大文字小文字の区別をなくす
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 
-# Load a few important annexes, without Turbo
-# (this is currently required for annexes)
-zinit light-mode for \
-    zinit-zsh/z-a-rust \
-    zinit-zsh/z-a-as-monitor \
-    zinit-zsh/z-a-patch-dl \
-    zinit-zsh/z-a-bin-gem-node
+# 補完時にtabで選択
+zstyle ':completion:*:default' menu select=1
 
-### End of Zinit's installer chunk
+# これがないとmacでzsh-completionsが効かない
+autoload -Uz compinit && compinit
 
-# https://github.com/zdharma/zinit#cloning-options
-# ice wait で遅延読み込み, !0 で読み込み完了を非表示
-
-# 非同期処理
-# https://github.com/mafredri/zsh-async
-zinit load "mafredri/zsh-async"
-
-# シンプルなプロンプト
-# https://github.com/sindresorhus/pure
-zinit load "sindresorhus/pure"
-
-  # プロンプトを $ に変更
-  export PURE_PROMPT_SYMBOL=$
-
-# 構文のハイライト
-# https://github.com/zsh-users/zsh-syntax-highlighting
-zinit ice wait'!0'; zinit light "zsh-users/zsh-syntax-highlighting"
-
-# コマンド入力途中で上下キー押したときの過去履歴がいい感じに出るようになる
-# https://github.com/zsh-users/zsh-history-substring-search
-zinit load "zsh-users/zsh-history-substring-search"
-
-# 過去に入力したコマンドの履歴が灰色のサジェストで出る
-zinit load "zsh-users/zsh-autosuggestions"
-
-# 256色表示にする
-zinit load "chrissicool/zsh-256color"
-
-# 補完強化
-zinit ice wait'!0'; zinit light "zsh-users/zsh-completions"
-
-  # 補完時に大文字小文字の区別をなくす
-  zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
-
-  # 補完時にtabで選択
-  zstyle ':completion:*:default' menu select=1
-
-  # これがないとmacでzsh-completionsが効かない
-  autoload -Uz compinit && compinit
-
-  # 環境変数を補完
-  setopt AUTO_PARAM_KEYS
+# 環境変数を補完
+setopt AUTO_PARAM_KEYS
 
 export EDITOR=nvim
 export VISUAL=nvim # macのcrontabが参照する
@@ -92,6 +40,8 @@ zstyle ':completion:*:default' menu select
 
 # パスを直接入力してもcdする
 setopt AUTO_CD
+
+export PURE_PROMPT_SYMBOL=$
 
 ################################################################################
 

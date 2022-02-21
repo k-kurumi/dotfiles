@@ -1,0 +1,43 @@
+# `sheldon` configuration file
+# ----------------------------
+#
+# You can modify this file directly or you can use one of the following
+# `sheldon` commands which are provided to assist in editing the config file:
+#
+# - `sheldon add` to add a new plugin to the config file
+# - `sheldon edit` to open up the config file in the default editor
+# - `sheldon remove` to remove a plugin from the config file
+#
+# See the documentation for more https://github.com/rossmacarthur/sheldon#readme
+
+shell = "zsh"
+
+[plugins]
+
+# # 非同期処理
+[plugins.zsh-async]
+github = 'mafredri/zsh-async'
+
+# # シンプルなプロンプト
+[plugins.pure]
+github = 'sindresorhus/pure'
+
+# 構文のハイライト
+[plugins.zsh-syntax-highlighting]
+github = 'zsh-users/zsh-syntax-highlighting'
+
+# コマンド入力途中で上下キー押したときの過去履歴がいい感じに出るようになる
+[plugins.zsh-history-substring-search]
+github = 'zsh-users/zsh-history-substring-search'
+
+# 過去に入力したコマンドの履歴が灰色のサジェストで出る
+[plugins.zsh-autosuggestions]
+github = 'zsh-users/zsh-autosuggestions'
+
+# 256色表示にする
+[plugins.zsh-256color]
+github = 'chrissicool/zsh-256color'
+
+# 補完強化
+[plugins.zsh-completions]
+github = 'zsh-users/zsh-completions'

@@ -22,6 +22,7 @@ brew-upgrade: brew-update ## brew upgrade all package
 brew-install-all: brew-update ## brew install all package
 # osxfuse, cryfs はm1にインストールできない
 	brew install \
+		sheldon \
 		tmux \
 		coreutils \
 		macvim \
