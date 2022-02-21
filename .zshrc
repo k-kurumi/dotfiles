@@ -162,7 +162,7 @@ alias ghost='tmux rename-window ghosttext-neovim && nvim -c GhostStart -c "set p
 
 # デフォルトで隠しファイルまで対象にする
 alias ag='ag --hidden'
-alias rg='rg --hidden'
+alias rg='rg --hidden --glob '!.git/'
 
 alias tmpfile='nvim $(mktemp)'
 
