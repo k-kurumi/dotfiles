@@ -20,6 +20,7 @@ brew-upgrade: brew-update ## brew upgrade all package
 
 .PHONY: brew-install-all
 brew-install-all: brew-update ## brew install all package
+	brew tap homebrew/cask-fonts
 # osxfuse, cryfs はm1にインストールできない
 	brew install \
 		sheldon \
@@ -59,8 +60,6 @@ brew-install-all: brew-update ## brew install all package
 		font-fira-mono-nerd-font \
 		font-cica \
 		font-hackgen-nerd
-
-	brew install --HEAD neovim
 
 # クリップボードマネージャー
 	brew install --cask maccy
