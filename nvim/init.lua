@@ -1,81 +1,82 @@
--- paq package manager https://github.com/savq/paq-nvim
-local install_path = vim.fn.stdpath('data') .. '/site/pack/paqs/start/paq-nvim'
-if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
-  vim.fn.system({'git', 'clone', 'https://github.com/savq/paq-nvim.git', install_path})
-end
-vim.cmd [[packadd paq-nvim]]
-local paq = require('paq').paq
+-- パッケージマネージャを先にインストールする必要あり
+-- curl -fLo ~/.config/nvim/autoload/jetpack.vim --create-dirs https://raw.githubusercontent.com/tani/vim-jetpack/master/autoload/jetpack.vim
+-- curl -fLo ~/.config/nvim/lua/jetpack.lua --create-dirs https://raw.githubusercontent.com/tani/vim-jetpack/master/lua/jetpack.lua
 
--- ステータスライン
-paq 'nvim-lualine/lualine.nvim'
-paq 'kyazdani42/nvim-web-devicons'
+require('jetpack').setup {
 
--- colorscheme
-paq 'sainnhe/gruvbox-material'
-paq 'rakr/vim-one'
-paq 'folke/tokyonight.nvim'
+  -- ステータスライン
+  'https://github.com/nvim-lualine/lualine.nvim',
+  'https://github.com/kyazdani42/nvim-web-devicons',
 
--- telescope
-paq 'nvim-lua/plenary.nvim'
-paq 'nvim-telescope/telescope.nvim'
+  -- colorscheme
+  'https://github.com/sainnhe/gruvbox-material',
+  'https://github.com/rakr/vim-one',
+  'https://github.com/folke/tokyonight.nvim',
 
--- telescopeでクリップボードマネージャ
-paq 'AckslD/nvim-neoclip.lua'
-paq 'tami5/sqlite.lua'
+  -- telescope
+  'https://github.com/nvim-lua/plenary.nvim',
+  'https://github.com/nvim-telescope/telescope.nvim',
 
--- treesitter syntax color
-paq 'nvim-treesitter/nvim-treesitter'
+  -- telescopeでクリップボードマネージャ
+  'https://github.com/AckslD/nvim-neoclip.lua',
+  'https://github.com/tami5/sqlite.lua',
 
--- コードの階層を表示する
-paq 'SmiteshP/nvim-gps'
+  -- treesitter syntax color
+  'https://github.com/nvim-treesitter/nvim-treesitter',
 
--- 閉じ括弧の追加
-paq 'windwp/nvim-autopairs'
+  -- コードの階層を表示する
+  'https://github.com/SmiteshP/nvim-gps',
 
--- 括弧の囲み
-paq 'tpope/vim-surround'
+  -- 閉じ括弧の追加
+  'https://github.com/windwp/nvim-autopairs',
 
--- 括弧の色付け
-paq 'p00f/nvim-ts-rainbow'
+  -- 括弧の囲み
+  'https://github.com/tpope/vim-surround',
 
--- git diffの行表示
-paq 'airblade/vim-gitgutter'
+  -- 括弧の色付け
+  'https://github.com/p00f/nvim-ts-rainbow',
 
--- :G でgitクライアント
-paq 'tpope/vim-fugitive'
+  -- git diffの行表示
+  'https://github.com/airblade/vim-gitgutter',
 
--- 末尾スペースを赤く表示
-paq 'ntpeters/vim-better-whitespace'
+  -- :G でgitクライアント
+  'https://github.com/tpope/vim-fugitive',
 
--- 行数指定で開く
-paq 'bogado/file-line'
+  -- 末尾スペースを赤く表示
+  'https://github.com/ntpeters/vim-better-whitespace',
 
--- markの表示
-paq 'kshenoy/vim-signature'
+  -- 行数指定で開く
+  'https://github.com/bogado/file-line',
 
--- gvでコメント化
-paq 'tomtom/tcomment_vim'
+  -- markの表示
+  'https://github.com/kshenoy/vim-signature',
 
--- カーソルの文字列を強調する
-paq 'itchyny/vim-cursorword'
+  -- gvでコメント化
+  'https://github.com/tomtom/tcomment_vim',
 
--- 非同期のlint
-paq 'dense-analysis/ale'
+  -- カーソルの文字列を強調する
+  'https://github.com/itchyny/vim-cursorword',
 
--- ウインドウのリサイズ <C-e>
-paq 'simeji/winresizer'
+  -- 非同期のlint
+  'https://github.com/dense-analysis/ale',
 
--- prettier
-paq {'prettier/vim-prettier', run = 'npm install'}
+  -- ウインドウのリサイズ <C-e>
+  'https://github.com/simeji/winresizer',
 
--- 組み込みlspは設定が煩雑なのでcocを使う
-paq {'neoclide/coc.nvim', branch = 'release'}
+  -- prettier
+  {'prettier/vim-prettier', run = 'npm install'},
 
--- *で検索対象に指定
-paq 'thinca/vim-visualstar'
+  -- 組み込みlspは設定が煩雑なのでcocを使う
+  {'neoclide/coc.nvim', branch = 'release'},
 
--- ghosttext
-paq 'subnut/nvim-ghost.nvim'
+  -- *で検索対象に指定
+  'https://github.com/thinca/vim-visualstar',
+
+  -- ghosttext
+  {'https://github.com/subnut/nvim-ghost.nvim', run = 'call nvim_ghost#installer#install()'},
+
+}
+
 
 --------------------------------------------------------------------------------
 --

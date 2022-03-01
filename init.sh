@@ -43,11 +43,9 @@ mkdir -p ~/.config/nvim
 # ln -sf "$(realpath nvim/init.vim)" ~/.config/nvim/init.vim
 ln -sf "$(realpath nvim/init.lua)" ~/.config/nvim/init.lua
 
-# スニペットファイル
-# FIXME ファイルと同じ感じでシンボリックリンクを作るとおかしなリンクができてしまう
-# リンク先が既存のときvim/UltiSnips/UltiSnipsというフォルダができてしまうため事前に削除する
-rm -rf ~/.config/nvim/UltiSnips
-ln -sf "$(realpath nvim/UltiSnips)" ~/.config/nvim/UltiSnips
+# プラグインマネージャ https://github.com/tani/vim-jetpack
+curl -fLo ~/.config/nvim/autoload/jetpack.vim --create-dirs https://raw.githubusercontent.com/tani/vim-jetpack/master/autoload/jetpack.vim
+curl -fLo ~/.config/nvim/lua/jetpack.lua --create-dirs https://raw.githubusercontent.com/tani/vim-jetpack/master/lua/jetpack.lua
 
 # coc
 ln -sf "$(realpath nvim/coc-settings.json)" ~/.config/nvim/coc-settings.json
