@@ -74,6 +74,9 @@ paq {'neoclide/coc.nvim', branch = 'release'}
 -- *で検索対象に指定
 paq 'thinca/vim-visualstar'
 
+-- ghosttext
+paq 'subnut/nvim-ghost.nvim'
+
 --------------------------------------------------------------------------------
 --
 -- プラグインの設定
