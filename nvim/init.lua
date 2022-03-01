@@ -1,4 +1,4 @@
--- パッケージマネージャを先にインストールする必要あり
+-- パッケージマネージャを先にインストールする必要あり https://github.com/tani/vim-jetpack
 -- curl -fLo ~/.config/nvim/autoload/jetpack.vim --create-dirs https://raw.githubusercontent.com/tani/vim-jetpack/master/autoload/jetpack.vim
 -- curl -fLo ~/.config/nvim/lua/jetpack.lua --create-dirs https://raw.githubusercontent.com/tani/vim-jetpack/master/lua/jetpack.lua
 
@@ -22,7 +22,7 @@ require('jetpack').setup {
   'https://github.com/tami5/sqlite.lua',
 
   -- treesitter syntax color
-  'https://github.com/nvim-treesitter/nvim-treesitter',
+  {'https://github.com/nvim-treesitter/nvim-treesitter', run = 'TSUpdate'},
 
   -- コードの階層を表示する
   'https://github.com/SmiteshP/nvim-gps',
@@ -64,10 +64,10 @@ require('jetpack').setup {
   'https://github.com/simeji/winresizer',
 
   -- prettier
-  {'prettier/vim-prettier', run = 'npm install'},
+  {'https://github.com/prettier/vim-prettier', run = 'npm install'},
 
   -- 組み込みlspは設定が煩雑なのでcocを使う
-  {'neoclide/coc.nvim', branch = 'release'},
+  {'https://github.com/neoclide/coc.nvim', branch = 'release'},
 
   -- *で検索対象に指定
   'https://github.com/thinca/vim-visualstar',
@@ -84,17 +84,10 @@ require('jetpack').setup {
 --
 --------------------------------------------------------------------------------
 require('nvim-treesitter.configs').setup {
-  ensure_installed = "maintained",
-  ignore_install = {},
-  highlight = {
-    enable = true,
-    disable = {},
-    additional_vim_regex_highlighting = false,
-  },
   rainbow = {
     enable = true,
     extended_mode = true,
-    max_file_lines = nil
+    max_file_lines = nil,
   }
 }
 require('nvim-autopairs').setup()
