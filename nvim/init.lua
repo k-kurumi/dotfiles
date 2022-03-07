@@ -72,9 +72,6 @@ require('jetpack').setup {
   -- *で検索対象に指定
   'https://github.com/thinca/vim-visualstar',
 
-  -- ghosttext
-  {'https://github.com/subnut/nvim-ghost.nvim', run = 'call nvim_ghost#installer#install()'},
-
 }
 
 
