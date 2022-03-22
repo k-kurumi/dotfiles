@@ -233,4 +233,5 @@ if vim.fn.has('termguicolors') then
   vim.o.termguicolors = true
 end
 vim.g.gruvbox_material_background = 'hard'
-vim.cmd [[colorscheme kanagawa]]
+vim.cmd [[colorscheme gruvbox-material]]
+vim.cmd [[set iskeyword+=-]]
