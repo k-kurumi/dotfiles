@@ -15,6 +15,10 @@ vendor/
 .ruby-version
 tags
 
+# python
+.venv/
+venv/
+
 # npm
 node_modules/
 npm-debug.log
