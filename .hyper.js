@@ -152,6 +152,9 @@ module.exports = {
 
     // タブをクリックしてリネームできる
     "hyper-rename-tab",
+
+    // 現在のタブにマークが表示される
+    "hyper-active-tab",
   ],
 
   gruvboxTheme: {
