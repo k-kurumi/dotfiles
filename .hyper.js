@@ -13,7 +13,8 @@ module.exports = {
 
     // font family with optional fallbacks
     // fontFamily: "Cica",
-    fontFamily: "HackGenNerd Console",
+    // fontFamily: "HackGenNerd Console",
+    fontFamily: "UDEV Gothic NF",
 
     // default font weight: 'normal' or 'bold'
     fontWeight: "bold",
