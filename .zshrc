@@ -70,10 +70,9 @@ if [[ -d ~/.ndenv ]]; then
   eval "$(ndenv init -)"
 fi
 
-# deno
-if [[ -d ~/.deno ]]; then
-  export DENO_INSTALL="${HOME}/.deno"
-  export PATH="$DENO_INSTALL/bin:$PATH"
+# nim
+if [[ -d ~/.nimble/bin ]]; then
+  export PATH="${HOME}/.nimble/bin:$PATH"
 fi
 
 # golang(1.8のデフォルトとは違う)
