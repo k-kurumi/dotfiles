@@ -73,12 +73,10 @@ require('jetpack').setup {
   -- *で検索対象に指定
   'https://github.com/thinca/vim-visualstar',
 
-  -- ghosttext
-  'https://github.com/subnut/nvim-ghost.nvim',
-
-  -- deno
+  -- deno ghosttext
   'https://github.com/vim-denops/denops.vim',
   'https://github.com/vim-denops/denops-helloworld.vim',
+  'https://github.com/gamoutatsumi/dps-ghosttext.vim',
 }
 
 
