@@ -58,9 +58,6 @@ require('jetpack').setup {
   -- カーソルの文字列を強調する
   'https://github.com/itchyny/vim-cursorword',
 
-  -- 非同期のlint
-  'https://github.com/dense-analysis/ale',
-
   -- ウインドウのリサイズ <C-e>
   'https://github.com/simeji/winresizer',
 
