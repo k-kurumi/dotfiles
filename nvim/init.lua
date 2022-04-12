@@ -47,6 +47,9 @@ require('jetpack').setup {
   -- 末尾スペースを赤く表示
   'https://github.com/ntpeters/vim-better-whitespace',
 
+  -- 検索ワードの位置表示
+  'https://github.com/kevinhwang91/nvim-hlslens',
+
   -- 行数指定で開く
   'https://github.com/bogado/file-line',
 
@@ -236,7 +239,7 @@ end
 vim.g.gruvbox_material_background = 'hard'
 vim.cmd [[
   try
-    colorscheme duskfox
+    colorscheme gruvbox-material
   catch /^Vim\%((\a\+)\)\=:E185/
     colorscheme desert
     set background=dark
