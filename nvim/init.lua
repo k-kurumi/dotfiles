@@ -13,6 +13,7 @@ require('jetpack').setup {
   'https://github.com/rakr/vim-one',
   'https://github.com/folke/tokyonight.nvim',
   'https://github.com/rebelot/kanagawa.nvim',
+  'https://github.com/EdenEast/nightfox.nvim',
 
   -- telescope
   'https://github.com/nvim-lua/plenary.nvim',
@@ -233,5 +234,12 @@ if vim.fn.has('termguicolors') then
   vim.o.termguicolors = true
 end
 vim.g.gruvbox_material_background = 'hard'
-vim.cmd [[colorscheme gruvbox-material]]
+vim.cmd [[
+  try
+    colorscheme duskfox
+  catch /^Vim\%((\a\+)\)\=:E185/
+    colorscheme desert
+    set background=dark
+  endtry
+]]
 vim.cmd [[set iskeyword+=-]]
