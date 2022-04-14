@@ -74,6 +74,11 @@ require('jetpack').setup {
   -- *で検索対象に指定
   'https://github.com/thinca/vim-visualstar',
 
+  -- vscodeのマルチカーソル
+  -- ビジュアルモード時に \\-c で範囲分のカーソル出現
+  -- TODO 離れた場所にカーソルを作る方法を調べる
+  'https://github.com/mg979/vim-visual-multi',
+
   -- deno ghosttext
   'https://github.com/vim-denops/denops.vim',
   'https://github.com/vim-denops/denops-helloworld.vim',
