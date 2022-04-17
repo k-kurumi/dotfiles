@@ -38,8 +38,10 @@ require('jetpack').setup {
   -- 括弧の色付け
   'https://github.com/p00f/nvim-ts-rainbow',
 
-  -- git diffの行表示
+  -- git ui
   'https://github.com/airblade/vim-gitgutter',
+  -- git commitのレイアウト変更
+  'https://github.com/rhysd/committia.vim',
 
   -- :G でgitクライアント
   'https://github.com/tpope/vim-fugitive',
