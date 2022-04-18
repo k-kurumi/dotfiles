@@ -18,6 +18,8 @@ require('jetpack').setup {
   -- telescope
   'https://github.com/nvim-lua/plenary.nvim',
   'https://github.com/nvim-telescope/telescope.nvim',
+  -- 開いたファイルの履歴を表示
+  'https://github.com/nvim-telescope/telescope-frecency.nvim',
 
   -- telescopeでクリップボードマネージャ
   'https://github.com/AckslD/nvim-neoclip.lua',
@@ -158,8 +160,14 @@ require('telescope').setup{
       '--glob',
       '!node_modules/'
     }
+  },
+  extensions = {
+    frecency = {
+      ignore_patterns = { "*.git/*" }
+    }
   }
 }
+require('telescope').load_extension("frecency")
 
 -- ウインドウリサイズの移動量
 vim.g.winresizer_vert_resize  = 1
@@ -177,6 +185,8 @@ vim.api.nvim_set_keymap("n", ",g", ":Telescope live_grep<CR>", {noremap = true, 
 vim.api.nvim_set_keymap("n", ",b", ":Telescope buffers<CR>", {noremap = true, silent = true})
 -- コピーバッファ(ペースト入るようにunnamedを指定する)
 vim.api.nvim_set_keymap("n", ",p", ":Telescope neoclip unnamed<CR>", {noremap = true, silent = true})
+-- 開いたファイルの履歴
+vim.api.nvim_set_keymap("n", ",F", ":Telescope frecency<CR>", {noremap = true, silent = true})
 
 -- coc
 vim.api.nvim_set_keymap("n", "[g", "<Plug>(coc-diagnostic-prev)", {noremap = false, silent = true})
