@@ -28,6 +28,9 @@ require('jetpack').setup {
   -- treesitter syntax color
   {'https://github.com/nvim-treesitter/nvim-treesitter', run = 'TSUpdate'},
 
+  -- 閉じ括弧部分に対応するコードを表示
+  'https://github.com/haringsrob/nvim_context_vt',
+
   -- コードの階層を表示する
   'https://github.com/SmiteshP/nvim-gps',
 
@@ -65,6 +68,12 @@ require('jetpack').setup {
 
   -- カーソルの文字列を強調する
   'https://github.com/itchyny/vim-cursorword',
+
+  -- キーワードをハイライトする
+  -- <space>m ハイライト
+  -- <space>M ハイライト解除
+  -- <space>r ハイライト全解除
+  'https://github.com/t9md/vim-quickhl',
 
   -- ウインドウのリサイズ <C-e>
   'https://github.com/simeji/winresizer',
@@ -242,6 +251,16 @@ vim.api.nvim_set_keymap("n", "*", "*zz", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", "#", "#zz", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", "*", "*N",  {noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", "#", "#N",  {noremap = true, silent = true})
+
+-- ハイライト
+vim.cmd [[
+  nmap <Space>m <Plug>(quickhl-manual-this)
+  xmap <Space>m <Plug>(quickhl-manual-this)
+  nmap <Space>M <Plug>(quickhl-manual-clear)
+  vmap <Space>M <Plug>(quickhl-manual-clear)
+  nmap <Space>r <Plug>(quickhl-manual-reset)
+  xmap <Space>r <Plug>(quickhl-manual-reset)
+]]
 
 --------------------------------------------------------------------------------
 --
