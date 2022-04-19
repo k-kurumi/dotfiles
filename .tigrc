@@ -17,6 +17,9 @@ bind main    G      move-last-line
 bind main R !git rebase -i %(commit)
 bind diff R !git rebase -i %(commit)
 
+# コミットハッシュをクリップボードに取り込み
+bind generic y @bash -c "echo %(commit) | pbcopy"
+
 # main view の左端にコミットIDを表示する
 set main-view = id date author author:email commit-title:graph=yes,refs=yes
 
