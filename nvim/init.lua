@@ -340,7 +340,7 @@ end
 vim.g.gruvbox_material_background = 'hard'
 vim.cmd [[
   try
-    colorscheme gruvbox-material
+    colorscheme kanagawa
   catch /^Vim\%((\a\+)\)\=:E185/
     colorscheme desert
     set background=dark
