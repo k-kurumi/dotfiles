@@ -43,6 +43,9 @@ require('jetpack').setup {
   -- 括弧の色付け
   'https://github.com/p00f/nvim-ts-rainbow',
 
+  -- タブの可視化
+  'https://github.com/lukas-reineke/indent-blankline.nvim',
+
   -- git ui
   'https://github.com/airblade/vim-gitgutter',
   -- git commitのレイアウト変更
@@ -62,8 +65,12 @@ require('jetpack').setup {
   -- 行数指定で開く
   'https://github.com/bogado/file-line',
 
-  -- markの表示
-  'https://github.com/kshenoy/vim-signature',
+  -- markの拡張
+  -- dm<space> 全てのmarkを削除
+  'https://github.com/chentau/marks.nvim',
+
+  -- quickfixにプレビュー表示
+  'https://github.com/kevinhwang91/nvim-bqf',
 
   -- gvでコメント化
   'https://github.com/tomtom/tcomment_vim',
@@ -191,6 +198,39 @@ require('telescope').setup{
 require('telescope').load_extension("frecency")
 
 require("scrollbar").setup()
+
+-- TODO コピペしただけなので修正する
+require('marks').setup {
+  -- whether to map keybinds or not. default true
+  default_mappings = true,
+  -- which builtin marks to show. default {}
+  builtin_marks = { ".", "<", ">", "^" },
+  -- whether movements cycle back to the beginning/end of buffer. default true
+  cyclic = true,
+  -- whether the shada file is updated after modifying uppercase marks. default false
+  force_write_shada = false,
+  -- how often (in ms) to redraw signs/recompute mark positions. 
+  -- higher values will have better performance but may cause visual lag, 
+  -- while lower values may cause performance penalties. default 150.
+  refresh_interval = 250,
+  -- sign priorities for each type of mark - builtin marks, uppercase marks, lowercase
+  -- marks, and bookmarks.
+  -- can be either a table with all/none of the keys, or a single number, in which case
+  -- the priority applies to all marks.
+  -- default 10.
+  sign_priority = { lower=10, upper=15, builtin=8, bookmark=20 },
+  -- disables mark tracking for specific filetypes. default {}
+  excluded_filetypes = {},
+  -- marks.nvim allows you to configure up to 10 bookmark groups, each with its own
+  -- sign/virttext. Bookmarks can be used to group together positions and quickly move
+  -- across multiple buffers. default sign is '!@#$%^&*()' (from 0 to 9), and
+  -- default virt_text is "".
+  bookmark_0 = {
+    sign = "⚑",
+    virt_text = "hello world"
+  },
+  mappings = {}
+}
 
 -- ウインドウリサイズの移動量
 vim.g.winresizer_vert_resize  = 1
