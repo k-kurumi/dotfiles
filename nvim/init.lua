@@ -101,6 +101,9 @@ require('jetpack').setup {
   -- :MundoToggleでundoをツリー表示
   'https://github.com/simnalamburt/vim-mundo',
 
+  -- :Linediff で特定の部分同士のdiff
+  'https://github.com/AndrewRadev/linediff.vim',
+
   -- deno ghosttext
   'https://github.com/vim-denops/denops.vim',
   'https://github.com/vim-denops/denops-helloworld.vim',
