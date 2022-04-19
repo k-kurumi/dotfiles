@@ -98,6 +98,9 @@ require('jetpack').setup {
   -- s<文字> で使う
   'https://github.com/ggandor/lightspeed.nvim',
 
+  -- :registersをポップアップ表示
+  'https://github.com/tversteeg/registers.nvim',
+
   -- deno ghosttext
   'https://github.com/vim-denops/denops.vim',
   'https://github.com/vim-denops/denops-helloworld.vim',
