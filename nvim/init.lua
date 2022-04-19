@@ -31,6 +31,12 @@ require('jetpack').setup {
   -- 閉じ括弧部分に対応するコードを表示
   'https://github.com/haringsrob/nvim_context_vt',
 
+  -- 括弧のマッチ
+  'https://github.com/andymass/vim-matchup',
+
+  -- html閉じタグの追加
+  'https://github.com/windwp/nvim-ts-autotag',
+
   -- コードの階層を表示する
   'https://github.com/SmiteshP/nvim-gps',
 
@@ -72,8 +78,8 @@ require('jetpack').setup {
   -- quickfixにプレビュー表示
   'https://github.com/kevinhwang91/nvim-bqf',
 
-  -- gvでコメント化
-  'https://github.com/tomtom/tcomment_vim',
+  -- gc コメント, gb ブロックコメント
+  'https://github.com/numToStr/Comment.nvim',
 
   -- カーソルの文字列を強調する
   'https://github.com/itchyny/vim-cursorword',
@@ -128,6 +134,9 @@ require('nvim-treesitter.configs').setup {
     enable = true,
     extended_mode = true,
     max_file_lines = nil,
+  },
+  autotag = {
+    enable = true,
   }
 }
 require('nvim-autopairs').setup()
@@ -231,6 +240,8 @@ require('marks').setup {
   },
   mappings = {}
 }
+
+require('Comment').setup()
 
 -- ウインドウリサイズの移動量
 vim.g.winresizer_vert_resize  = 1
