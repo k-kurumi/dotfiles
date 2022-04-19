@@ -111,9 +111,6 @@ if type trash > /dev/null; then
   alias rm='trash'
 fi
 
-# ghosttext
-alias ghost='tmux rename-window ghosttext-neovim && nvim -c GhostStart -c "set paste"'
-
 # デフォルトで隠しファイルまで対象にする
 alias ag='ag --hidden'
 alias rg="rg --hidden --glob '!.git/'"
