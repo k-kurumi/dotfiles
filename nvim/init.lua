@@ -98,8 +98,8 @@ require('jetpack').setup {
   -- s<文字> で使う
   'https://github.com/ggandor/lightspeed.nvim',
 
-  -- :registersをポップアップ表示
-  'https://github.com/tversteeg/registers.nvim',
+  -- :MundoToggleでundoをツリー表示
+  'https://github.com/simnalamburt/vim-mundo',
 
   -- deno ghosttext
   'https://github.com/vim-denops/denops.vim',
