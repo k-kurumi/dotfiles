@@ -85,8 +85,8 @@ require('jetpack').setup {
   'https://github.com/itchyny/vim-cursorword',
 
   -- キーワードをハイライトする
-  -- <space>m ハイライト
-  -- <space>M ハイライト解除
+  -- <space>h ハイライト
+  -- <space>H ハイライト解除
   -- <space>r ハイライト全解除
   'https://github.com/t9md/vim-quickhl',
 
@@ -218,8 +218,8 @@ require('marks').setup {
   cyclic = true,
   -- whether the shada file is updated after modifying uppercase marks. default false
   force_write_shada = false,
-  -- how often (in ms) to redraw signs/recompute mark positions. 
-  -- higher values will have better performance but may cause visual lag, 
+  -- how often (in ms) to redraw signs/recompute mark positions.
+  -- higher values will have better performance but may cause visual lag,
   -- while lower values may cause performance penalties. default 150.
   refresh_interval = 250,
   -- sign priorities for each type of mark - builtin marks, uppercase marks, lowercase
@@ -319,10 +319,10 @@ vim.api.nvim_set_keymap("n", "#", "#N",  {noremap = true, silent = true})
 
 -- ハイライト
 vim.cmd [[
-  nmap <Space>m <Plug>(quickhl-manual-this)
-  xmap <Space>m <Plug>(quickhl-manual-this)
-  nmap <Space>M <Plug>(quickhl-manual-clear)
-  vmap <Space>M <Plug>(quickhl-manual-clear)
+  nmap <Space>h <Plug>(quickhl-manual-this)
+  xmap <Space>h <Plug>(quickhl-manual-this)
+  nmap <Space>H <Plug>(quickhl-manual-clear)
+  vmap <Space>H <Plug>(quickhl-manual-clear)
   nmap <Space>r <Plug>(quickhl-manual-reset)
   xmap <Space>r <Plug>(quickhl-manual-reset)
 ]]
