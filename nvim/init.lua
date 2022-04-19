@@ -56,6 +56,8 @@ require('jetpack').setup {
 
   -- 検索ワードの位置表示
   'https://github.com/kevinhwang91/nvim-hlslens',
+  -- スクロールバー
+  'https://github.com/petertriho/nvim-scrollbar',
 
   -- 行数指定で開く
   'https://github.com/bogado/file-line',
@@ -91,6 +93,10 @@ require('jetpack').setup {
   -- ビジュアルモード時に \\-c で範囲分のカーソル出現
   -- TODO 離れた場所にカーソルを作る方法を調べる
   'https://github.com/mg979/vim-visual-multi',
+
+  -- 見える場所にジャンプしやすくする
+  -- s<文字> で使う
+  'https://github.com/ggandor/lightspeed.nvim',
 
   -- deno ghosttext
   'https://github.com/vim-denops/denops.vim',
@@ -177,6 +183,8 @@ require('telescope').setup{
   }
 }
 require('telescope').load_extension("frecency")
+
+require("scrollbar").setup()
 
 -- ウインドウリサイズの移動量
 vim.g.winresizer_vert_resize  = 1
