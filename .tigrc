@@ -1,7 +1,7 @@
 # https://qiita.com/sfus/items/063797a1dd8fdc7d032f
 
-# kittyeのgruvboxだとfgcolor,bgcolorとも緑で見づらいので灰色を指定する
-color cursor  234 7
+# ターミナルの配色によって見づらい場合は変更する
+# color cursor  234 7
 
 # 画面を上下分割
 set vertical-split = no
