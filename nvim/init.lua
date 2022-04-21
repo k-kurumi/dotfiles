@@ -28,6 +28,9 @@ require('jetpack').setup {
   -- treesitter syntax color
   {'https://github.com/nvim-treesitter/nvim-treesitter', run = 'TSUpdate'},
 
+  -- treesitterで対応していないシンタックスは個別に追加する
+  'https://github.com/raimon49/requirements.txt.vim',
+
   -- 閉じ括弧部分に対応するコードを表示
   'https://github.com/haringsrob/nvim_context_vt',
 
