@@ -1,7 +1,7 @@
 {
   // poetry の virtualenvs.in-project true でインストールするパス
-  "python.venvPath": "./.venv",
-  "python.pythonPath": "./.venv/bin/python",
+  "python.venvPath": "./venv",
+  "python.pythonPath": "./venv/bin/python",
 
   "explorer.width": 36,
   "explorer.position": "left",
