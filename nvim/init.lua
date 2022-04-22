@@ -254,8 +254,6 @@ vim.g.coc_global_extensions = {
   'coc-pairs',
   'coc-rust-analyzer',
   'coc-sh',
-  'coc-snippets',
-  'coc-solargraph',
   'coc-toml',
   'coc-yaml',
 }
