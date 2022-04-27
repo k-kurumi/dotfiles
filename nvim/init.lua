@@ -102,6 +102,12 @@ require('jetpack').setup {
   -- 組み込みlspは設定が煩雑なのでcocを使う
   {'https://github.com/neoclide/coc.nvim', branch = 'release'},
 
+  -- RustFmtなど
+  'https://github.com/rust-lang/rust.vim',
+
+  -- RustPaly(playgroundにソース転送)に必要
+  'https://github.com/mattn/webapi-vim',
+
   -- *で検索対象に指定
   'https://github.com/thinca/vim-visualstar',
 
