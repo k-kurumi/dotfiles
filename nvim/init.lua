@@ -297,6 +297,15 @@ vim.cmd [[
   xmap <Space>r <Plug>(quickhl-manual-reset)
 ]]
 
+-- for goneovim (gui)
+vim.cmd [[
+  set guifont=UDEV\ Gothic\ NF:h18:b
+
+  " nvimターミナルから抜ける
+  " nvimターミナル内でnvimを起動すると抜けられなくなるため注意する
+  tnoremap <silent> <C-[> <C-\><C-n>
+]]
+
 --------------------------------------------------------------------------------
 --
 -- 設定を反映するため最後にテーマを指定する
