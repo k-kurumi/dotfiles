@@ -132,6 +132,9 @@ require('jetpack').setup {
   -- :call LuaFormat() でフォーマットする
   'https://github.com/andrejlevkovitch/vim-lua-format',
 
+  -- FIXME runが動かない気がする
+  {'https://github.com/iamcco/markdown-preview.nvim', run = 'call mkdp#util#install()'},
+
   -- deno ghosttext
   'https://github.com/vim-denops/denops.vim',
   'https://github.com/vim-denops/denops-helloworld.vim',
