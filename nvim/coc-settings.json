@@ -1,3 +1,4 @@
+// vim: set ft=jsonc :
 {
   // poetry の virtualenvs.in-project true でインストールするパス
   "python.venvPath": "./venv",
@@ -12,6 +13,37 @@
     "v": "open:vsplit"
   },
   "explorer.file.showHiddenFiles": true,
-  "explorer.toggle": false
+  "explorer.toggle": false,
 
+  "languageserver": {
+    // lua-language-server はビルドが必要
+    // https://zenn.dev/koralle/scraps/d91c106b7eb3ac
+    // https://github.com/sumneko/lua-language-server/wiki/Build-and-Run
+    // TODO ~でのパス指定が使えないのでなんとかする
+    "lua": {
+      "command": "/Users/kurumi/dev/src/github.com/sumneko/lua-language-server/bin/lua-language-server",
+      "args": [
+        "-E",
+        "/Users/kurumi/dev/src/github.com/sumneko/lua-language-server/bin/main.lua"
+      ],
+      "filetypes": ["lua"],
+      "settings": {
+        "Lua": {
+          "workspace.library": {
+            // TODO バージョンが入っているのでなんとかしたい
+            "/usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/lua": true,
+            "/usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/lua/vim": true,
+            "/usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/lua/vim/lsp": true
+          }
+        },
+        "diagnostics": {
+          "disable": [
+            "undefined-global",
+            "lowercase-global"
+          ],
+          "globals": ["vim", "use"]
+        }
+      }
+    }
+  }
 }
