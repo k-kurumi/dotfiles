@@ -31,9 +31,16 @@
         "Lua": {
           "workspace.library": {
             // TODO バージョンが入っているのでなんとかしたい
+
+            // x86 mac
             "/usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/lua": true,
             "/usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/lua/vim": true,
-            "/usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/lua/vim/lsp": true
+            "/usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/lua/vim/lsp": true,
+
+            // m1 mac
+            "/opt/homebrew/Cellar/neovim/0.7.0/share/nvim/runtime/lua": true,
+            "/opt/homebrew/Cellar/neovim/0.7.0/share/nvim/runtime/lua/vim": true,
+            "/opt/homebrew/Cellar/neovim/0.7.0/share/nvim/runtime/lua/vim/lsp": true
           }
         },
         "diagnostics": {
