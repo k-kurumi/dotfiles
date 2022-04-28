@@ -14,43 +14,45 @@
   },
   "explorer.file.showHiddenFiles": true,
   "explorer.toggle": false,
+  "Lua.telemetry.enable": true,
 
-  "languageserver": {
-    // lua-language-server はビルドが必要
-    // https://zenn.dev/koralle/scraps/d91c106b7eb3ac
-    // https://github.com/sumneko/lua-language-server/wiki/Build-and-Run
-    // TODO ~でのパス指定が使えないのでなんとかする
-    "lua": {
-      "command": "/Users/kurumi/dev/src/github.com/sumneko/lua-language-server/bin/lua-language-server",
-      "args": [
-        "-E",
-        "/Users/kurumi/dev/src/github.com/sumneko/lua-language-server/bin/main.lua"
-      ],
-      "filetypes": ["lua"],
-      "settings": {
-        "Lua": {
-          "workspace.library": {
-            // TODO バージョンが入っているのでなんとかしたい
-
-            // x86 mac
-            "/usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/lua": true,
-            "/usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/lua/vim": true,
-            "/usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/lua/vim/lsp": true,
-
-            // m1 mac
-            "/opt/homebrew/Cellar/neovim/0.7.0/share/nvim/runtime/lua": true,
-            "/opt/homebrew/Cellar/neovim/0.7.0/share/nvim/runtime/lua/vim": true,
-            "/opt/homebrew/Cellar/neovim/0.7.0/share/nvim/runtime/lua/vim/lsp": true
-          }
-        },
-        "diagnostics": {
-          "disable": [
-            "undefined-global",
-            "lowercase-global"
-          ],
-          "globals": ["vim", "use"]
-        }
-      }
-    }
-  }
+  //// CocInstall coc-sumneko-lua すれば細かい設定が不要になった
+  // "languageserver": {
+  //   // lua-language-server はビルドが必要
+  //   // https://zenn.dev/koralle/scraps/d91c106b7eb3ac
+  //   // https://github.com/sumneko/lua-language-server/wiki/Build-and-Run
+  //   // TODO ~でのパス指定が使えないのでなんとかする
+  //   "lua": {
+  //     "command": "/Users/kurumi/dev/src/github.com/sumneko/lua-language-server/bin/lua-language-server",
+  //     "args": [
+  //       "-E",
+  //       "/Users/kurumi/dev/src/github.com/sumneko/lua-language-server/bin/main.lua"
+  //     ],
+  //     "filetypes": ["lua"],
+  //     "settings": {
+  //       "Lua": {
+  //         "workspace.library": {
+  //           // TODO バージョンが入っているのでなんとかしたい
+  //
+  //           // x86 mac
+  //           "/usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/lua": true,
+  //           "/usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/lua/vim": true,
+  //           "/usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/lua/vim/lsp": true,
+  //
+  //           // m1 mac
+  //           "/opt/homebrew/Cellar/neovim/0.7.0/share/nvim/runtime/lua": true,
+  //           "/opt/homebrew/Cellar/neovim/0.7.0/share/nvim/runtime/lua/vim": true,
+  //           "/opt/homebrew/Cellar/neovim/0.7.0/share/nvim/runtime/lua/vim/lsp": true
+  //         }
+  //       },
+  //       "diagnostics": {
+  //         "disable": [
+  //           "undefined-global",
+  //           "lowercase-global"
+  //         ],
+  //         "globals": ["vim", "use"]
+  //       }
+  //     }
+  //   }
+  // }
 }
