@@ -17,6 +17,8 @@ export VISUAL=nvim # macのcrontabが参照する
 export LANGUAGE=en
 export LANG=en_US.UTF-8
 
+export XDG_CONFIG_HOME="${HOME}/.config"
+
 # ^を展開しないようにするためgitでHEAD^などがエスケープなしで使えるようになる
 unsetopt extended_glob
 

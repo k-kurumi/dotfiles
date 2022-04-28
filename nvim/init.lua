@@ -126,6 +126,12 @@ require('jetpack').setup {
   -- :Linediff で特定の部分同士のdiff
   'https://github.com/AndrewRadev/linediff.vim',
 
+  -- luaformatter は次のようにビルドする
+  -- brew install luarocks
+  -- luarocks install --server=https://luarocks.org/dev luaformatter
+  -- :call LuaFormat() でフォーマットする
+  'https://github.com/andrejlevkovitch/vim-lua-format',
+
   -- deno ghosttext
   'https://github.com/vim-denops/denops.vim',
   'https://github.com/vim-denops/denops-helloworld.vim',
