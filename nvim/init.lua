@@ -190,7 +190,7 @@ require('lualine').setup{
     }
   },
   options = {
-    theme = 'kanagawa'
+    theme = 'gruvbox-material'
   }
 }
 
@@ -357,7 +357,7 @@ end
 vim.g.gruvbox_material_background = 'hard'
 vim.cmd [[
   try
-    colorscheme kanagawa
+    colorscheme gruvbox-material
   catch /^Vim\%((\a\+)\)\=:E185/
     colorscheme desert
     set background=dark
