@@ -26,11 +26,20 @@
 
 global !p
 
-# 2022-01-02 (Sun)
-def today():
+# lang="en" のとき 2022-01-02 (Sun)
+# lang="ja" のとき 2022-01-02 (日)
+def today(lang="en"):
 	import datetime
 	now = datetime.datetime.now()
-	return now.strftime("%Y-%m-%d (%a)")
+	yobi = now.strftime("%a")
+
+	if lang == "ja":
+		# 日本語表記の日付
+		yobi_ja = ["日", "月", "火", "水", "木", "金", "土"]
+		idx = int(now.strftime("%w"))
+		yobi = yobi_ja[idx]
+
+	return now.strftime(f"%Y-%m-%d ({yobi})")
 
 # 21:34
 def now():
@@ -45,6 +54,13 @@ endglobal
 # 日付
 snippet today "maybe 2022-01-02 (Sun)"
 ## `!p snip.rv = today()`
+
+$1
+endsnippet
+
+日付(曜日は日本語)
+snippet kyo "maybe 2022-01-02 (日)"
+## `!p snip.rv = today("ja")`
 
 $1
 endsnippet
