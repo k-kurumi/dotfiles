@@ -9,11 +9,10 @@ require('jetpack').setup {
   'https://github.com/kyazdani42/nvim-web-devicons',
 
   -- colorscheme
-  'https://github.com/sainnhe/gruvbox-material',
+  'https://github.com/luisiacc/gruvbox-baby',
   'https://github.com/rakr/vim-one',
-  'https://github.com/folke/tokyonight.nvim',
   'https://github.com/rebelot/kanagawa.nvim',
-  'https://github.com/EdenEast/nightfox.nvim',
+  {'https://github.com/dracula/vim', as = 'dracula'},
 
   -- telescope
   'https://github.com/nvim-lua/plenary.nvim',
@@ -190,7 +189,7 @@ require('lualine').setup{
     }
   },
   options = {
-    theme = 'gruvbox-material'
+    theme = 'dracula'
   }
 }
 
@@ -354,10 +353,9 @@ vim.cmd [[
 if vim.fn.has('termguicolors') then
   vim.o.termguicolors = true
 end
-vim.g.gruvbox_material_background = 'hard'
 vim.cmd [[
   try
-    colorscheme gruvbox-material
+    colorscheme dracula
   catch /^Vim\%((\a\+)\)\=:E185/
     colorscheme desert
     set background=dark
