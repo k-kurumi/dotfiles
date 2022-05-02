@@ -189,7 +189,7 @@ require('lualine').setup{
     }
   },
   options = {
-    theme = 'dracula'
+    theme = 'onedark'
   }
 }
 
@@ -355,7 +355,7 @@ if vim.fn.has('termguicolors') then
 end
 vim.cmd [[
   try
-    colorscheme dracula
+    colorscheme one
   catch /^Vim\%((\a\+)\)\=:E185/
     colorscheme desert
     set background=dark
