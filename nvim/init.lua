@@ -10,7 +10,7 @@ require('jetpack').setup {
 
   -- colorscheme
   'https://github.com/luisiacc/gruvbox-baby',
-  'https://github.com/rakr/vim-one',
+  'https://github.com/joshdick/onedark.vim',
   'https://github.com/rebelot/kanagawa.nvim',
   {'https://github.com/dracula/vim', as = 'dracula'},
 
@@ -355,7 +355,7 @@ if vim.fn.has('termguicolors') then
 end
 vim.cmd [[
   try
-    colorscheme one
+    colorscheme onedark
   catch /^Vim\%((\a\+)\)\=:E185/
     colorscheme desert
     set background=dark
