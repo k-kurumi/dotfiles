@@ -212,7 +212,11 @@ require('telescope').setup{
       '--glob',
       '!venv/',
       '--glob',
-      '!node_modules/'
+      '!node_modules/',
+      '--glob',
+      '!target/',
+      '--glob',
+      '!.idea/',
     }
   },
   extensions = {
@@ -239,8 +243,24 @@ vim.api.nvim_set_keymap("n", "tl", ":tabnext<CR>", {noremap = true, silent = tru
 vim.api.nvim_set_keymap("n", "tq", ":tabclose<CR>", {noremap = true, silent = true})
 
 -- telescope
--- .git/以外の隠しファイルを表示する
-vim.api.nvim_set_keymap("n", ",f", ":Telescope find_files find_command=rg,--files,--no-ignore,--hidden,--glob,!.git/,--glob,!venv/,--glob,!node_modules/<CR>", {noremap = true, silent = true})
+-- 1行に長くなるのでカンマで連結
+rg_find = {
+  "rg",
+  "--files",
+  "--no-ignore",
+  "--hidden",
+  "--glob",
+  "!.git/",
+  "--glob",
+  "!venv/",         -- python
+  "--glob",
+  "!node_modules/", -- node
+  "--glob",
+  "!target/",       -- rust
+  "--glob",
+  "!.idea/",        -- intellij
+}
+vim.api.nvim_set_keymap("n", ",f", ":Telescope find_files find_command=" .. table.concat(rg_find, ",") .. "<CR>", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", ",g", ":Telescope live_grep<CR>", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", ",b", ":Telescope buffers<CR>", {noremap = true, silent = true})
 -- コピーバッファ(ペースト入るようにunnamedを指定する)
