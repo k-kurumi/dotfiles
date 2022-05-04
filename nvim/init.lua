@@ -9,10 +9,10 @@ require('jetpack').setup {
   'https://github.com/kyazdani42/nvim-web-devicons',
 
   -- colorscheme
+  'https://github.com/ellisonleao/gruvbox.nvim',
   'https://github.com/luisiacc/gruvbox-baby',
   'https://github.com/joshdick/onedark.vim',
   'https://github.com/rebelot/kanagawa.nvim',
-  {'https://github.com/dracula/vim', as = 'dracula'},
 
   -- telescope
   'https://github.com/nvim-lua/plenary.nvim',
