@@ -51,7 +51,7 @@ curl -fLo ~/.config/nvim/lua/jetpack.lua --create-dirs https://raw.githubusercon
 ln -sf "$(realpath nvim/coc-settings.json)" ~/.config/nvim/coc-settings.json
 
 mkdir -p ~/.config/coc
-ln -sf "$(realpath coc/ultisnips/)" ~/.config/coc/ultisnips
+ln -sf "$(realpath coc/ultisnips)" ~/.config/coc
 
 ################################################################################
 #
