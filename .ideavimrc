@@ -29,6 +29,9 @@ map th :action PreviousTab<CR>
 " https://github.com/JetBrains/ideavim/wiki/Emulated-plugins
 "
 
+set NERDTree
+  map ,f :NERDTreeFind<CR>
+
 " 括弧で囲んだり
 " https://qiita.com/gesutaka/items/e1160f907f664445d45a
 " ビジュアルモードで選択して
@@ -37,8 +40,10 @@ map th :action PreviousTab<CR>
 " 囲み文字の変更 cs'" で'を"に変更
 set surround
 
-set NERDTree
-  map ,f :NERDTreeFind<CR>
+" <A-n> でカーソルを増やしたあと v で確定
+" <A-x> で <A-n> のカーソルをスキップ
+" :sの置換と変わらない気がする
+set multiple-cursors
 
 " commentary.vim風にコメント化する
 " ビジュアルモードでgc
