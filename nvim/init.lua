@@ -130,11 +130,6 @@ require('jetpack').setup {
   -- luarocks install --server=https://luarocks.org/dev luaformatter
   -- :call LuaFormat() でフォーマットする
   'https://github.com/andrejlevkovitch/vim-lua-format',
-
-  -- deno ghosttext
-  'https://github.com/vim-denops/denops.vim',
-  'https://github.com/vim-denops/denops-helloworld.vim',
-  'https://github.com/gamoutatsumi/dps-ghosttext.vim',
 }
 
 
