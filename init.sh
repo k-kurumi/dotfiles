@@ -104,8 +104,8 @@ fi
 # zsh plugin manager sheldon
 #
 
-mkdir -p ~/.sheldon
-ln -sf "$(realpath sheldon/plugins.toml)" ~/.sheldon/plugins.toml
+mkdir -p ~/.config/sheldon
+ln -sf "$(realpath sheldon/plugins.toml)" ~/.config/sheldon
 
 ################################################################################
 #
