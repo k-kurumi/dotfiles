@@ -29,6 +29,10 @@ map th :action PreviousTab<CR>
 " https://github.com/JetBrains/ideavim/wiki/Emulated-plugins
 "
 
+" ,,f<文字> や ,,w ,,b で表示して飛ぶ
+let mapleader=","
+set easymotion
+
 set NERDTree
   map ,f :NERDTreeFind<CR>
 
