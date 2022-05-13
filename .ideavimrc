@@ -29,12 +29,29 @@ map th :action PreviousTab<CR>
 " https://github.com/JetBrains/ideavim/wiki/Emulated-plugins
 "
 
-" ,,f<文字> や ,,w ,,b で表示して飛ぶ
 let mapleader=","
+
 set easymotion
+  " ,f<x> 見えている範囲のカーソルより後を検索
+  map <leader>f <Plug>(easymotion-f)
+  " ,F<x> 見えている範囲の全体から検索
+  map <leader>F <Plug>(easymotion-s)
 
 set NERDTree
-  map ,f :NERDTreeFind<CR>
+  " coc-explorerによせる
+  map <leader>e :NERDTreeFind<CR>
+  " Open files, directories and bookmarks
+  " Recursively open the selected directory
+  let g:NERDTreeMapActivateNode = "l"
+  let g:NERDTreeMapOpenRecursively = "L"
+  " Close the current nodes parent
+  " Recursively close all children of the current node
+  let g:NERDTreeMapCloseDir = "h"
+  let g:NERDTreeMapCloseChildren = "H"
+  " Open selected file in a new vsplit
+  " Open selected file in a split window
+  let g:NERDTreeMapOpenVSplit = "v"
+  let g:NERDTreeMapOpenSplit = "s"
 
 " 括弧で囲んだり
 " https://qiita.com/gesutaka/items/e1160f907f664445d45a
