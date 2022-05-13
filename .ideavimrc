@@ -32,10 +32,8 @@ map th :action PreviousTab<CR>
 let mapleader=","
 
 set easymotion
-  " ,f<x> 見えている範囲のカーソルより後を検索
-  map <leader>f <Plug>(easymotion-f)
-  " ,F<x> 見えている範囲の全体から検索
-  map <leader>F <Plug>(easymotion-s)
+  " s<x><x> で検索
+  map s <Plug>(easymotion-s2)
 
 set NERDTree
   " coc-explorerによせる
