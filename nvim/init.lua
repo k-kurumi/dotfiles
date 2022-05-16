@@ -114,7 +114,7 @@ require('jetpack').setup {
 
   -- 見える場所にジャンプしやすくする
   -- s<文字> で使う
-  'https://github.com/ggandor/lightspeed.nvim',
+  'https://github.com/easymotion/vim-easymotion',
 
   -- :MundoToggleでundoをツリー表示
   'https://github.com/simnalamburt/vim-mundo',
@@ -339,6 +339,11 @@ vim.cmd [[
   vmap <Space>H <Plug>(quickhl-manual-clear)
   nmap <Space>r <Plug>(quickhl-manual-reset)
   xmap <Space>r <Plug>(quickhl-manual-reset)
+]]
+
+-- easymotion
+vim.cmd [[
+  nmap s <Plug>(easymotion-overwin-f)
 ]]
 
 -- for goneovim (gui)
