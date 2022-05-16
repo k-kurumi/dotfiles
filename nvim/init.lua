@@ -67,8 +67,6 @@ require('jetpack').setup {
 
   -- 検索ワードの位置表示
   'https://github.com/kevinhwang91/nvim-hlslens',
-  -- スクロールバー
-  'https://github.com/petertriho/nvim-scrollbar',
 
   -- 行数指定で開く
   'https://github.com/bogado/file-line',
@@ -218,8 +216,6 @@ require('telescope').setup{
   }
 }
 require('telescope').load_extension("frecency")
-
-require("scrollbar").setup()
 
 require('marks').setup({})
 
