@@ -10,7 +10,6 @@ require('jetpack').setup {
 
   -- colorscheme
   'https://github.com/ellisonleao/gruvbox.nvim',
-  'https://github.com/luisiacc/gruvbox-baby',
   'https://github.com/joshdick/onedark.vim',
   'https://github.com/rebelot/kanagawa.nvim',
 
@@ -73,7 +72,7 @@ require('jetpack').setup {
 
   -- markの拡張
   -- dm<space> 全てのmarkを削除
-  'https://github.com/chentau/marks.nvim',
+  'https://github.com/chentoast/marks.nvim',
 
   -- quickfixにプレビュー表示
   'https://github.com/kevinhwang91/nvim-bqf',
@@ -179,7 +178,7 @@ require('lualine').setup{
     }
   },
   options = {
-    theme = 'onedark'
+    theme = 'gruvbox'
   }
 }
 
@@ -363,7 +362,7 @@ if vim.fn.has('termguicolors') then
 end
 vim.cmd [[
   try
-    colorscheme onedark
+    colorscheme gruvbox
   catch /^Vim\%((\a\+)\)\=:E185/
     colorscheme desert
     set background=dark
