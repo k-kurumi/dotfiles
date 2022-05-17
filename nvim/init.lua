@@ -343,6 +343,8 @@ vim.cmd [[
 
 -- easymotion
 vim.cmd [[
+  " 大文字小文字の区別なし
+  let g:EasyMotion_smartcase = 1
   nmap s <Plug>(easymotion-overwin-f)
 ]]
 
