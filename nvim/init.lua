@@ -349,11 +349,11 @@ vim.cmd [[
 -- for goneovim (gui)
 vim.cmd [[
   set guifont=UDEV\ Gothic\ NF:h18:b
-
-  " nvimターミナルから抜ける
-  " nvimターミナル内でnvimを起動すると抜けられなくなるため注意する
-  tnoremap <silent> <C-[> <C-\><C-n>
 ]]
+
+-- terminalからescで抜ける設定 tnoremap <C-[> <C-\><C-n> をすると、
+-- terminal上で入れ子のnvim(git-commitなど)を起動したとき抜けられなくなるため
+-- デフォルト設定を利用すること
 
 --------------------------------------------------------------------------------
 --
