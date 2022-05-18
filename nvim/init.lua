@@ -112,9 +112,9 @@ require('jetpack').setup {
   -- TODO 離れた場所にカーソルを作る方法を調べる
   'https://github.com/mg979/vim-visual-multi',
 
-  -- 見える場所にジャンプしやすくする
+  -- 見える場所にジャンプしやすくする easymotion系
   -- s<文字> で使う
-  'https://github.com/easymotion/vim-easymotion',
+  'https://github.com/phaazon/hop.nvim',
 
   -- :MundoToggleでundoをツリー表示
   'https://github.com/simnalamburt/vim-mundo',
@@ -341,12 +341,10 @@ vim.cmd [[
   xmap <Space>r <Plug>(quickhl-manual-reset)
 ]]
 
--- easymotion
-vim.cmd [[
-  " 大文字小文字の区別なし
-  let g:EasyMotion_smartcase = 1
-  nmap s <Plug>(easymotion-overwin-f)
-]]
+require('hop').setup {
+  keys = 'etovxqpdygfblzhckisuran',
+}
+vim.api.nvim_set_keymap('n', 's', "<cmd>lua require'hop'.hint_char1()<cr>", {})
 
 -- for goneovim (gui)
 vim.cmd [[
