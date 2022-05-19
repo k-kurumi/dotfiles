@@ -351,9 +351,14 @@ vim.cmd [[
   set guifont=UDEV\ Gothic\ NF:h18:b
 ]]
 
--- terminalからescで抜ける設定 tnoremap <C-[> <C-\><C-n> をすると、
--- terminal上で入れ子のnvim(git-commitなど)を起動したとき抜けられなくなるため
--- デフォルト設定を利用すること
+-- terminalからescで抜ける設定 tnoremap <C-[> <C-\><C-n> では入れ子のnvim(git-commitなど)を
+-- 起動したとき抜けられなくなるためデフォルト設定を利用すること
+vim.cmd [[
+  autocmd TermOpen * startinsert
+  nnoremap ,tt :tabedit<cr>:terminal<cr>
+  nnoremap ,ts :split<cr>:terminal<cr>
+  nnoremap ,tv :vsplit<cr>:terminal<cr>
+]]
 
 --------------------------------------------------------------------------------
 --
