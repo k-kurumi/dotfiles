@@ -272,12 +272,14 @@ vim.g.coc_global_extensions = {
   'coc-explorer',
   'coc-go',
   'coc-json',
+  'coc-markdown-preview-enhanced',
   'coc-pairs',
   'coc-rust-analyzer',
   'coc-sh',
   'coc-snippets',
   'coc-sumneko-lua',
   'coc-toml',
+  'coc-webview',
   'coc-yaml',
 }
 
