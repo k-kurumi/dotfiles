@@ -2,133 +2,134 @@
 -- curl -fLo ~/.config/nvim/autoload/jetpack.vim --create-dirs https://raw.githubusercontent.com/tani/vim-jetpack/master/autoload/jetpack.vim
 -- curl -fLo ~/.config/nvim/lua/jetpack.lua --create-dirs https://raw.githubusercontent.com/tani/vim-jetpack/master/lua/jetpack.lua
 
-require('jetpack').setup {
+-- https://github.com/tani/vim-jetpack#packer-style
+require('jetpack').startup(function(use)
 
   -- ステータスライン
-  'https://github.com/nvim-lualine/lualine.nvim',
-  'https://github.com/kyazdani42/nvim-web-devicons',
+  use 'https://github.com/nvim-lualine/lualine.nvim'
+  use 'https://github.com/kyazdani42/nvim-web-devicons'
 
   -- colorscheme
-  'https://github.com/ellisonleao/gruvbox.nvim',
-  'https://github.com/joshdick/onedark.vim',
-  'https://github.com/rebelot/kanagawa.nvim',
+  use 'https://github.com/ellisonleao/gruvbox.nvim'
+  use 'https://github.com/joshdick/onedark.vim'
+  use 'https://github.com/rebelot/kanagawa.nvim'
 
   -- telescope
-  'https://github.com/nvim-lua/plenary.nvim',
-  'https://github.com/nvim-telescope/telescope.nvim',
+  use 'https://github.com/nvim-lua/plenary.nvim'
+  use 'https://github.com/nvim-telescope/telescope.nvim'
   -- 開いたファイルの履歴を表示
-  'https://github.com/nvim-telescope/telescope-frecency.nvim',
+  use 'https://github.com/nvim-telescope/telescope-frecency.nvim'
 
   -- telescopeでクリップボードマネージャ
-  'https://github.com/AckslD/nvim-neoclip.lua',
-  'https://github.com/tami5/sqlite.lua',
+  use 'https://github.com/AckslD/nvim-neoclip.lua'
+  use 'https://github.com/tami5/sqlite.lua'
 
   -- treesitter syntax color
-  {'https://github.com/nvim-treesitter/nvim-treesitter', run = 'TSUpdate'},
+  use {'https://github.com/nvim-treesitter/nvim-treesitter', run = 'TSUpdate'}
 
   -- treesitterで対応していないシンタックスは個別に追加する
-  'https://github.com/raimon49/requirements.txt.vim',
+  use 'https://github.com/raimon49/requirements.txt.vim'
 
   -- 閉じ括弧部分に対応するコードを表示
-  'https://github.com/haringsrob/nvim_context_vt',
+  use 'https://github.com/haringsrob/nvim_context_vt'
 
   -- 括弧のマッチ
-  'https://github.com/andymass/vim-matchup',
+  use 'https://github.com/andymass/vim-matchup'
 
   -- html閉じタグの追加
-  'https://github.com/windwp/nvim-ts-autotag',
+  use 'https://github.com/windwp/nvim-ts-autotag'
 
   -- コードの階層を表示する
-  'https://github.com/SmiteshP/nvim-gps',
+  use 'https://github.com/SmiteshP/nvim-gps'
 
   -- 閉じ括弧の追加
-  'https://github.com/windwp/nvim-autopairs',
+  use 'https://github.com/windwp/nvim-autopairs'
 
   -- 括弧の囲み
-  'https://github.com/tpope/vim-surround',
+  use 'https://github.com/tpope/vim-surround'
 
   -- 括弧の色付け
-  'https://github.com/p00f/nvim-ts-rainbow',
+  use 'https://github.com/p00f/nvim-ts-rainbow'
 
   -- タブの可視化
-  'https://github.com/lukas-reineke/indent-blankline.nvim',
+  use 'https://github.com/lukas-reineke/indent-blankline.nvim'
 
   -- git ui
-  'https://github.com/airblade/vim-gitgutter',
+  use 'https://github.com/airblade/vim-gitgutter'
   -- git commitのレイアウト変更
-  'https://github.com/rhysd/committia.vim',
+  use 'https://github.com/rhysd/committia.vim'
 
   -- :G でgitクライアント
-  'https://github.com/tpope/vim-fugitive',
+  use 'https://github.com/tpope/vim-fugitive'
 
   -- 末尾スペースを赤く表示
-  'https://github.com/ntpeters/vim-better-whitespace',
+  use 'https://github.com/ntpeters/vim-better-whitespace'
 
   -- 検索ワードの位置表示
-  'https://github.com/kevinhwang91/nvim-hlslens',
+  use 'https://github.com/kevinhwang91/nvim-hlslens'
 
   -- 行数指定で開く
-  'https://github.com/bogado/file-line',
+  use 'https://github.com/bogado/file-line'
 
   -- markの拡張
   -- dm<space> 全てのmarkを削除
-  'https://github.com/chentoast/marks.nvim',
+  use 'https://github.com/chentoast/marks.nvim'
 
   -- quickfixにプレビュー表示
-  'https://github.com/kevinhwang91/nvim-bqf',
+  use 'https://github.com/kevinhwang91/nvim-bqf'
 
   -- gc コメント, gb ブロックコメント
-  'https://github.com/numToStr/Comment.nvim',
+  use 'https://github.com/numToStr/Comment.nvim'
 
   -- カーソルの文字列を強調する
-  'https://github.com/itchyny/vim-cursorword',
+  use 'https://github.com/itchyny/vim-cursorword'
 
   -- キーワードをハイライトする
   -- <space>h ハイライト
   -- <space>H ハイライト解除
   -- <space>r ハイライト全解除
-  'https://github.com/t9md/vim-quickhl',
+  use 'https://github.com/t9md/vim-quickhl'
 
   -- ウインドウのリサイズ <C-e>
-  'https://github.com/simeji/winresizer',
+  use 'https://github.com/simeji/winresizer'
 
   -- prettier
-  {'https://github.com/prettier/vim-prettier', run = 'npm install'},
+  use {'https://github.com/prettier/vim-prettier', run = 'npm install'}
 
   -- 組み込みlspは設定が煩雑なのでcocを使う
-  {'https://github.com/neoclide/coc.nvim', branch = 'release'},
+  use {'https://github.com/neoclide/coc.nvim', branch = 'release'}
 
   -- RustFmtなど
-  'https://github.com/rust-lang/rust.vim',
+  use 'https://github.com/rust-lang/rust.vim'
 
   -- RustPaly(playgroundにソース転送)に必要
-  'https://github.com/mattn/webapi-vim',
+  use 'https://github.com/mattn/webapi-vim'
 
   -- *で検索対象に指定
-  'https://github.com/thinca/vim-visualstar',
+  use 'https://github.com/thinca/vim-visualstar'
 
   -- vscodeのマルチカーソル
   -- ビジュアルモード時に \\-c で範囲分のカーソル出現
   -- TODO 離れた場所にカーソルを作る方法を調べる
-  'https://github.com/mg979/vim-visual-multi',
+  use 'https://github.com/mg979/vim-visual-multi'
 
   -- 見える場所にジャンプしやすくする easymotion系
   -- s<文字> で使う
-  'https://github.com/phaazon/hop.nvim',
+  use 'https://github.com/phaazon/hop.nvim'
 
   -- :MundoToggleでundoをツリー表示
-  'https://github.com/simnalamburt/vim-mundo',
+  use 'https://github.com/simnalamburt/vim-mundo'
 
   -- :Linediff で特定の部分同士のdiff
-  'https://github.com/AndrewRadev/linediff.vim',
+  use 'https://github.com/AndrewRadev/linediff.vim'
 
   -- luaformatter は次のようにビルドする
   -- brew install luarocks
   -- luarocks install --server=https://luarocks.org/dev luaformatter
   -- :call LuaFormat() でフォーマットする
-  'https://github.com/andrejlevkovitch/vim-lua-format',
-}
+  use 'https://github.com/andrejlevkovitch/vim-lua-format'
 
+end)
 
 --------------------------------------------------------------------------------
 --
