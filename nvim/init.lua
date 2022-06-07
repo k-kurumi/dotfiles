@@ -263,6 +263,9 @@ vim.api.nvim_set_keymap("n", "gd", "<Plug>(coc-definition)", {noremap = false, s
 vim.api.nvim_set_keymap("n", "gy", "<Plug>(coc-type-definition)", {noremap = false, silent = true})
 vim.api.nvim_set_keymap("n", "gi", "<Plug>(coc-implementation)", {noremap = false, silent = true})
 vim.api.nvim_set_keymap("n", "gr", "<Plug>(coc-references)", {noremap = false, silent = true})
+-- [Goto Definition in Vsplit? · Issue #1249 · neoclide/coc.nvim](https://github.com/neoclide/coc.nvim/issues/1249#issuecomment-539803007)
+vim.api.nvim_set_keymap("n", "gs", ":call CocAction('jumpDefinition', 'split')<cr>", {noremap = false, silent = true})
+vim.api.nvim_set_keymap("n", "gt", ":call CocAction('jumpDefinition', 'tabe')<cr>", {noremap = false, silent = true})
 
 -- ファイルエクスプローラの開閉
 vim.api.nvim_set_keymap("n", ",e", ":CocCommand explorer<CR>", {noremap = true, silent = true})
