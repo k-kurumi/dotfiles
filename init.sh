@@ -109,6 +109,14 @@ ln -sf "$(realpath sheldon/plugins.toml)" ~/.config/sheldon
 
 ################################################################################
 #
+# zellij
+#
+
+mkdir -p ~/.config/zellij
+ln -sf zellij/config.yaml ~/.config/zellij/config.yaml
+
+################################################################################
+#
 # その他のツール
 #
 
