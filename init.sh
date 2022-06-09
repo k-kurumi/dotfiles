@@ -113,7 +113,7 @@ ln -sf "$(realpath sheldon/plugins.toml)" ~/.config/sheldon
 #
 
 mkdir -p ~/.config/zellij
-ln -sf zellij/config.yaml ~/.config/zellij/config.yaml
+ln -sf "$(realpath zellij/config.yaml)" ~/.config/zellij/config.yaml
 
 ################################################################################
 #
