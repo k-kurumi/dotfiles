@@ -217,23 +217,23 @@ function wiki() {
 ################################################################################
 # fzf
 
-# フォルダは移動する
-# ファイルはvimで開く
-function fzf_open_file() {
-  local selected=$(find . -not -path './.git/*' -print 2> /dev/null | fzf)
-  echo $selected
-  if [ -n "$selected" ]; then
-    if [[ -d "$selected" ]]; then
-      BUFFER="cd ${selected}"
-    else
-      BUFFER="nvim ${selected}"
-    fi
-    zle accept-line
-  fi
-  zle clear-screen
-}
-zle -N fzf_open_file
-bindkey '^O' fzf_open_file
+# # フォルダは移動する
+# # ファイルはvimで開く
+# function fzf_open_file() {
+#   local selected=$(find . -not -path './.git/*' -print 2> /dev/null | fzf)
+#   echo $selected
+#   if [ -n "$selected" ]; then
+#     if [[ -d "$selected" ]]; then
+#       BUFFER="cd ${selected}"
+#     else
+#       BUFFER="nvim ${selected}"
+#     fi
+#     zle accept-line
+#   fi
+#   zle clear-screen
+# }
+# zle -N fzf_open_file
+# bindkey '^O' fzf_open_file
 
 # history表示
 function fzf_select_history() {
@@ -254,7 +254,7 @@ function fzf_select_ghq_repo() {
   zle clear-screen
 }
 zle -N fzf_select_ghq_repo
-bindkey '^G' fzf_select_ghq_repo
+bindkey '^O' fzf_select_ghq_repo
 
 # read private config
 if [[ -d ~/OneDrive/dotfiles_private ]]; then
