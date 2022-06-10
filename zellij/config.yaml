@@ -9,7 +9,7 @@ keybinds:
     unbind: true
     normal:
         - action: [SwitchToMode: Locked,]
-          key: [Ctrl: 'g',]
+          key: [Ctrl: 'z',]
         - action: [SwitchToMode: Pane,]
           key: [Ctrl: 'p',]
         - action: [SwitchToMode: Resize,]
@@ -47,10 +47,10 @@ keybinds:
         #   key: [ Alt: 'c']
     locked:
         - action: [SwitchToMode: Normal,]
-          key: [Ctrl: 'g',]
+          key: [Ctrl: 'z',]
     resize:
         - action: [SwitchToMode: Locked,]
-          key: [Ctrl: 'g']
+          key: [Ctrl: 'z']
         - action: [SwitchToMode: Pane,]
           key: [Ctrl: 'p',]
         - action: [SwitchToMode: Tab,]
@@ -99,7 +99,7 @@ keybinds:
           key: [ Alt: '-']
     pane:
         - action: [SwitchToMode: Locked,]
-          key: [Ctrl: 'g']
+          key: [Ctrl: 'z']
         - action: [SwitchToMode: Resize,]
           key: [Ctrl: 'n',]
         - action: [SwitchToMode: Tab,]
@@ -162,7 +162,7 @@ keybinds:
           key: [Char: 'c']
     move:
         - action: [SwitchToMode: Locked,]
-          key: [Ctrl: 'g']
+          key: [Ctrl: 'z']
         - action: [SwitchToMode: Pane,]
           key: [Ctrl: 'p',]
         - action: [SwitchToMode: Tab,]
@@ -205,7 +205,7 @@ keybinds:
           key: [ Alt: '-']
     tab:
         - action: [SwitchToMode: Locked,]
-          key: [Ctrl: 'g']
+          key: [Ctrl: 'z']
         - action: [SwitchToMode: Pane,]
           key: [Ctrl: 'p',]
         - action: [SwitchToMode: Resize,]
@@ -278,7 +278,7 @@ keybinds:
         - action: [SwitchToMode: Tab,]
           key: [Ctrl: 't',]
         - action: [SwitchToMode: Locked,]
-          key: [Ctrl: 'g',]
+          key: [Ctrl: 'z',]
         - action: [SwitchToMode: Pane,]
           key: [Ctrl: 'p',]
         - action: [SwitchToMode: Move,]
@@ -368,7 +368,7 @@ keybinds:
           key: [ Alt: '-']
     session:
         - action: [SwitchToMode: Locked,]
-          key: [Ctrl: 'g']
+          key: [Ctrl: 'z']
         - action: [SwitchToMode: Resize,]
           key: [Ctrl: 'n',]
         - action: [SwitchToMode: Pane,]
@@ -405,7 +405,7 @@ keybinds:
           key: [ Alt: '-']
     tmux:
         - action: [SwitchToMode: Locked,]
-          key: [Ctrl: 'g']
+          key: [Ctrl: 'z']
         - action: [SwitchToMode: Resize,]
           key: [Ctrl: 'n',]
         - action: [SwitchToMode: Pane,]
