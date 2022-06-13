@@ -78,7 +78,7 @@ if [[ -d ~/.nimble/bin ]]; then
 fi
 
 # golang(1.8のデフォルトとは違う)
-if type go >/dev/null; then
+if [[ -d ~/go ]]; then
   export GOPATH=${HOME}/dev
   export PATH=${GOPATH}/bin:${PATH}
   export GOROOT=${HOME}/go
