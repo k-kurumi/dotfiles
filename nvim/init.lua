@@ -370,6 +370,13 @@ vim.cmd [[
   nnoremap ,tv :vsplit<cr>:terminal<cr>
 ]]
 
+-- coc-go golang
+vim.cmd [[
+  autocmd BufNewFile,BufRead *.go   set filetype=go  noet sw=4 ts=4 sts=4 cindent autoindent
+  autocmd BufWritePre *.go :silent call CocAction('runCommand', 'editor.action.organizeImport')
+  autocmd BufWritePre *.go :silent call CocAction('runCommand', 'editor.action.formatDocument')
+]]
+
 --------------------------------------------------------------------------------
 --
 -- 設定を反映するため最後にテーマを指定する
