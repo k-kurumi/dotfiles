@@ -337,6 +337,10 @@ vim.api.nvim_set_keymap("n", "#", "#zz", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", "*", "*N",  {noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", "#", "#N",  {noremap = true, silent = true})
 
+-- 折り返し行の移動を見た目通りにする
+vim.api.nvim_set_keymap("n", "j", "gj",  {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "k", "gk",  {noremap = true, silent = true})
+
 -- ハイライト
 vim.cmd [[
   nmap <Space>h <Plug>(quickhl-manual-this)
