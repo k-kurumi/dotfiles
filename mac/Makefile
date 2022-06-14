@@ -28,6 +28,7 @@ brew-install-all: brew-update ## brew install all package
 		coreutils \
 		macvim \
 		jq \
+		gron \
 		tree \
 		wget \
 		curl \
