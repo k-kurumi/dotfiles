@@ -44,8 +44,7 @@ mkdir -p ~/.config/nvim
 ln -sf "$(realpath nvim/init.lua)" ~/.config/nvim/init.lua
 
 # プラグインマネージャ https://github.com/tani/vim-jetpack
-curl -fLo ~/.config/nvim/autoload/jetpack.vim --create-dirs https://raw.githubusercontent.com/tani/vim-jetpack/master/autoload/jetpack.vim
-curl -fLo ~/.config/nvim/lua/jetpack.lua --create-dirs https://raw.githubusercontent.com/tani/vim-jetpack/master/lua/jetpack.lua
+curl -fLo ~/.config/nvim/plugin/jetpack.vim --create-dirs https://raw.githubusercontent.com/tani/vim-jetpack/master/plugin/jetpack.vim
 
 # coc
 ln -sf "$(realpath nvim/coc-settings.json)" ~/.config/nvim/coc-settings.json

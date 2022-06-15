@@ -3,6 +3,7 @@
 -- curl -fLo ~/.config/nvim/lua/jetpack.lua --create-dirs https://raw.githubusercontent.com/tani/vim-jetpack/master/lua/jetpack.lua
 
 -- https://github.com/tani/vim-jetpack#packer-style
+vim.cmd('runtime */jetpack.vim')
 require('jetpack').startup(function(use)
 
   -- ステータスライン
