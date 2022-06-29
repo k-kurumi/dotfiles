@@ -367,8 +367,7 @@ vim.cmd [[
   cnoremap <D-v> <C-r>+
 ]]
 
--- terminal内でnvimを起動しないように気をつける
--- ESCでターミナルモードを抜けるため変更が保存できない
+-- terminal内でnvimを起動すると<C-[>ではコマンドモードに戻れない jj で戻る
 vim.cmd [[
   autocmd TermOpen * startinsert
   nnoremap ,tt :tabedit<cr>:terminal<cr>
@@ -377,6 +376,9 @@ vim.cmd [[
 
   " terminalでターミナルモードから抜ける
   tnoremap <Esc> <C-\><C-n>
+
+  " terminal上で起動したnvimからコマンドモードに戻るため
+  inoremap <silent> jj <ESC>
 ]]
 
 -- coc-go golang
