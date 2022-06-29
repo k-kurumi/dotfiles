@@ -367,13 +367,16 @@ vim.cmd [[
   cnoremap <D-v> <C-r>+
 ]]
 
--- terminalからescで抜ける設定 tnoremap <C-[> <C-\><C-n> では入れ子のnvim(git-commitなど)を
--- 起動したとき抜けられなくなるためデフォルト設定を利用すること
+-- terminal内でnvimを起動しないように気をつける
+-- ESCでターミナルモードを抜けるため変更が保存できない
 vim.cmd [[
   autocmd TermOpen * startinsert
   nnoremap ,tt :tabedit<cr>:terminal<cr>
   nnoremap ,ts :split<cr>:terminal<cr>
   nnoremap ,tv :vsplit<cr>:terminal<cr>
+
+  " terminalでターミナルモードから抜ける
+  tnoremap <Esc> <C-\><C-n>
 ]]
 
 -- coc-go golang
