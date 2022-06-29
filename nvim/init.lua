@@ -360,6 +360,11 @@ vim.api.nvim_set_keymap('n', 's', "<cmd>lua require'hop'.hint_char1()<cr>", {})
 -- for goneovim (gui)
 vim.cmd [[
   set guifont=UDEV\ Gothic\ NF:h18:b
+
+  " https://github.com/akiyosi/goneovim/issues/163
+  nnoremap <D-v> a<C-r>+<Esc>
+  inoremap <D-v> <C-r>+
+  cnoremap <D-v> <C-r>+
 ]]
 
 -- terminalからescで抜ける設定 tnoremap <C-[> <C-\><C-n> では入れ子のnvim(git-commitなど)を
