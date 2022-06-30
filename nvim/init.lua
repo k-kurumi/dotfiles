@@ -377,6 +377,9 @@ vim.cmd [[
   " terminalでターミナルモードから抜ける
   tnoremap <Esc> <C-\><C-n>
 
+  " ウインドウ移動
+  tnoremap <C-w> <C-\><C-n><C-w>
+
   " terminal上で起動したnvimからコマンドモードに戻るため
   inoremap <silent> jj <ESC>
 ]]
