@@ -391,6 +391,11 @@ vim.cmd [[
   autocmd BufWritePre *.go :silent call CocAction('runCommand', 'editor.action.formatDocument')
 ]]
 
+-- direnv
+vim.cmd [[
+  autocmd BufNewFile,BufRead .envrc   set filetype=sh et sw=2 ts=2 sts=2 cindent autoindent
+]]
+
 --------------------------------------------------------------------------------
 --
 -- 設定を反映するため最後にテーマを指定する
