@@ -130,6 +130,8 @@ require('jetpack').startup(function(use)
   -- :call LuaFormat() でフォーマットする
   use 'https://github.com/andrejlevkovitch/vim-lua-format'
 
+  -- treesitterがcue対応していないため
+  use 'https://github.com/jjo/vim-cue'
 end)
 
 --------------------------------------------------------------------------------
