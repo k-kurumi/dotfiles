@@ -393,6 +393,11 @@ vim.cmd [[
   autocmd BufWritePre *.go :silent call CocAction('runCommand', 'editor.action.formatDocument')
 ]]
 
+-- cuelang
+vim.cmd [[
+  autocmd BufNewFile,BufRead *.cue  set filetype=cue  noet sw=4 ts=4 sts=4 cindent autoindent
+]]
+
 -- direnv
 vim.cmd [[
   autocmd BufNewFile,BufRead .envrc   set filetype=sh et sw=2 ts=2 sts=2 cindent autoindent
