@@ -122,6 +122,12 @@ module.exports = {
 
     // for advanced config flags please refer to https://hyper.is/#cfg
     //
+
+    summon: {
+      hideDock: true,
+      hideOnBlur: false,
+      hotkey: "`",
+    }
   },
 
   // a list of plugins to fetch and install from npm
@@ -156,6 +162,9 @@ module.exports = {
 
     // 現在のタブにマークが表示される
     "hyper-active-tab",
+
+    // guake style
+    "hyperterm-summon",
   ],
 
   gruvboxTheme: {
