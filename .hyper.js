@@ -123,6 +123,12 @@ module.exports = {
     // for advanced config flags please refer to https://hyper.is/#cfg
     //
 
+    // 透過率
+    opacity: {
+      focus: 0.95,
+      blur: 0.5,
+    },
+
     summon: {
       hideDock: true,
       hideOnBlur: false,
@@ -145,11 +151,11 @@ module.exports = {
     // 'hyper-material-theme',
 
     // 背景透過
-    // 'hyper-clean',
-    // 'hyper-firewatch',
+    'hyper-opacity',
 
-    // "hyper-gruvbox",
-    "hyper-dracula",
+    // color theme
+    "hyper-gruvbox",
+    // "hyper-dracula",
 
     // カーソルが目立つ
     // 'hyperpower',
@@ -165,6 +171,9 @@ module.exports = {
 
     // guake style
     "hyperterm-summon",
+
+    // ウインドウ枠を消す
+    "hyperminimal",
   ],
 
   gruvboxTheme: {
@@ -180,6 +189,7 @@ module.exports = {
   keymaps: {
     // https://github.com/zeit/hyper/blob/canary/app/keymaps/darwin.json
 
+    // タブはzellij使うのでなくてもよい
     "tab:new": "ctrl+shift+t",
     "tab:prev": "ctrl+shift+[",
     "tab:next": "ctrl+shift+]",
