@@ -7,9 +7,8 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 zstyle ':completion:*:default' menu select=1
 
 # 補完用のファイル読み込み
-if [[ ! -d ~/.zsh_completion ]]; then
-
-  mkdir -p ~/.zsh_completion
+mkdir -p ~/.zsh_completion
+if [[ -d ~/.zsh_completion ]]; then
 
   # go-task
   [[ -f ~/.zsh_completion/_task ]] || curl -o ~/.zsh_completion/_task https://raw.githubusercontent.com/go-task/task/master/completion/zsh/_task
