@@ -6,6 +6,21 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 # 補完時にtabで選択
 zstyle ':completion:*:default' menu select=1
 
+# 補完用のファイル読み込み
+if [[ ! -d ~/.zsh_completion ]]; then
+
+  mkdir -p ~/.zsh_completion
+
+  # go-task
+  [[ -f ~/.zsh_completion/_task ]] || curl -o ~/.zsh_completion/_task https://raw.githubusercontent.com/go-task/task/master/completion/zsh/_task
+
+  fpath=( ~/.zsh_completion "${fpath[@]}" )
+  for f in ~/.zsh_completion/_*
+  do
+    autoload -Uz ${f}
+  done
+fi
+
 # これがないとmacでzsh-completionsが効かない
 autoload -Uz compinit && compinit
 
