@@ -161,13 +161,13 @@ module.exports = {
     'hyperpower',
 
     // タブをマウスで移動できる
-    // "hyper-dnd-tabs",
+    "hyper-dnd-tabs",
 
     // タブをクリックしてリネームできる
-    // "hyper-rename-tab",
+    "hyper-rename-tab",
 
     // 現在のタブにマークが表示される
-    // "hyper-active-tab",
+    "hyper-active-tab",
 
     // guake style
     "hyperterm-summon",
@@ -194,10 +194,8 @@ module.exports = {
 
   keymaps: {
     // https://github.com/zeit/hyper/blob/canary/app/keymaps/darwin.json
-
-    // タブはzellij使うのでなくてもよい
-    // "tab:new": "ctrl+shift+t",
-    // "tab:prev": "ctrl+shift+[",
-    // "tab:next": "ctrl+shift+]",
+    "tab:new": "command+n",
+    "tab:prev": "command+h",
+    "tab:next": "command+l",
   },
 };
