@@ -522,7 +522,8 @@ default_mode: locked
 # Options:
 #   - true (default)
 #   - false
-#mouse_mode: false
+# マウスで選択してコピーが効かなくなるので無効化する
+mouse_mode: false
 
 # Configure the scroll back buffer size
 # This is the number of lines zellij stores for each pane in the scroll back
