@@ -132,6 +132,9 @@ require('jetpack').startup(function(use)
 
   -- treesitterがcue対応していないため
   use 'https://github.com/jjo/vim-cue'
+
+  -- earthly
+  use 'https://github.com/earthly/earthly.vim'
 end)
 
 --------------------------------------------------------------------------------
@@ -401,6 +404,12 @@ vim.cmd [[
 -- direnv
 vim.cmd [[
   autocmd BufNewFile,BufRead .envrc   set filetype=sh et sw=2 ts=2 sts=2 cindent autoindent
+]]
+
+-- earthly
+vim.cmd [[
+  au BufRead,BufNewFile Earthfile set filetype=Earthfile
+  au BufRead,BufNewFile build.earth set filetype=Earthfile
 ]]
 
 --------------------------------------------------------------------------------
