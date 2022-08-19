@@ -12,10 +12,18 @@ return {
   font_size = 18.0,
 
   -- https://github.com/mbadolato/iTerm2-Color-Schemes#screenshots
-  color_scheme = "Gruvbox Dark",
+  -- color_scheme = "Gruvbox Dark",
+  -- color_scheme = "Hybrid",
+  -- color_scheme = "Monokai (terminal.sexy)",
+  -- color_scheme = "Neon (terminal.sexy)",
+  -- color_scheme = "PencilDark",
+  color_scheme = "Sakura",
+  -- color_scheme = "tokyonight",
+  -- color_scheme = "Urple",
+  -- color_scheme = "WildCherry",
 
-  -- 背景透過 1.0が不透過 キー入力の度に点滅するので使わない
-  -- window_background_opacity = 0.9,
+  -- 背景透過 1.0が不透過
+  window_background_opacity = 0.8,
 
   -- キーバインド変更
   -- https://wezfurlong.org/wezterm/config/keys.html#default-shortcut--key-binding-assignments
