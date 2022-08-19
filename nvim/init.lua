@@ -387,6 +387,11 @@ vim.cmd [[
 
   " terminal上で起動したnvimからコマンドモードに戻るため
   inoremap <silent> jj <ESC>
+
+  " ポップアップの透過 100に近いほど透明
+  set pumblend=30
+  " ウインドウの透過
+  set winblend=30
 ]]
 
 -- coc-go golang
