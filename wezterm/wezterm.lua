@@ -3,8 +3,6 @@ return {
   -- What to set the TERM variable to
   term = "xterm-256color",
 
-  -- 日本語変換途中の文字が見えないので長文は厳しい
-  -- 日本語のカーソル移動もおかしい気がする
   use_ime = true,
 
   -- font
