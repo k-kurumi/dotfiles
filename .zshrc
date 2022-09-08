@@ -62,9 +62,10 @@ export PURE_PROMPT_SYMBOL=$
 ################################################################################
 
 # mac(arm)
-if [[ -f /opt/homebrew/opt/asdf/libexec/asdf.sh ]]; then
-  source /opt/homebrew/opt/asdf/libexec/asdf.sh
-fi
+test -f /opt/homebrew/opt/asdf/libexec/asdf.sh && source /opt/homebrew/opt/asdf/libexec/asdf.sh
+
+# mac(intel)
+test -f /usr/local/opt/asdf/libexec/asdf.sh && source /usr/local/opt/asdf/libexec/asdf.sh
 
 if [[ $(uname) == Darwin ]];then
   # brewでインストールしたpyenvでzlibのパスがみつからない対策
