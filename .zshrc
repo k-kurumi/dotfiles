@@ -61,29 +61,15 @@ export PURE_PROMPT_SYMBOL=$
 
 ################################################################################
 
-# ruby
-if [[ -d ~/.rbenv ]]; then
-  export PATH="$HOME/.rbenv/bin:$PATH"
-  export PATH="$HOME/.rbenv/shims:$PATH"  # /usr/local/bin/rubyが先に読まれるため上書きする
-fi
-
-# python
-if [[ -d ~/.pyenv ]]; then
-  export PYENV_ROOT="$HOME/.pyenv"
-  export PATH="$PYENV_ROOT/bin:$PATH"
-  eval "$(pyenv init --path)"
+# mac(arm)
+if [[ -f /opt/homebrew/opt/asdf/libexec/asdf.sh ]]; then
+  source /opt/homebrew/opt/asdf/libexec/asdf.sh
 fi
 
 if [[ $(uname) == Darwin ]];then
   # brewでインストールしたpyenvでzlibのパスがみつからない対策
   export LDFLAGS="-L/usr/local/opt/zlib/lib"
   export CPPFLAGS="-I/usr/local/opt/zlib/include"
-fi
-
-# node
-if [[ -d ~/.ndenv ]]; then
-  export PATH="$HOME/.ndenv/bin:$PATH"
-  eval "$(ndenv init -)"
 fi
 
 # nim
