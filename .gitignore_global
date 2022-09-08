@@ -10,6 +10,7 @@
 vendor/
 .pryrc
 
+.tool-versions
 .node-version
 .python-version
 .ruby-version
