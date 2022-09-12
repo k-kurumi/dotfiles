@@ -135,6 +135,9 @@ require('jetpack').startup(function(use)
 
   -- earthly
   use 'https://github.com/earthly/earthly.vim'
+
+  -- コード整形
+  use 'https://github.com/junegunn/vim-easy-align'
 end)
 
 --------------------------------------------------------------------------------
