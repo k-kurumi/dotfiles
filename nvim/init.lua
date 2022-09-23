@@ -337,6 +337,7 @@ vim.o.wrapscan = false
 vim.o.listchars = 'eol:$,tab:>_'
 vim.o.cursorline = true
 vim.o.cursorcolumn = true
+vim.o.signcolumn = "yes"
 
 -- 検索周り
 vim.api.nvim_set_keymap("n", "n", "nzz", {noremap = true, silent = true})
