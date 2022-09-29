@@ -72,6 +72,9 @@ brew-install-all: brew-update ## brew install all package
 	brew tap "rhysd/hgrep" "https://github.com/rhysd/hgrep"
 	brew install hgrep
 
+	# yaml用のdiff
+	brew install homeport/tap/dyff
+
 .PHONY: brew-install
 brew-install: brew-update  ## brew install target=package
 ifdef target
