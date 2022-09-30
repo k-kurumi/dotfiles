@@ -15,6 +15,9 @@ require('jetpack').startup(function(use)
   use 'https://github.com/joshdick/onedark.vim'
   use 'https://github.com/rebelot/kanagawa.nvim'
 
+  use 'https://github.com/kartikp10/noctis.nvim'
+  use 'https://github.com/rktjmp/lush.nvim'
+
   -- telescope
   use 'https://github.com/nvim-lua/plenary.nvim'
   use 'https://github.com/nvim-telescope/telescope.nvim'
@@ -188,7 +191,7 @@ require('lualine').setup{
     }
   },
   options = {
-    theme = 'gruvbox'
+    theme = 'noctis'
   }
 }
 
@@ -433,7 +436,7 @@ if vim.fn.has('termguicolors') then
 end
 vim.cmd [[
   try
-    colorscheme gruvbox
+    colorscheme noctis
   catch /^Vim\%((\a\+)\)\=:E185/
     colorscheme desert
     set background=dark
