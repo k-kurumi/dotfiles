@@ -190,9 +190,9 @@ require('lualine').setup{
       { gps.get_location, cond = gps.is_available },
     }
   },
-  options = {
-    theme = 'noctis'
-  }
+  -- options = {
+  --   theme = 'gruvbox'
+  -- }
 }
 
 -- live_grepはrgを使用しているため隠しファイルや.env系も表示できるようにオプションを追加
