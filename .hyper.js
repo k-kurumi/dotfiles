@@ -124,10 +124,10 @@ module.exports = {
     //
 
     // 透過率
-    opacity: {
-      focus: 0.95,
-      blur: 0.5,
-    },
+    // opacity: {
+    //   focus: 0.95,
+    //   blur: 0.5,
+    // },
 
     summon: {
       hideDock: true,
@@ -151,7 +151,7 @@ module.exports = {
     // 'hyper-material-theme',
 
     // 背景透過
-    'hyper-opacity',
+    // 'hyper-opacity',
 
     // color theme
     "hyper-gruvbox",
