@@ -103,8 +103,8 @@ fi
 # zsh plugin manager sheldon
 #
 
-mkdir -p ~/.config/sheldon
-ln -sf "$(realpath sheldon/plugins.toml)" ~/.config/sheldon
+mkdir -p "${XDG_CONFIG_HOME}/sheldon"
+ln -sf "$(realpath sheldon/plugins.toml)" "${XDG_CONFIG_HOME}/sheldon"
 
 ################################################################################
 #

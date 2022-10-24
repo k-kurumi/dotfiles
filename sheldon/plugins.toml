@@ -17,18 +17,6 @@ shell = "zsh"
 [plugins.zsh-async]
 github = 'mafredri/zsh-async'
 
-[plugins.zsh-defer]
-github = "romkatv/zsh-defer"
-
-[templates]
-defer = { value = 'zsh-defer source "{{ file }}"', each = true }
-# PATH = 'export PATH="$PATH:{{ dir }}"'
-
-# .zshrcで書けばいい気がする
-# [plugins.compinit]
-# inline = 'autoload -Uz compinit && compinit'
-# autoload -Uz compinit && compinit
-
 # よりよい補完
 [plugins.zsh-completions]
 github = "zsh-users/zsh-completions"
@@ -37,12 +25,10 @@ github = "zsh-users/zsh-completions"
 [plugins.zsh-autosuggestions]
 github = "zsh-users/zsh-autosuggestions"
 use = ["{{ name }}.zsh"]
-apply = ["defer"]
 
 # 存在するコマンドを緑表示
 [plugins.zsh-syntax-highlighting]
 github = "zsh-users/zsh-syntax-highlighting"
-apply = ["defer"]
 
 # 暗号化したファイルを編集するエイリアスらしい
 # [plugins.blackbox]
@@ -51,7 +37,6 @@ apply = ["defer"]
 # コマンド入力途中で上下キー押したときの過去履歴がいい感じに出るようになる
 [plugins.zsh-history-substring-search]
 github = 'zsh-users/zsh-history-substring-search'
-apply = ["defer"]
 
 # 256色表示にする
 [plugins.zsh-256color]
