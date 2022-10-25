@@ -124,10 +124,10 @@ module.exports = {
     //
 
     // 透過率
-    // opacity: {
-    //   focus: 0.95,
-    //   blur: 0.5,
-    // },
+    opacity: {
+      focus: 1.0,
+      blur: 0.9,
+    },
 
     summon: {
       hideDock: true,
@@ -147,11 +147,9 @@ module.exports = {
     // 複数行の貼り付け時に確認ウインドウを出す
     "hyperterm-safepaste",
 
-    // ダーク系はどれも似たような感じなのでこれでいい
-    // 'hyper-material-theme',
 
     // 背景透過
-    // 'hyper-opacity',
+    'hyper-opacity',
 
     // color theme
     "hyper-gruvbox",
