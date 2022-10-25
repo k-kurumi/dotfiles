@@ -190,9 +190,9 @@ require('lualine').setup{
       { gps.get_location, cond = gps.is_available },
     }
   },
-  -- options = {
-  --   theme = 'gruvbox'
-  -- }
+  options = {
+    theme = 'gruvbox'
+  }
 }
 
 -- live_grepはrgを使用しているため隠しファイルや.env系も表示できるようにオプションを追加
@@ -436,7 +436,7 @@ if vim.fn.has('termguicolors') then
 end
 vim.cmd [[
   try
-    colorscheme noctis
+    colorscheme gruvbox
   catch /^Vim\%((\a\+)\)\=:E185/
     colorscheme desert
     set background=dark
