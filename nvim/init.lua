@@ -233,6 +233,8 @@ require('marks').setup({})
 
 require('Comment').setup()
 
+require('hlslens').setup()
+
 -- ウインドウリサイズの移動量
 vim.g.winresizer_vert_resize  = 1
 vim.g.winresizer_horiz_resize = 1
