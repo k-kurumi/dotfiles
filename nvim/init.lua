@@ -4,7 +4,7 @@
 
 -- https://github.com/tani/vim-jetpack#packer-style
 vim.cmd('runtime */jetpack.vim')
-require('jetpack').startup(function(use)
+require('jetpack.packer').startup(function(use)
 
   -- ステータスライン
   use 'https://github.com/nvim-lualine/lualine.nvim'
