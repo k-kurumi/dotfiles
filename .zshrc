@@ -21,7 +21,7 @@ if [[ -d ~/.zsh_completion ]]; then
 fi
 
 # これがないとmacでzsh-completionsが効かない
-# autoload -Uz compinit && compinit
+autoload -Uz compinit && compinit
 
 # 環境変数を補完
 setopt AUTO_PARAM_KEYS
