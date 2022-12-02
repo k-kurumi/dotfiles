@@ -218,23 +218,24 @@ function wiki() {
 ################################################################################
 # fzf
 
-# フォルダは移動する
-# ファイルはvimで開く
-function fzf_open_file() {
-  local selected=$(find . -not -path './.git/*' -print 2> /dev/null | fzf)
-  echo $selected
-  if [ -n "$selected" ]; then
-    if [[ -d "$selected" ]]; then
-      BUFFER="cd ${selected}"
-    else
-      BUFFER="nvim ${selected}"
-    fi
-    zle accept-line
-  fi
-  zle clear-screen
-}
-zle -N fzf_open_file
-bindkey '^O' fzf_open_file
+# ^Tでファイル補完ができるので不要になった
+# # フォルダは移動する
+# # ファイルはvimで開く
+# function fzf_open_file() {
+#   local selected=$(find . -not -path './.git/*' -print 2> /dev/null | fzf)
+#   echo $selected
+#   if [ -n "$selected" ]; then
+#     if [[ -d "$selected" ]]; then
+#       BUFFER="cd ${selected}"
+#     else
+#       BUFFER="nvim ${selected}"
+#     fi
+#     zle accept-line
+#   fi
+#   zle clear-screen
+# }
+# zle -N fzf_open_file
+# bindkey '^O' fzf_open_file
 
 # history表示
 function fzf_select_history() {
@@ -257,6 +258,11 @@ function fzf_select_ghq_repo() {
 zle -N fzf_select_ghq_repo
 bindkey '^G' fzf_select_ghq_repo
 
+# コマンドをエディタで編集する
+autoload -Uz edit-command-line
+zle -N edit-command-line
+bindkey '^O' edit-command-line
+
 # read private config
 if [[ -d ~/OneDrive/dotfiles_private ]]; then
   for f in ~/OneDrive/dotfiles_private/*.sh
@@ -276,11 +282,6 @@ fi
 # rg版
 export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*"'
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-# コマンドをエディタで編集する
-autoload -Uz edit-command-line
-zle -N edit-command-line
-bindkey '^I' edit-command-line
 
 # PC情報の表示
 type neofetch > /dev/null && neofetch || :
