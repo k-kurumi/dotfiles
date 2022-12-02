@@ -277,5 +277,10 @@ fi
 export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*"'
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+# コマンドをエディタで編集する
+autoload -Uz edit-command-line
+zle -N edit-command-line
+bindkey '^I' edit-command-line
+
 # PC情報の表示
 type neofetch > /dev/null && neofetch || :
