@@ -132,7 +132,7 @@ module.exports = {
     summon: {
       hideDock: true,
       hideOnBlur: false,
-      hotkey: "`",
+      hotkey: "Ctrl+;",
     }
   },
 
@@ -170,6 +170,9 @@ module.exports = {
     // guake style
     "hyperterm-summon",
 
+    // guake風のターミナル(hyperterm-summonに比べて表示位置の自由度が低い)
+    // "hyperterm-overlay"
+    //
     // ウインドウ枠を消す(ドラッグできなくてウインドウ移動しづらい)
     // "hyperminimal",
     //
