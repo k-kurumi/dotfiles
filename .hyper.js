@@ -123,17 +123,26 @@ module.exports = {
     // for advanced config flags please refer to https://hyper.is/#cfg
     //
 
-    // 透過率
+    // 透過率 1 に近いほど透過なし
     opacity: {
-      focus: 1.0,
-      blur: 0.9,
+      focus: 0.95,
+      blur: 0.8,
     },
 
-    summon: {
-      hideDock: true,
-      hideOnBlur: false,
-      hotkey: "Ctrl+;",
-    }
+    // summon: {
+    //   hideDock: true,
+    //   hideOnBlur: false,
+    //   hotkey: "Ctrl+;",
+    // },
+
+    overlay: {
+      animate: false,
+      hotkeys: ["`", "Ctrl+;"],
+      size: 0.4,
+      startAlone: true,
+      unique: true,
+    },
+
   },
 
   // a list of plugins to fetch and install from npm
@@ -168,14 +177,16 @@ module.exports = {
     "hyper-active-tab",
 
     // 最前面に表示
-    "hyper-always-on-top",
+    // "hyper-always-on-top",
 
-    // guake style
-    "hyperterm-summon",
+    // ショートカットキーでウインドウ表示非表示切り替え
+    // hyperterm-overlayとキーを取り合うため同時に使えない
+    // "hyperterm-summon",
 
     // guake風のターミナル(hyperterm-summonに比べて表示位置の自由度が低い)
-    // "hyperterm-overlay"
-    //
+    // forkされたhyper-overlayは表示がおかしくなるため使用しない
+    "hyperterm-overlay",
+
     // ウインドウ枠を消す(ドラッグできなくてウインドウ移動しづらい)
     // "hyperminimal",
     //
