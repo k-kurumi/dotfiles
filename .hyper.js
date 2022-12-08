@@ -167,6 +167,9 @@ module.exports = {
     // 現在のタブにマークが表示される
     "hyper-active-tab",
 
+    // 最前面に表示
+    "hyper-always-on-top",
+
     // guake style
     "hyperterm-summon",
 
