@@ -40,7 +40,6 @@ brew-install-all: brew-update ## brew install all package
 		mosh \
 		pyenv \
 		pyenv-virtualenv \
-		tfenv \
 		direnv \
 		gpg \
 		pinentry \
