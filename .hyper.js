@@ -139,7 +139,6 @@ module.exports = {
       animate: false,
       hotkeys: ["`", "Ctrl+;"],
       size: 0.4,
-      startAlone: true,
       unique: true,
     },
 
@@ -175,6 +174,9 @@ module.exports = {
 
     // 現在のタブにマークが表示される
     "hyper-active-tab",
+
+    // 色付きの枠
+    "hyperborder",
 
     // 最前面に表示
     // "hyper-always-on-top",
