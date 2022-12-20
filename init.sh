@@ -175,7 +175,3 @@ ln -sf "$(realpath lf/lfrc)" ~/.config/lf/
 
 mkdir -p ~/.config/luaformatter
 ln -sf "$(realpath luaformatter/config.yaml)" ~/.config/luaformatter/
-
-# デバッグツール周り
-mkdir -p ~/dev/bin
-cp bin/nc_server.sh ~/dev/bin

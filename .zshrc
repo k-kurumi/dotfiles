@@ -102,6 +102,10 @@ if [[ -d ~/.local/bin ]]; then
   export PATH=${PATH}:~/.local/bin
 fi
 
+if [[ -d ~/dotfiles/bin ]]; then
+  export PATH=${PATH}:~/dotfiles/bin
+fi
+
 # ~/.gcloudrc は ./google-cloud-sdk/install.sh 実行時に指定して作成する
 if [[ -f ~/.gcloudrc ]]; then
   source ~/.gcloudrc

@@ -2,7 +2,9 @@
 
 port=${1:-8000}
 
-echo ">>> listen ${port}"
+echo ">>> listen ${port}, pid: $$"
+
+trap "exit 0" INT
 
 while true
 do
