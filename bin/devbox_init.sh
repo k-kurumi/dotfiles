@@ -12,6 +12,10 @@ use_devbox() {
   eval $(devbox shell --print-env)
 }
 test -f devbox.json && use devbox
+
+if [[ -d .venv ]]; then
+  source .venv/bin/activate
+fi
 EOF
 }
 
