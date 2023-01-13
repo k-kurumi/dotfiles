@@ -141,9 +141,6 @@ require('jetpack.packer').startup(function(use)
 
   -- コード整形
   use 'https://github.com/junegunn/vim-easy-align'
-
-  -- ghosttext
-  use 'https://github.com/subnut/nvim-ghost.nvim'
 end)
 
 --------------------------------------------------------------------------------
