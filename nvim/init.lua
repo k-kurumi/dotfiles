@@ -141,6 +141,9 @@ require('jetpack.packer').startup(function(use)
 
   -- コード整形
   use 'https://github.com/junegunn/vim-easy-align'
+
+  -- ghosttext
+  use 'https://github.com/subnut/nvim-ghost.nvim'
 end)
 
 --------------------------------------------------------------------------------
@@ -508,7 +511,7 @@ vim.o.background = 'dark'
 vim.o.wrapscan = false
 vim.o.listchars = 'eol:$,tab:>_'
 vim.o.cursorline = true
-vim.o.cursorcolumn = true
+vim.o.cursorcolumn = false
 vim.o.signcolumn = "yes"
 vim.o.mouse = ""
 
