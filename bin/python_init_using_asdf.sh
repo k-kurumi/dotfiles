@@ -18,14 +18,14 @@ function init_asdf() {
 
 function init_venv() {
   echo "setup: venv"
-  python -m venv venv
+  python -m venv .venv
 }
 
 function init_direnv() {
   echo "setup: direnv"
   cat <<EOF > .envrc
-if [[ -d ./venv ]]; then
-  source ./venv/bin/activate
+if [[ -d ./.venv ]]; then
+  source ./.venv/bin/activate
 fi
 EOF
 }
@@ -34,7 +34,7 @@ EOF
 
 init_asdf "${1}"
 
-if [[ ! -d ./venv ]]; then
+if [[ ! -d ./.venv ]]; then
   init_venv
 fi
 
