@@ -67,6 +67,9 @@ test -f /opt/homebrew/opt/asdf/libexec/asdf.sh && source /opt/homebrew/opt/asdf/
 # mac(intel)
 test -f /usr/local/opt/asdf/libexec/asdf.sh && source /usr/local/opt/asdf/libexec/asdf.sh
 
+# linux(intel)
+test -f /home/linuxbrew/.linuxbrew/opt/asdf/libexec/asdf.sh && source /home/linuxbrew/.linuxbrew/opt/asdf/libexec/asdf.sh
+
 if [[ $(uname) == Darwin ]];then
   # brewでインストールしたpyenvでzlibのパスがみつからない対策
   export LDFLAGS="-L/usr/local/opt/zlib/lib"
