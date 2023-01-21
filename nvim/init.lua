@@ -25,8 +25,8 @@ require('jetpack.packer').startup(function(use)
   use 'https://github.com/nvim-telescope/telescope-frecency.nvim'
 
   -- telescopeでクリップボードマネージャ
-  -- use 'https://github.com/AckslD/nvim-neoclip.lua'
-  -- use 'https://github.com/tami5/sqlite.lua'
+  use 'https://github.com/AckslD/nvim-neoclip.lua'
+  use 'https://github.com/tami5/sqlite.lua'
 
   -- treesitter syntax color
   use {'https://github.com/nvim-treesitter/nvim-treesitter', run = 'TSUpdate'}
