@@ -1,0 +1,18 @@
+# https://taskfile.dev
+
+version: '3'
+
+vars:
+  GREETING: Hello, World!
+
+tasks:
+  default:
+    desc: list tasks
+    cmds:
+      - task -l
+    silent: true
+  dump:
+    desc: dump apps list
+    cmds:
+      - brew bundle dump --global --force
+      - cp ~/.Brewfile .
