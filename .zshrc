@@ -70,10 +70,10 @@ test -f /usr/local/opt/asdf/libexec/asdf.sh && source /usr/local/opt/asdf/libexe
 # linux(intel)
 test -f /home/linuxbrew/.linuxbrew/opt/asdf/libexec/asdf.sh && source /home/linuxbrew/.linuxbrew/opt/asdf/libexec/asdf.sh
 
-if [[ $(uname) == Darwin ]];then
-  # brewでインストールしたpyenvでzlibのパスがみつからない対策
-  export LDFLAGS="-L/usr/local/opt/zlib/lib"
-  export CPPFLAGS="-I/usr/local/opt/zlib/include"
+# brewでインストールしたpyenvでzlibのパスがみつからない対策
+if type brew > /dev/null; then
+  export LDFLAGS="-L$(brew --prefix zlib)/lib"
+  export CPPFLAGS="-I$(brew --prefix zlib)/include"
 fi
 
 # nim
