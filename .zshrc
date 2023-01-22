@@ -70,10 +70,12 @@ test -f /usr/local/opt/asdf/libexec/asdf.sh && source /usr/local/opt/asdf/libexe
 # linux(intel)
 test -f /home/linuxbrew/.linuxbrew/opt/asdf/libexec/asdf.sh && source /home/linuxbrew/.linuxbrew/opt/asdf/libexec/asdf.sh
 
-# brewでインストールしたpyenvでzlibのパスがみつからない対策
+# asdf(pyenv)でエラーが出るため
 if type brew > /dev/null; then
-  export LDFLAGS="-L$(brew --prefix zlib)/lib"
-  export CPPFLAGS="-I$(brew --prefix zlib)/include"
+  # export LDFLAGS="-L$(brew --prefix zlib)/lib"
+  # export CPPFLAGS="-I$(brew --prefix zlib)/include"
+  export LDFLAGS="-L$(brew --prefix openssl)/lib"
+  export CPPFLAGS="-I$(brew --prefix openssl)/include"
 fi
 
 # nim
