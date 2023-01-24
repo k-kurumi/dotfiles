@@ -1,24 +1,27 @@
 // vim: set ft=jsonc :
 {
-  // poetry の virtualenvs.in-project true でインストールするパス
-  "python.venvPath": "./venv",
-  "python.pythonPath": "./venv/bin/python",
+	// タブで開く
+	"coc.preferences.jumpCommand": "tabe",
 
-  "explorer.width": 36,
-  "explorer.position": "left",
-  "explorer.openAction.strategy": "select",
-  "explorer.previewAction.onHover": false,
-  "explorer.keyMappings.global": {
-    "<cr>": ["expandable?", "expand", "open"],
-    "v": "open:vsplit"
-  },
-  "explorer.file.showHiddenFiles": true,
-  "explorer.toggle": false,
-  "Lua.telemetry.enable": true,
+	// poetry の virtualenvs.in-project true でインストールするパス
+	"python.venvPath": "./venv",
+	"python.pythonPath": "./venv/bin/python",
 
-  // vim.api... に飛べるようにする設定
-  // coc-sumneko-luaをインストールすれば自前でlspをビルドする必要はない(coc-luaだと必要に見える)
-  // https://superuser.com/questions/1668467/undefined-global-vim-in-lua-language-server-coc-nvim
-  "sumneko-lua.enableNvimLuaDev": true,
-  "snippets.ultisnips.pythonPrompt": false
+	"explorer.width": 36,
+	"explorer.position": "left",
+	"explorer.openAction.strategy": "select",
+	"explorer.previewAction.onHover": false,
+	"explorer.keyMappings.global": {
+		"<cr>": ["expandable?", "expand", "open"],
+		"v": "open:vsplit"
+	},
+	"explorer.file.showHiddenFiles": true,
+	"explorer.toggle": false,
+	"Lua.telemetry.enable": true,
+
+	// vim.api... に飛べるようにする設定
+	// coc-sumneko-luaをインストールすれば自前でlspをビルドする必要はない(coc-luaだと必要に見える)
+	// https://superuser.com/questions/1668467/undefined-global-vim-in-lua-language-server-coc-nvim
+	"sumneko-lua.enableNvimLuaDev": true,
+	"snippets.ultisnips.pythonPrompt": false
 }
