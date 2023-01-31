@@ -74,8 +74,13 @@ test -f /home/linuxbrew/.linuxbrew/opt/asdf/libexec/asdf.sh && source /home/linu
 if type brew > /dev/null; then
   # export LDFLAGS="-L$(brew --prefix zlib)/lib"
   # export CPPFLAGS="-I$(brew --prefix zlib)/include"
-  export LDFLAGS="-L$(brew --prefix openssl)/lib"
-  export CPPFLAGS="-I$(brew --prefix openssl)/include"
+  # export LDFLAGS="-L$(brew --prefix openssl)/lib"
+  # export CPPFLAGS="-I$(brew --prefix openssl)/include"
+
+  # brewを実行するとzsh起動が遅いため即値にする
+  # TODO m1はパスが違うため条件分けする
+  export LDFLAGS="-L/usr/local/opt/openssl@3/lib"
+  export CPPFLAGS="-I/usr/local/opt/openssl@3/include"
 fi
 
 # nim
