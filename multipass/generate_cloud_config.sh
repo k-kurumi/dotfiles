@@ -1,11 +1,13 @@
 #!/bin/bash
 #
-# multipassで使用するcloud-config.yamlを生成する
+# multipassで使用するcloud-initを生成する
+#
+# [Module reference - cloud-init 22.4.2 documentation](https://cloudinit.readthedocs.io/en/latest/reference/modules.html)
 #
 
 set -eu
 
-cat <<EOF > cloud-config.yaml
+cat <<EOF > cloud_init.yml
 ---
 timezone: Asia/Tokyo
 locale: en_US.UTF-8

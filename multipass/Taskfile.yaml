@@ -1,0 +1,17 @@
+# https://taskfile.dev
+
+version: '3'
+
+vars:
+  vmname: testvm
+
+tasks:
+  default:
+    cmds:
+      - task -l
+    silent: true
+
+  launch:
+    desc: lunch 22.04
+    cmds:
+      - multipass launch 22.04 --name {{.vmname}} --cloud-init cloud_init.yml
