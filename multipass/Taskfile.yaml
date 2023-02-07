@@ -3,7 +3,7 @@
 version: '3'
 
 vars:
-  vmname: testvm
+  VM_NAME: testvm
 
 tasks:
   default:
@@ -11,7 +11,34 @@ tasks:
       - task -l
     silent: true
 
-  launch:
-    desc: lunch 22.04
+  vm_create:
+    desc: create {{.VM_NAME}}
     cmds:
-      - multipass launch 22.04 --name {{.vmname}} --cloud-init cloud_init.yml
+      - multipass launch 22.04 --name {{.VM_NAME}} --cloud-init cloud_init.yml
+      - task: vm_login
+
+  vm_destroy:
+    desc: destroy {{.VM_NAME}}
+    cmds:
+      - multipass delete {{.VM_NAME}}
+      - multipass purge
+
+  vm_login:
+    desc: login {{.VM_NAME}} (using multipass shell)
+    cmds:
+      - multipass shell {{.VM_NAME}}
+
+  vm_ssh:
+    desc: ssh {{.VM_NAME}} (using ssh_config)
+    cmds:
+      - ssh -F ssh_config {{.VM_NAME}}
+
+  generate_ssh_config:
+    desc: generate ssh_config for multipass
+    cmds:
+      - ./generate_ssh_config.sh
+
+  generate_cloud_init_yaml:
+    desc: generate cloud_init.yml for multipass
+    cmds:
+      - ./generate_cloud_config.sh
