@@ -1,3 +1,5 @@
+source ~/.profile
+
 eval "$(sheldon source)"
 
 # 補完時に大文字小文字の区別をなくす
