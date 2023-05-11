@@ -296,3 +296,7 @@ export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*"'
 
 # PC情報の表示
 type neofetch > /dev/null && neofetch || :
+
+# https://github.com/joerdav/xc
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /opt/homebrew/bin/xc xc
