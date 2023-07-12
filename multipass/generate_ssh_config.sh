@@ -11,6 +11,7 @@ multipass list | awk '$2 = /Running/{
   print "  User ubuntu"
   print "  Port 22"
   print "  ForwardAgent yes"
+  print "  IdentityFile ~/.ssh/id_ed25519"
   print "  IdentityFile ~/.ssh/id_rsa"
   print "  StrictHostKeyChecking no"
   print "  UserKnownHostsFile /dev/null"
