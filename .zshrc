@@ -85,15 +85,8 @@ if [[ -d ~/.nimble/bin ]]; then
   export PATH="${HOME}/.nimble/bin:$PATH"
 fi
 
-# golang(1.8のデフォルトとは違う)
-if [[ -d ~/go ]]; then
-  export GOPATH=${HOME}/dev
-  export PATH=${GOPATH}/bin:${PATH}
-  export GOROOT=${HOME}/go
-  export PATH=${GOROOT}/bin:${PATH}
-  export GO111MODULE=on
-  go env -w GO111MODULE=on
-fi
+# golang
+export PATH="${HOME}/.local/go/bin:$PATH"
 
 # rust
 if [[ -d ~/.cargo ]]; then
