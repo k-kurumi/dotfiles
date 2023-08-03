@@ -87,6 +87,7 @@ fi
 
 # golang
 export PATH="${HOME}/.local/go/bin:$PATH"
+export PATH="${HOME}/go/bin:$PATH"
 
 # rust
 if [[ -d ~/.cargo ]]; then
