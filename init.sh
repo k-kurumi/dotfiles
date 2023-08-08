@@ -8,7 +8,6 @@ set -eu
 tmp_dir=$(mktemp -d)
 
 echo ".Xmodmap
-.ackrc
 .ctags
 .eslintrc.yml
 .gitignore_global
@@ -20,7 +19,6 @@ echo ".Xmodmap
 .tigrc
 .tmux.conf
 .zshrc
-.rdb.sh
 .ptconfig.toml
 .vimrc" | while read f
 do
