@@ -88,6 +88,9 @@ git config --global difftool.prompt false
 # git-diff時のタブを4スペースにする
 git config --global core.pager 'less -x4'
 
+# コミット時に差分も表示する
+git config --global commit.verbose true
+
 # globalなgitignoreを追加
 if ! grep 'excludesfile =' ~/.gitconfig > /dev/null; then
   cat << 'EOL' >> ~/.gitconfig
