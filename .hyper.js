@@ -137,7 +137,7 @@ module.exports = {
 
     overlay: {
       animate: false,
-      hotkeys: ["`", "Ctrl+;"],
+      hotkeys: ["Ctrl+;"],
       size: 0.4,
       unique: true,
     },
