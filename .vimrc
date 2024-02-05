@@ -98,6 +98,7 @@ set nowrapscan
 
 " 文字コード関連
 set laststatus=2
+set encoding=utf-8
 set fileencodings=utf-8,euc-jp,sjis,iso-2022-jp
 set fileencoding=utf-8
 
