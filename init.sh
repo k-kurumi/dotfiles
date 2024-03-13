@@ -50,6 +50,10 @@ mkdir -p ~/.local/bin
 # mkdir -p ~/.config/coc
 # ln -sf "$(realpath coc/ultisnips)" ~/.config/coc
 
+# lunarvim
+mkdir -p ~/.config/lvim
+ln -sf "$(realpath lvim/config.lua)" ~/.config/lvim/config.lua
+
 ################################################################################
 #
 # git
