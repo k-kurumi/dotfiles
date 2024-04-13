@@ -1,61 +1,54 @@
 # multipass
 
-## Tasks
+## 設定ファイルの生成
 
-### generate-cloud-config
-
-create cloud_init.yml
+multipass で読み込ませる cloud_init.yml を表示する
 
 ```shell
-./generate_cloud_config.sh
+vm_name=test123
+
+./print_cloud_config.sh "${vm_name}"
 ```
 
-### generate-ssh_config
-
-generate ssh_config
+ssh_config を表示する
 
 ```shell
-./generate_ssh_config.sh
+vm_name=test123
+
+./print_ssh_config.sh  "${vm_name}"
 ```
 
-### create-vm
+## VM の作成
 
 ubuntu 22.04 で VM を作成する
 
-inputs: vm_name
-
 ```shell
-echo ${vm_name}
+vm_name=test123
+
 multipass launch 22.04 --name "${vm_name}" --cloud-init cloud_init.yml
 ```
 
-### destroy-vm
+## VM の削除
 
-指定した VM を削除する
-
-inputs: vm_name
+指定した VM を削除する (purge で完全削除)
 
 ```shell
+vm_name=test123
+
 multipass delete "${vm_name}"
 multipass purge
 ```
 
-### login
+## VM に接続
 
 login multipass vm
 
-inputs: vm_name
-
 ```shell
+vm_name=test123
+
 multipass shell "${vm_name}"
-```
 
-### ssh
-
-ssh multipass vm
-
-inputs: vm_name
-
-```shell
+## or
+./print_ssh_config.sh > ssh_config
 ssh -F ssh_config "${vm_name}"
 ```
