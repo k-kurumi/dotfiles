@@ -62,26 +62,16 @@ ln -sf "$(realpath lvim/config.lua)" ~/.config/lvim/config.lua
 # ghqが使用するフォルダ
 mkdir -p ~/dev/src
 mkdir -p ~/dev/bin
+touch ~/.gitconfig
 
 git config --global user.name k-kurumi
 git config --global user.email optpia.kurumi@gmail.com
 
-touch ~/.gitconfig
-if ! grep ghq ~/.gitconfig > /dev/null; then
-  cat << 'EOL' >> ~/.gitconfig
-[ghq]
-  root = ~/dev/src
-EOL
-fi
+git config --global ghq.root '~/dev/src'
 
 # git gl でグラフ表示
-if ! grep 'gla =' ~/.gitconfig > /dev/null; then
-  cat << 'EOL' >> ~/.gitconfig
-[alias]
-  gl  = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
-  gla = log --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
-EOL
-fi
+git config --global alias.gl 'log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit --date=relative'
+git config --global alias.gla 'log --graph --all --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit --date=relative'
 
 # git difftoolでvimdiffを使ったdiffを表示する(git-diffとは別)
 git config --global diff.tool vimdiff
@@ -95,13 +85,11 @@ git config --global core.pager 'less -x4'
 # コミット時に差分も表示する
 git config --global commit.verbose true
 
+# コミット時のエディタ
+type lvim && git config --global core.editor lvim
+
 # globalなgitignoreを追加
-if ! grep 'excludesfile =' ~/.gitconfig > /dev/null; then
-  cat << 'EOL' >> ~/.gitconfig
-[core]
-  excludesfile = ~/.gitignore_global
-EOL
-fi
+git config --global core.excludesfile '~/.gitignore_global'
 
 ################################################################################
 #
