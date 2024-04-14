@@ -6,6 +6,8 @@
 vim.opt.virtualedit = 'all'
 vim.opt.wrapscan = false
 
+vim.api.nvim_set_keymap('i', 'jj', '<ESC>', {noremap=true, silent=true})
+
 lvim.plugins = {
   {
     "kylechui/nvim-surround",
