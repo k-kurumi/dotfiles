@@ -155,8 +155,7 @@ vnoremap <silent> // y/<C-R>=escape(@", '\\/.*$^~[]')<CR><CR>
 "選択した文字列を置換
 vnoremap /s "xy:%s/<C-R>=escape(@x, '\\/.*$^~[]')<CR>//gc<Left><Left><Left>
 
-" 間違って押しやすいから
-inoremap <C-@> <ESC>
+inoremap <silent> jj <ESC>
 
 " 行の強調(列を有効にするとカーソル移動がもたつくため使わない)
 set cursorline
