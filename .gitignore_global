@@ -105,3 +105,6 @@ _vimrc_local.vim
 .vimrc_local.vim
 
 _workaround.mk
+
+# devcontainerを個人的にカスタマイズしたもの
+.devcontainer/*-personal
