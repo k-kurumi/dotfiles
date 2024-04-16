@@ -6,7 +6,12 @@
 vim.opt.virtualedit = 'all'
 vim.opt.wrapscan = false
 
+-- jjでコマンドモードに戻る
 vim.api.nvim_set_keymap('i', 'jj', '<ESC>', {noremap=true, silent=true})
+
+-- bufferの切り替え
+vim.api.nvim_set_keymap('n', 'th', ':bp<ENTER>', {noremap=true, silent=true})
+vim.api.nvim_set_keymap('n', 'tl', ':bn<ENTER>', {noremap=true, silent=true})
 
 lvim.plugins = {
   {
