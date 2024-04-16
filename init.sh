@@ -36,19 +36,8 @@ mkdir -p ~/.local/bin
 # vim
 #
 
-# # nvim固有の設定が増えてきて条件分岐が多くなってきたため、設定ファイルを分けた
-# mkdir -p ~/.config/nvim
-# # ln -sf "$(realpath nvim/init.vim)" ~/.config/nvim/init.vim
-# ln -sf "$(realpath nvim/init.lua)" ~/.config/nvim/init.lua
-#
-# # プラグインマネージャ https://github.com/tani/vim-jetpack
-# curl -fLo ~/.config/nvim/plugin/jetpack.vim --create-dirs https://raw.githubusercontent.com/tani/vim-jetpack/master/plugin/jetpack.vim
-#
-# # coc
-# ln -sf "$(realpath nvim/coc-settings.json)" ~/.config/nvim/coc-settings.json
-#
-# mkdir -p ~/.config/coc
-# ln -sf "$(realpath coc/ultisnips)" ~/.config/coc
+# for swapfile
+mkdir -p ~/.vim
 
 # lunarvim
 mkdir -p ~/.config/lvim
