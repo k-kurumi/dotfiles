@@ -35,3 +35,6 @@ grep SHELL ~/.profile || echo 'export SHELL=/usr/bin/zsh' >> ~/.profile
 # userで一度受けるのはsudo時にUSER=rootとなるため
 user="${USER}"
 sudo chsh "${user}" -s /usr/bin/zsh
+
+# UTC->JST
+sudo ln -sf /usr/share/zoneinfo/Japan /etc/localtime
