@@ -22,3 +22,10 @@ type apt-get && sudo apt-get update && sudo apt-get install -y tig vim ripgrep t
 # sheldon
 type sheldon || curl --proto '=https' -fLsS https://rossmacarthur.github.io/install/crate.sh \
   | bash -s -- --repo rossmacarthur/sheldon --to ~/.local/bin
+
+# 開く大本のターミナルはsettings.jsonの"terminal.integrated.defaultProfile.linux": "zsh"で設定する
+# tmuxのpaneはSHELLを参照している
+touch ~/.profile
+grep SHELL ~/.profile || echo 'export SHELL=/usr/bin/zsh' >> ~/.profile
+# これはなくても問題ないが/etc/passwdを変更しておく
+sudo chsh -s $USER -s /usr/bin/zsh
