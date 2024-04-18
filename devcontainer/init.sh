@@ -17,7 +17,11 @@ if [ -z "${REMOTE_CONTAINERS}" ]; then
   exit 0
 fi
 
-type apt-get && sudo apt-get update && sudo apt-get install -y tig vim ripgrep tmux direnv fzf git-crypt
+type apt-get && sudo apt-get update && sudo apt-get install -y tig vim ripgrep tmux direnv git-crypt
+
+# fzfをaptでインストールすると補完周りが効かないため
+test -d ~/.fzf || git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+~/.fzf/install
 
 # sheldon
 type sheldon || curl --proto '=https' -fLsS https://rossmacarthur.github.io/install/crate.sh \
@@ -27,6 +31,7 @@ type sheldon || curl --proto '=https' -fLsS https://rossmacarthur.github.io/inst
 # tmuxのpaneはSHELLを参照している
 touch ~/.profile
 grep SHELL ~/.profile || echo 'export SHELL=/usr/bin/zsh' >> ~/.profile
-# これはなくても問題ないが/etc/passwdを変更しておく
+# chshしなくてもzsh固定できているが念の為設定しておく
+# userで一度受けるのはsudo時にUSER=rootとなるため
 user="${USER}"
 sudo chsh "${user}" -s /usr/bin/zsh
