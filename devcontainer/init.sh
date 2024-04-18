@@ -28,4 +28,5 @@ type sheldon || curl --proto '=https' -fLsS https://rossmacarthur.github.io/inst
 touch ~/.profile
 grep SHELL ~/.profile || echo 'export SHELL=/usr/bin/zsh' >> ~/.profile
 # これはなくても問題ないが/etc/passwdを変更しておく
-sudo chsh -s $USER -s /usr/bin/zsh
+user="${USER}"
+sudo chsh -s "${user}" -s /usr/bin/zsh
