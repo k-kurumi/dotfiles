@@ -2,8 +2,11 @@
 // README at: https://github.com/devcontainers/templates/tree/main/src/python
 {
   "features": {
-    "ghcr.io/wxw-matt/devcontainer-features/command_runner:0": {
-      "command1": "chsh vscode -s /usr/bin/zsh"
+    "features": {
+      "ghcr.io/devcontainers-contrib/features/bash-command:1": {
+        // ターミナルからchshしても効いていない
+        "command": "chsh vscode -s /usr/bin/zsh"
+      }
     }
   }
 }
