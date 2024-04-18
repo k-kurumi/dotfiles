@@ -21,7 +21,7 @@ type apt-get && sudo apt-get update && sudo apt-get install -y tig vim ripgrep t
 
 # fzfをaptでインストールすると補完周りが効かないため
 test -d ~/.fzf || git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-~/.fzf/install
+yes Y | ~/.fzf/install
 
 # sheldon
 type sheldon || curl --proto '=https' -fLsS https://rossmacarthur.github.io/install/crate.sh \
