@@ -4,8 +4,8 @@
   "features": {
     "features": {
       "ghcr.io/devcontainers-contrib/features/bash-command:1": {
-        // ターミナルからchshしても効いていない
-        "command": "chsh vscode -s /usr/bin/zsh"
+        // zsh固定はsettings.jsonとinit.shで設定できる
+        //"command": "chsh vscode -s /usr/bin/zsh"
       }
     }
   }
