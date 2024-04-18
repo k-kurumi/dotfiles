@@ -17,8 +17,8 @@ if [ -z "${REMOTE_CONTAINERS}" ]; then
   exit 0
 fi
 
-type apt-get && sudo apt-get install -y tig vim ripgrep tmux direnv fzf
+type apt-get && sudo apt-get update && sudo apt-get install -y tig vim ripgrep tmux direnv fzf
 
 # sheldon
-curl --proto '=https' -fLsS https://rossmacarthur.github.io/install/crate.sh \
+type sheldon || curl --proto '=https' -fLsS https://rossmacarthur.github.io/install/crate.sh \
   | bash -s -- --repo rossmacarthur/sheldon --to ~/.local/bin
