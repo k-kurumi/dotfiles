@@ -29,4 +29,4 @@ touch ~/.profile
 grep SHELL ~/.profile || echo 'export SHELL=/usr/bin/zsh' >> ~/.profile
 # これはなくても問題ないが/etc/passwdを変更しておく
 user="${USER}"
-sudo chsh -s "${user}" -s /usr/bin/zsh
+sudo chsh "${user}" -s /usr/bin/zsh
