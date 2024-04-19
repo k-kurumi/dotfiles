@@ -244,14 +244,6 @@ function wiki() {
 # zle -N fzf_open_file
 # bindkey '^O' fzf_open_file
 
-# history表示
-function fzf_select_history() {
-  BUFFER=$(history -n 1 | fzf)
-  zle clear-screen
-}
-zle -N fzf_select_history
-bindkey '^R' fzf_select_history
-
 # ghqリポジトリに移動する
 function fzf_select_ghq_repo() {
   local selected_dir=$(ghq list -p | fzf)
