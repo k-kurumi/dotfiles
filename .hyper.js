@@ -181,6 +181,7 @@ module.exports = {
     // git-pushでロケット発射
     "gitrocket",
 
+
     // 最前面に表示
     // "hyper-always-on-top",
 
