@@ -155,7 +155,6 @@ module.exports = {
     // 複数行の貼り付け時に確認ウインドウを出す
     "hyperterm-safepaste",
 
-
     // 背景透過
     'hyper-opacity',
 
