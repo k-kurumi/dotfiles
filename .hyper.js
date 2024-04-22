@@ -160,8 +160,9 @@ module.exports = {
     'hyper-opacity',
 
     // color theme
-    "hyper-gruvbox",
+    // "hyper-gruvbox",
     // "hyper-dracula",
+    "hyper-flat",
 
     // カーソルを目立たせる
     'hyperpower',
@@ -177,6 +178,9 @@ module.exports = {
 
     // 色付きの枠
     "hyperborder",
+
+    // git-pushでロケット発射
+    "gitrocket",
 
     // 最前面に表示
     // "hyper-always-on-top",
