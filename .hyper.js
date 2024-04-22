@@ -187,7 +187,7 @@ module.exports = {
 
     // guake風のターミナル(hyperterm-summonに比べて表示位置の自由度が低い)
     // forkされたhyper-overlayは表示がおかしくなるため使用しない
-    "hyperterm-overlay",
+    // "hyperterm-overlay",
 
     // ウインドウ枠を消す(ドラッグできなくてウインドウ移動しづらい)
     // "hyperminimal",
