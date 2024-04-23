@@ -5,6 +5,8 @@ return {
 
   use_ime = true,
 
+  audible_bell = "Disabled",
+
   -- font
   font = wezterm.font("UDEV Gothic NF", {bold=true, italic=false}),
   font_size = 18.0,
@@ -21,7 +23,7 @@ return {
   -- color_scheme = "WildCherry",
 
   -- 背景透過 1.0が不透過
-  window_background_opacity = 0.8,
+  window_background_opacity = 0.9,
 
   -- キーバインド変更
   -- https://wezfurlong.org/wezterm/config/keys.html#default-shortcut--key-binding-assignments
@@ -37,14 +39,12 @@ return {
     { key = "n", mods = "SUPER", action = wezterm.action{SpawnTab = "CurrentPaneDomain"} },
 
     -- cmd+H タブを左に移動する
-    { key = "h", mods = "SHIFT|SUPER", action = wezterm.action{MoveTabRelative = -1} },
+    { key = "H", mods = "SUPER", action = wezterm.action{MoveTabRelative = -1} },
     -- cmd+L タブを右に移動する
-    { key = "l", mods = "SHIFT|SUPER", action = wezterm.action{MoveTabRelative = 1} },
+    { key = "L", mods = "SUPER", action = wezterm.action{MoveTabRelative = 1} },
 
-    -- 基本US配列なのか key = "+",mods = "SUPER" では効かない
-    -- cmd++ フォントを大きくする
-    -- {key = "+", mods = "SHIFT|SUPER", action = "IncreaseFontSize"},
-    { key = "+", mods = "SHIFT|SUPER", action = wezterm.action.IncreaseFontSize },
+    -- ズーム周り
+    { key = "=", mods = "SUPER", action = wezterm.action.IncreaseFontSize },
     { key = "-", mods = "SUPER", action = wezterm.action.DecreaseFontSize },
     { key = "0", mods = "SUPER", action = wezterm.action.ResetFontSize },
   },
