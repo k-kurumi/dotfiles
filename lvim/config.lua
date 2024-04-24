@@ -25,3 +25,6 @@ lvim.plugins = {
     end
   },
 }
+
+-- 背景透過処理
+lvim.transparent_window = true
