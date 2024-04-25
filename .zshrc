@@ -130,6 +130,7 @@ alias rg="rg --hidden --glob '!.git/'"
 alias tmpfile='nvim $(mktemp)'
 
 alias lg='lazygit'
+alias gu='gitui'
 
 # vim-fugitive
 # alias g='nvim -c G -c only'

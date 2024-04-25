@@ -157,3 +157,6 @@ ln -sf "$(realpath lf/lfrc)" ~/.config/lf/
 
 mkdir -p ~/.config/luaformatter
 ln -sf "$(realpath luaformatter/config.yaml)" ~/.config/luaformatter/
+
+mkdir -p ~/.config/gitui
+ln -sf "$(realpath gitui/key_bindings.ron)" ~/.config/gitui/
