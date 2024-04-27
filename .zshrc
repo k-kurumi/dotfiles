@@ -91,6 +91,7 @@ export PATH="${HOME}/go/bin:$PATH"
 
 # rust
 if [[ -d ~/.cargo ]]; then
+  export PATH="${HOME}/.cargo/bin:${PATH}"
   source ${HOME}/.cargo/env
 fi
 
