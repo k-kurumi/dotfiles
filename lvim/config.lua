@@ -3,6 +3,7 @@
 -- Forum: https://www.reddit.com/r/lunarvim/
 -- Discord: https://discord.com/invite/Xb9B4Ny
 
+vim.opt.clipboard = ''
 vim.opt.virtualedit = 'all'
 vim.opt.wrapscan = false
 
