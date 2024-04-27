@@ -142,7 +142,14 @@ case $(uname) in
     ;;
 esac
 
-# wezterm 日本語変換途中が表示されないがそれ以外は問題なく使える
+# alacritty
+mkdir -p ~/.config/alacritty
+ln -sf "$(realpath alacritty/alacritty.toml)" ~/.config/alacritty/
+
+mkdir -p ~/.config/alacritty/themes
+file -d ~/.config/alacritty/themes/.git || git clone https://github.com/alacritty/alacritty-theme ~/.config/alacritty/themes
+
+# wezterm linuxで日本語入力不可
 mkdir -p ~/.config/wezterm
 ln -sf "$(realpath wezterm/wezterm.lua)" ~/.config/wezterm/
 
