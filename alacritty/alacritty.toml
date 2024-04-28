@@ -21,7 +21,7 @@ opacity = 0.98  # Default: 1.0
 [font]
 
 # Normal font style
-normal = { family = "UDEV Gothic NFLG", style = "Regular" }  # Default for Linux/BSD: "monospace", Regular
+normal = { family = "UDEV Gothic NFLG", style = "Bold" }  # Default for Linux/BSD: "monospace", Regular
 
 # Font size in points
 size = 16  # Default: 11.25
