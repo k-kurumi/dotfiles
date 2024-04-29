@@ -14,7 +14,7 @@ import = [
 dimensions = { columns = 120, lines = 45 }
 
 # Opacity
-opacity = 0.98  # Default: 1.0
+opacity = 0.95  # Default: 1.0
 
 [font]
 
