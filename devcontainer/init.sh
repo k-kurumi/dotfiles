@@ -17,7 +17,7 @@ if [ -z "${REMOTE_CONTAINERS}" ]; then
   exit 0
 fi
 
-type apt-get && sudo apt-get update && sudo apt-get install -y tig vim ripgrep tmux direnv git-crypt
+type apt-get && sudo apt-get update && sudo apt-get install -y tig vim ripgrep tmux direnv git-crypt neofetch
 
 # fzfをaptでインストールすると補完周りが効かないため
 test -d ~/.fzf || git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
