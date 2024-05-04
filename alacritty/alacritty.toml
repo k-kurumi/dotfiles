@@ -10,16 +10,11 @@ import = [
 #
 
 [window]
-
+padding = { x = 10, y = 10 }
 dimensions = { columns = 120, lines = 45 }
-
-# Opacity
-opacity = 0.95  # Default: 1.0
+opacity = 0.9  # Default: 1.0
+blur = true
 
 [font]
-
-# Normal font style
-normal = { family = "UDEV Gothic NFLG", style = "Bold" }  # Default for Linux/BSD: "monospace", Regular
-
-# Font size in points
-size = 16  # Default: 11.25
+normal = { family = "UDEV Gothic NFLG", style = "Bold" }
+size = 16
