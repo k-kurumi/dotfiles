@@ -15,32 +15,32 @@ return {
   -- color_scheme = "Gruvbox Dark",
   -- color_scheme = "Hybrid",
   -- color_scheme = "Monokai (terminal.sexy)",
-  color_scheme = "Neon (terminal.sexy)",
+  -- color_scheme = "Neon (terminal.sexy)",
   -- color_scheme = "PencilDark",
   -- color_scheme = "Sakura",
-  -- color_scheme = "tokyonight",
+  color_scheme = "tokyonight",
   -- color_scheme = "Urple",
   -- color_scheme = "WildCherry",
 
-  background = {
-    {
-      source = {
-        -- ~は使えない
-        File = os.getenv("HOME") .. "/dotfiles/images/stained-glass.jpg",
-      },
-      -- sourceは改行しても固定
-      attachment = "Fixed",
-      -- sourceの明度
-      hsb =  { brightness = 0.005 },
-      -- 背景透過 0に近いほど透過する
-      opacity = 1.0,
-      horizontal_offset = 0,
-      vertical_offset = 0,
-    },
-  },
+  -- background = {
+  --   {
+  --     source = {
+  --       -- ~は使えない
+  --       File = os.getenv("HOME") .. "/dotfiles/images/stained-glass.jpg",
+  --     },
+  --     -- sourceは改行しても固定
+  --     attachment = "Fixed",
+  --     -- sourceの明度
+  --     hsb =  { brightness = 0.005 },
+  --     -- 背景透過 0に近いほど透過する
+  --     opacity = 1.0,
+  --     horizontal_offset = 0,
+  --     vertical_offset = 0,
+  --   },
+  -- },
 
   -- 背景透過 1.0が不透過
-  window_background_opacity = 1.0,
+  window_background_opacity = 0.95,
 
   -- キーバインド変更
   -- FIXME SUPERはpoposのウインドウ切り替えと被るので変更したい
