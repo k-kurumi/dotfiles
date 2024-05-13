@@ -5,9 +5,19 @@
 multipass で読み込ませる cloud_init.yml を表示する
 
 ```shell
+./print_cloud_config.sh
+```
+
+## VM の作成
+
+ubuntu 24.04 (lts) で VM を作成する
+
+> `24.04`指定はエラーになるため`lts`を使用する
+
+```shell
 vm_name=test123
 
-./print_cloud_config.sh "${vm_name}"
+multipass launch lts --name "${vm_name}" --cloud-init cloud_init.yml
 ```
 
 ssh_config を表示する
@@ -16,16 +26,6 @@ ssh_config を表示する
 vm_name=test123
 
 ./print_ssh_config.sh  "${vm_name}"
-```
-
-## VM の作成
-
-ubuntu 22.04 で VM を作成する
-
-```shell
-vm_name=test123
-
-multipass launch 22.04 --name "${vm_name}" --cloud-init cloud_init.yml
 ```
 
 ## VM の削除
