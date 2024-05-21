@@ -101,14 +101,6 @@ ln -sf "$(realpath zellij/config.yaml)" ~/.config/zellij/config.yaml
 # その他のツール
 #
 
-# yamllintの設定ファイル
-mkdir -p ~/.config/yamllint
-ln -sf "$(realpath .config/yamllint/config)" ~/.config/yamllint/
-
-# zathura vi風のPDFリーダー設定ファイル
-mkdir -p ~/.config/zathura
-ln -sf "$(realpath .config/zathura/zathurarc)" ~/.config/zathura/
-
 # .docker/config.jsonは認証情報が追記されシンボリックリンクにすると差分管理しづらいためファイルにする
 if type jq > /dev/null; then
   # dockerコンテナ内で<C-p>2度押しを解消
