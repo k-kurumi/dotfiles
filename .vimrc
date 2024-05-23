@@ -51,6 +51,7 @@ set showmode
 
 " 自動字下げ
 "set cindent
+set autoindent
 
 " 括弧対応を強調
 set showmatch
