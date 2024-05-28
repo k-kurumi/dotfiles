@@ -30,14 +30,6 @@ use = ["{{ name }}.zsh"]
 [plugins.zsh-syntax-highlighting]
 github = "zsh-users/zsh-syntax-highlighting"
 
-# 暗号化したファイルを編集するエイリアスらしい
-# [plugins.blackbox]
-# github = "StackExchange/blackbox"
-
-# コマンド入力途中で上下キー押したときの過去履歴がいい感じに出るようになる
-[plugins.zsh-history-substring-search]
-github = 'zsh-users/zsh-history-substring-search'
-
 # 256色表示にする
 [plugins.zsh-256color]
 github = 'chrissicool/zsh-256color'
