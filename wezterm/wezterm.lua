@@ -1,4 +1,59 @@
 local wezterm = require 'wezterm';
+
+-- キーバインド変更
+-- https://wezfurlong.org/wezterm/config/keys.html#default-shortcut--key-binding-assignments
+-- https://wezfurlong.org/wezterm/config/lua/keyassignment/index.html
+
+-- OS判定
+-- https://wezfurlong.org/wezterm/config/lua/wezterm/target_triple.html
+-- x86_64-pc-windows-msvc - Windows
+-- x86_64-apple-darwin - macOS (Intel)
+-- aarch64-apple-darwin - macOS (Apple Silicon)
+-- x86_64-unknown-linux-gnu - Linux
+if wezterm.target_triple == 'x86_64-unknown-linux-gnu' then
+  MY_KEYS = {
+    -- alt+h 左のタブを表示する
+    { key = "h", mods = "ALT", action = wezterm.action{ActivateTabRelative = -1} },
+    -- alt+l 右のタブを表示する
+    { key = "l", mods = "ALT", action = wezterm.action{ActivateTabRelative = 1} },
+
+    -- alt+n タブを開く
+    { key = "n", mods = "ALT", action = wezterm.action{SpawnTab = "CurrentPaneDomain"} },
+
+    -- alt+H タブを左に移動する
+    { key = "H", mods = "ALT", action = wezterm.action{MoveTabRelative = -1} },
+    -- alt+L タブを右に移動する
+    { key = "L", mods = "ALT", action = wezterm.action{MoveTabRelative = 1} },
+
+    -- ズーム周り
+    { key = "=", mods = "ALT", action = wezterm.action.IncreaseFontSize },
+    { key = "-", mods = "ALT", action = wezterm.action.DecreaseFontSize },
+    { key = "0", mods = "ALT", action = wezterm.action.ResetFontSize },
+  }
+end
+
+if wezterm.target_triple == 'aarch64-apple-darwin' or wezterm.target_triple == 'x86_64-apple-darwin' then
+  MY_KEYS = {
+    -- cmd+h 左のタブを表示する
+    { key = "h", mods = "SUPER", action = wezterm.action{ActivateTabRelative = -1} },
+    -- cmd+l 右のタブを表示する
+    { key = "l", mods = "SUPER", action = wezterm.action{ActivateTabRelative = 1} },
+
+    -- cmd+n タブを開く
+    { key = "n", mods = "SUPER", action = wezterm.action{SpawnTab = "CurrentPaneDomain"} },
+
+    -- cmd+H タブを左に移動する
+    { key = "H", mods = "SUPER", action = wezterm.action{MoveTabRelative = -1} },
+    -- cmd+L タブを右に移動する
+    { key = "L", mods = "SUPER", action = wezterm.action{MoveTabRelative = 1} },
+
+    -- ズーム周り
+    { key = "=", mods = "SUPER", action = wezterm.action.IncreaseFontSize },
+    { key = "-", mods = "SUPER", action = wezterm.action.DecreaseFontSize },
+    { key = "0", mods = "SUPER", action = wezterm.action.ResetFontSize },
+  }
+end
+
 return {
   -- What to set the TERM variable to
   term = "xterm-256color",
@@ -42,28 +97,5 @@ return {
   -- 背景透過 1.0が不透過
   window_background_opacity = 0.95,
 
-  -- キーバインド変更
-  -- FIXME SUPERはpoposのウインドウ切り替えと被るので変更したい
-  -- https://wezfurlong.org/wezterm/config/keys.html#default-shortcut--key-binding-assignments
-  -- SUPER == command
-  -- https://wezfurlong.org/wezterm/config/lua/keyassignment/index.html
-  keys = {
-    -- cmd+h 左のタブを表示する
-    { key = "h", mods = "SUPER", action = wezterm.action{ActivateTabRelative = -1} },
-    -- cmd+l 右のタブを表示する
-    { key = "l", mods = "SUPER", action = wezterm.action{ActivateTabRelative = 1} },
-
-    -- cmd+n タブを開く
-    { key = "n", mods = "SUPER", action = wezterm.action{SpawnTab = "CurrentPaneDomain"} },
-
-    -- cmd+H タブを左に移動する
-    { key = "H", mods = "SUPER", action = wezterm.action{MoveTabRelative = -1} },
-    -- cmd+L タブを右に移動する
-    { key = "L", mods = "SUPER", action = wezterm.action{MoveTabRelative = 1} },
-
-    -- ズーム周り
-    { key = "=", mods = "SUPER", action = wezterm.action.IncreaseFontSize },
-    { key = "-", mods = "SUPER", action = wezterm.action.DecreaseFontSize },
-    { key = "0", mods = "SUPER", action = wezterm.action.ResetFontSize },
-  },
+  keys = MY_KEYS,
 }
