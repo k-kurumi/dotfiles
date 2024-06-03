@@ -72,8 +72,8 @@ return {
   -- color_scheme = "Monokai (terminal.sexy)",
   -- color_scheme = "Neon (terminal.sexy)",
   -- color_scheme = "PencilDark",
-  -- color_scheme = "Sakura",
-  color_scheme = "tokyonight",
+  color_scheme = "Sakura",
+  -- color_scheme = "tokyonight",
   -- color_scheme = "Urple",
   -- color_scheme = "WildCherry",
 
