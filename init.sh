@@ -63,7 +63,7 @@ git config --global alias.gl 'log --graph --pretty=format:"%Cred%h%Creset -%C(ye
 git config --global alias.gla 'log --graph --all --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit --date=relative'
 
 # git difftoolでvimdiffを使ったdiffを表示する(git-diffとは別)
-git config --global diff.tool vimdiff
+# git config --global diff.tool vimdiff
 git config --global difftool.prompt false
 # git config --global merge.tool vimdiff
 # git config --global mergetool.prompt false
@@ -75,7 +75,7 @@ git config --global core.pager 'less -x4'
 git config --global commit.verbose true
 
 # コミット時のエディタ
-type vim && git config --global core.editor vim
+type code && git config --global core.editor 'code --wait' || git config --global core.editor vim
 
 # globalなgitignoreを追加
 git config --global core.excludesfile '~/.gitignore_global'
