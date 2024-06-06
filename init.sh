@@ -75,7 +75,8 @@ git config --global core.pager 'less -x4'
 git config --global commit.verbose true
 
 # コミット時のエディタ
-type code && git config --global core.editor 'code --wait' || git config --global core.editor vim
+# type code && git config --global core.editor 'code --wait' || git config --global core.editor vim
+type lvim && git config --global core.editor lvim || git config --global core.editor vim
 
 # globalなgitignoreを追加
 git config --global core.excludesfile '~/.gitignore_global'
