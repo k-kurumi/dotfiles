@@ -38,3 +38,15 @@ sudo chsh "${user}" -s /usr/bin/zsh
 
 # UTC->JST
 sudo ln -sf /usr/share/zoneinfo/Japan /etc/localtime
+
+# LunarVim
+pushd $HOME
+  wget https://github.com/neovim/neovim/releases/download/v0.10.0/nvim.appimage
+  chmod +x nvim.appimage
+  ./nvim.appimage --appimage-extract
+  echo 'export PATH=${HOME}/squashfs-root/usr/bin:${PATH}' >> "${HOME}/.profile"
+
+  # LunarVimのインストーラでnvimが見えるように一時的にパスを通す
+  export PATH="${HOME}/squashfs-root/usr/bin:${PATH}"
+  yes no | LV_BRANCH='release-1.4/neovim-0.9' bash <(curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/release-1.4/neovim-0.9/utils/installer/install.sh)
+popd
