@@ -1,6 +1,7 @@
 source ~/.profile
 
 eval "$(sheldon source)"
+eval "$(starship init zsh)"
 
 # 補完時に大文字小文字の区別をなくす
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'

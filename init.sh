@@ -91,6 +91,14 @@ ln -sf "$(realpath sheldon/plugins.toml)" ~/.config/sheldon
 
 ################################################################################
 #
+# startship
+#
+
+mkdir -p ~/.config
+ln -sf "$(realpath starship/starship.toml)" ~/.config/starship.toml
+
+################################################################################
+#
 # zellij
 #
 
