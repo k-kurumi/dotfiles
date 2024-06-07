@@ -39,14 +39,12 @@ sudo chsh "${user}" -s /usr/bin/zsh
 # UTC->JST
 sudo ln -sf /usr/share/zoneinfo/Japan /etc/localtime
 
-# LunarVim
+# neovim and lunarvim
+# FIXME neovimのarm対応版がリリースされたら利用したい (appimageはx64のためarmで起動できない)
 pushd "$HOME" || exit
-  wget https://github.com/neovim/neovim/releases/download/v0.10.0/nvim.appimage
-  chmod +x nvim.appimage
-  ./nvim.appimage --appimage-extract
-  echo "export PATH=${HOME}/squashfs-root/usr/bin:${PATH}" >> "${HOME}/.profile"
-
-  # LunarVimのインストーラでnvimが見えるように一時的にパスを通す
-  export PATH="${HOME}/squashfs-root/usr/bin:${PATH}"
+  sudo apt-get install -y ninja-build gettext cmake unzip curl build-essential
+  git clone --depth 1 https://github.com/neovim/neovim
+  cd neovim && make CMAKE_BUILD_TYPE=RelWithDebInfo
+  sudo make install
   yes no | LV_BRANCH='release-1.4/neovim-0.9' bash <(curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/release-1.4/neovim-0.9/utils/installer/install.sh)
 popd || exit
