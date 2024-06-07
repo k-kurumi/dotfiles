@@ -39,9 +39,9 @@ mkdir -p ~/.local/bin
 # for swapfile
 mkdir -p ~/.vim
 
-## lunarvim
-#mkdir -p ~/.config/lvim
-#ln -sf "$(realpath lvim/config.lua)" ~/.config/lvim/config.lua
+# lunarvim
+mkdir -p ~/.config/lvim
+ln -sf "$(realpath lvim/config.lua)" ~/.config/lvim/config.lua
 
 ################################################################################
 #
