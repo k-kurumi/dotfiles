@@ -94,6 +94,8 @@ ln -sf "$(realpath sheldon/plugins.toml)" ~/.config/sheldon
 # startship
 #
 
+type starship || curl -sS https://starship.rs/install.sh | sh
+
 mkdir -p ~/.config
 ln -sf "$(realpath starship/starship.toml)" ~/.config/starship.toml
 
