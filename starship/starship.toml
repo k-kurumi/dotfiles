@@ -2,17 +2,20 @@
 # https://starship.rs/ja-JP/config/
 #
 
-right_format = '$time'
+format = '$time $all'
 continuation_prompt = '... '
 
 [character]
 success_symbol = '[\$](green bold)'
 error_symbol = '[:\(](red bold)'
-vimcmd_symbol = '[❮](green)'
+vimcmd_symbol = '[❮](blue bold)'
 
 [time]
 disabled = false
 format = '\[[$time](yellow bold)\]'
+
+[os]
+disabled = false
 
 #
 # ここより下はコピーしたもの
