@@ -29,8 +29,7 @@ autoload -Uz compinit && compinit
 # 環境変数を補完
 setopt AUTO_PARAM_KEYS
 
-export EDITOR=nvim
-export VISUAL=nvim # macのcrontabが参照する
+type lvim && export EDITOR=lvim
 export LANGUAGE=en
 export LANG=en_US.UTF-8
 
