@@ -170,3 +170,6 @@ ln -sf "$(realpath luaformatter/config.yaml)" ~/.config/luaformatter/
 
 mkdir -p ~/.config/gitui
 ln -sf "$(realpath gitui/key_bindings.ron)" ~/.config/gitui/
+
+mkdir -p ~/.hammerspoon
+ln -sf "$(realpath hammerspoon/init.lua)" ~/.hammerspoon/init.lua
