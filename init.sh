@@ -173,3 +173,6 @@ ln -sf "$(realpath gitui/key_bindings.ron)" ~/.config/gitui/
 
 mkdir -p ~/.hammerspoon
 ln -sf "$(realpath hammerspoon/init.lua)" ~/.hammerspoon/init.lua
+
+mkdir -p ~/.config/autokey
+ln -sf "$(realpath autokey/data)" ~/.config/autokey/
