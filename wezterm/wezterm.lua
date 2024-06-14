@@ -64,7 +64,7 @@ return {
 
   -- font
   font = wezterm.font("UDEV Gothic NF", {bold=true, italic=false}),
-  font_size = 16.0,
+  font_size = 20.0,
 
   -- https://github.com/mbadolato/iTerm2-Color-Schemes#screenshots
   -- color_scheme = "Gruvbox Dark",
