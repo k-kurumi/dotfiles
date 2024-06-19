@@ -63,22 +63,24 @@ export PURE_PROMPT_SYMBOL=$
 
 ################################################################################
 
-# mac(arm)
-test -f /opt/homebrew/opt/asdf/libexec/asdf.sh && source /opt/homebrew/opt/asdf/libexec/asdf.sh
-if [[ -d /opt/homebrew/opt/openssl@3 ]]; then
-  export LDFLAGS="-L/opt/homebrew/opt/openssl@3/lib"
-  export CPPFLAGS="-I/opt/homebrew/opt/openssl@3/include"
-fi
+type mise && eval "$(mise activate zsh)"
 
-# mac(intel)
-test -f /usr/local/opt/asdf/libexec/asdf.sh && source /usr/local/opt/asdf/libexec/asdf.sh
-if [[ -d /usr/local/opt/openssl@3 ]]; then
-  export LDFLAGS="-L/usr/local/opt/openssl@3/lib"
-  export CPPFLAGS="-I/usr/local/opt/openssl@3/include"
-fi
+# # mac(arm)
+# test -f /opt/homebrew/opt/asdf/libexec/asdf.sh && source /opt/homebrew/opt/asdf/libexec/asdf.sh
+# if [[ -d /opt/homebrew/opt/openssl@3 ]]; then
+#   export LDFLAGS="-L/opt/homebrew/opt/openssl@3/lib"
+#   export CPPFLAGS="-I/opt/homebrew/opt/openssl@3/include"
+# fi
 
-# linux(intel)
-test -f /home/linuxbrew/.linuxbrew/opt/asdf/libexec/asdf.sh && source /home/linuxbrew/.linuxbrew/opt/asdf/libexec/asdf.sh
+# # mac(intel)
+# test -f /usr/local/opt/asdf/libexec/asdf.sh && source /usr/local/opt/asdf/libexec/asdf.sh
+# if [[ -d /usr/local/opt/openssl@3 ]]; then
+#   export LDFLAGS="-L/usr/local/opt/openssl@3/lib"
+#   export CPPFLAGS="-I/usr/local/opt/openssl@3/include"
+# fi
+
+# # linux(intel)
+# test -f /home/linuxbrew/.linuxbrew/opt/asdf/libexec/asdf.sh && source /home/linuxbrew/.linuxbrew/opt/asdf/libexec/asdf.sh
 
 # nim
 if [[ -d ~/.nimble/bin ]]; then
