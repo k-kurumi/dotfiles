@@ -16,5 +16,5 @@ opacity = 0.9  # Default: 1.0
 blur = true
 
 [font]
-normal = { family = "UDEV Gothic NFLG", style = "Bold" }
+normal = { family = "UDEV Gothic NF", style = "Bold" }
 size = 18
