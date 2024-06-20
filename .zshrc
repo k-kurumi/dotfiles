@@ -63,7 +63,7 @@ export PURE_PROMPT_SYMBOL=$
 
 ################################################################################
 
-type mise && eval "$(mise activate zsh)"
+type mise > /dev/null && eval "$(mise activate zsh)"
 
 # # mac(arm)
 # test -f /opt/homebrew/opt/asdf/libexec/asdf.sh && source /opt/homebrew/opt/asdf/libexec/asdf.sh
