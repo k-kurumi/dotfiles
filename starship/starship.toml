@@ -17,6 +17,9 @@ format = '\[[$time](yellow bold)\]'
 [os]
 disabled = false
 
+[hostname]
+ssh_symbol = 'ssh '
+
 #
 # ここより下はコピーしたもの
 # https://starship.rs/ja-JP/presets/plain-text
