@@ -10,6 +10,10 @@ vim.opt.wrapscan = false
 -- jjでコマンドモードに戻る
 vim.api.nvim_set_keymap('i', 'jj', '<ESC>', {noremap=true, silent=true})
 
+-- wrap状態でも1行ごとに移動
+vim.api.nvim_set_keymap('n', 'j', 'gj', {noremap=true, silent=true})
+vim.api.nvim_set_keymap('n', 'k', 'gk', {noremap=true, silent=true})
+
 -- bufferの切り替え
 vim.api.nvim_set_keymap('n', 'th', ':bp<ENTER>', {noremap=true, silent=true})
 vim.api.nvim_set_keymap('n', 'tl', ':bn<ENTER>', {noremap=true, silent=true})
