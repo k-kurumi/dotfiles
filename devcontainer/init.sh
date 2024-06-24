@@ -41,6 +41,12 @@ sudo ln -sf /usr/share/zoneinfo/Japan /etc/localtime
 
 git config --global core.editor 'code --wait'
 
+# sshdはfeaturesで追加する (aptでopen-sshserverをインストールしてもsystemdがないので動かない)
+# devcontainer.jsonの設定: featuresでsshd追加, forwardPortsで2222指定
+# docker psではポートが開いていないように見えるが ssh vscode@localhost -p 2222 で接続可能
+mkdir -p ~/.ssh
+curl -o ~/.ssh/authorized_keys https://github.com/k-kurumi.keys
+
 # # neovim and lunarvim
 # # FIXME neovimのarm対応版がリリースされたら利用したい (appimageはx64のためarmで起動できない)
 # pushd "$HOME" || exit
