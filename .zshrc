@@ -136,6 +136,7 @@ alias lg='lazygit'
 alias gu='gitui'
 
 alias v='lvim'
+alias l='yazi'
 
 ################################################################################
 # function
@@ -225,8 +226,8 @@ function wiki() {
   tmux rename-window zsh
 }
 
-# yazi
-function l() {
+# yazi終了時点のパスにカレントを切り替える
+function lll() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
 	yazi "$@" --cwd-file="$tmp"
 	if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
