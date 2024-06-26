@@ -297,7 +297,7 @@ export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*"'
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # PC情報の表示
-type neofetch > /dev/null && neofetch || :
+type fastfetch > /dev/null && fastfetch || :
 
 # https://github.com/joerdav/xc
 autoload -U +X bashcompinit && bashcompinit
