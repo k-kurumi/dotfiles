@@ -67,15 +67,10 @@ return {
   font_size = 20.0,
 
   -- https://github.com/mbadolato/iTerm2-Color-Schemes#screenshots
-  -- color_scheme = "Gruvbox Dark",
-  -- color_scheme = "Hybrid",
-  -- color_scheme = "Monokai (terminal.sexy)",
-  color_scheme = "Neon (terminal.sexy)",
-  -- color_scheme = "PencilDark",
+  -- color_scheme = "Dark Pastel",
+  -- color_scheme = "Grey-green",
+  color_scheme = "Monokai Vivid",
   -- color_scheme = "Sakura",
-  -- color_scheme = "tokyonight",
-  -- color_scheme = "Urple",
-  -- color_scheme = "WildCherry",
 
   -- background = {
   --   {
