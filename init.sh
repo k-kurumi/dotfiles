@@ -56,6 +56,8 @@ touch ~/.gitconfig
 git config --global user.name k-kurumi
 git config --global user.email optpia.kurumi@gmail.com
 
+git config --global init.defaultBranch main
+
 git config --global ghq.root '~/dev/src'
 
 # git gl でグラフ表示
