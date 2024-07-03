@@ -67,9 +67,8 @@ return {
   font_size = 20.0,
 
   -- https://github.com/mbadolato/iTerm2-Color-Schemes#screenshots
-  -- color_scheme = "Dark Pastel",
+  color_scheme = "Dark Pastel",
   -- color_scheme = "Grey-green",
-  color_scheme = "Monokai Vivid",
   -- color_scheme = "Sakura",
 
   -- background = {
