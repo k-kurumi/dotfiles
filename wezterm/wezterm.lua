@@ -1,5 +1,25 @@
 local wezterm = require 'wezterm';
 
+-- -- 表示できている範囲をlvimで開くので普通にコピーモード(shift+ctrl+x)したほうが便利な気がする
+-- wezterm.on("trigger-nvim-with-scrollback", function(window, pane)
+-- 	local scrollback = pane:get_lines_as_text()
+-- 	local name = os.tmpname()
+-- 	local f = io.open(name, "w+")
+-- 	f:write(scrollback)
+-- 	f:flush()
+-- 	f:close()
+-- 	window:perform_action(
+-- 		wezterm.action({ SpawnCommandInNewTab = {
+--       -- zshのPATHではなく /usr/bin などの最低限のPATHしか認識していないため
+--       -- sudo ln -sf /opt/homebrew/bin/nvim /usr/local/bin/nvim しておく必要あり
+-- 			args = { wezterm.home_dir .. '/.local/bin/lvim', name },
+-- 		} }),
+-- 		pane
+-- 	)
+-- 	wezterm.sleep_ms(1000)
+-- 	os.remove(name)
+-- end)
+
 -- キーバインド変更
 -- https://wezfurlong.org/wezterm/config/keys.html#default-shortcut--key-binding-assignments
 -- https://wezfurlong.org/wezterm/config/lua/keyassignment/index.html
@@ -29,6 +49,8 @@ if wezterm.target_triple == 'x86_64-unknown-linux-gnu' then
     { key = "=", mods = "ALT", action = wezterm.action.IncreaseFontSize },
     { key = "-", mods = "ALT", action = wezterm.action.DecreaseFontSize },
     { key = "0", mods = "ALT", action = wezterm.action.ResetFontSize },
+
+    -- {key = "E", mods = "ALT", action = wezterm.action{ EmitEvent = "trigger-nvim-with-scrollback" }},
   }
 end
 
@@ -51,6 +73,8 @@ if wezterm.target_triple == 'aarch64-apple-darwin' or wezterm.target_triple == '
     { key = "=", mods = "SUPER", action = wezterm.action.IncreaseFontSize },
     { key = "-", mods = "SUPER", action = wezterm.action.DecreaseFontSize },
     { key = "0", mods = "SUPER", action = wezterm.action.ResetFontSize },
+
+    -- {key = "e", mods = "SUPER", action = wezterm.action{ EmitEvent = "trigger-nvim-with-scrollback" }},
   }
 end
 
@@ -92,4 +116,19 @@ return {
   window_background_opacity = 0.95,
 
   keys = MY_KEYS,
+
+  -- wezterm connect um790 で接続するとtmuxのようにセッションが回復する
+  -- ただ1セッションしかないようにみえる
+  -- 今のところForwardAgentが効かないので使いづらい
+  -- ssh_domains = {
+  --   {
+  --     name = 'um790',
+  --     remote_address = '192.168.10.200',
+  --     username = 'kurumi',
+  --     ssh_option = {
+  --       ForwardAgent = "yes",
+  --     }
+  --   }
+  -- }
+
 }
