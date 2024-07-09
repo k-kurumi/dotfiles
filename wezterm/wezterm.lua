@@ -30,8 +30,9 @@ local wezterm = require 'wezterm';
 -- x86_64-apple-darwin - macOS (Intel)
 -- aarch64-apple-darwin - macOS (Apple Silicon)
 -- x86_64-unknown-linux-gnu - Linux
+local my_keys = {}
 if wezterm.target_triple == 'x86_64-unknown-linux-gnu' then
-  MY_KEYS = {
+  my_keys = {
     -- alt+h 左のタブを表示する
     { key = "h", mods = "ALT", action = wezterm.action{ActivateTabRelative = -1} },
     -- alt+l 右のタブを表示する
@@ -52,31 +53,32 @@ if wezterm.target_triple == 'x86_64-unknown-linux-gnu' then
 
     -- {key = "E", mods = "ALT", action = wezterm.action{ EmitEvent = "trigger-nvim-with-scrollback" }},
   }
-end
-
-if wezterm.target_triple == 'aarch64-apple-darwin' or wezterm.target_triple == 'x86_64-apple-darwin' then
-  MY_KEYS = {
+elseif wezterm.target_triple == 'aarch64-apple-darwin' or wezterm.target_triple == 'x86_64-apple-darwin' then
+  my_keys = {
     -- cmd+h 左のタブを表示する
-    { key = "h", mods = "SUPER", action = wezterm.action{ActivateTabRelative = -1} },
+    { key = "h", mods = "CMD", action = wezterm.action{ActivateTabRelative = -1} },
     -- cmd+l 右のタブを表示する
-    { key = "l", mods = "SUPER", action = wezterm.action{ActivateTabRelative = 1} },
+    { key = "l", mods = "CMD", action = wezterm.action{ActivateTabRelative = 1} },
 
     -- cmd+n タブを開く
-    { key = "n", mods = "SUPER", action = wezterm.action{SpawnTab = "CurrentPaneDomain"} },
+    { key = "n", mods = "CMD", action = wezterm.action{SpawnTab = "CurrentPaneDomain"} },
 
     -- cmd+H タブを左に移動する
-    { key = "H", mods = "SUPER", action = wezterm.action{MoveTabRelative = -1} },
+    { key = "H", mods = "CMD", action = wezterm.action{MoveTabRelative = -1} },
     -- cmd+L タブを右に移動する
-    { key = "L", mods = "SUPER", action = wezterm.action{MoveTabRelative = 1} },
+    { key = "L", mods = "CMD", action = wezterm.action{MoveTabRelative = 1} },
 
     -- ズーム周り
-    { key = "=", mods = "SUPER", action = wezterm.action.IncreaseFontSize },
-    { key = "-", mods = "SUPER", action = wezterm.action.DecreaseFontSize },
-    { key = "0", mods = "SUPER", action = wezterm.action.ResetFontSize },
+    { key = "=", mods = "CMD", action = wezterm.action.IncreaseFontSize },
+    { key = "-", mods = "CMD", action = wezterm.action.DecreaseFontSize },
+    { key = "0", mods = "CMD", action = wezterm.action.ResetFontSize },
 
-    -- {key = "e", mods = "SUPER", action = wezterm.action{ EmitEvent = "trigger-nvim-with-scrollback" }},
+    -- {key = "e", mods = "CMD", action = wezterm.action{ EmitEvent = "trigger-nvim-with-scrollback" }},
   }
 end
+
+-- 接続先によって背景色を変える
+-- https://github.com/wez/wezterm/issues/1680
 
 return {
   -- What to set the TERM variable to
@@ -95,27 +97,10 @@ return {
   -- color_scheme = "Grey-green",
   -- color_scheme = "Sakura",
 
-  -- background = {
-  --   {
-  --     source = {
-  --       -- ~は使えない
-  --       File = os.getenv("HOME") .. "/dotfiles/images/stained-glass.jpg",
-  --     },
-  --     -- sourceは改行しても固定
-  --     attachment = "Fixed",
-  --     -- sourceの明度
-  --     hsb =  { brightness = 0.005 },
-  --     -- 背景透過 0に近いほど透過する
-  --     opacity = 1.0,
-  --     horizontal_offset = 0,
-  --     vertical_offset = 0,
-  --   },
-  -- },
-
   -- 背景透過 1.0が不透過
   window_background_opacity = 0.95,
 
-  keys = MY_KEYS,
+  keys = my_keys,
 
   -- wezterm connect um790 で接続するとtmuxのようにセッションが回復する
   -- ただ1セッションしかないようにみえる
