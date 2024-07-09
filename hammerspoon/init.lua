@@ -12,7 +12,8 @@ function toggleApp(appName, key1, key2)
   end)
 end
 
-toggleApp("WezTerm", "ctrl", ";")
+toggleApp("Alacritty", "ctrl", ";")
+-- toggleApp("WezTerm", "ctrl", ";")
 toggleApp("Google Chrome", "option", "c")
 toggleApp("Obsidian", "option", "o")
 toggleApp("1Password", "option", "1")

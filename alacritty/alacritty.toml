@@ -1,8 +1,9 @@
 # https://github.com/alacritty/alacritty-theme
 import = [
-  # "~/.config/alacritty/themes/themes/ayu_dark.toml"
-  # "~/.config/alacritty/themes/themes/github_dark_high_contrast.toml"
-  "~/.config/alacritty/themes/themes/monokai_charcoal.toml"
+  "~/.config/alacritty/themes/themes/Cobalt2.toml"
+  # "~/.config/alacritty/themes/themes/monokai_charcoal.toml"
+  # "~/.config/alacritty/themes/themes/nightfox.toml"
+  # "~/.config/alacritty/themes/themes/thelovelace.toml"
 ]
 
 ################################################################################
@@ -11,10 +12,10 @@ import = [
 
 [window]
 padding = { x = 10, y = 10 }
-dimensions = { columns = 120, lines = 45 }
-opacity = 0.9  # Default: 1.0
+dimensions = { columns = 140, lines = 45 }
+opacity = 1.0  # Default: 1.0
 blur = true
 
 [font]
-normal = { family = "UDEV Gothic NF", style = "Bold" }
-size = 18
+normal = { family = "UDEV Gothic NF", style = "Regular" }
+size = 20
