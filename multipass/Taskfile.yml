@@ -1,0 +1,35 @@
+# https://taskfile.dev
+
+version: '3'
+
+vars:
+  VM_NAME: s1
+  CLOUD_CONFIG_FILE: cloud-init.yml
+
+tasks:
+  default:
+    cmds:
+      - task -l
+    silent: true
+
+  generate-cloud-init:
+    desc: Generate cloud-init file
+    cmds:
+      - ./print_cloud_config.sh > {{.CLOUD_CONFIG_FILE}}
+
+  launch-vm:
+    desc: Login to the VM
+    cmds:
+      - multipass launch lts --name {{.VM_NAME}} --cloud-init {{.CLOUD_CONFIG_FILE}}
+
+  login-vm:
+    desc: SSH into the VM
+    cmds:
+      - multipass shell {{.VM_NAME}}
+
+  delete-vm:
+    desc: Delete the VM
+    cmds:
+      - multipass stop {{.VM_NAME}}
+      - multipass delete {{.VM_NAME}}
+      - multipass purge

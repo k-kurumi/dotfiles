@@ -1,3 +1,2 @@
 multipass/ssh_config
-multipass/cloud-config.yaml
-multipass/cloud_init.yml
+multipass/cloud-init.yml
