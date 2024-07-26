@@ -39,7 +39,7 @@ sudo chsh "${user}" -s /usr/bin/zsh
 # UTC->JST
 sudo ln -sf /usr/share/zoneinfo/Japan /etc/localtime
 
-git config --global core.editor 'code --wait'
+git config --global core.editor vim
 
 # sshdはfeaturesで追加する (aptでopen-sshserverをインストールしてもsystemdがないので動かない)
 # devcontainer.jsonの設定: featuresでsshd追加, forwardPortsで2222指定
