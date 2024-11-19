@@ -45,6 +45,15 @@ ln -sf "$(realpath lvim/config.lua)" ~/.config/lvim/config.lua
 
 ################################################################################
 #
+# zed
+#
+
+mkdir -p ~/.config/zed
+ln -sf "$(realpath zed/settings.json)" ~/.config/zed/settings.json
+ln -sf "$(realpath zed/keymap.json)" ~/.config/zed/keymap.json
+
+################################################################################
+#
 # git
 #
 
