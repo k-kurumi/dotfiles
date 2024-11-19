@@ -129,18 +129,18 @@ module.exports = {
       blur: 0.8,
     },
 
-    // summon: {
-    //   hideDock: true,
-    //   hideOnBlur: false,
-    //   hotkey: "Ctrl+;",
-    // },
-
-    overlay: {
-      animate: false,
-      hotkeys: ["Ctrl+;"],
-      size: 0.4,
-      unique: true,
+    summon: {
+      hideDock: true,
+      hideOnBlur: false,
+      hotkey: "Ctrl+;",
     },
+
+    // overlay: {
+    //   animate: false,
+    //   hotkeys: ["Ctrl+;"],
+    //   size: 0.4,
+    //   unique: true,
+    // },
 
   },
 
@@ -183,7 +183,7 @@ module.exports = {
 
     // ショートカットキーでウインドウ表示非表示切り替え
     // hyperterm-overlayとキーを取り合うため同時に使えない
-    // "hyperterm-summon",
+    "hyperterm-summon",
 
     // guake風のターミナル(hyperterm-summonに比べて表示位置の自由度が低い)
     // forkされたhyper-overlayは表示がおかしくなるため使用しない
