@@ -11,6 +11,7 @@ vendor/
 .pryrc
 
 .mise.toml
+mise.toml
 .tool-versions
 .node-version
 .python-version
