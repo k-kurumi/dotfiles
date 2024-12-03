@@ -86,7 +86,9 @@ git config --global core.pager 'less -x4'
 git config --global commit.verbose true
 
 # コミット時のエディタ
-if type code > /dev/null; then
+if [[ -f /.dockerenv ]]; then
+  git config --global core.editor vim
+elif type code > /dev/null; then
   git config --global core.editor 'code --wait'
 else
   git config --global core.editor vim
