@@ -1,5 +1,5 @@
 # https://github.com/alacritty/alacritty-theme
-import = [
+general.import = [
   "~/.config/alacritty/themes/themes/Cobalt2.toml"
   # "~/.config/alacritty/themes/themes/monokai_charcoal.toml"
   # "~/.config/alacritty/themes/themes/nightfox.toml"
