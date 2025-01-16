@@ -16,12 +16,12 @@
       // "shift shift": "file_finder::Toggle"
     }
   },
-  {
-    "context": "Editor && vim_mode == insert",
-    "bindings": {
-      "j j": ["workspace::SendKeystrokes", "escape"]
-    }
-  },
+  // {
+  //   "context": "Editor && vim_mode == insert",
+  //   "bindings": {
+  //     "j j": ["workspace::SendKeystrokes", "escape"]
+  //   }
+  // },
   {
     "context": "Editor && vim_mode == normal",
     "bindings": {
