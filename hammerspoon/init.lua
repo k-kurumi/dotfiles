@@ -14,7 +14,5 @@ end
 
 -- toggleApp("Alacritty", "ctrl", ";")
 toggleApp("WezTerm", "ctrl", ";")
+toggleApp("Alacritty", "ctrl", "'")
 toggleApp("Google Chrome", "option", "c")
-toggleApp("Obsidian", "option", "o")
-toggleApp("1Password", "option", "1")
-toggleApp("KeePassXC", "option", "k")
