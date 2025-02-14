@@ -20,6 +20,7 @@ vim.api.nvim_set_keymap('n', 'tl', ':bn<ENTER>', {noremap=true, silent=true})
 
 lvim.plugins = {
   {
+    -- 特定文字で囲み
     "kylechui/nvim-surround",
     version = "*", -- Use for stability; omit to use `main` branch for the latest features
       event = "VeryLazy",
@@ -28,6 +29,11 @@ lvim.plugins = {
           -- Configuration here, or leave empty to use defaults
           })
     end
+  },
+  {
+    -- カーソルに滑らかな残像が残るようになる
+    "sphamba/smear-cursor.nvim",
+    opts = {},
   },
 }
 
