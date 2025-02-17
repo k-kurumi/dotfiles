@@ -93,12 +93,12 @@ return {
   font_size = 20.0,
 
   -- https://github.com/mbadolato/iTerm2-Color-Schemes#screenshots
-  color_scheme = "Dark Pastel",
+  -- color_scheme = "Dark Pastel",
   -- color_scheme = "Grey-green",
-  -- color_scheme = "Sakura",
+  color_scheme = "Sakura",
 
   -- 背景透過 1.0が不透過
-  window_background_opacity = 0.95,
+  window_background_opacity = 1.0,
 
   keys = my_keys,
 
