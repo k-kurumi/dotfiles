@@ -20,6 +20,11 @@ vim.api.nvim_set_keymap('n', 'tl', ':bn<ENTER>', {noremap=true, silent=true})
 
 lvim.plugins = {
   {
+    -- sやfでeasymotion風の移動
+    "ggandor/lightspeed.nvim",
+    opts = {},
+  },
+  {
     -- 特定文字で囲み
     "kylechui/nvim-surround",
     version = "*", -- Use for stability; omit to use `main` branch for the latest features
