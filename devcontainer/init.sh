@@ -17,7 +17,7 @@ if [ -z "${REMOTE_CONTAINERS}" ]; then
   exit 0
 fi
 
-type apt-get && sudo apt-get update && sudo apt-get install -y tig vim ripgrep tmux direnv git-crypt file iputils-ping
+type apt-get && sudo apt-get update && sudo apt-get install -y tig vim ripgrep tmux direnv git-crypt file iputils-ping wget curl
 
 # fzfをaptでインストールすると補完周りが効かないため
 test -d ~/.fzf || git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
@@ -40,6 +40,9 @@ sudo chsh "${user}" -s /usr/bin/zsh
 sudo ln -sf /usr/share/zoneinfo/Japan /etc/localtime
 
 git config --global core.editor vim
+
+# https://taskfile.dev/installation/#install-script
+sh -c "$(curl --location https://taskfile.dev/install.sh)" -- -d -b ~/.local/bin
 
 # sshdはfeaturesで追加する (aptでopen-sshserverをインストールしてもsystemdがないので動かない)
 # devcontainer.jsonの設定: featuresでsshd追加, forwardPortsで2222指定
