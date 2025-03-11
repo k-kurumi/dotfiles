@@ -15,5 +15,4 @@ end
 -- toggleApp("Alacritty", "ctrl", ";")
 toggleApp("WezTerm", "ctrl", ";")
 toggleApp("Alacritty", "ctrl", "'")
-toggleApp("Hyper", "ctrl", "h")
 toggleApp("Google Chrome", "option", "c")
