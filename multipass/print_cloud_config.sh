@@ -8,7 +8,8 @@
 set -eu
 
 cat <<EOL
----
+#cloud-config
+
 timezone: Asia/Tokyo
 locale: en_US.UTF-8
 package_upgrade: true
