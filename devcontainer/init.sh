@@ -59,3 +59,7 @@ curl -o ~/.ssh/authorized_keys https://github.com/k-kurumi.keys
 #   sudo make install
 #   yes no | LV_BRANCH='release-1.4/neovim-0.9' bash <(curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/release-1.4/neovim-0.9/utils/installer/install.sh)
 # popd || exit
+
+# FIXME インストールしてもうまく動かないのがあるで調査する
+code --install-extension oderwat.indent-rainbow
+code --install-extension streetsidesoftware.code-spell-checker
