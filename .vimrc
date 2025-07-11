@@ -1,3 +1,21 @@
+" ------------------------------------------------------------------------------
+call plug#begin()
+
+" コメント周り
+" https://github.com/tpope/vim-commentary
+Plug 'tpope/vim-commentary'
+
+" 文字列の囲み
+" https://github.com/tpope/vim-surround
+Plug 'tpope/vim-surround'
+
+" git差分表示
+" https://github.com/airblade/vim-gitgutter
+Plug 'airblade/vim-gitgutter'
+
+call plug#end()
+" ------------------------------------------------------------------------------
+
 " default updatetime 4000ms is not good for async update
 set updatetime=100
 

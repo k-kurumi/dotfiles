@@ -36,6 +36,9 @@ mkdir -p ~/.local/bin
 # vim
 #
 
+# vim-plug
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
 # for swapfile
 mkdir -p ~/.vim
 
