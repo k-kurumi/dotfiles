@@ -35,11 +35,12 @@ lvim.plugins = {
           })
     end
   },
-  {
-    -- カーソルに滑らかな残像が残るようになる
-    "sphamba/smear-cursor.nvim",
-    opts = {},
-  },
+  -- 起動や動きが遅くなるので使わなくなった
+  -- {
+  --   -- カーソルに滑らかな残像が残るようになる
+  --   "sphamba/smear-cursor.nvim",
+  --   opts = {},
+  -- },
 }
 
 -- 背景透過処理
