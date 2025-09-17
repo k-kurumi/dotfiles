@@ -95,7 +95,9 @@ return {
   -- https://github.com/mbadolato/iTerm2-Color-Schemes#screenshots
   -- color_scheme = "Dark Pastel",
   -- color_scheme = "Grey-green",
-  color_scheme = "Sakura",
+  -- color_scheme = "Sakura",
+  -- color_scheme = "Cobalt2",
+  color_scheme = "Dracula",
 
   -- 背景透過 1.0が不透過
   window_background_opacity = 1.0,
