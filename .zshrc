@@ -220,21 +220,14 @@ function sleep2() {
   done
 }
 
-# vimwiki
-function wiki() {
-  tmux rename-window wiki-neovim
-  cd ~/vimwiki; nvim index.md; cd -
-  tmux rename-window zsh
-}
-
 # yazi終了時点のパスにカレントを切り替える
 function lll() {
-	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
-	yazi "$@" --cwd-file="$tmp"
-	if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
-		cd -- "$cwd"
-	fi
-	rm -f -- "$tmp"
+  local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
+  yazi "$@" --cwd-file="$tmp"
+  if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+    cd -- "$cwd"
+  fi
+  rm -f -- "$tmp"
 }
 
 ################################################################################
