@@ -195,3 +195,6 @@ ln -sf "$(realpath hammerspoon/init.lua)" ~/.hammerspoon/init.lua
 
 mkdir -p ~/.config/autokey
 ln -sf "$(realpath autokey/data)" ~/.config/autokey/
+
+mkdir -p ~/.config/ghostty
+ln -sf "$(realpath ghostty/config)" ~/.config/ghostty/config
