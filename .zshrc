@@ -263,7 +263,7 @@ function fzf_select_ghq_repo() {
   zle clear-screen
 }
 zle -N fzf_select_ghq_repo
-bindkey '^G' fzf_select_ghq_repo
+bindkey '^V' fzf_select_ghq_repo
 
 # コマンドをエディタで編集する
 autoload -Uz edit-command-line
