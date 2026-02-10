@@ -19,6 +19,31 @@ fi
 
 type apt-get && sudo apt-get update && sudo apt-get install -y tig vim ripgrep tmux direnv git-crypt file iputils-ping wget curl
 
+# zellij
+zellij_version="v0.43.1"
+case "$(uname -m)" in
+  x86_64)
+    pushd /tmp || exit
+      wget "https://github.com/zellij-org/zellij/releases/download/${zellij_version}/zellij-x86_64-unknown-linux-musl.tar.gz"
+      tar zxvf zellij-x86_64-unknown-linux-musl.tar.gz
+      chmod +x zellij
+      sudo mv zellij /usr/local/bin/
+    popd || exit
+    ;;
+  aarch64 | arm64)
+    pushd /tmp || exit
+      wget "https://github.com/zellij-org/zellij/releases/download/${zellij_version}/zellij-aarch64-unknown-linux-musl.tar.gz"
+      tar zxvf zellij-aarch64-unknown-linux-musl.tar.gz
+      chmod +x zellij
+      sudo mv zellij /usr/local/bin/
+    popd || exit
+    ;;
+  *)
+    echo "Unsupported architecture: $(uname -m)"
+    exit 1
+    ;;
+esac
+
 # fzfをaptでインストールすると補完周りが効かないため
 test -d ~/.fzf || git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 yes Y | ~/.fzf/install
