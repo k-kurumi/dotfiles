@@ -9,6 +9,7 @@ confirm-close-surface = false
 quit-after-last-window-closed = true
 
 cursor-style = block
+cursor-style-blink = false
 
 # custom-shader = ./shaders/cursor_blaze.glsl
 # custom-shader = ./shaders/cursor_lightning.glsl
