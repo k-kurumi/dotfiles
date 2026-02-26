@@ -12,14 +12,14 @@ function toggleApp(appName, key1, key2)
   end)
 end
 
-toggleApp("Alacritty", "ctrl", ";")
-toggleApp("Ghostty", "ctrl", "'")
+-- toggleApp("Alacritty", "ctrl", ";")
+-- toggleApp("Ghostty", "ctrl", "'")
 
 -- toggleApp("Ghostty", "ctrl", ";")
 -- toggleApp("Alacritty", "ctrl", "'")
 
--- toggleApp("Alacritty", "ctrl", ";")
--- toggleApp("WezTerm", "ctrl", "'")
+toggleApp("Alacritty", "ctrl", ";")
+toggleApp("WezTerm", "ctrl", "'")
 
 -- toggleApp("WezTerm", "ctrl", ";")
 -- toggleApp("Alacritty", "ctrl", "'")
