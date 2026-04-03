@@ -18,10 +18,10 @@ end
 -- toggleApp("Ghostty", "ctrl", ";")
 -- toggleApp("Alacritty", "ctrl", "'")
 
-toggleApp("Alacritty", "ctrl", ";")
-toggleApp("WezTerm", "ctrl", "'")
+-- toggleApp("Alacritty", "ctrl", ";")
+-- toggleApp("WezTerm", "ctrl", "'")
 
--- toggleApp("WezTerm", "ctrl", ";")
--- toggleApp("Alacritty", "ctrl", "'")
+toggleApp("WezTerm", "ctrl", ";")
+toggleApp("Alacritty", "ctrl", "'")
 
 -- toggleApp("Google Chrome", "option", "c")
