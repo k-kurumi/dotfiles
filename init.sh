@@ -89,13 +89,7 @@ git config --global core.pager 'less -x4'
 git config --global commit.verbose true
 
 # コミット時のエディタ
-if [[ -f /.dockerenv ]]; then
-  git config --global core.editor vim
-elif type code > /dev/null; then
-  git config --global core.editor 'code --wait'
-else
-  git config --global core.editor vim
-fi
+git config --global core.editor vim
 
 # globalなgitignoreを追加
 git config --global core.excludesfile '~/.gitignore_global'
