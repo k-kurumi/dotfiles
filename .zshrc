@@ -29,7 +29,7 @@ autoload -Uz compinit && compinit
 # 環境変数を補完
 setopt AUTO_PARAM_KEYS
 
-tyep vim >/dev/null && export EDITOR=vim
+type vim >/dev/null && export EDITOR=vim
 export LANGUAGE=en
 export LANG=en_US.UTF-8
 
