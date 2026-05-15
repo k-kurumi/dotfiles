@@ -90,6 +90,8 @@ git config --global commit.verbose true
 
 # コミット時のエディタ
 git config --global core.editor vim
+type code && git config --global core.editor 'code --wait'
+# type zed && git config --global core.editor 'zed --wait'
 
 # globalなgitignoreを追加
 git config --global core.excludesfile '~/.gitignore_global'
