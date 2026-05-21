@@ -42,10 +42,6 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.c
 # for swapfile
 mkdir -p ~/.vim
 
-# lunarvim
-mkdir -p ~/.config/lvim
-ln -sf "$(realpath lvim/config.lua)" ~/.config/lvim/config.lua
-
 ################################################################################
 #
 # zed
@@ -160,6 +156,10 @@ case $(uname) in
     ;;
 esac
 
+#
+# terminal
+#
+
 # alacritty
 mkdir -p ~/.config/alacritty
 ln -sf "$(realpath alacritty/alacritty.toml)" ~/.config/alacritty/
@@ -167,30 +167,14 @@ ln -sf "$(realpath alacritty/alacritty.toml)" ~/.config/alacritty/
 mkdir -p ~/.config/alacritty/themes
 file -d ~/.config/alacritty/themes/.git || git clone https://github.com/alacritty/alacritty-theme ~/.config/alacritty/themes
 
-# wezterm linuxで日本語入力不可
 mkdir -p ~/.config/wezterm
 ln -sf "$(realpath wezterm/wezterm.lua)" ~/.config/wezterm/
 
-# kitty weztermのようなターミナル
-mkdir -p ~/.config/kitty
-ln -sf "$(realpath kitty/kitty.conf)" ~/.config/kitty/
-ln -sf "$(realpath kitty/gruvbox_dark.conf)" ~/.config/kitty/
-
-# cui file manager
-mkdir -p ~/.config/lf
-ln -sf "$(realpath lf/lfrc)" ~/.config/lf/
-
-mkdir -p ~/.config/luaformatter
-ln -sf "$(realpath luaformatter/config.yaml)" ~/.config/luaformatter/
-
-mkdir -p ~/.config/gitui
-ln -sf "$(realpath gitui/key_bindings.ron)" ~/.config/gitui/
-
-mkdir -p ~/.hammerspoon
-ln -sf "$(realpath hammerspoon/init.lua)" ~/.hammerspoon/init.lua
-
-mkdir -p ~/.config/autokey
-ln -sf "$(realpath autokey/data)" ~/.config/autokey/
-
 mkdir -p ~/.config/ghostty
 ln -sf "$(realpath ghostty/config)" ~/.config/ghostty/config
+
+#
+# keybinding
+#
+mkdir -p ~/.hammerspoon
+ln -sf "$(realpath hammerspoon/init.lua)" ~/.hammerspoon/init.lua

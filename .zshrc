@@ -126,12 +126,9 @@ alias ll='ls -lv'
 alias ag='ag --hidden'
 alias rg="rg --hidden --glob '!.git/'"
 
-alias tmpfile='nvim $(mktemp)'
-
 alias lg='lazygit'
 alias gu='gitui'
 
-alias v='lvim'
 alias l='yazi'
 
 ################################################################################
@@ -227,25 +224,6 @@ function lll() {
 
 ################################################################################
 # fzf
-
-# ^Tでファイル補完ができるので不要になった
-# # フォルダは移動する
-# # ファイルはvimで開く
-# function fzf_open_file() {
-#   local selected=$(find . -not -path './.git/*' -print 2> /dev/null | fzf)
-#   echo $selected
-#   if [ -n "$selected" ]; then
-#     if [[ -d "$selected" ]]; then
-#       BUFFER="cd ${selected}"
-#     else
-#       BUFFER="nvim ${selected}"
-#     fi
-#     zle accept-line
-#   fi
-#   zle clear-screen
-# }
-# zle -N fzf_open_file
-# bindkey '^O' fzf_open_file
 
 # ghqリポジトリに移動する
 function fzf_select_ghq_repo() {
