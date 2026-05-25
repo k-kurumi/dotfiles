@@ -7,6 +7,11 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
+  "icon_theme": {
+    "mode": "light",
+    "light": "Catppuccin Mocha",
+    "dark": "Catppuccin Mocha"
+  },
   "cli_default_open_behavior": "existing_window",
   "project_panel": {
     "dock": "left"
@@ -27,7 +32,11 @@
   },
   "auto_update": false,
   "proxy": "",
-  "theme": "Gruvbox Dark Hard",
+  "theme": {
+    "mode": "dark",
+    "light": "One Light",
+    "dark": "Gruvbox Dark Hard"
+  },
   "telemetry": {
     "diagnostics": false,
     "metrics": false
