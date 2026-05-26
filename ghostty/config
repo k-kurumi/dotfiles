@@ -1,6 +1,11 @@
 font-family = "UDEV Gothic NF"
 font-size = 18
 
+# リガチャ無効
+font-feature = "-calt"
+font-feature = "-dlig"
+font-feature = "-liga"
+
 # 太字
 font-thicken = true
 font-thicken-strength = 255
@@ -17,3 +22,6 @@ cursor-style-blink = false
 # custom-shader = ./shaders/slash.glsl
 # custom-shader = ./shaders/gravity.glsl
 # custom-shader = ./shaders/cursor_black.glsl
+
+# sshしたときエコがーおかしい場合があるため
+term = "xterm-256color"
