@@ -55,4 +55,23 @@
   "auto_install_extensions": {
     "catppuccin-icons": true,
   },
+
+  // TODO 設定を見直す
+  // https://zed.dev/docs/visual-customization
+
+  // Visually show tabs and spaces
+  "show_whitespaces": "all",
+  "whitespace_map": {
+    "space": ".",
+    "tab": "_",
+  },
+
+  // Indent guides
+  "indent_guides": {
+    "enabled": true,
+    "line_width": 1,
+    "active_line_width": 3,
+    "coloring": "indent_aware",
+    "background_coloring": "disabled",
+  },
 }
