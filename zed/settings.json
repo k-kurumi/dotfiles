@@ -49,6 +49,7 @@
   // 100から900で指定する 900が太い
   "buffer_font_weight": 600,
   "soft_wrap": "none",
+  "search_wrap": false,
 
   // 追加する拡張機能名は ~/Library/Application Support/Zed/extensions/installed で確認する
   // zedコマンドから取得不可らしい
