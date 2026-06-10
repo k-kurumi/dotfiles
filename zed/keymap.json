@@ -8,26 +8,39 @@
 //
 //
 [
-  // { // jjでノーマルに抜ける
-  //   "context": "Editor && vim_mode == insert",
-  //   "bindings": {
-  //     "j j": "vim::SwitchToNormalMode",
-  //   },
-  // },
+  // jjでノーマルに抜ける
   {
-    // 1行ずつカーソル移動
+    "context": "Editor && vim_mode == insert",
+    "bindings": {
+      "j j": "vim::SwitchToNormalMode",
+    },
+  },
+  // 1行ずつカーソル移動
+  {
     "context": "VimControl && ! menu",
     "bindings": {
       "j": ["vim::Down", { "display_lines": true }],
       "k": ["vim::Up", { "display_lines": true }],
     },
   },
+  // タブの切替
   {
-    // タブの切替
     "context": "vim_mode == normal",
     "bindings": {
       "t h": "pane::ActivatePreviousItem",
       "t l": "pane::ActivateNextItem",
+    },
+  },
+  // ターミナルにフォーカス
+  {
+    "bindings": {
+      "shift-ctrl-t": "terminal_panel::Toggle",
+    },
+  },
+  // エディタにフォーカス
+  {
+    "bindings": {
+      "shift-ctrl-e": "editor::ToggleFocus",
     },
   },
 ]
