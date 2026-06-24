@@ -75,4 +75,9 @@
     "coloring": "indent_aware",
     "background_coloring": "disabled",
   },
+
+  "vim": {
+    // 選択状態がクリップボードに入らないようする
+    "use_system_clipboard": "never",
+  },
 }
