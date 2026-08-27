@@ -1,29 +1,29 @@
--- [爆速！デスクトップアプリの切り替え！（Mac対象）](https://zenn.dev/yokojp/articles/a4939e92c3fc31)
-function toggleApp(appName, key1, key2)
-  hs.hotkey.bind({key1}, key2, function()
-    local app = hs.application.get(appName)
-    if app == nil then
-      hs.application.launchOrFocus("/Applications/" .. appName .. ".app")
-    elseif app:isFrontmost() then
-      app:hide()
+-- https://qiita.com/mishiwata1015/items/5031f0ca55621301b800
+local app_map = {}
+local mash = {"cmd", "ctrl"}
+
+local function registerAppLauncer(modifier, app)
+  table.insert(app_map, string.lower(modifier) .. " - " .. app)
+  hs.hotkey.bind(mash, modifier, function ()
+    -- hs.alert.show('Cmd + Ctrl + '..modifier, 2) -- 動作確認用
+    local app_name = hs.application.get(app)
+    if app_name ~= nil and app_name:isFrontmost() then
+      app_name:hide()
     else
-      hs.application.launchOrFocus("/Applications/" .. appName .. ".app")
+      hs.application.launchOrFocus(app)
     end
   end)
 end
 
--- toggleApp("Alacritty", "ctrl", ";")
--- toggleApp("Ghostty", "ctrl", "'")
+-- ショートカットキーとアプリの紐付け設定
+-- browser
+registerAppLauncer("G", "Google Chrome")
 
-toggleApp("Ghostty", "ctrl", ";")
-toggleApp("Visual Studio Code", "f1", "f1")
-toggleApp("Zed", "f2", "f2")
-toggleApp("Obsidian", "f12", "f12")
+-- editor
+registerAppLauncer("V", "Visual Studio Code")
+registerAppLauncer("Z", "Zed")
+registerAppLauncer("O", "Obsidian")
 
--- toggleApp("Alacritty", "ctrl", ";")
--- toggleApp("WezTerm", "ctrl", "'")
-
--- toggleApp("WezTerm", "ctrl", ";")
--- toggleApp("Alacritty", "ctrl", "'")
-
--- toggleApp("Google Chrome", "option", "c")
+-- terminal
+registerAppLauncer(";", "Ghostty")
+registerAppLauncer("W", "WezTerm")
