@@ -16,7 +16,9 @@ end
 -- toggleApp("Ghostty", "ctrl", "'")
 
 toggleApp("Ghostty", "ctrl", ";")
-toggleApp("Visual Studio Code", "ctrl", "'")
+toggleApp("Visual Studio Code", "f1", "f1")
+toggleApp("Zed", "f2", "f2")
+toggleApp("Obsidian", "f12", "f12")
 
 -- toggleApp("Alacritty", "ctrl", ";")
 -- toggleApp("WezTerm", "ctrl", "'")
