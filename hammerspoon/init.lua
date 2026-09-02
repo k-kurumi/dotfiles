@@ -17,7 +17,7 @@ end
 
 -- ショートカットキーとアプリの紐付け設定
 -- browser
-registerAppLauncer("G", "Google Chrome")
+registerAppLauncer("C", "Google Chrome")
 
 -- editor
 registerAppLauncer("V", "Visual Studio Code")
@@ -25,5 +25,6 @@ registerAppLauncer("Z", "Zed")
 registerAppLauncer("O", "Obsidian")
 
 -- terminal
-registerAppLauncer(";", "Ghostty")
+registerAppLauncer(";", "Alacritty")
+registerAppLauncer("G", "Ghostty")
 registerAppLauncer("W", "WezTerm")
