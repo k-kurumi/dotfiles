@@ -93,10 +93,10 @@ type code && git config --global core.editor 'code --wait'
 git config --global core.excludesfile '~/.gitignore_global'
 
 # 署名をつける
-# https://blog.inorinrinrin.com/entry/c88f7714-055b-ddca-a3ae-e5a6f4aa04cc
 if [[ -f ~/.ssh/id_ed25519.pub ]]; then
   git config --global user.signingkey ~/.ssh/id_ed25519.pub
   git config --global gpg.format ssh
+  git config --global commit.gpgsign true
 fi
 
 ################################################################################
