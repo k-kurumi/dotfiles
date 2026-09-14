@@ -92,7 +92,8 @@ type code && git config --global core.editor 'code --wait'
 # globalなgitignoreを追加
 git config --global core.excludesfile '~/.gitignore_global'
 
-# 署名をつける
+# GitHubでコミットにVerified表示させるため署名をつける
+# GitHubに公開鍵をSigning keyとして追加登録が必要
 if [[ -f ~/.ssh/id_ed25519.pub ]]; then
   git config --global user.signingkey ~/.ssh/id_ed25519.pub
   git config --global gpg.format ssh
