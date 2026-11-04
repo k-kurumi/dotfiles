@@ -3,7 +3,6 @@ source ~/.profile
 export LANG="C.UTF-8"
 export LC_ALL="C.UTF-8"
 export LC_CTYPE="C.UTF-8"
-export LANG="C.UTF-8"
 
 eval "$(sheldon source)"
 eval "$(starship init zsh)"
