@@ -1,5 +1,10 @@
 source ~/.profile
 
+export LANG="C.UTF-8"
+export LC_ALL="C.UTF-8"
+export LC_CTYPE="C.UTF-8"
+export LANG="C.UTF-8"
+
 eval "$(sheldon source)"
 eval "$(starship init zsh)"
 
@@ -30,8 +35,6 @@ autoload -Uz compinit && compinit
 setopt AUTO_PARAM_KEYS
 
 type vim >/dev/null && export EDITOR=vim
-export LANGUAGE=en
-export LANG=en_US.UTF-8
 
 export XDG_CONFIG_HOME="${HOME}/.config"
 
