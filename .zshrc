@@ -271,3 +271,6 @@ type fastfetch > /dev/null && fastfetch || :
 # https://github.com/joerdav/xc
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /opt/homebrew/bin/xc xc
+
+# シンボリックリンクではうまく動かないためaliasにする
+[ -f "/Applications/Tailscale.app/Contents/MacOS/Tailscale" ] && alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
